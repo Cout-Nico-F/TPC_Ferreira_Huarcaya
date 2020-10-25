@@ -9,7 +9,7 @@ using WebForms.Masters;
 
 namespace WebForms.ASPX
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class WebPages : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +18,7 @@ namespace WebForms.ASPX
             if (master != null)
             {
                 var control = master.FindControl("Master_A_body") as HtmlGenericControl;
-                master.SetHtmlElementClass(control, " bg-rainbow");
+                master.SetHtmlElementClass(control, " bg-red");
             }
         }
     }
