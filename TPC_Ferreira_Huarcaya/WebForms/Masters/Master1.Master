@@ -4,11 +4,14 @@
 
 <html>
 <head runat="server">
+
+    <link href="../CSS/css_master1.css" rel="stylesheet" />
+
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body id="Master_A_body" runat="server" class="common-bg-properties">
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
