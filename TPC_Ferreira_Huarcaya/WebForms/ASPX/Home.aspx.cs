@@ -11,7 +11,13 @@ namespace WebForms.ASPX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //esto podria estar dentro de un metodo.( Lo paso a uno cuando tenga mas de una llamada al metodo SetHtmlElementClass )
+            var master = Master as Master_A;
+            if (master != null)
+            {
+                var control = master.FindControl("Master_A_body") as HtmlGenericControl;
+                master.SetHtmlElementClass(control, " bg-red");
+            }
         }
     }
 }
