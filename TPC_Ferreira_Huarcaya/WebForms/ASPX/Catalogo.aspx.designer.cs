@@ -11,7 +11,7 @@ namespace WebForms.ASPX
 {
 
 
-    public partial class Home
+    public partial class Catalogo
     {
     }
 }
