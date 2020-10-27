@@ -3,16 +3,32 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    
-       <!-- <footer id="footer">
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <button type="button" class="btn btn-secondary">3</button>
-                <button type="button" class="btn btn-secondary">4</button>
-            </div>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="WebPages">Otro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contacto.aspx">Informacion</a>
+                </li>
+            </ul>
+             <!-- No hace falta el buscador aca -->
+             <!--<form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            </form>-->
         </div>
-    </footer> -->
+    </nav>
+
+      
 
 </asp:Content>

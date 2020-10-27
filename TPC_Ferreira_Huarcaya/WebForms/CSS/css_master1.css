@@ -12,7 +12,39 @@
 .bg-rainbow {
     background-image: url(https://cdn.pixabay.com/photo/2017/03/25/17/55/color-2174045_960_720.png);
 }
-#footer{
-    position:relative;
-    bottom:-1000px;
+
+/*Contacto.aspx*/
+
+h1{
+    font-size:36px;
+    color:#555;
+    font-weight:bold;
 }
+h3{
+    font-size:24px;
+    color:#333;
+    font-weight:bold;
+}
+#team i{
+    font-size:26px;
+    color:#555;
+}
+#team p{
+    font-weight:500;
+}
+
+/*Esto lo saque de youtube*/
+#team .card {
+    border-radius: 0;
+    box-shadow: 5px 5px 15px rgb(76, 148, 245);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+    #team .card:hover {
+        background: rgb(128, 178, 247);
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 5px 5px 10px #9E9E9E;
+    }

@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASPX\Catalogo.aspx" />
+    <Content Include="ASPX\Contacto.aspx" />
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\WebPages.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -124,6 +125,13 @@
     <Compile Include="ASPX\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
@@ -166,7 +174,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
