@@ -33,7 +33,7 @@
     <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />
-    <section id="facilites">
+    <section id="facilities">
         <div class="container">
             <div class="row">
                 <div class="col md-5 col-sm-4">

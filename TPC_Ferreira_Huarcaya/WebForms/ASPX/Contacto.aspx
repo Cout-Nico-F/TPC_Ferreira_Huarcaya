@@ -79,9 +79,9 @@
                             <h3>Alonso Huarcaya</h3>
                             <h5>Tec.Univ en Programacion</h5>
                             <!-- No se que poner -->
-                            <p>Desayuno, almuerzo y ceno codigo </p>
-                            <p>mi pasion es programar y vivir de ello</p>
-                            <p> Una frase que me identifica es: "sufre ahora y vive el resto de tu vida como un campeon"</p>
+                            <p>Desayuno, almuerzo y ceno codigo <br />
+                               Mi pasion es programar y vivir de ello <br />
+                               Una frase que me identifica es: "sufre ahora y vive el resto de tu vida como un campeon"</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
                                     <a href="https://www.linkedin.com/in/alonso-huarcaya-934300188/">
