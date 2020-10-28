@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Master1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="WebForms.ASPX.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../CSS/Home.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--Agregue un segundo navbar para hacer sticky junto con el anterior quiero hacer un smooth control -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,9 +16,40 @@
                 <a class="nav-link" href="#About">Acerca de</a>
             </div>
         </div>
-    </nav>
+    </nav>-->
+
+    <!--Las imagenes las saque de UnDraw solo las descargue -->
+    <!--Tuve un error con las imagenes las descargue y venian con un fondo blanco y yo lo queria sin fondo entonces lo descargue como svg y listo (lo tuve que buscar) -->
+    <div id="estilo">
+         <section id="sec1">
+        <div class="contenedor-texto">
+            <h2>Paginas Web</h2>
+            <p>sadsadasdas</p>
+            <a href="Catalogo.aspx">Section 2</a>
+            <img src="../Imagenes/Landing_Page.svg" alt="Landing Page no found"/>
+        </div>
+    </section>
+    <section id="sec2">
+         <div class="contenedor-texto">
+            <h2>Arte </h2>
+            <p>sadsadasdas</p>
+            <a href="#">Section 2</a>
+            <img src="../Imagenes/Uno.svg" alt="Landing Page no found"/>
+        </div>
+    </section>
+    <section id="sec3">
+         <div class="contenedor-texto">
+            <h2>Contrataciones</h2>
+            <p>sadsadasdas</p>
+            <a href="#">Section 2</a>
+            <img src="../Imagenes/Team.svg" alt="Landing Page no found"/>
+        </div>
+    </section>
+    </div>
+   
+
     <!--No tiene agregado la hoja de css en el master??  -->
-    <div id="PaginaWeb">
+    <!--<div id="PaginaWeb">
         <img src="../Imagenes/Paisaje_01.png" alt="Imagen no encontrada"/>
     </div>
      <div id="Arte">
@@ -26,7 +58,7 @@
      <div id="About">
         <img src="../Imagenes/Espacio.jpg" alt="Imagen no encontrada"
             <h1 style="color:white;">Hola</h1>/>
-    </div>
+    </div>-->
 
     <!-- Por ahora lo saco-->
     <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

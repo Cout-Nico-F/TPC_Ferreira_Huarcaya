@@ -115,6 +115,7 @@
     <Content Include="bin\WebForms.dll" />
     <Content Include="bin\WebForms.pdb" />
     <Content Include="CSS\css_master1.css" />
+    <Content Include="CSS\Home.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

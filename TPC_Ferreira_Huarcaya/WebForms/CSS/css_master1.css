@@ -1,4 +1,5 @@
-﻿.common-bg-properties {
+﻿
+.common-bg-properties {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -16,6 +17,8 @@
 /*Home.aspx*/
 
 
+/*Elijo que elemento quiero con nth-child*/
+ 
 /*Contacto.aspx*/
 #team i {
     font-size: 26px;
