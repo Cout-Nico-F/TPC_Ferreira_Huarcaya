@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,9 @@
                             <h3>Alonso Huarcaya</h3>
                             <h5>Tec.Univ en Programacion</h5>
                             <!-- No se que poner -->
-                            <p></p>
+                            <p>Desayuno, almuerzo y ceno codigo </p>
+                            <p>mi pasion es programar y vivir de ello</p>
+                            <p> Una frase que me identifica es: "sufre ahora y vive el resto de tu vida como un campeon"</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
                                     <a href="https://www.linkedin.com/in/alonso-huarcaya-934300188/">
@@ -107,10 +109,40 @@
             <div class="row mb-5">
                 <div class="col">
                     <h1>Team</h1>
-                    <p class="mt-3">
-                    </p>
+                    <p class="mt-3"></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Aca va una foto tuya Nico -->
+                            <img src="../Imagenes/user.png" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
+                            <h3>Elver Galarga</h3>
+                            <h5>Maquetador Web</h5>
+                            <!--Queda vacia para que agregues una descripcion breve de lo quieras -->
+                            <p></p>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="p-4">
+                                    <a href="#">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                                <div class="p-4">
+                                    <a href="#">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                                 <div class="p-4">
+                                     <!--Opcional -->
+                                    <a href="#">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </section>
 

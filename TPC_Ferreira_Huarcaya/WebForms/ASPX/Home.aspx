@@ -22,7 +22,7 @@
                     <a class="nav-link" href="WebPages">Otro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Contacto.aspx">Contacto.aspx</a>
+                    <a class="nav-link" href="Contacto.aspx">Informacion</a>
                 </li>
             </ul>
             <!-- No hace falta el buscador aca -->

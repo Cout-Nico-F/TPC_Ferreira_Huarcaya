@@ -21,14 +21,60 @@
                     <a class="nav-link" href="Contacto.aspx">Informacion</a>
                 </li>
             </ul>
-             <!-- No hace falta el buscador aca -->
-             <!--<form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-            </form>-->
         </div>
     </nav>
 
-      
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Hola bienvenido</h1>
+            <p class="lead">Estamos trabajando.... <i class="fas fa-exclamation-triangle"></i></p>
+        </div>
+    </div>
+    <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
+    <br />
+    <br />
+    <section id="facilites">
+        <div class="container">
+            <div class="row">
+                <div class="col md-5 col-sm-4">
+                    <div class="card text-center">
+                        <img src="../Imagenes/Ejemplo1.png" class="card-img-top" alt="No se encontro la imagen" />
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplo 01</h5>
+                            <p class="card-text">Aca va una descripcion de lo que vamos a encontrar</p>
+                            <button type="button" class="btn btn-info btn-lg btn-block">Vista Previa</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col md-1 col-sm-4">
+                    <div class="card text-center">
+                        <img src="../Imagenes/Ejemplo2.png" class="card-img-top" alt="No se encontro la imagen" />
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplo 02</h5>
+                            <p class="card-text">Aca va una descripcion de lo que vamos a encontrar</p>
+                            <button type="button" class="btn btn-info btn-lg btn-block">Vista Previa</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col md-2 col-sm-4">
+                    <div class="card text-center">
+                        <img src="../Imagenes/Ejemplo3.png" class="card-img-top" alt="No se encontro la imagen" />
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplo 03</h5>
+                            <p class="card-text">Aca va una descripcion de lo que vamos a encontrar</p>
+                            <button type="button" class="btn btn-info btn-lg btn-block">Vista Previa</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
 
 </asp:Content>
