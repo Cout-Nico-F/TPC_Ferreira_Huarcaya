@@ -6,27 +6,7 @@
         <h1>
          Navegar a WebPages
         </h1>
-    </a> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="WebPages">Otro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Contacto.aspx">Informacion</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+       </a> -->
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -39,10 +19,7 @@
                 <img src="../Imagenes/Paisaje_01.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="../Imagenes/ArteWeb.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -54,5 +31,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 </asp:Content>
