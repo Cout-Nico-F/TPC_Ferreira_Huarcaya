@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../CSS/Home.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <!--Las imagenes las saque de UnDraw solo las descargue -->
     <!--Tuve un error con las imagenes las descargue y venian con un fondo blanco y yo lo queria sin fondo entonces lo descargue como svg y listo (lo tuve que buscar) -->
-    <div id="estilo">
+   <!-- <div id="estilo">
          <section id="sec1">
         <div class="contenedor-texto">
             <h2>Paginas Web</h2>
@@ -31,23 +31,9 @@
             <img src="../Imagenes/Team.svg" alt="Landing Page no found"/>
         </div>
     </section>
-    </div>
-   
-
-    <!--No tiene agregado la hoja de css en el master??  -->
-    <!--<div id="PaginaWeb">
-        <img src="../Imagenes/Paisaje_01.png" alt="Imagen no encontrada"/>
-    </div>
-     <div id="Arte">
-        <img src="../Imagenes/ArteWeb.jpg" alt="Imagen no encontrada"/>
-    </div>
-     <div id="About">
-        <img src="../Imagenes/Espacio.jpg" alt="Imagen no encontrada"
-            <h1 style="color:white;">Hola</h1>/>
     </div>-->
 
-    <!-- Por ahora lo saco-->
-    <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -69,11 +55,11 @@
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>-->
+        </a>
 
     <!-- jQuery and JS bundle w/ Popper.js -->
     <!--Esto es para agregar funcionalidad para el carousel-->
-   <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> 
 
 </asp:Content>
