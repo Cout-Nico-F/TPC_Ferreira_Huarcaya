@@ -2,21 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../CSS/Home.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!--Agregue un segundo navbar para hacer sticky junto con el anterior quiero hacer un smooth control -->
-   <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" href="#PaginaWeb">Paginas Web <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="#Arte">Arte</a>
-                <a class="nav-link" href="#">Contrataciones</a>
-                <a class="nav-link" href="#About">Acerca de</a>
-            </div>
-        </div>
-    </nav>-->
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server
 
     <!--Las imagenes las saque de UnDraw solo las descargue -->
     <!--Tuve un error con las imagenes las descargue y venian con un fondo blanco y yo lo queria sin fondo entonces lo descargue como svg y listo (lo tuve que buscar) -->
