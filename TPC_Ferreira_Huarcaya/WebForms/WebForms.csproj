@@ -68,8 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASPX\Catalogo.aspx" />
-    <Content Include="ASPX\Contacto.aspx" />
+    <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
+    <Content Include="ASPX\Contact.aspx" />
     <Content Include="ASPX\WebPages.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -1950,18 +1951,25 @@
     <Compile Include="ASPX\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\Contacto.aspx.cs">
-      <DependentUpon>Contacto.aspx</DependentUpon>
+    <Compile Include="ASPX\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ASPX\Contacto.aspx.designer.cs">
-      <DependentUpon>Contacto.aspx</DependentUpon>
+    <Compile Include="ASPX\Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\WebPages.aspx.cs">
       <DependentUpon>WebPages.aspx</DependentUpon>
