@@ -1,6 +1,6 @@
-create database Ferreira_Huarcaya_DB_TEST2
+create database Ferreira_Huarcaya_DB
 go
-use Ferreira_Huarcaya_DB_TEST2
+use Ferreira_Huarcaya_DB
 go
 --Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
 create table Elementos (
@@ -109,10 +109,8 @@ create table Elementos_X_Paginas (
 	ID_Elemento smallint not null
 )
 	go
-	
 
-
---Alter Tables de PK y FKs
+--Alter Tables de PK
 	alter table Elementos add constraint PK_Elementos primary key (ID)
 	go
 	alter table Disposicion_Elementos add constraint PK_ID_Disposicion primary key (ID)
@@ -127,51 +125,47 @@ create table Elementos_X_Paginas (
 	go
 	alter table Relacion_Colores add constraint PK_Relacion_Colores primary key (ID)
 	go
-	alter table Relacion_Colores add foreign key (ID_Estilo) references Estilos(ID)
-	go
-	alter table Colores_X_RelacionColores add constraint PK_Colores_X_RelacionColores primary key (ID_Color)
-	go
-	alter table Colores_X_RelacionColores add foreign key (ID_Color) references Color(ID)
-	go
-	alter table Colores_X_RelacionColores add constraint PK2_Colores_X_RelacionColores primary key (ID_Relacioncolor)
-	go
-	alter table Colores_X_RelacionColores add foreign key (ID_RelacionColor) references Relacion_Colores(ID)
+	alter table Colores_X_RelacionColores add constraint PKS_Colores_X_RelacionColores primary key (ID_Color,ID_RelacionColor)
 	go
 	alter table Estilos add constraint PK_Estilos primary key (ID)
 	go
-	alter table Estilos add foreign key (ID_Seccion) references Secciones(ID)
-	go
 	alter table Secciones add constraint PK_Secciones primary key (ID)
 	go
-	alter table Secciones add foreign key (ID_Pedido) references PedidosWebPage(ID)
+	alter table PedidosWebPage add constraint PK_PedidosWebPage primary key (ID)
 	go
-	alter table PedidosWebPage add constraint PK_Secciones primary key (ID)
+	alter table Usuarios add constraint PK_Usuarios primary key (ID)
+	go
+	alter table Datos_Personales add constraint PK_Datos_Personales primary key (ID_Usuario)
+	go
+	alter table Paginas add constraint PK_Paginas primary key (ID)
+	go
+	alter table Elementos_X_Paginas add constraint PKS_Elementos_X_Paginas primary key (ID_Pagina, ID_Disposicion, ID_Elemento)
+	go
+
+--Alter Tables FK's
+	alter table Relacion_Colores add foreign key (ID_Estilo) references Estilos(ID)
+	go
+	alter table Colores_X_RelacionColores add foreign key (ID_Color) references Colores(ID)
+	go
+	alter table Colores_X_RelacionColores add foreign key (ID_RelacionColor) references Relacion_Colores(ID)
+	go
+	alter table Estilos add foreign key (ID_Seccion) references Secciones(ID)
+	go
+	alter table Secciones add foreign key (ID_Pedido) references PedidosWebPage(ID)
 	go
 	alter table PedidosWebPage add foreign key (ID_Usuario) references Usuarios(ID)
 	go
 	alter table PedidosWebPage add foreign key (ID_Categoria) references Categorias(ID)
 	go
-	alter table Usuarios add constraint PK_Usuarios primary key (ID)
-	go
 	alter table Usuarios add foreign key (ID_Nivel) references Niveles_Acceso(ID)
-	go
-	alter table Datos_Personales add constraint PK_Datos_Personales primary key (ID_Usuario)
 	go
 	alter table Datos_Personales add foreign key (ID_Usuario) references Usuarios(ID)
 	go
-	alter table Paginas add constraint PK_Paginas primary key (ID)
-	go
 	alter table Paginas add foreign key (ID_Seccion) references Secciones(ID)
-	go
-	alter table Elementos_X_Paginas add constraint PK_Elementos_X_Paginas primary key (ID_Pagina)
 	go
 	alter table Elementos_X_Paginas add foreign key (ID_Pagina) references Paginas(ID)
 	go
-	alter table Elementos_X_Paginas add constraint PK2_Elementos_X_Paginas primary key (ID_Disposicion)
-	go
-	alter table Elementos_X_Paginas add foreign key (ID_Disposicion) references Disposiciones(ID)
-	go
-	alter table Elementos_X_Paginas add constraint PK3_Elementos_X_Paginas primary key (ID_Elemento)
+	alter table Elementos_X_Paginas add foreign key (ID_Disposicion) references Disposicion_Elementos(ID)
 	go
 	alter table Elementos_X_Paginas add foreign key (ID_Elemento) references Elementos(ID)
 	go
@@ -179,4 +173,4 @@ create table Elementos_X_Paginas (
 	alter table Elementos add constraint CH_Elementos_Costo check (Costo >= 0)
 	go
 	alter table Funcionalidades add constraint CH_Funcionalidades_Costo check (Costo >= 0)
-	go
+	--Falta: Checks de varchars de espacio vacio, Check de Email valido
