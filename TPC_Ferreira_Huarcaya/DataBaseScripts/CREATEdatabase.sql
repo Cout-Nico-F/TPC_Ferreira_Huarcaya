@@ -139,4 +139,22 @@ create table Paginas (
 	alter table Paginas add constraint PK_Paginas primary key (ID)
 	go
 	alter table Paginas add foreign key (ID_Seccion) references Secciones(ID)
+create table Elementos_X_Paginas (
+	ID_Pagina smallint not null,
+	ID_Disposicion smallint not null,
+	ID_Elemento smallint not null
+)
+	go
+	alter table Elementos_X_Paginas add constraint PK_Elementos_X_Paginas primary key (ID_Pagina)
+	go
+	alter table Elementos_X_Paginas add foreign key (ID_Pagina) references Paginas(ID)
+	go
+	alter table Elementos_X_Paginas add constraint PK2_Elementos_X_Paginas primary key (ID_Disposicion)
+	go
+	alter table Elementos_X_Paginas add foreign key (ID_Disposicion) references Disposiciones(ID)
+	go
+	alter table Elementos_X_Paginas add constraint PK3_Elementos_X_Paginas primary key (ID_Elemento)
+	go
+	alter table Elementos_X_Paginas add foreign key (ID_Elemento) references Elementos(ID)
+
 
