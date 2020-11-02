@@ -52,7 +52,7 @@ values
 ('Footer',10),
 ('Header',10);
 
---                                  Tablas No Mestras
+--                                  Tablas No Maestras
 
 insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel)/*listo*/
 values
@@ -64,7 +64,7 @@ values
 (6,'AlonsoHS20','AlonsohuarcayaAdmin2',3),
 (7,'NicoFerreira1','NicoFerreAdmin1',3);
 
-insert into PedidosWebPage(ID_Usuario,ID_Categoria)/*listo (Edit row 200: Porque empezo desde el ID 2?)*/ 
+insert into PedidosWebPage(ID_Usuario,ID_Categoria)/*listo (Edit row 200: Porque empiezo desde el ID 2?)*/ 
 values
 (1,2),
 (2,3),
