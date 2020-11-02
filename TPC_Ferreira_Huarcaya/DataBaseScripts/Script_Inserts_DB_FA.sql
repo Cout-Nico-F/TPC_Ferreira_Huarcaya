@@ -37,5 +37,60 @@ values
 ('Gris'),
 ('Celeste');
 
+insert into Colores_X_Relacion_Colores(ID_Color,ID_RelacionColores)
+values
+(1,),
+(2,),
+(3,),
+(1,),
+(1,),
+(5,),
+(6,),
+
+-- el ID es indentity(1,1)
+insert into Relacion_Colores(Descripcion,ID_Estilo)
+values
+(,)
+
+-- el ID es indentity(1,1)
+insert into Estilos(Descripcion,ID_RelacionColores)
+values
+('Esqueumorfismo'),
+('Flat design'),
+('Material design'),
+('Niños'),
+('Noticias'),
+('Blog'),
+('E-commerce'),
+('Maquetador/a Web'),
+('Diseñador/a Web'),
+('Barroco'),
+('Clasicismo'),
+('Surrealismo'),
+('Expesionismo'),
+('Moderno'),
+('Pixel Art');
+
+insert into Secciones(Descripcion,ID_Estilo)
+values
+('WebPages',1),
+('WebPages',2),
+('WebPages',3),
+('WebPages',4),
+('WebPages',5),
+('WebPages',6),
+('WebPages',7),
+('Contrataciones',8),
+('Contrataciones',9),
+('Arte',10),
+('Arte',11),
+('Arte',12),
+('Arte',13),
+('Arte',14),
+('Arte',15),
+
+
+
+
 
 
