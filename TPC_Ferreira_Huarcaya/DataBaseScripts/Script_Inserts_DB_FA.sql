@@ -35,9 +35,10 @@ values
 ('Amarrilo'),
 ('Bordo'),
 ('Gris'),
-('Celeste');
+('Celeste'),
+('Monocromaticos');
 
-insert into Colores_X_Relacion_Colores(ID_Color,ID_RelacionColores)
+insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColores)
 values
 (1,),
 (2,),
@@ -58,12 +59,8 @@ values
 ('Esqueumorfismo'),
 ('Flat design'),
 ('Material design'),
-('Niños'),
-('Noticias'),
-('Blog'),
-('E-commerce'),
 ('Maquetador/a Web'),
-('Diseñador/a Web'),
+('Diseniador/a Web'),
 ('Barroco'),
 ('Clasicismo'),
 ('Surrealismo'),
@@ -76,21 +73,42 @@ values
 ('WebPages',1),
 ('WebPages',2),
 ('WebPages',3),
-('WebPages',4),
-('WebPages',5),
-('WebPages',6),
-('WebPages',7),
-('Contrataciones',8),
-('Contrataciones',9),
+('Contrataciones',4),
+('Contrataciones',5),
+('Arte',6),
+('Arte',7),
+('Arte',8),
+('Arte',9),
 ('Arte',10),
-('Arte',11),
-('Arte',12),
-('Arte',13),
-('Arte',14),
-('Arte',15),
+('Arte',11);
+
+-- el ID es indentity(1,1)
+insert into Categorias(Descripcion)
+values 
+('Ninios'),
+('Noticias'),
+('Blog'),
+('E-Commerce'),
+('Publicidad');
+('Portfolio');
+
+--La verdad no se si va antes o despues
+insert into Paginas(ID_Pedido,Descripcion)
+values
+(1,'Home/Detalles/Contacto'),
+(2,'Home'),
+(3,'Contacto'),
+(4,'Informacion');
+
+insert into PedidosWebPage(ID_Usuario,ID_Pagina,ID_Categoria)
+values
+(1,1,2),
+(2,2,3),
+(3,3,5);
 
 
 
 
+-- tablas "terminadoas" --> Secciones,Nivel Acesso,Colores,Datos_Personales,Usuarios
 
 
