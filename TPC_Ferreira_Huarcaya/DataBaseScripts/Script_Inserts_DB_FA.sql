@@ -10,8 +10,6 @@ values
 ('JazminSR1','Jazz23',1),
 ('GabiF','GabFru24',1),
 ('AndreaA2','Andreita15',1),
-('Romeo09','MellamanRomeo2',1),
-('ElisaVilla99','EliVi1999',1),
 ('AlonsoHS20','AlonsohuarcayaAdmin2',3),
 ('NicoFerreira1','NicoFerreAdmin1',3);
 
@@ -21,5 +19,23 @@ values
 ('Usuario'),
 ('Staff'),
 ('Admin');
+
+insert into Datos_Personales(Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion)
+values
+('Jeremias Inova','1143726710','JereIno21@hotmail.com','45232234','03/03/99','AnnaMaria44@hotmail.com');
+
+--No entendi los colores
+-- el ID es indentity(1,1)
+insert into Colores(Descripcion)
+values
+('Negro'),
+('Azul'),
+('Rojo'),
+('Verde'),
+('Amarrilo'),
+('Bordo'),
+('Gris'),
+('Celeste');
+
 
 
