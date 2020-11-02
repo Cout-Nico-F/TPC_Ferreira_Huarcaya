@@ -1,6 +1,6 @@
-create database Ferreira_Huarcaya_DB_TEST6
+create database Ferreira_Huarcaya_DB
 go
-use Ferreira_Huarcaya_DB_TEST6
+use Ferreira_Huarcaya_DB
 go
 --Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
 create table Elementos (
@@ -173,4 +173,4 @@ create table Elementos_X_Paginas (
 	alter table Elementos add constraint CH_Elementos_Costo check (Costo >= 0)
 	go
 	alter table Funcionalidades add constraint CH_Funcionalidades_Costo check (Costo >= 0)
-
+	--Falta: Checks de varchars de espacio vacio, Check de Email valido
