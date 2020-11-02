@@ -1,13 +1,9 @@
 
-Use [Ferreira_Huarcaya_DB_TEST2];
-
+Use [Ferreira_Huarcaya_DB];
 
 --                                   Tablas Maestras
 
-
---No entendi los colores
--- el ID es indentity(1,1)
-insert into Colores(Descripcion)
+insert into Colores(Descripcion)/*listo*/
 values
 ('Negro'),
 ('Azul'),
@@ -19,15 +15,14 @@ values
 ('Celeste'),
 ('Monocromaticos');
 
--- Si los pongo en este orden se asignaran como esta mas arriba no estoy seguro
-insert into Niveles_Acceso(Descripcion)
+insert into Niveles_Acceso(Descripcion)/*listo*/
 values
 ('Usuario'),
 ('Staff'),
 ('Admin');
 
--- el ID es indentity(1,1)
-insert into Categorias(Descripcion)
+
+insert into Categorias(Descripcion)/*listo*/
 values 
 ('Ninios'),
 ('Noticias'),
@@ -36,8 +31,7 @@ values
 ('Publicidad'),
 ('Portfolio');
 
---Que son las funcionalidades?
-insert into Funcionalidades(Descripcion,Costo)
+insert into Funcionalidades(Descripcion,Costo)/*listo*/
 values
 ('Conexion Base de Datos',0),
 ('Envio mail automatico',100),
@@ -47,8 +41,7 @@ values
 ('Evento alerta con boton',180),
 ('Evento pop-up',5000);
 
---Que son elementos?
-insert into Elementos(Descripcion,Costo)
+insert into Elementos(Descripcion,Costo)/*Se duplicarion los elementos*/
 values
 ('Carousel',0),
 ('Sticky navbar',10),
@@ -61,78 +54,17 @@ values
 
 --                                  Tablas No Mestras
 
-
-
---Usuario = 1/Staff = 2/Admin = 3 se me ocurrio a mi
--- O es autonumerico no tengo que agregar ID_Nivel
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel)
+insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel)/*listo*/
 values
-('JeremiasI21','Jere123',1),
-('Lorena23','Lore321',1),
-('JazminSR1','Jazz23',1),
-('GabiF','GabFru24',1),
-('AndreaA2','Andreita15',1),
-('AlonsoHS20','AlonsohuarcayaAdmin2',3),
-('NicoFerreira1','NicoFerreAdmin1',3);
+(1,'JeremiasI21','Jere123',1),
+(2,'Lorena23','Lore321',1),
+(3,'JazminSR1','Jazz23',1),
+(4,'GabiF','GabFru24',1),
+(5,'AndreaA2','Andreita15',1),
+(6,'AlonsoHS20','AlonsohuarcayaAdmin2',3),
+(7,'NicoFerreira1','NicoFerreAdmin1',3);
 
-
-
-insert into Datos_Personales(Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion)
-values
-('Jeremias Inova','1143726710','JereIno21@hotmail.com','45232234','03/03/99','AnnaMaria44@hotmail.com');
-
--- Faltan datos personales por completar
-
-
-
-insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor)
-values
-(1,1),
-(2,1),
-(3,2),
-(1,2),
-(1,2),
-(5,2),
-(6,3);
-
--- el ID es indentity(1,1)
-insert into Relacion_Colores(Descripcion,ID_Estilo)
-values
-('Monocromatico',1),
-('Triada',1),
-('Complementarios',1);
-
--- el ID es indentity(1,1)
-insert into Estilos(Descripcion,ID_Seccion)
-values
-('Esqueumorfismo',1),
-('Flat design',1),
-('Material design',1),
-('Maquetador/a Web',2),
-('Diseniador/a Web',2),
-('Barroco',3),
-('Clasicismo',3),
-('Surrealismo',3),
-('Expesionismo',3),
-('Moderno',3),
-('Pixel Art',3);
-
-insert into Secciones(Descripcion,ID_Pedido)
-values
-('WebPages',1),
-('Contrataciones',2),
-('Arte',3);
-
---La verdad no se si va antes o despues
-insert into Paginas(ID_Seccion,Descripcion)
-values
-(1,'Home/Detalles/Contacto'),
-(3,'Home'),
-(1,'Contacto'),
-(3,'Informacion'),
-(1,'Login');
-
-insert into PedidosWebPage(ID_Usuario,ID_Categoria)
+insert into PedidosWebPage(ID_Usuario,ID_Categoria)/*listo (Edit row 200: Porque empezo desde el ID 2?)*/ 
 values
 (1,2),
 (2,3),
@@ -140,18 +72,12 @@ values
 (4,1);
 
 
-
-/*insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina)
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion)/*Listo*/
 values
-(1,1),
-(2,1),
-(3,2),
-(4,1),
-(5,1),
-(2,2);*/
+(1,'Jeremias Inova','1143726710','JereIno21@hotmail.com','45232234','03/03/99','AnnaMaria44@hotmail.com');
+-- Faltan completar los datos de los demas usuarios
 
-
-insert into Disposicion_Elementos(Descripcion)
+insert into Disposicion_Elementos(Descripcion)/*Listo*/
 values
 ('Arriba'),
 ('Abajo'),
@@ -161,14 +87,75 @@ values
 ('Inclinado'),
 ('Invertido');
 
+
+insert into Secciones(Descripcion,ID_Pedido)/*Listo*/
+values
+('WebPages',2), /*('WebPages',1), Como el pedidosWebPages nose porque el ID comienza en 2 entonces al poner 1 tiraba error*/
+('Contrataciones',2),
+('Arte',3);
+
+insert into Estilos(Descripcion,ID_Seccion)
+values
+('Esqueumorfismo',3),
+('Flat design',3),
+('Material design',3),
+('Maquetador/a Web',4),
+('Diseniador/a Web',4),
+('Barroco',4),
+('Clasicismo',4),
+('Surrealismo',4),
+('Expesionismo',4),
+('Moderno',4),
+('Pixel Art',4);
+-- Por alguna razon los IDs empiezan en 3,4 y 5 
+
+insert into Relacion_Colores(Descripcion,ID_Estilo)
+values
+('Monocromatico',3),
+('Triada',3),
+('Complementarios',3);
+-- Empieza del 2 ni idea porque tampoco
+
+insert into Paginas(ID_Seccion,Descripcion)
+values
+(3,'Home/Detalles/Contacto'),
+(3,'Home'),
+(3,'Contacto'),
+(3,'Informacion'),
+(3,'Login');
+/*ID_Secciones empieza desde el 3*/
+
+insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor)
+values
+(1,2),
+(2,2),
+(3,2),
+(1,3),
+(1,2),
+(5,2),
+(6,3);
+/*ID_Relacion empieza desde el 2 */
+
 insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento)
 values
-(1,1,3),
-(2,1,3),
-(5,1,5),
-(2,2,2),
-(1,4,4);
+(3,1,3),
+(4,1,3),
+(6,1,5),
+(4,2,2),
+(3,4,4);
+/*ID_Paginas empieza desde el 3*/
 
+
+
+-- Todavia no esta creada esta tabla
+/*insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina)
+values
+(1,1),
+(2,1),
+(3,2),
+(4,1),
+(5,1),
+(2,2);*/
 
 
 
