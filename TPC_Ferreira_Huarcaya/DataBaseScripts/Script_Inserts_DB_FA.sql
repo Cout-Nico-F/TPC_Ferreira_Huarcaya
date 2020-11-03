@@ -90,7 +90,7 @@ values
 
 insert into Secciones(Descripcion,ID_Pedido)/*Listo*/
 values
-('WebPages',2), /*('WebPages',1), Como el pedidosWebPages nose porque el ID comienza en 2 entonces al poner 1 tiraba error*/
+('WebPages',1), /*('WebPages',1), Como el pedidosWebPages nose porque el ID comienza en 2 entonces al poner 1 tiraba error*/
 ('Contrataciones',2),
 ('Arte',3);
 

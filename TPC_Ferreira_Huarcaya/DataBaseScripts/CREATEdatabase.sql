@@ -1,42 +1,45 @@
+
+--Drop database Ferreira_Huarcaya_DB
+
 create database Ferreira_Huarcaya_DB
 go
 use Ferreira_Huarcaya_DB
 go
 --Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
 create table Elementos (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	Costo int not null
 )
 	go
 	
 create table Disposicion_Elementos (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
 )
 	go
 	
 create table Funcionalidades (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	Costo int not null
 )
 	go
 	
 create table Categorias (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
 )
 	go
 	
 create table Niveles_Acceso (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
 )
 	go
 	
 create table Colores (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
 )
 	go
@@ -44,7 +47,7 @@ create table Colores (
 --Fin de tablas maestro.
 
 create table Relacion_Colores (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	ID_Estilo smallint not null
 )
@@ -57,21 +60,21 @@ create table Colores_X_RelacionColores (
 	go
 	
 create table Estilos (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	ID_Seccion smallint not null
 )
 	go
 	
 create table Secciones (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	ID_Pedido smallint not null
 )
 	go
 	
 create table PedidosWebPage (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	ID_Usuario smallint not null,
 	ID_Categoria smallint not null
 )
@@ -97,7 +100,7 @@ create table Datos_Personales (
 	go
 	
 create table Paginas (
-	ID smallint not null identity(1,1),
+	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	ID_Seccion smallint not null
 )
