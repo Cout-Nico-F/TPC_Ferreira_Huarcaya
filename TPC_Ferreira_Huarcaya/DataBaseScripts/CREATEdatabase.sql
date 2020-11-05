@@ -1,23 +1,30 @@
 
 --Drop database Ferreira_Huarcaya_DB
 
+
 create database Ferreira_Huarcaya_DB
 go
+
 use Ferreira_Huarcaya_DB
 go
+
 --Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
+
 create table Elementos (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	Costo int not null
 )
 	go
-	
+
 create table Disposicion_Elementos (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
 )
+ -- Yo eliminaria la tabla Disposicion Elementos
+ -- Porque en la realidad la disposicion deberia quedar a nuestro criterio y en caso de no gustarle al cliente se cambia
 	go
+
 	
 create table Funcionalidades (
 	ID smallint identity(1,1),
@@ -25,6 +32,9 @@ create table Funcionalidades (
 	Costo int not null
 )
 	go
+-- No estoy tan seguro de que Funcionalidades tenga una relacion muchos a muchos
+-- porque una pagina puede tener muchas funcionalidades pero una funcionalidad puede tener muchas paginas?
+
 	
 create table Categorias (
 	ID smallint identity(1,1),
@@ -116,6 +126,7 @@ create table Funcionalidades_X_Paginas (
 	ID_Funcionalidad smallint not null,
 	ID_Pagina smallint not null
 )
+
 
 --Alter Tables de PK
 	alter table Elementos add constraint PK_Elementos primary key (ID)
