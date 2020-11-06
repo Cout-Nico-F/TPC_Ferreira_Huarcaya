@@ -13,5 +13,10 @@ namespace WebForms.ASPX
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

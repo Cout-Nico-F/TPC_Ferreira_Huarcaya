@@ -45,7 +45,7 @@
                         <textarea class="form-control" id="message" name="message" placeholder="Mensaje" rows="5"></textarea>
                         <br />
                         <div class="col-md-12 form-group">
-                            <button class="btn btn-primary" type="submit" >Enviar</button>
+                            <asp:Button CssClass="btn btn-primary" Text="Enviar" OnClick="btnCorreo_click" runat="server" />
                         </div>
                     </form>
                 </div>
