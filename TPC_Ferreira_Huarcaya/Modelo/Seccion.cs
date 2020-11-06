@@ -14,6 +14,6 @@ namespace Modelo
 
         public Estilo Estilo { get; set; }
 
-        public List<Pagina> Paginas { get; set; }
+        public List<Pagina> Paginas { get; set; }// Lista de paginas que componen a la seccion
     }
 }

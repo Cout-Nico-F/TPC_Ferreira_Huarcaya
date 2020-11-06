@@ -14,7 +14,7 @@ namespace Modelo
 
         public Int32 Costo { get; set; }
 
-        public Disposicion Disposicion { get; set; }
+        public Disposicion Disposicion { get; set; } //El elemento tiene una disposicion en la pagina.
 
     }
 }

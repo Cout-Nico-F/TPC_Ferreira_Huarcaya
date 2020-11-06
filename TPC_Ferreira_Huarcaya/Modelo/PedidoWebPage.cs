@@ -12,7 +12,7 @@ namespace Modelo
 
         public string Comentarios { get; set; }
 
-        public Cliente Cliente { get; set; }
+        public Cliente Cliente { get; set; }//El pedido tiene un cliente ( que lo pidió )
 
         public Categoria Categoria { get; set; }
 
