@@ -17,5 +17,8 @@ namespace Modelo
         public Categoria Categoria { get; set; }
 
         public List<Seccion> Secciones { get; set; }
+
+        public int Precio { get; set; } // Precio final que se setea en base a los costos acumulados de las secciones que la componen.
+
     }
 }

@@ -13,7 +13,7 @@ namespace Modelo
 
         public string Descripcion { get; set; }
 
-        public Int32 Costo { get; set; }
+        public Int32 Costo { get; set; }//Se consige sumando los costos de sus elementos y funcionalidades.
 
         public List<Elemento> Elementos { get; set; }
 

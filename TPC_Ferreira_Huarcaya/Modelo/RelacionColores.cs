@@ -12,8 +12,6 @@ namespace Modelo
 
         public string Descripcion { get; set; }
 
-        public Int32 Costo { get; set; }
-
         public List<Color> Colores { get; set; } // Composicion: una RelacionColor tiene Colores.
 
     }
