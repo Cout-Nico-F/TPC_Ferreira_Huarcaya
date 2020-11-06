@@ -7,17 +7,52 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" /> -->
+    <!--CDN BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Estilos CSS -->
+    <link href="../CSS/Estilos_Contact.css" rel="stylesheet" />
 
     <title></title>
 </head>
 
-<body style="background-image:url(https://www.xtrafondos.com/wallpaper/3000x2002/3315-montanas-en-bosque-al-atardecer.html)">
-    <!-- <form id="form1" runat="server">
-        <div>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-description">__________  __________   ____________  ________   _____________   __________   ____________</p>
+                </div>
+                <div class="col-md-12 col-md-offset-2">
+                    <form id="contact" method="post" class="form" role="form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required/>
+                            </div>
+                             <div class="col-md-6 form-group">
+                                <input class="form-control" id="email" name="email" placeholder="Correo Electronico" type="email" required/>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input class="form-control" id="cel" name="telephone" placeholder="Celular (Opcional)" type="text" required/>
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="message" name="message" placeholder="Mensaje" rows="5"></textarea>
+                        <br />
+                        <div class="col-md-12 form-group">
+                            <button class="btn btn-primary" type="submit" >Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form> -->
-
+    </div>
+    <!-- 
     <div class="section container">
 
         <div class="row">
@@ -50,9 +85,9 @@
 
         </div>
 
-    </div>
+    </div> -->
 
      <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,29 @@
+﻿
+.form-control{
+    border: 2px solid #cbd0d3;
+    border-radius:0;
+    padding: 0 25px;
+    line-height: 45px;
+    height: 45px;
+}
+.btn-primary{
+    background-color: grey;
+}
+.btn-primary:hover{
+    background-color: green;
+}
+h2.section-title{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin-bottom: 80px;
+}
+p.section-title{
+    font-weight:lighter;
+    font-size:16px;
+}
+h2.section-title + p{
+    margin-top: -70px;
+    margin-bottom: 80px;
+}
