@@ -9,33 +9,33 @@ namespace Negocios
 {
     class ConexionMSSQL
     {
-        public SqlDataReader dataReader { get; set; }
-        public SqlConnection connection { get; set; }
-        public SqlCommand command { get; set; }
+        public SqlDataReader DataReader { get; set; }
+        public SqlConnection Connection { get; set; }
+        public SqlCommand Command { get; set; }
 
         public void Conectar  ()
         {
-            connection = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi");
-            command = new SqlCommand();
-            command.Connection = connection;
-            connection.Open();
+            Connection = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi");
+            Command = new SqlCommand();
+            Command.Connection = Connection;
+            Connection.Open();
         }
 
         public void Desconectar()
         {
-            connection.Close();
+            Connection.Close();
         }
 
         public void SetConsulta(string consulta)
         {
-            command.CommandText = consulta;
+            Command.CommandText = consulta;
         }
 
         public SqlDataReader Leer()
         {
-            dataReader = command.ExecuteReader();
-            dataReader.Read();
-            return dataReader;
+            DataReader = Command.ExecuteReader();
+            DataReader.Read();
+            return DataReader;
         }
 
         public SqlDataReader Consulta_Rapida(string consulta)
