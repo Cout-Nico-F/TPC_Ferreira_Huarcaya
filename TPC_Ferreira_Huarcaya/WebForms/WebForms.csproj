@@ -71,7 +71,7 @@
     <Content Include="ASPX\Contacto.aspx" />
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
-    <Content Include="ASPX\Contact.aspx" />
+    <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\Login.aspx" />
     <Content Include="ASPX\Personalizar.aspx" />
     <Content Include="ASPX\WebPages.aspx" />
@@ -1976,12 +1976,12 @@
     <Compile Include="ASPX\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="ASPX\InicioSesion.aspx.cs">
+      <DependentUpon>InicioSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ASPX\Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="ASPX\InicioSesion.aspx.designer.cs">
+      <DependentUpon>InicioSesion.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

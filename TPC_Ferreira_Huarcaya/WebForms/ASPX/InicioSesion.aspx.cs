@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
-    public partial class Login1 : System.Web.UI.Page
+    public partial class InicioSesion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
