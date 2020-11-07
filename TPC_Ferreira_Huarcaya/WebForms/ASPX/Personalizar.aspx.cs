@@ -22,35 +22,22 @@ namespace WebForms.ASPX
         }
         private void IniciarLlenado()
         {
-            ColoresNegocio colores = new ColoresNegocio();
-
-            /*Porque no puedo usar el metodo Consulta de la clase de acceso a datos??*/
-
+            ColoresNegocio coloresNegocio = new ColoresNegocio();
+            ElementosNegocio elementosNegocio = new ElementosNegocio();
+            
             //Colores
-            ddl_Colores.DataSource = ("Select * From Colores");
+            ddl_Colores.DataSource = coloresNegocio.ListarColores("Select * From Colores");
             ddl_Colores.DataTextField = "Descripcion";
             ddl_Colores.DataValueField = "ID";
             ddl_Colores.DataBind();
-            ddl_Colores.Items.Insert(0, new ListItem("[Sin Colores]", "0"));
+            ddl_Colores.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
             //Elementos
-            ddl_Elementos.DataSource = consultas("Select * From Elementos");
+            ddl_Elementos.DataSource = elementosNegocio.ListarElementos("Select * From Elementos");
             ddl_Elementos.DataTextField = "Descripcion";
             ddl_Elementos.DataValueField = "ID";
             ddl_Elementos.DataBind();
-            ddl_Elementos.Items.Insert(0, new ListItem("[Sin Elementos]", "0"));
+            ddl_Elementos.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
-        }
-        public DataSet consultas(string strSql)
-        {
-            string conexion = "data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi";
-            SqlConnection con = new SqlConnection(conexion);
-            con.Open();
-            SqlCommand cmd = new SqlCommand(strSql, con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            con.Close();
-            return ds;
         }
     }
 }

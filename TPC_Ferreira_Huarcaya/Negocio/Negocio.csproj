@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ColoresNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
+    <Compile Include="ElementosNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
