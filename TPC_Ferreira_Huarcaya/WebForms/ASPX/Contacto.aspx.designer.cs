@@ -11,7 +11,7 @@ namespace WebForms.ASPX
 {
 
 
-    public partial class Login
+    public partial class Contacto1
     {
     }
 }

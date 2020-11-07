@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Contacto1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Unnamed_Click(object sender, EventArgs e)
         {
 
         }
