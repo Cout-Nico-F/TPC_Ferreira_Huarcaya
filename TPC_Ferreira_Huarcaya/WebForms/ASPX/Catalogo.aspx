@@ -39,7 +39,7 @@
                                 complementos ricos que hacen de este tema un excelente modelo para su próximo proyecto basado en Bootstrap!</p>
                             <a href="../Templates Prefabricados/Template_02/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Colores.aspx.cs" Inherits="WebForms.ASPX.Colores" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Personalizar.aspx.cs" Inherits="WebForms.ASPX.Personalizar" %>
 
 <!DOCTYPE html>
 
@@ -9,12 +9,11 @@
     <title></title>
 </head>
 <body>
-     <form id="form1" runat="server">
-        <div>
-            <asp:DropDownList ID="ddl_Colores" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
+    <form id="form1" runat="server">
+        <div class="container">
+             <asp:DropDownList ID="ddl_Colores" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
             <asp:DropDownList ID="ddl_Elementos" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
         </div>
     </form>
-   
 </body>
 </html>
