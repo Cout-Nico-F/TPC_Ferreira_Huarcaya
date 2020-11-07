@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace WebForms.ASPX
 {
@@ -11,7 +12,8 @@ namespace WebForms.ASPX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ColoresNegocio colores = new ColoresNegocio();
+            ddl_Colores.DataSource = colores.listar();
         }
     }
 }

@@ -1970,6 +1970,7 @@
     </Compile>
     <Compile Include="ASPX\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ASPX\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -1997,6 +1998,7 @@
     </Compile>
     <Compile Include="Masters\Master1.Master.cs">
       <DependentUpon>Master1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Masters\Master1.Master.designer.cs">
       <DependentUpon>Master1.Master</DependentUpon>
@@ -2302,6 +2304,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{287c029d-dbfd-4f6c-ae8f-388465af5039}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{bddf7d69-d305-40a8-97ce-a3283fbb0d85}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

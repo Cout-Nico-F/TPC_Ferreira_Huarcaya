@@ -27,6 +27,7 @@ namespace Negocio
             while(lector.Read())
             {
                 Color aux = new Color();
+                aux.Id = lector.GetInt16(0);
                 aux.Descripcion = lector.GetString(1);
 
                 lista.Add(aux);
