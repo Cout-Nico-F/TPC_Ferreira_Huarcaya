@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class RelacionColores
+    public class RelacionColores
     {
         public Int16 Id { get; set; }
 

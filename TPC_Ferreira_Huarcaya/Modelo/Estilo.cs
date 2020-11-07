@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Estilo
+    public class Estilo
     {
         public Int16 Id { get; set; }
 

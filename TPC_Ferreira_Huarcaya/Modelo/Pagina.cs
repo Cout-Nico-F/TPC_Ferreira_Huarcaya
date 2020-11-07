@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Pagina
+    public class Pagina
     {
         public Int16 Id { get; set; }
 

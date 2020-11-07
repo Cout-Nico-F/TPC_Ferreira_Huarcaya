@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class PedidoWebPage
+    public class PedidoWebPage
     {
         public Int16 Id { get; set; }
 
