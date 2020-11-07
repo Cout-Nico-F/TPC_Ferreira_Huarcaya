@@ -22,20 +22,22 @@ namespace WebForms.ASPX
         }
         private void IniciarLlenado()
         {
+            ColoresNegocio colores = new ColoresNegocio();
+
             /*Porque no puedo usar el metodo Consulta de la clase de acceso a datos??*/
 
             //Colores
-            ddl_Colores.DataSource = consultas("Select * From Colores");
+            ddl_Colores.DataSource = ("Select * From Colores");
             ddl_Colores.DataTextField = "Descripcion";
             ddl_Colores.DataValueField = "ID";
             ddl_Colores.DataBind();
-            ddl_Colores.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+            ddl_Colores.Items.Insert(0, new ListItem("[Sin Colores]", "0"));
             //Elementos
             ddl_Elementos.DataSource = consultas("Select * From Elementos");
             ddl_Elementos.DataTextField = "Descripcion";
             ddl_Elementos.DataValueField = "ID";
             ddl_Elementos.DataBind();
-            ddl_Elementos.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+            ddl_Elementos.Items.Insert(0, new ListItem("[Sin Elementos]", "0"));
 
         }
         public DataSet consultas(string strSql)

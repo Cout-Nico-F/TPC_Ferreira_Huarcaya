@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASPX\Catalogo.aspx" />
-    <Content Include="ASPX\Colores.aspx" />
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\Contact.aspx" />
@@ -1954,13 +1953,6 @@
     </Compile>
     <Compile Include="ASPX\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASPX\Colores.aspx.cs">
-      <DependentUpon>Colores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\Colores.aspx.designer.cs">
-      <DependentUpon>Colores.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
