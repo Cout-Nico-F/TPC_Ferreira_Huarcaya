@@ -107,9 +107,9 @@
     <footer>
         <script samesite="None; Secure" src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
         <script>
-  var myLandbot = new LandbotLivechat({
-    index: 'https://chats.landbot.io/v2/H-749446-IDIBFL9M7ZRC4OK9/index.html',
-  });
+            var myLandbot = new LandbotLivechat({
+                index: 'https://chats.landbot.io/v2/H-749446-IDIBFL9M7ZRC4OK9/index.html',
+            });
         </script>
     </footer>
    
