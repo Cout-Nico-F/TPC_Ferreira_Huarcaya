@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColoresNegocio.cs" />
+    <Compile Include="DropdownsNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
     <Compile Include="ElementosNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

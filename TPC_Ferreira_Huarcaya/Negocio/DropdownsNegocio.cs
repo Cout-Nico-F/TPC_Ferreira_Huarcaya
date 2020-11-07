@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Modelo;
 using System.Data.SqlClient;
 using Negocios;
+using System.Data;
 
 namespace Negocio
 {
-    public class ColoresNegocio
+    public class DropdownsNegocio
     { 
         public List<Color> ListarColores(string consultaSQL)
         {
@@ -32,5 +33,18 @@ namespace Negocio
             conexionMSSQL.Desconectar();
             return lista;
         }
+        public DataSet ConsultaDataSet(string consulta)
+        {
+            string strconnection = "data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi";
+            SqlConnection connection = new SqlConnection(strconnection);
+            connection.Open();
+            SqlCommand command = new SqlCommand(consulta, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            connection.Close();
+            return dataSet;
+        }
     }
+   
 }

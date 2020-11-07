@@ -25,7 +25,7 @@
                                 está inspirado en los principios del diseño de materiales junto con un sistema de color simple y atractivo.</p>
                             <a href="../Templates Prefabricados/Template_01/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                                 El tema también se puede modificar y ajustar para adaptarse a casi cualquier propósito. ¡Descarga este tema gratuito de Bootstrap ahora para comenzar!</p>
                             <a href="../Templates Prefabricados/Template_03/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                 desplazamiento suave por las secciones de contenido.</p>
                             <a href="../Templates Prefabricados/Template_04/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                             <p class="card-text">Shop Homepage es una plantilla de inicio para una tienda en línea basada en Bootstrap o un sitio web de comercio electrónico.</p>
                             <a href="../Templates Prefabricados/Template_05/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                             <p class="card-text">Business Casual es una plantilla de sitio web completa para Bootstrap 4. Cuenta con cuatro páginas HTML diferentes y una serie de componentes de estilo personalizados.</p>
                             <a href="../Templates Prefabricados/Template_06/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Personalizar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>
                     </div>
                 </div>
