@@ -69,10 +69,12 @@
   <ItemGroup>
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\Contacto.aspx" />
+    <Content Include="ASPX\CrearCuenta.aspx" />
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\Personalizar.aspx" />
+    <Content Include="ASPX\RecuperarContaseña.aspx" />
     <Content Include="ASPX\WebPages.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -1961,6 +1963,13 @@
     <Compile Include="ASPX\Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\CrearCuenta.aspx.cs">
+      <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\CrearCuenta.aspx.designer.cs">
+      <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1988,6 +1997,13 @@
     </Compile>
     <Compile Include="ASPX\Personalizar.aspx.designer.cs">
       <DependentUpon>Personalizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\RecuperarContaseña.aspx.cs">
+      <DependentUpon>RecuperarContaseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\RecuperarContaseña.aspx.designer.cs">
+      <DependentUpon>RecuperarContaseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\WebPages.aspx.cs">
       <DependentUpon>WebPages.aspx</DependentUpon>

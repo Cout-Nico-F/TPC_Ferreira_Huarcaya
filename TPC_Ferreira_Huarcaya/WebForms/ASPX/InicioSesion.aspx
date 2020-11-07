@@ -63,11 +63,11 @@
                 </form>
                <div class="col-12">
                    <label>No tiene una cuenta?</label>
-                   <a href="#">Crear cuenta</a>
+                   <a href="CrearCuenta.aspx">Crear cuenta</a>
                </div>
                  <div class="col-12">
                    <label>Olvido su contraseña</label>
-                   <a href="#">Recuperar contraseña</a>
+                   <a href="RecuperarContraseña.aspx">Recuperar contraseña</a>
                </div>
             </div>
         </div>

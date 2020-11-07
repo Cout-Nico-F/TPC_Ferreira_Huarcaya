@@ -1,7 +1,6 @@
 
 --Drop database Ferreira_Huarcaya_DB
 
-
 create database Ferreira_Huarcaya_DB
 go
 
