@@ -5,25 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelo;
 using System.Data.SqlClient;
+using Negocios;
 
 namespace Negocio
 {
     public class ColoresNegocio
     { 
-        public List<Color> listar()
+        public List<Color> ListarColores()
         {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            ConexionMSSQL conexionMSSQL = new ConexionMSSQL();
+
             List<Color> lista = new List<Color>();
+            conexionMSSQL.Conectar();
+            conexionMSSQL.SetConsulta("Select ID,Descripcion From Colores");
 
-            conexion.ConnectionString = "data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi";
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select ID,Descripcion From Colores";
-            comando.Connection = conexion;
+            SqlDataReader lector = conexionMSSQL.Leer();
 
-            conexion.Open();
-            lector = comando.ExecuteReader();
             while(lector.Read())
             {
                 Color aux = new Color();
@@ -32,7 +29,7 @@ namespace Negocio
 
                 lista.Add(aux);
             }
-            conexion.Close();
+            conexionMSSQL.Desconectar();
             return lista;
         }
     }
