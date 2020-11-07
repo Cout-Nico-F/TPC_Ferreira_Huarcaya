@@ -44,23 +44,14 @@
                                 <input class="form-control" id="apellido" name="apellido" placeholder="Apellido" type="text" required/>
                             </div>
                              <div class="col-md-12 form-group">
-                                <input class="form-control" id="email" name="email" placeholder="Correo Electronico" type="email" required/>
+                                <input class="form-control" id="NombreUsu" name="NombreUsuario" placeholder="Nombre Usuario" type="text" required/>
                             </div>
-                            <div class="col-md-6 form-group">
-                                <input class="form-control" id="cel" name="cel" placeholder="Celular (Opcional)" type="text" required/>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input class="form-control" id="telep" name="telephone" placeholder="Telefono Fijo (Opcional)" type="text" required/>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input class="form-control" id="fecha" name="fechaNacimiento" placeholder="Fecha de Nacimiento" type="date" required/>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input class="form-control" id="emailRec" name="emailRecuperacion" placeholder="Email de Recuperacion (Opcional)" type="email" required/>
+                             <div class="col-md-12 form-group">
+                                <input class="form-control" id="contrasenia" name="contrasenia" placeholder="Contraseña" type="text" required/>
                             </div>
                         </div>
                         <br />
-                        <div class="col-md-12 form-group">
+                        <div class="col-md-6 form-group">
                             <button class="btn btn-primary">Enviar</button>
                         </div>
                     </form>

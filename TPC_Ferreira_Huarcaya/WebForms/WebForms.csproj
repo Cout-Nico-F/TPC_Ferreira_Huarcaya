@@ -70,6 +70,7 @@
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\Contacto.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
+    <Content Include="ASPX\Error.aspx" />
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
@@ -121,6 +122,7 @@
     <Content Include="bin\WebForms.pdb" />
     <Content Include="CSS\css_master1.css" />
     <Content Include="CSS\Estilos_Contact.css" />
+    <Content Include="CSS\Estilos_Error.css" />
     <Content Include="CSS\Home.css" />
     <Content Include="Templates Prefabricados\Template_06\about.html" />
     <Content Include="Templates Prefabricados\Template_06\css\business-casual.css" />
@@ -1969,6 +1971,13 @@
     </Compile>
     <Compile Include="ASPX\CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>

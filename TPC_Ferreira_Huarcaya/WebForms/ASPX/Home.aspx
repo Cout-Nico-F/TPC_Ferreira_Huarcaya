@@ -90,6 +90,7 @@
         }
          #mainSlider .carousel-caption a {
            font-size: 30px;
+           border-radius: 30px;
         }
 
     </style>
