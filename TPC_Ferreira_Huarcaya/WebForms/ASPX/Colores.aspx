@@ -8,10 +8,13 @@
     <title></title>
 </head>
 <body>
+     <form id="form1" runat="server">
+        <div>
+            <asp:DropDownList ID="ddl_Colores" runat="server">
 
-    <asp:DropDownList ID="ddl_Colores" runat="server">
-       
-    </asp:DropDownList>
-
+             </asp:DropDownList>
+        </div>
+    </form>
+   
 </body>
 </html>
