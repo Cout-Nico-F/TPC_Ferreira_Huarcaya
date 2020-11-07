@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    class ConexionMSSQL
+    public class ConexionMSSQL
     {
         public SqlDataReader DataReader { get; set; }
         public SqlConnection Connection { get; set; }

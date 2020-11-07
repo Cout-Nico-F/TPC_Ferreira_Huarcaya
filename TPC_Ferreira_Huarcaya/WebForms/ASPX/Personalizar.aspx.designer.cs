@@ -11,7 +11,7 @@ namespace WebForms.ASPX
 {
 
 
-    public partial class Colores
+    public partial class Personalizar
     {
 
         /// <summary>
