@@ -18,18 +18,6 @@
             width: 100%;
             background: #000;
         }
-        #carouselExampleIndicators .carousel-inner .carousel-item{
-            position: relative;
-            height: 100%;
-            width: 100%;
-            background:url(https://www.xtrafondos.com/wallpapers/resized/constelaciones-en-via-lactea-5382.jpg?s=large);
-            background-size: 100% 100%;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
          #carouselExampleIndicators .carousel-inner .carousel-item h1{
                      position: absolute;
                      background-color: transparent;
@@ -53,17 +41,30 @@
                      text-align: center;
                      font-size: 1.5em;
          }
+         #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(1) {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background:url(../Imagenes/Arte.svg);
+            background-size: 40% 100%;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-             #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2){
-            background:url(https://www.xtrafondos.com/wallpapers/resized/constelaciones-en-via-lactea-5382.jpg?s=large);
+         #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2) {
+            background:url(../Imagenes/Seo.svg);
             background-size: 100% 100%;
             background-position: center; 
-              }
-                #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3){
-            background:url(https://www.xtrafondos.com/wallpapers/resized/constelaciones-en-via-lactea-5382.jpg?s=large);
+         }
+
+         #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3) {
+           background:url(../Imagenes/Info.svg);
             background-size: 100% 100%;
             background-position: center; 
-                 }
+          }
                 
                   
     </style>
@@ -79,7 +80,7 @@
                 <h1>Paginas Web</h1>
                 <a href="Catalogo.aspx" class="btn btn-dark">Vamos alla!</a>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item other">
                <h1>Arte</h1>
                 <a href="Catalogo.aspx" class="btn btn-dark">Vamos alla!</a>
             </div>
