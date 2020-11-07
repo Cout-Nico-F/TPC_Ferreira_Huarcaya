@@ -8,6 +8,7 @@ namespace Modelo
 {
     class Categoria
     {
+        //Alo: se que querias que halla una categoria y por momentos la veo, pero por otros no estoy seguro si podemos tenerla. Hay que buscarle la forma
         public Int16 Id { get; set; }
 
         public string Descripcion { get; set; }

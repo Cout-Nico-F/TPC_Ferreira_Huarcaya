@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class RelacionColores
+    class Elemento
     {
         public Int16 Id { get; set; }
 
         public string Descripcion { get; set; }
 
-        public List<Color> Colores { get; set; } // Composicion: una RelacionColor tiene Colores.
+        public Int32 Costo { get; set; }
+
+        public Disposicion Disposicion { get; set; } //El elemento tiene una disposicion en la pagina.
 
     }
 }

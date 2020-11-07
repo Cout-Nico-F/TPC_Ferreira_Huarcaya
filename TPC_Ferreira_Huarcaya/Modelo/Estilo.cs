@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Cliente : Usuario
+    class Estilo
     {
         public Int16 Id { get; set; }
 
-        //el id de usuario lo recibe por herencia asi como los demas atributos de Usuario.
+        public string Descripcion { get; set; }
+
+        public RelacionColores RelacionColores { get; set; }//Un estilo tiene una relacion de colores.
+
     }
 }

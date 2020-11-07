@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,19 @@ namespace Negocios
             SqlDataReader lectura = Leer();
             Desconectar();
             return lectura;
+        }
+
+        public DataSet ConsultaDataSet (string consulta)
+        {
+            string strconnection = "data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi";
+            SqlConnection connection = new SqlConnection(strconnection);
+            connection.Open();
+            SqlCommand command = new SqlCommand(consulta, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            connection.Close();
+            return dataSet;
         }
     }
 }
