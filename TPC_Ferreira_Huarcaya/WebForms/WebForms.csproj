@@ -72,7 +72,6 @@
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
-    <Content Include="ASPX\Login.aspx" />
     <Content Include="ASPX\Personalizar.aspx" />
     <Content Include="ASPX\WebPages.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -1982,13 +1981,6 @@
     </Compile>
     <Compile Include="ASPX\InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASPX\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Personalizar.aspx.cs">
       <DependentUpon>Personalizar.aspx</DependentUpon>
