@@ -9,6 +9,12 @@
             <p class="lead">Estamos trabajando.... <i class="fas fa-exclamation-triangle"></i></p>
         </div>
     </div>
+    <br />
+    <br />
+    <div>
+        <asp:TextBox runat="server" class="form-text" ID="txt_buscar" placeholder="Search.." />  
+        <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary btn-lg active" OnClick="btn_buscar_Click" ID="btn_buscar" />
+    </div>
     <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />
