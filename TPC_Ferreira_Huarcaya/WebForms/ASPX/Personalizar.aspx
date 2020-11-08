@@ -57,7 +57,6 @@
             </div>
             <div class="other">
                  <asp:DropDownList ID="ddl_Estilos" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
-               
             </div>
             <div class="funciones">
                  <asp:DropDownList ID="ddl_Funcionalidades" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>

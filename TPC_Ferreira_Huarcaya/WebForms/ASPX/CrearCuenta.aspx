@@ -13,6 +13,45 @@
 </head>
 <body>
 
+    <script>
+
+        function validar() {
+            var nombre, apellido, nombreUsuario, contrasenia, expresionReg;
+            nombre = document.getElementById("nombre");
+            apellido = document.getElementById("apellido");
+            nombreUsuario = document.getElementById("NombreUsu");
+            contrasenia = document.getElementById("contrasenia");
+
+            expresionesReg = /\w+@\w+\.+[a-z]/;
+
+            if (nombre == "" || apellido == "" || nombreUsuario == "" || contrasenia == "") {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+            else if (nombre.length > 20 ) {
+                alert("El campo nombre es demasiado largo");
+                return false;
+            }
+            else if (apellido.length > 20) {
+                alert("El campo apellido es demasiado largo");
+                return false;
+            }
+            else if (nombreUsuario.length > 10 ) {
+                alert("El campo Nombre Usuario es demasiado largo");
+                return false;
+            }
+            else if (contrasenia.length > 20) {
+                alert("El campo Contraseña es demasiado largo");
+                return false;
+            }
+            else if (!expresionesReg.test(email)) {
+                alert("El email es invalido");
+                return false;
+            }
+        }
+
+    </script>
+
     <br />
     <br />
     <br />
@@ -35,10 +74,10 @@
                     <br />
                 </div>
                 <div class="col-md-12 col-md-offset-2">
-                    <form id="contact" method="post" class="form" role="form">
+                    <form id="contact" method="post" class="form" role="form" onsubmit="return validar();">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required/>
+                                <input class="form-control" id="nombre" name="name" placeholder="Nombre" type="text" required/>
                             </div>
                              <div class="col-md-6 form-group">
                                 <input class="form-control" id="apellido" name="apellido" placeholder="Apellido" type="text" required/>

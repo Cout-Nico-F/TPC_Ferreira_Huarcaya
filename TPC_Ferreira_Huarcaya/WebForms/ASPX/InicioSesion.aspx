@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
      <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"/>
+    <!--CSS Estilos -->
+    <link href="../CSS/Estilos_Sesion.css" rel="stylesheet" />
+
     <title>Iniciar Sesion</title>
 
 </head>
@@ -17,6 +20,38 @@
         <div>
         </div>
     </form>
+
+    <script>
+        /*
+          Estas son validaciones que si funcionan
+          Las validaciones las piden en el Paso 2 creo recordar
+         */
+        function validar() {
+            var email, password, expresionesReg;
+            email = document.getElementById("email").value;
+            password = document.getElementById("password").value;
+
+            expresionesReg = /\w+@\w+\.+[a-z]/;
+
+            if (email == "" || password == "") {
+                alert("Todos los campos son obligatorios");
+                return false; //con esto evitamos que los datos sean enviados despues de presionar aceptar
+            }
+            else if (password.length > 20) {
+                alert("La password es muy larga");
+                return false;
+            }
+            else if (!expresionesReg.test(email)) {
+                alert("El email es invalido");
+                return false;
+            }
+            else if (email.length > 30) {
+                alert("El email es demasiado largo");
+                return false;
+            }
+        }
+
+    </script>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
@@ -52,14 +87,15 @@
                 <div class="col-12">
                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRW6X2lldt_gy2tcbXCKBbKWNVBpH-f1Mcjsw&usqp=CAU" alt="Alternate Text" /> 
                 </div>
-                <form class="col-12">
+                <form class="col-12" onsubmit="return validar();">
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Correo Electronico" />
+                        <input id="email" type="email" class="form-control" placeholder="Correo Electronico" required />
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Contraseña"/>
+                        <input id="password" type="password" class="form-control" placeholder="Contraseña" required />
                     </div>
-                   <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button>
+                   <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button> -->
+                    <input type="submit" value="Registrar" class="btn btn-primary" />
                 </form>
                <div class="col-12">
                    <label>No tiene una cuenta?</label>
