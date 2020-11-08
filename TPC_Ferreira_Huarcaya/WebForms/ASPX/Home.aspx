@@ -5,69 +5,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         
-   <!-- <style>
-       
-        #carouselExampleIndicators{
-            position: relative;
-            height: 100vh;
-            width: 100%;
-        }
-        #carouselExampleIndicators .carousel-inner{
-            position: relative;
-            height: 100%;
-            width: 100%;
-            background: #000;
-        }
-         #carouselExampleIndicators .carousel-inner .carousel-item h1{
-                     position: absolute;
-                     background-color: transparent;
-                     height: auto;
-                     color: white;
-                     width: 100%;
-                     top: 50%;
-                     transform: translateX(0%);
-                     transform: translateY(-60%);
-                     z-index: 1;
-                     text-align: center;
-                     font-size: 5.5em;
-         }
-         #carouselExampleIndicators .carousel-inner .carousel-item a{
-                     position: absolute;
-                     color: white;
-                     top: 50%;
-                     transform: translateX(0%);
-                     transform: translateY(80%);
-                     z-index: 1;
-                     text-align: center;
-                     font-size: 1.5em;
-         }
-         #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(1) {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            background:url(../Imagenes/Arte.svg);
-            background-size: 40% 100%;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-         #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2) {
-            background:url(../Imagenes/Seo.svg);
-            background-size: 100% 100%;
-            background-position: center; 
-         }
-
-         #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3) {
-           background:url(../Imagenes/Info.svg);
-            background-size: 100% 100%;
-            background-position: center; 
-          }
-                
-                  
-    </style> -->
     <style>
         .container-fluid{
             padding: 0;
@@ -81,6 +18,8 @@
          #mainSlider .carousel-caption h2 {
             font-size: 100px;
             margin-bottom: 30px;
+            font-family: 'Pacifico', cursive;
+           
         }
          #mainSlider .carousel-caption p {
            font-size: 22px;
@@ -90,7 +29,9 @@
         }
          #mainSlider .carousel-caption a {
            font-size: 30px;
-           border-radius: 30px;
+           border-radius: 0px;
+            font-family: 'Raleway', sans-serif;
+           
         }
 
     </style>
@@ -104,24 +45,24 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../Imagenes/Paisaje_01.png" class="d-block w-100" alt="Imagene de Arte SVG" />
+                    <img src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Paginas Web</h2>
-                        <a href="Catalogo.aspx" class="btn btn-dark">Vamos alla!</a>
+                        <a href="Catalogo.aspx" class="btn btn-dark btn-neon">Ir!</a>   
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../Imagenes/Arte.svg" class="d-block w-100" alt="Imagene de Arte SVG" />
+                    <img src="https://cdn.pixabay.com/photo/2016/10/07/08/56/beauty-1721060__340.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Arte</h2>
-                        <a href="Catalogo.aspx" class="btn btn-dark">Vamos alla!</a>
+                        <a href="Catalogo.aspx" class="btn btn-dark ">Ir!</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../Imagenes/Arte.svg" class="d-block w-100" alt="Imagene de Arte SVG" />
+                    <img src="https://cdn.pixabay.com/photo/2014/09/07/21/52/city-438393__340.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Contrataciones</h2>
-                        <a href="Catalogo.aspx" class="btn btn-dark">Vamos alla!</a>
+                        <a href="Catalogo.aspx" class="btn btn-dark">Ir!</a>
                     </div>
                 </div>
             </div>
