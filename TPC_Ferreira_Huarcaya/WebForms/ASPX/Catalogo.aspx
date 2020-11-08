@@ -15,6 +15,26 @@
     <section id="facilities">
         <div class="container">
             <div class="row">
+                <%
+                        foreach(Modelo.PaginaWeb item in Lista)
+                        {%>
+                <div class="col md-5 col-sm-4">
+                    <div class="card text-center">
+                        <img src="../Imagenes/Page_Admin.png" class="card-img-top" alt="No se encontro la imagen" />
+                        <div class="card-body">
+                            <h5 class="card-title"><%=item.Titulo %></h5>
+                            <p class="card-text"><%=item.Descripcion %></p>
+                            <a href="../Templates Prefabricados/Template_01/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
+                        </div>
+                    </div>
+                </div>
+                        <%}%>
+                </div>
+            </div>
+        </section>
+                <!--
                 <div class="col md-5 col-sm-4">
                     <div class="card text-center">
                         <img src="../Imagenes/Page_Admin.png" class="card-img-top" alt="No se encontro la imagen" />
@@ -102,7 +122,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <footer>
         <!--Bot Nilo bot-->
