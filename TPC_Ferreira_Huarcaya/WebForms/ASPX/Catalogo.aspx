@@ -19,7 +19,7 @@
                         foreach(Modelo.PaginaWeb item in Lista)
                         {%>
                 <div class="col md-5 col-sm-4">
-                    <div class="card text-center">
+                    <div class="card text-center" style="margin-bottom: 40px;">
                         <img src="../Imagenes/Page_Admin.png" class="card-img-top" alt="No se encontro la imagen" />
                         <div class="card-body">
                             <h5 class="card-title"><%=item.Titulo %></h5>

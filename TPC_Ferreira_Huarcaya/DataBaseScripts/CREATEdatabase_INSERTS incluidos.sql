@@ -338,7 +338,8 @@ go
 /*				Tabla Pagina Web					*/
 insert into PaginaWeb(Titulo,Descripcion) values ('Blog Personal','Contiene informacion personal')
 insert into PaginaWeb(Titulo,Descripcion) values ('Tienda','Aca van a estar tus productos a la venta')
-insert into PaginaWeb(Titulo,Descripcion) values ('Portfolio','Sera la pagina que le vas a presentar a tus jefes')
+insert into PaginaWeb(Titulo,Descripcion) values ('Portfolio','Sera la pagina que le vas a presentar')
+insert into PaginaWeb(Titulo,Descripcion) values ('E-commerce','Esta es una tienda solamente virtual')
 
 -- Cambios:
 -- Saque los not nulls a los identity pk: parece que se arreglo el problema de que empezaba en el ID 2 o ID 6, no lo probe del todo
