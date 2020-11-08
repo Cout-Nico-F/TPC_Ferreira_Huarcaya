@@ -23,13 +23,13 @@ namespace WebForms.ASPX
         private void IniciarLlenadoDeDropDowns()
         {
             DropdownsNegocio coloresNegocio = new DropdownsNegocio();
-            
+            /*
             //Colores
             ddl_Colores.DataSource = coloresNegocio.ConsultaDataSet("Select * From Colores");
             ddl_Colores.DataTextField = "Descripcion";
             ddl_Colores.DataValueField = "ID";
             ddl_Colores.DataBind();
-            ddl_Colores.Items.Insert(0, new ListItem("[Colores]", "0"));
+            ddl_Colores.Items.Insert(0, new ListItem("[Colores]", "0"));*/
 
             //Elementos
             ddl_Elementos.DataSource = coloresNegocio.ConsultaDataSet("Select * From Elementos");
@@ -45,7 +45,7 @@ namespace WebForms.ASPX
             ddl_DispElementos.DataBind();
             ddl_DispElementos.Items.Insert(0, new ListItem("[Disposicion Elementos]", "0"));
 
-            //Categorias
+            /*//Categorias
             ddl_Categorias.DataSource = coloresNegocio.ConsultaDataSet("Select * From Categorias");
             ddl_Categorias.DataTextField = "Descripcion";
             ddl_Categorias.DataValueField = "ID";
@@ -57,7 +57,7 @@ namespace WebForms.ASPX
             ddl_Estilos.DataTextField = "Descripcion";
             ddl_Estilos.DataValueField = "ID";
             ddl_Estilos.DataBind();
-            ddl_Estilos.Items.Insert(0, new ListItem("[Estilos]", "0"));
+            ddl_Estilos.Items.Insert(0, new ListItem("[Estilos]", "0"));*/
 
             //Funcionalidades
             ddl_Funcionalidades.DataSource = coloresNegocio.ConsultaDataSet("Select * From Funcionalidades");
