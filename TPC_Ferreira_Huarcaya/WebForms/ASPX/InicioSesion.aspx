@@ -95,7 +95,7 @@
                         <input id="password" type="password" class="form-control" placeholder="Contraseña" required />
                     </div>
                    <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button> -->
-                    <input type="submit" value="Registrar" class="btn btn-primary" />
+                    <i class="fas fa-sign-in-alt"></i><input type="submit" value="Registrar" class="btn btn-primary" />
                 </form>
                <div class="col-12">
                    <label>No tiene una cuenta?</label>

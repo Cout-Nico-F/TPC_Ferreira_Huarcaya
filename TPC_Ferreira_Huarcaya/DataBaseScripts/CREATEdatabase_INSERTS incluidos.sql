@@ -33,7 +33,11 @@ create table Funcionalidades (
 	go
 -- No estoy tan seguro de que Funcionalidades tenga una relacion muchos a muchos
 -- porque una pagina puede tener muchas funcionalidades pero una funcionalidad puede tener muchas paginas?
-
+create table PaginaWeb(
+	ID smallint identity(1,1),
+	Titulo varchar(50) not null,
+	Descripcion varchar(200) not null,
+)
 	
 create table Categorias (
 	ID smallint identity(1,1),
@@ -160,6 +164,7 @@ create table Funcionalidades_X_Paginas (
 	go
 	alter table Funcionalidades_X_Paginas add constraint PKS_Funcionalidades_X_Paginas primary key (ID_Funcionalidad, ID_Pagina)
 	go
+	alter table PaginaWeb add constraint PK_PaginaWeb primary key (ID)
 
 --Alter Tables FK's
 	alter table Relacion_Colores add foreign key (ID_Estilo) references Estilos(ID)

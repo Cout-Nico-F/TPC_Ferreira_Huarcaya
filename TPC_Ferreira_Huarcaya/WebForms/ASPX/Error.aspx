@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <!--Hoja de estilos CSS -->
     <link href="../CSS/Estilos_Error.css" rel="stylesheet" />
-    <title></title>
+
+    <title>Fatal Error</title>
 </head>
 <body>
     <form id="form1" runat="server">
