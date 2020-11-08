@@ -105,6 +105,7 @@
     </section>
 
     <footer>
+        <!--Bot Nilo bot-->
         <script samesite="None; Secure" src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
         <script>
             var myLandbot = new LandbotLivechat({
