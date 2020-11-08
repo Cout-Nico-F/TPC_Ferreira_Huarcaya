@@ -335,10 +335,16 @@ insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (5,1)
 insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,2)
 go
 
+/*				Tabla Pagina Web					*/
+insert into PaginaWeb(Titulo,Descripcion) values ('Blog Personal','Contiene informacion personal')
+insert into PaginaWeb(Titulo,Descripcion) values ('Tienda','Aca van a estar tus productos a la venta')
+insert into PaginaWeb(Titulo,Descripcion) values ('Portfolio','Sera la pagina que le vas a presentar a tus jefes')
+
 -- Cambios:
 -- Saque los not nulls a los identity pk: parece que se arreglo el problema de que empezaba en el ID 2 o ID 6, no lo probe del todo
 -- Cambie el formato de los inserts
 -- agregue la tabla Funcionalidades_X_Paginas con sus PKs y FKs
+-- Agregue una tabla PaginaWeb hice si alter table de PK y le agregue unos inserts
 
 -- Problemas:
 -- insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (1,2) cuando los id se repiten los los inserts ocurre un error por ejemplo no puedo hacer esto
