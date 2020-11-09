@@ -18,6 +18,40 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <style>
+                .col-12{
+                     padding:1em;
+                }
+                .col-12 img
+                {
+                    margin-top:-80px;
+                    margin-bottom:40px;
+                }
+                .btn btn-primary
+                {
+                   resize:vertical
+                }
+                .form-control
+                {
+                    padding:20px;
+                    width:400px;
+                    margin-left:30px;
+                }
+                .btn-Ingresar{
+                    width:100px;
+                    height:40px;
+                    margin-left:175px;
+                    background-color:rgb(107, 155, 243);
+                    border:none;
+                    color:white;
+                    margin-top:10px;
+                }
+                .btn-Ingresar:hover
+                {
+                    background-color:rgb(73, 129, 236);
+                }
+            </style>
+
             <script>
                 /*
                   Estas son validaciones que si funcionan
@@ -81,33 +115,32 @@
             <br />
             <br />
 
-            <div class="modal-dialog text-center border-0">
+            <div class="modal-dialog text-center">
                 <div class="col-sm-12">
                     <div class="modal-content">
                         <div class="col-12">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRW6X2lldt_gy2tcbXCKBbKWNVBpH-f1Mcjsw&usqp=CAU" alt="Alternate Text" />
                         </div>
-                        <form class="col-12" <!--onsubmit="return validar();" -->>
+                        <form class="col-12" <!--onsubmit="return validar();" -->
                             <div class="form-group">
                                 <!-- <input id="email" type="email" class="form-control" placeholder="Correo Electronico" required /> -->
-                                <asp:TextBox runat="server" ID="txtNombreUsuario" Text="NombreUsuario"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtNombreUsuario" Text="NombreUsuario" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                <!-- <input id="password" type="password" class="form-control" placeholder="Contraseña" required /> -->
-                                <asp:TextBox runat="server" ID="txtPass" Text="Contraseña"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtPass" Text="Contraseña" CssClass="form-control"></asp:TextBox>
                             </div>
                             <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button> -->
                            <!-- <i class="fas fa-sign-in-alt"></i>  No puedo hacer que el icono este dentro de el boton quizas con grid o flexbox puede ser -->
-                            <asp:Button Text="Ingresar" runat="server" CssClass="btn btn-primary" ID="btn_Ingresar" OnClick="btn_Ingresar_Click" />
+                            <asp:Button Text="Ingresar" runat="server" CssClass="btn-Ingresar" ID="btn_Ingresar" OnClick="btn_Ingresar_Click" />
                         </form>
                         <div class="col-12">
                             <label>No tiene una cuenta?</label>
                             <a href="CrearCuenta.aspx">Crear cuenta</a>
-                        </div>
-                        <div class="col-12">
+                            <br />
                             <label>Olvido su contraseña</label>
                             <a href="RecuperarContraseña.aspx">Recuperar contraseña</a>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
