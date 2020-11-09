@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
     <Content Include="ASPX\Error.aspx" />
@@ -125,33 +126,6 @@
     <Content Include="CSS\Estilos_Personalizar.css" />
     <Content Include="CSS\Estilos_Sesion.css" />
     <Content Include="CSS\Home.css" />
-    <Content Include="Templates Prefabricados\Template_06\about.html" />
-    <Content Include="Templates Prefabricados\Template_06\css\business-casual.css" />
-    <Content Include="Templates Prefabricados\Template_06\css\business-casual.min.css" />
-    <Content Include="Templates Prefabricados\Template_06\gulpfile.js" />
-    <Content Include="Templates Prefabricados\Template_06\img\about.jpg" />
-    <Content Include="Templates Prefabricados\Template_06\img\bg.jpg" />
-    <Content Include="Templates Prefabricados\Template_06\img\intro.jpg" />
-    <Content Include="Templates Prefabricados\Template_06\img\products-01.jpg" />
-    <Content Include="Templates Prefabricados\Template_06\img\products-02.jpg" />
-    <Content Include="Templates Prefabricados\Template_06\img\products-03.jpg" />
-    <Content Include="Templates Prefabricados\Template_06\index.html" />
-    <Content Include="Templates Prefabricados\Template_06\products.html" />
-    <Content Include="Templates Prefabricados\Template_06\store.html" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\jquery\jquery.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\jquery\jquery.min.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\jquery\jquery.slim.js" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Templates Prefabricados\Template_05\css\shop-homepage.css" />
     <Content Include="Templates Prefabricados\Template_05\gulpfile.js" />
     <Content Include="Templates Prefabricados\Template_05\index.html" />
@@ -1952,6 +1926,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASPX\CarritoCompra.aspx.cs">
+      <DependentUpon>CarritoCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\CarritoCompra.aspx.designer.cs">
+      <DependentUpon>CarritoCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\Catalogo.aspx.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2282,38 +2263,6 @@
     <Content Include="Templates Prefabricados\Template_05\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="Templates Prefabricados\Template_05\vendor\jquery\jquery.min.map" />
     <Content Include="Templates Prefabricados\Template_05\vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Templates Prefabricados\Template_06\.browserslistrc" />
-    <Content Include="Templates Prefabricados\Template_06\.gitignore" />
-    <Content Include="Templates Prefabricados\Template_06\.travis.yml" />
-    <Content Include="Templates Prefabricados\Template_06\LICENSE" />
-    <Content Include="Templates Prefabricados\Template_06\package-lock.json" />
-    <Content Include="Templates Prefabricados\Template_06\package.json" />
-    <Content Include="Templates Prefabricados\Template_06\README.md" />
-    <Content Include="Templates Prefabricados\Template_06\scss\business-casual.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_about.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_bootstrap-overrides.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_buttons.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_cta.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_footer.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_global.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_intro.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_mixins.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_navbar.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_products.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_store.scss" />
-    <Content Include="Templates Prefabricados\Template_06\scss\_variables.scss" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-grid.css.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-reboot.css.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.js.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\bootstrap\js\bootstrap.min.js.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\jquery\jquery.min.map" />
-    <Content Include="Templates Prefabricados\Template_06\vendor\jquery\jquery.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

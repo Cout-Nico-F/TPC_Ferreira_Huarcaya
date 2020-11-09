@@ -11,10 +11,11 @@
     </div>
     <br />
     <br />
+    <!-- Por ahora el buscador queda inactivo hasta encontrar porque no funciona
     <div>
         <asp:TextBox runat="server" class="form-text" ID="txt_buscar" placeholder="Search.." />  
         <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary btn-lg active" OnClick="btn_buscar_Click" ID="btn_buscar" />
-    </div>
+    </div> -->
     <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />
@@ -30,9 +31,9 @@
                         <div class="card-body">
                             <h5 class="card-title"><%=item.Titulo %></h5>
                             <p class="card-text"><%=item.Descripcion %></p>
-                            <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block">Vista Previa</a>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
-                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
+                            <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>  Vista Previa</a>
+                            <a href="CarritoCompra.aspx?idPagina=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>   Solicitar</a>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-plus-circle"></i>   Personalizar</a>
                         </div>
                     </div>
                 </div>
