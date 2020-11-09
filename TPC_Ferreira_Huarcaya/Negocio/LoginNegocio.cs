@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Negocios;
+using System.Runtime.Remoting.Messaging;
 
 namespace Negocio
 {
@@ -14,15 +15,27 @@ namespace Negocio
         public Usuario login(Usuario user)
         {
             // tengo que ir a la DB y buscarlo
-            ConexionMSSQL conexion = new ConexionMSSQL();
+            try
+            {
+                ConexionMSSQL conexion = new ConexionMSSQL();
 
-            conexion.Conectar();
+                conexion.Conectar();
+                //exec SP_BuscarUsuario AlonsoHS20,AlonsoHuarcayaAdmin2
+                string consulta = "exec SP_BuscarUsuario " + user.NombreUsuario + "," + user.Contraseña;
 
-            string consulta = "Select NombreUsuario,Contrasenia From Usuarios Where ID=@ID_Usuario and Contrasenia=@Contraseña";
+                conexion.SetConsulta(consulta);
 
+                conexion.Desconectar();
 
-            user.IdUsuario = 6;
-            return user;
+                return user;
+            }
+            catch (Exception)
+            {
+                user.IdUsuario = 0;
+                return user;    
+            }
+            
+           
         }
     }
 }

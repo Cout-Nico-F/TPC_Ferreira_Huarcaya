@@ -32,7 +32,7 @@ namespace WebForms.ASPX
             // lo hice asi por una razon porque lo vamos a necesitar el switch cuando tengamos que verificar si los niveles de acceso de cada usuario etc
             switch (user.IdUsuario)
             {
-                case 1:
+                case 0:
                     {
                         Response.Redirect("Error.aspx");
                     }break;
