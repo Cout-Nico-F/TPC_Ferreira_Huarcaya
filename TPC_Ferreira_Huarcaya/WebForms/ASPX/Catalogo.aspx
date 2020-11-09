@@ -3,19 +3,28 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="jumbotron jumbotron-fluid">
+    <div class="section">
         <div class="container">
-            <h1 class="display-4">Hola bienvenido</h1>
-            <p class="lead">Estamos trabajando.... <i class="fas fa-exclamation-triangle"></i></p>
+            <div class="row">
+                <div class="col-md-12 col-md-offset-2">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input class="form-control" id="contrasenia" name="contrasenia" placeholder="Contraseña" type="text" required />
+                            </div>
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
+            <!--<asp:TextBox runat="server" cssClass="txt-buscador" ID="TextBox1" placeholder="Search.." />   -->
+    
     <br />
     <br />
-    <!-- Por ahora el buscador queda inactivo hasta encontrar porque no funciona
-    <div>
-        <asp:TextBox runat="server" class="form-text" ID="txt_buscar" placeholder="Search.." />  
-        <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary btn-lg active" OnClick="btn_buscar_Click" ID="btn_buscar" />
-    </div> -->
+    <!--Por ahora el buscador queda inactivo hasta encontrar porque no funciona -->
+    <div class="jumbotron-fluid">
+           <!--  <asp:TextBox runat="server" CssClass="txt-buscador" ID="txt_buscar" placeholder="Search.." />  -->
+        <!--<asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary btn-lg active" OnClick="btn_buscar_Click" ID="btn_buscar" /> -->
+    </div> 
     <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />

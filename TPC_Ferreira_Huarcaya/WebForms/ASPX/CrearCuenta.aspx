@@ -13,45 +13,6 @@
 </head>
 <body>
 
-    <script>
-
-        function validar() {
-            var nombre, apellido, nombreUsuario, contrasenia, expresionReg;
-            nombre = document.getElementById("nombre");
-            apellido = document.getElementById("apellido");
-            nombreUsuario = document.getElementById("NombreUsu");
-            contrasenia = document.getElementById("contrasenia");
-
-            expresionesReg = /\w+@\w+\.+[a-z]/;
-
-            if (nombre == "" || apellido == "" || nombreUsuario == "" || contrasenia == "") {
-                alert("Todos los campos son obligatorios");
-                return false;
-            }
-            else if (nombre.length > 20 ) {
-                alert("El campo nombre es demasiado largo");
-                return false;
-            }
-            else if (apellido.length > 20) {
-                alert("El campo apellido es demasiado largo");
-                return false;
-            }
-            else if (nombreUsuario.length > 10 ) {
-                alert("El campo Nombre Usuario es demasiado largo");
-                return false;
-            }
-            else if (contrasenia.length > 20) {
-                alert("El campo Contraseña es demasiado largo");
-                return false;
-            }
-            else if (!expresionesReg.test(email)) {
-                alert("El email es invalido");
-                return false;
-            }
-        }
-
-    </script>
-
     <br />
     <br />
     <br />

@@ -91,5 +91,13 @@ h2.section-title + p {
     margin-top: -70px;
     margin-bottom: 80px;
 }
+.txt-buscador
+{
+    margin-top:10px;
+    width:300px;
+}
+.col-md-12{
+    margin:10px;
+}
 
 /*Home.aspx*/
