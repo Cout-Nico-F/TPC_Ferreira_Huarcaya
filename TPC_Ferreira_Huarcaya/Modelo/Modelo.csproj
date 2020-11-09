@@ -45,10 +45,12 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Color.cs" />
+    <Compile Include="DatosPersonales.cs" />
     <Compile Include="Disposicion.cs" />
     <Compile Include="Elemento.cs" />
     <Compile Include="Estilo.cs" />
     <Compile Include="Funcionalidad.cs" />
+    <Compile Include="InfoWeb.cs" />
     <Compile Include="Pagina.cs" />
     <Compile Include="PaginaWeb.cs" />
     <Compile Include="PedidoWebPage.cs" />
