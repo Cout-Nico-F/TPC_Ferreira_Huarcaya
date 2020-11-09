@@ -45,21 +45,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png" class="d-block w-100" alt="Imagene de Arte SVG" />
+                    <img src="../Imagenes/Montañas_Home.png" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Paginas Web</h2>
                         <a href="Catalogo.aspx" class="btn btn-dark btn-neon">Ir!</a>   
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2016/10/07/08/56/beauty-1721060__340.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
+                    <img src="../Imagenes/Arte_Home.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Arte</h2>
                         <a href="Catalogo.aspx" class="btn btn-dark ">Ir!</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2014/09/07/21/52/city-438393__340.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
+                    <img src="../Imagenes/Contrataciones_Home.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Contrataciones</h2>
                         <a href="Catalogo.aspx" class="btn btn-dark">Ir!</a>
