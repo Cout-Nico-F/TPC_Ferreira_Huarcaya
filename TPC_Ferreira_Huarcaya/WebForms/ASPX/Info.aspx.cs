@@ -14,6 +14,7 @@ namespace WebForms.ASPX
         public List<InfoWeb> listaInfo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 InformacionNegocio infoNeg = new InformacionNegocio();
@@ -24,17 +25,18 @@ namespace WebForms.ASPX
                 }
                 else
                 {
-                    listaInfo = ((List<InfoWeb>)Session["listadoInfo"]);
+                    listaInfo = (List<InfoWeb>)Session["listadoInfo"];
                     Session["listadoInfo"] = null;
                 }
             }
             catch (Exception ex)
             {
 
-                Session.Add("errorEncontrado", ex.ToString());
-                Response.Redirect("Error.aspx");
+                /*Session.Add("errorEncontrado", ex.ToString());
+                Response.Redirect("Error.aspx");*/
+                
             }
-
+            
             
         }
     }
