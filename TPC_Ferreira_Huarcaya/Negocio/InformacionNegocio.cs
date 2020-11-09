@@ -18,7 +18,8 @@ namespace Negocio
             List<InfoWeb> listaInfo = new List<InfoWeb>();
 
             conexion.Conectar();
-            string consulta = "";
+            /*Es una vista muy basica*/
+            string consulta = "Select ID_Usuarios,ID_Nivel,NombreApellido,Descripcion From VW_MostrarUsuario";
 
             conexion.SetConsulta(consulta);
 
@@ -27,10 +28,16 @@ namespace Negocio
             while (lectura.Read())
             {
                 InfoWeb aux = new InfoWeb();
-                aux.NombreApellido = lectura.GetString(0);
-                aux.ID_Usuario = lectura.GetInt16(1);
-                aux.Descripcion = lectura.GetString(2);
+                aux.ID_Usuario = lectura.GetInt16(0);
+                aux.ID_Nivel = lectura.GetInt16(1);
+                aux.NombreApellido = lectura.GetString(2);
+                aux.Descripcion = lectura.GetString(3);
+
+                listaInfo.Add(aux);
+
             }
+            conexion.Desconectar();
+            return listaInfo;
         }
     }
 }
