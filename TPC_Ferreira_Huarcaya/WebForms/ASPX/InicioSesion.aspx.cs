@@ -21,7 +21,7 @@ namespace WebForms.ASPX
         {
             Usuario user = new Usuario();
 
-            LoginNegocios logNeg = new LoginNegocio();
+            LoginNegocio logNeg = new LoginNegocio();
 
             user.NombreUsuario = txtNombreUsuario.Text;
             user.Contraseña = txtPass.Text;

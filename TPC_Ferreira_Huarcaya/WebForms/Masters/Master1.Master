@@ -35,7 +35,6 @@
             <a class="nav-link" href="Home.aspx">Home</a>
             <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
             <a class="nav-link" href="Info.aspx">Informacion</a>
-            <a class="nav-link" href="Contacto.aspx">Contacto</a>
         </div>
         <div>
             <div class="boton-nav-user">

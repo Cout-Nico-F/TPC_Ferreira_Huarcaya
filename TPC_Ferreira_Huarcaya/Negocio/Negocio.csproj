@@ -43,8 +43,8 @@
   <ItemGroup>
     <Compile Include="DropdownsNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
-    <Compile Include="ElementosNegocio.cs" />
     <Compile Include="InformacionNegocio.cs" />
+    <Compile Include="LoginNegocio.cs" />
     <Compile Include="PaginasWebNegocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
