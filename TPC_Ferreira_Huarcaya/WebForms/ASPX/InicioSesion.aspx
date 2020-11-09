@@ -19,6 +19,11 @@
     <form id="form1" runat="server">
         <div>
             <style>
+                body
+                {
+                    background-image:url(https://www.xtrafondos.com/wallpapers/resized/bosque-de-pinos-en-la-niebla-3340.jpg?s=large);
+                    background-size:cover;
+                }
                 .col-12{
                      padding:1em;
                 }
@@ -26,6 +31,7 @@
                 {
                     margin-top:-80px;
                     margin-bottom:40px;
+                    background-color:transparent;
                 }
                 .btn btn-primary
                 {
@@ -50,50 +56,17 @@
                 {
                     background-color:rgb(73, 129, 236);
                 }
+
             </style>
-
-            <script>
-                /*
-                  Estas son validaciones que si funcionan
-                  Las validaciones las piden en el Paso 2 creo recordar
-                 */
-                function validar() {
-                    var email, password, expresionesReg;
-                    email = document.getElementById("email").value;
-                    password = document.getElementById("password").value;
-
-                    expresionesReg = /\w+@\w+\.+[a-z]/;
-
-                    if (email == "" || password == "") {
-                        alert("Todos los campos son obligatorios");
-                        return false; //con esto evitamos que los datos sean enviados despues de presionar aceptar
-                    }
-                    else if (password.length > 20) {
-                        alert("La password es muy larga");
-                        return false;
-                    }
-                    else if (!expresionesReg.test(email)) {
-                        alert("El email es invalido");
-                        return false;
-                    }
-                    else if (email.length > 30) {
-                        alert("El email es demasiado largo");
-                        return false;
-                    }
-                }
-
-            </script>
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
                 <a class="navbar-brand" href="#">
                     <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" style="background-color: rgba(255, 0, 0, 0.5);">
-                    <!-- No puedo hacer transparente el fonde de la imagen -->
                     FerreAlo</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- el ID anterior era : navbarNavAltMarkup -->
                     <div class="navbar-nav mr-auto ml-auto text-center">
                         <a class="nav-link" href="Home.aspx">Home</a>
                         <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
@@ -121,7 +94,7 @@
                         <div class="col-12">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRW6X2lldt_gy2tcbXCKBbKWNVBpH-f1Mcjsw&usqp=CAU" alt="Alternate Text" />
                         </div>
-                        <form class="col-12" <!--onsubmit="return validar();" -->
+                        <form class="col-12" >
                             <div class="form-group">
                                 <!-- <input id="email" type="email" class="form-control" placeholder="Correo Electronico" required /> -->
                                 <asp:TextBox runat="server" ID="txtNombreUsuario" Text="NombreUsuario" CssClass="form-control"></asp:TextBox>
