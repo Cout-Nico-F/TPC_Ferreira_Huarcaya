@@ -19,22 +19,38 @@ namespace WebForms.ASPX
 
         protected void btn_Ingresar_Click(object sender, EventArgs e)
         {
-            Usuario user = new Usuario();
+            List<Usuario> user = new List<Usuario>();
+            Usuario usu = new Usuario();
 
             LoginNegocio logNeg = new LoginNegocio();
 
-            user.NombreUsuario = txtNombreUsuario.Text;
-            user.Contraseña = txtPass.Text;
 
-            user = logNeg.login(user);
+            usu.NombreUsuario = txtNombreUsuario.Text;
+            usu.Contraseña = txtPass.Text;
+
+            // podria enviarle los dos string 
+
+            user = logNeg.login(usu);
+
+            bool UsuarioExiste = BuscarUsuario(user,usu);
+
+            if (UsuarioExiste)//funciona igual que c++ no? siempre es true
+            {
+                //codigo para usuario encontrado
+            }
+            else
+            {
+                //codigo para usuario no encontrado
+                Response.Redirect("Error.aspx");
+            }
 
             //Que recuerdos el switch jaja cuando todo era facil
             // lo hice asi por una razon porque lo vamos a necesitar el switch cuando tengamos que verificar si los niveles de acceso de cada usuario etc
-            switch (user.IdUsuario)
+            /*switch (user.IdUsuario)
             {
                 case 0:
                     {
-                        Response.Redirect("Error.aspx");
+                       
                     }break;
                 case 2:
                     {
@@ -48,7 +64,25 @@ namespace WebForms.ASPX
                     {
                         Response.Redirect("Info.aspx");
                     }break;
+            }*/
+
+            
+        }
+        private bool BuscarUsuario(List<Usuario>listaUsuario,Usuario usuario)
+        {
+            foreach(var item in listaUsuario)
+            {
+                if(item.IdUsuario != 0 && txtNombreUsuario.Text == usuario.NombreUsuario && usuario.Contraseña == txtPass.Text)
+                {
+                    return true;
+                }
             }
+            return false;
+        }
+
+        private void Validaciones()
+        {
+            
         }
     }
 }
