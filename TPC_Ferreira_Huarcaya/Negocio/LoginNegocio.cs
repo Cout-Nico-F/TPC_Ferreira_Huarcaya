@@ -12,28 +12,8 @@ namespace Negocio
 {
     public class LoginNegocio
     {
-        public List<Usuario> login(Usuario user)
+        public List<Usuario> login()
         {
-            // tengo que ir a la DB y buscarlo
-            /* try
-             {
-                 ConexionMSSQL conexion = new ConexionMSSQL();
-
-                 conexion.Conectar();
-                 //exec SP_BuscarUsuario AlonsoHS20,AlonsoHuarcayaAdmin2
-                 string consulta = "exec SP_BuscarUsuario " + user.NombreUsuario + "," + user.Contraseña;
-
-                 conexion.SetConsulta(consulta);
-
-                 conexion.Desconectar();
-
-                 return user;
-             }
-             catch (Exception)
-             {
-                 user.IdUsuario = 0;
-                 return user;    
-             }*/
             // recibo un usuario y devuelvo una lista para en el back de asp buscar la coincidadencia es mas engorroso asi pero debe funcionar
             ConexionMSSQL conexion = new ConexionMSSQL();
 

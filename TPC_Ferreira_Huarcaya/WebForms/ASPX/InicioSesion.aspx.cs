@@ -30,41 +30,20 @@ namespace WebForms.ASPX
 
             // podria enviarle los dos string 
 
-            user = logNeg.login(usu);
+            user = logNeg.login(); // se supone que trae la lista completa de usuarios
 
-            bool UsuarioExiste = BuscarUsuario(user,usu);
+            bool UsuarioExiste = BuscarUsuario(user,usu);// le envio la lista de usuarios y la variable usuario para comparar
 
             if (UsuarioExiste)//funciona igual que c++ no? siempre es true
             {
                 //codigo para usuario encontrado
+                Response.Redirect("Catalogo.aspx");
             }
             else
             {
                 //codigo para usuario no encontrado
                 Response.Redirect("Error.aspx");
             }
-
-            //Que recuerdos el switch jaja cuando todo era facil
-            // lo hice asi por una razon porque lo vamos a necesitar el switch cuando tengamos que verificar si los niveles de acceso de cada usuario etc
-            /*switch (user.IdUsuario)
-            {
-                case 0:
-                    {
-                       
-                    }break;
-                case 2:
-                    {
-                        Response.Redirect("Home.aspx");
-                    }break;
-                case 3:
-                    {
-                        Response.Redirect("Catalogo.aspx");
-                    }break;
-                case 6:
-                    {
-                        Response.Redirect("Info.aspx");
-                    }break;
-            }*/
 
             
         }
