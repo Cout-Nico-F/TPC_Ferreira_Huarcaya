@@ -38,7 +38,7 @@ create table PaginaWeb(
 	Titulo varchar(50) not null,
 	Descripcion varchar(200) not null,
 )
-	
+	go
 create table Categorias (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
@@ -129,6 +129,12 @@ create table Funcionalidades_X_Paginas (
 	ID_Funcionalidad smallint not null,
 	ID_Pagina smallint not null
 )
+create table InfoWeb (
+	ID_Usuarios smallint not null,
+	ID_Nivel smallint not null,
+	NombreApellido varchar(200) not null,
+	Descripcion varchar(200) not null
+)
 
 
 --Alter Tables de PK
@@ -165,6 +171,9 @@ create table Funcionalidades_X_Paginas (
 	alter table Funcionalidades_X_Paginas add constraint PKS_Funcionalidades_X_Paginas primary key (ID_Funcionalidad, ID_Pagina)
 	go
 	alter table PaginaWeb add constraint PK_PaginaWeb primary key (ID)
+	go
+	alter table InfoWeb add constraint PKS_InfoWeb primary key (ID_Usuarios,ID_Nivel)
+	go
 
 --Alter Tables FK's
 	alter table Relacion_Colores add foreign key (ID_Estilo) references Estilos(ID)
@@ -196,6 +205,10 @@ create table Funcionalidades_X_Paginas (
 	alter table Funcionalidades_X_Paginas add foreign key (ID_Funcionalidad) references Funcionalidades(ID)
 	go
 	alter table Funcionalidades_X_Paginas add foreign key (ID_Pagina) references Paginas(ID)
+	go
+	alter table InfoWeb add foreign key (ID_Usuarios) references Usuarios(ID)
+	go
+	alter table InfoWeb add foreign key (ID_Nivel) references Niveles_Acceso(ID)
 	go
 --Alter tables CHECKS
 	alter table Elementos add constraint CH_Elementos_Costo check (Costo >= 0)
@@ -341,11 +354,16 @@ insert into PaginaWeb(Titulo,Descripcion) values ('Tienda','Aca van a estar tus 
 insert into PaginaWeb(Titulo,Descripcion) values ('Portfolio','Sera la pagina que le vas a presentar')
 insert into PaginaWeb(Titulo,Descripcion) values ('E-commerce','Esta es una tienda solamente virtual')
 
+/*				Tabla Informacion				*/
+insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso')
+insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas')
+
 -- Cambios:
 -- Saque los not nulls a los identity pk: parece que se arreglo el problema de que empezaba en el ID 2 o ID 6, no lo probe del todo
 -- Cambie el formato de los inserts
 -- agregue la tabla Funcionalidades_X_Paginas con sus PKs y FKs
 -- Agregue una tabla PaginaWeb hice si alter table de PK y le agregue unos inserts
+-- Cree otra tabla InfoWeb con dos PKs y FKs de id_usuario y id_datos personales 
 
 -- Problemas:
 -- insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (1,2) cuando los id se repiten los los inserts ocurre un error por ejemplo no puedo hacer esto
