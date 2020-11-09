@@ -17,7 +17,7 @@ namespace Negocio
 
             List<PaginaWeb> listaPaginaWeb = new List<PaginaWeb>();
 
-            SqlDataReader lectura = conexion.Consulta_Rapida("Select ID,Titulo,Descripcion From PaginaWeb");
+            SqlDataReader lectura = conexion.Consulta_Rapida("Select ID,Titulo,Descripcion,Url_Pagina From PaginaWeb");
 
             while (lectura.Read())
             {
@@ -25,6 +25,7 @@ namespace Negocio
                 aux.ID = lectura.GetInt16(0);
                 aux.Titulo = lectura.GetString(1);
                 aux.Descripcion = lectura.GetString(2);
+                aux.Url_PaginaWeb = lectura.GetString(3);   
 
                 listaPaginaWeb.Add(aux);
             }

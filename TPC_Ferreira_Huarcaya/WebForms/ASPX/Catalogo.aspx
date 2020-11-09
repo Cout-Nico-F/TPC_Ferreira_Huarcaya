@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><%=item.Titulo %></h5>
                             <p class="card-text"><%=item.Descripcion %></p>
-                            <a href="../Templates Prefabricados/Template_01/index.html" class="btn btn-info btn-lg btn-block">Vista Previa</a>
+                            <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block">Vista Previa</a>
                             <button type="button" class="btn btn-secondary btn-lg btn-block">Solicitar</button>
                             <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block">Personalizar</a>
                         </div>

@@ -14,5 +14,7 @@ namespace Modelo
 
         public string  Descripcion { get; set; }
 
+        public string Url_PaginaWeb { get; set; }
+
     }
 }

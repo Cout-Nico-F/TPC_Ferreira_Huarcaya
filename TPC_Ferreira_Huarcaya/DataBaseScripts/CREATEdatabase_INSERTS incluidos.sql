@@ -1,5 +1,5 @@
 
---Drop database Ferreira_Huarcaya_DB
+Drop database Ferreira_Huarcaya_DB
 
 create database Ferreira_Huarcaya_DB
 go
@@ -37,6 +37,7 @@ create table PaginaWeb(
 	ID smallint identity(1,1),
 	Titulo varchar(50) not null,
 	Descripcion varchar(200) not null,
+	Url_Pagina varchar(100) not null,
 )
 	go
 create table Categorias (
@@ -133,7 +134,7 @@ create table InfoWeb (
 	ID_Usuarios smallint not null,
 	ID_Nivel smallint not null,
 	NombreApellido varchar(200) not null,
-	Descripcion varchar(200) not null
+	Descripcion varchar(200) not null,
 )
 
 
@@ -349,14 +350,18 @@ insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,2)
 go
 
 /*				Tabla Pagina Web					*/
-insert into PaginaWeb(Titulo,Descripcion) values ('Tienda','Aca van a estar tus productos a la venta')
-insert into PaginaWeb(Titulo,Descripcion) values ('Portfolio','Sera la pagina que le vas a presentar')
-insert into PaginaWeb(Titulo,Descripcion) values ('E-commerce','Esta es una tienda solamente virtual')
-insert into PaginaWeb(Titulo,Descripcion) values ('Blog Personal','Contiene informacion personal')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Admin SB2','Pagina para administrar ventas,negocio,programas,etc','../Templates Prefabricados/Template_01/index.html')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Creativo','Pagina fabricada con base de Bootstrap para negocio','../Templates Prefabricados/Template_02/index.html')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('E-commerce','Esta es una tienda solamente virtual','../Templates Prefabricados/Template_03/index.html')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Portfolio Stylish','Portfolio para presentar en una entrevista de trabajo','../Templates Prefabricados/Template_04/index.html')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Shop online','Template simple para vender online','../Templates Prefabricados/Template_05/index.html')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Contacto','Es un formulario de contacto monocromatico muy agredable a la vista','../Templates Prefabricados/Template_06/index.html')
+go
 
 /*				Tabla Informacion				*/
 insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso')
 insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas')
+go
 
 -- Cambios:
 -- Saque los not nulls a los identity pk: parece que se arreglo el problema de que empezaba en el ID 2 o ID 6, no lo probe del todo
@@ -375,3 +380,4 @@ insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (1,2)
 insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (1,1,3)
 insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (4,1,3)
 */
+
