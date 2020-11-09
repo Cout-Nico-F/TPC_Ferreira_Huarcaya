@@ -16,8 +16,8 @@
             top:30%;
         }
          #mainSlider .carousel-caption h2 {
-            font-size: 100px;
-            margin-bottom: 30px;
+            font-size: 10em;
+            margin-bottom: 0.2em;
             font-family: 'Pacifico', cursive;
            
         }
@@ -29,10 +29,15 @@
         }
          #mainSlider .carousel-caption a {
            font-size: 30px;
-           border-radius: 0px;
-            font-family: 'Raleway', sans-serif;
+           border-radius: 1em;
+           font-family: 'Raleway', sans-serif;
+           background-color:rgb(229, 232, 110 );
            
         }
+         #mainSlider .carousel-caption a:hover
+         {
+             background-color:rgb(210, 213, 124 );
+         }
 
     </style>
     
@@ -48,21 +53,21 @@
                     <img src="../Imagenes/Montañas_Home.png" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Paginas Web</h2>
-                        <a href="Catalogo.aspx" class="btn btn-dark btn-neon">Ir!</a>   
+                        <a href="Catalogo.aspx" class="btn btn-dark btn-neon">Me pica la curiosidad</a>   
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="../Imagenes/Arte_Home.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Arte</h2>
-                        <a href="Catalogo.aspx" class="btn btn-dark ">Ir!</a>
+                        <a href="Catalogo.aspx" class="btn btn-dark ">Echar un vistazo</a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="../Imagenes/Contrataciones_Home.jpg" class="d-block w-100" alt="Imagene de Arte SVG" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Contrataciones</h2>
-                        <a href="Catalogo.aspx" class="btn btn-dark">Ir!</a>
+                        <a href="Catalogo.aspx" class="btn btn-dark">Quisera saber mas</a>
                     </div>
                 </div>
             </div>
