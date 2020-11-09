@@ -322,7 +322,7 @@ insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (6,3)
 go
 /*				Tabla Elementos X Paginas			*/
 insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (3,1,3)
-insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (6,1,5)
+insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (5,1,5)
 insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (4,2,2)
 insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (3,4,4)
 go
@@ -336,10 +336,10 @@ insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,2)
 go
 
 /*				Tabla Pagina Web					*/
-insert into PaginaWeb(Titulo,Descripcion) values ('Blog Personal','Contiene informacion personal')
 insert into PaginaWeb(Titulo,Descripcion) values ('Tienda','Aca van a estar tus productos a la venta')
 insert into PaginaWeb(Titulo,Descripcion) values ('Portfolio','Sera la pagina que le vas a presentar')
 insert into PaginaWeb(Titulo,Descripcion) values ('E-commerce','Esta es una tienda solamente virtual')
+insert into PaginaWeb(Titulo,Descripcion) values ('Blog Personal','Contiene informacion personal')
 
 -- Cambios:
 -- Saque los not nulls a los identity pk: parece que se arreglo el problema de que empezaba en el ID 2 o ID 6, no lo probe del todo

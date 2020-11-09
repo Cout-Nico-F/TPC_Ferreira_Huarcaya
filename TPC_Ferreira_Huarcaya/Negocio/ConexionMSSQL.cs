@@ -35,7 +35,6 @@ namespace Negocios
         public SqlDataReader Leer()
         {
             DataReader = Command.ExecuteReader();
-            DataReader.Read();
             return DataReader;
         }
 
@@ -44,7 +43,6 @@ namespace Negocios
             Conectar();
             SetConsulta(consulta);
             SqlDataReader lectura = Leer();
-            Desconectar();
             return lectura;
         }
     
