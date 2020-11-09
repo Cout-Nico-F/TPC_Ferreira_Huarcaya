@@ -27,7 +27,7 @@
                         {%>
                 <div class="col md-5 col-sm-4">
                     <div class="card text-center" style="margin-bottom: 40px;">
-                        <img src="../Imagenes/Page_Admin.png" class="card-img-top" alt="No se encontro la imagen" />
+                        <img src=<%=item.Url_Imagen %> class="card-img-top" alt="No se encontro la imagen" />
                         <div class="card-body">
                             <h5 class="card-title"><%=item.Titulo %></h5>
                             <p class="card-text"><%=item.Descripcion %></p>

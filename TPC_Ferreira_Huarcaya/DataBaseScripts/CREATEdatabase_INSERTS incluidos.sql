@@ -38,6 +38,7 @@ create table PaginaWeb(
 	Titulo varchar(50) not null,
 	Descripcion varchar(200) not null,
 	Url_Pagina varchar(100) not null,
+	Url_Image varchar(100) null
 )
 	go
 create table Categorias (
@@ -350,12 +351,12 @@ insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,2)
 go
 
 /*				Tabla Pagina Web					*/
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Admin SB2','Pagina para administrar ventas,negocio,programas,etc','../Templates Prefabricados/Template_01/index.html')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Creativo','Pagina fabricada con base de Bootstrap para negocio','../Templates Prefabricados/Template_02/index.html')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('E-commerce','Esta es una tienda solamente virtual','../Templates Prefabricados/Template_03/index.html')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Portfolio Stylish','Portfolio para presentar en una entrevista de trabajo','../Templates Prefabricados/Template_04/index.html')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Shop online','Template simple para vender online','../Templates Prefabricados/Template_05/index.html')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina) values ('Contacto','Es un formulario de contacto monocromatico muy agredable a la vista','../Templates Prefabricados/Template_06/index.html')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Admin SB2','Pagina para administrar ventas,negocio,programas,etc','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginas/Page_Admin.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Creativo','Pagina fabricada con base de Bootstrap para negocio','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginas/Page_Creative.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('E-commerce','Esta es una tienda solamente virtual','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Page_Agency.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Portfolio Stylish','Portfolio para presentar en una entrevista de trabajo','../Templates Prefabricados/Template_04/index.html','../Imagenes/ImagenesPaginas/Page_Portfolio.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Shop online','Template simple para vender online','../Templates Prefabricados/Template_05/index.html','../Imagenes/ImagenesPaginas/Page_Home.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Contacto','Es un formulario de contacto monocromatico muy agredable a la vista','../Templates Prefabricados/Template_06/index.html','../Imagenes/ImagenesPaginas/Page_Contacto.png')
 go
 
 /*				Tabla Informacion				*/
