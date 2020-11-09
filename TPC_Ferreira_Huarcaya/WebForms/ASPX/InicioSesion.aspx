@@ -88,7 +88,7 @@
                         <div class="col-12">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRW6X2lldt_gy2tcbXCKBbKWNVBpH-f1Mcjsw&usqp=CAU" alt="Alternate Text" />
                         </div>
-                        <form class="col-12" onsubmit="return validar();">
+                        <form class="col-12" <!--onsubmit="return validar();" -->>
                             <div class="form-group">
                                 <!-- <input id="email" type="email" class="form-control" placeholder="Correo Electronico" required /> -->
                                 <asp:TextBox runat="server" ID="txtNombreUsuario" Text="NombreUsuario"></asp:TextBox>

@@ -11,7 +11,8 @@ namespace Negocio
     {
         public Usuario login(Usuario user)
         {
-
+            // tengo que ir a la DB y buscarlo
+            user.IdUsuario = 6;
             return user;
         }
     }
