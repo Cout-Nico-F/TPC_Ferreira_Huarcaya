@@ -20,7 +20,7 @@ namespace WebForms.ASPX
 
         protected void btn_CrearCuenta_Click(object sender, EventArgs e)
         {
-            DatosPersonales datPer = new DatosPersonales();
+            /*DatosPersonales datPer = new DatosPersonales();
             Usuario usu = new Usuario();
 
             datPer.NombreApellido = txtNombreApellido.Text;
@@ -28,8 +28,8 @@ namespace WebForms.ASPX
             datPer.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             datPer.Email = txtEmail.Text;
             datPer.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil);
-            //falta el email recuperacion no lo puse a proposito
-            datPer.
+            //falta el email recuperacion no lo puse a proposito*/
+            
 
 
         }

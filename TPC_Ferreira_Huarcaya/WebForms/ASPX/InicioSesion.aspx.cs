@@ -32,9 +32,9 @@ namespace WebForms.ASPX
 
             user = logNeg.login(); // se supone que trae la lista completa de usuarios
 
-            bool UsuarioExiste = BuscarUsuario(user,usu);// le envio la lista de usuarios y la variable usuario para comparar
+            //bool UsuarioExiste = BuscarUsuario(user,usu);// le envio la lista de usuarios y la variable usuario para comparar
 
-            if (UsuarioExiste)//funciona igual que c++ no? siempre es true
+           /* if (UsuarioExiste)//funciona igual que c++ no? siempre es true
             {
                 //codigo para usuario encontrado
                 Response.Redirect("Catalogo.aspx");
@@ -43,13 +43,13 @@ namespace WebForms.ASPX
             {
                 //codigo para usuario no encontrado
                 Response.Redirect("Error.aspx");
-            }
+            }*/
 
             
         }
-        private bool BuscarUsuario(List<Usuario>listaUsuario,Usuario usuario)
-        {
-            foreach(var item in listaUsuario)
+        //private bool BuscarUsuario(List<Usuario>listaUsuario,Usuario usuario)
+        //{
+           /* foreach(var item in listaUsuario)
             {
                 if(item.IdUsuario != 0 && txtNombreUsuario.Text == usuario.NombreUsuario && usuario.Contraseña == txtPass.Text)
                 {
@@ -62,6 +62,6 @@ namespace WebForms.ASPX
         private void Validaciones()
         {
             
-        }
+        }*/
     }
 }

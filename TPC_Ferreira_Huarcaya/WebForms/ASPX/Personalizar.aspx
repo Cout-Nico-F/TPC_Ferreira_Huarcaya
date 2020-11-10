@@ -18,29 +18,56 @@
     
     <style>
 
-        .grid .container {
-            display: grid;
-            grid-template-columns: 20% 20%;
-            grid-template-rows: auto;
-            grid-gap: 1em;
+        body{
+            overflow: hidden;
+            font-weight: 300;
+            color:var(--primary);
         }
 
-        div {
-            background: #ecf0f1;
-            padding: 1.5em;
+        #sidebar-container{
+            min-height: 300vh;
+           
+        }
+        .bg-primary {background-color: var(--primary) !important} /*Se que important no se usa*/
+        #sidebar-container logo{
+            padding: .875rem 1.25rem;
+        }
+        #sidebar-container .menu{
+            width: 18rem;
+            background-color:black;
+        }
+        .space{
+            
         }
 
     </style>
-
+        
+       
     <form id="form1" runat="server">
 
-        <div class="grid">
+        <div class="d-flex">
+            <div id="sidebar-container" class="bg-primary">
+                <div class="logo">
+                    <h4 class="text-light font-weight-bold">   Menu de Opciones</h4>
+                </div>
+                <div class="menu">
+                     <asp:DropDownList ID="ddl_Funcionalidades" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block space"></asp:DropDownList>
+                     <asp:DropDownList ID="ddl_Paginas" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block"></asp:DropDownList>
+                    <!--<a href="#" class="d-block p-3">Hola</a>
+                    <a href="#" class="d-block p-3">Hola</a>
+                    <a href="#" class="d-block p-3">Hola</a>
+                    <a href="#" class="d-block p-3">Hola</a> -->
+                </div>
+            </div>
+        </div>
+        
+        <!--<div class="grid">
             <div class="container">
                 <div>
-                    <asp:DropDownList ID="ddl_Funcionalidades" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
+                   
                 </div>
                 <div>
-                    <asp:DropDownList ID="ddl_Paginas" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
+                    
                 </div>
                 <div>
                     <asp:DropDownList ID="ddl_Secciones" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
@@ -54,7 +81,7 @@
                     <asp:DropDownList ID="ddl_DispElementos" runat="server" CssClass="btn btn-secondary dropdown-toggle"></asp:DropDownList>
                 </div>
             </div>
-        </div>       
+        </div> -->    
     </form>
 
 </body>

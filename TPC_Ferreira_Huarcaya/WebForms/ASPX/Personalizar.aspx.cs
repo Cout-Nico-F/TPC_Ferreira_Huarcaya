@@ -31,7 +31,7 @@ namespace WebForms.ASPX
             ddl_Colores.DataBind();
             ddl_Colores.Items.Insert(0, new ListItem("[Colores]", "0"));*/
 
-            //Elementos
+           /* //Elementos
             ddl_Elementos.DataSource = coloresNegocio.ConsultaDataSet("Select * From Elementos");
             ddl_Elementos.DataTextField = "Descripcion";
             ddl_Elementos.DataValueField = "ID";
@@ -43,7 +43,7 @@ namespace WebForms.ASPX
             ddl_DispElementos.DataTextField = "Descripcion";
             ddl_DispElementos.DataValueField = "ID";
             ddl_DispElementos.DataBind();
-            ddl_DispElementos.Items.Insert(0, new ListItem("[Disposicion Elementos]", "0"));
+            ddl_DispElementos.Items.Insert(0, new ListItem("[Disposicion Elementos]", "0"));*/
 
             /*//Categorias
             ddl_Categorias.DataSource = coloresNegocio.ConsultaDataSet("Select * From Categorias");
@@ -73,12 +73,12 @@ namespace WebForms.ASPX
             ddl_Paginas.DataBind();
             ddl_Paginas.Items.Insert(0, new ListItem("[Paginas]", "0"));
 
-            //Secciones
+            /*//Secciones
             ddl_Secciones.DataSource = coloresNegocio.ConsultaDataSet("Select * From Secciones");
             ddl_Secciones.DataTextField = "Descripcion";
             ddl_Secciones.DataValueField = "ID";
             ddl_Secciones.DataBind();
-            ddl_Secciones.Items.Insert(0, new ListItem("[Secciones]", "0"));
+            ddl_Secciones.Items.Insert(0, new ListItem("[Secciones]", "0"));*/
 
 
 
