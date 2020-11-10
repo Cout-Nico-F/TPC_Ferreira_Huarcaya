@@ -20,14 +20,14 @@ namespace WebForms.ASPX
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();
-                if (Session["listado"] == null)
+                if (Session["listadoBuscados"] == null)
                 {
                     Lista = pagNegocio.listaPaginassWeb();
                 }
                 else
                 {
-                    Lista = ((List<PaginaWeb>)Session["listado"]);
-                    Session["listado"] = null;
+                    Lista = ((List<PaginaWeb>)Session["listadoBuscados"]);
+                    Session["listadoBuscados"] = null;
                 }
             }
             catch (Exception ex)
@@ -53,8 +53,8 @@ namespace WebForms.ASPX
              */
             listaBuscador = Lista;
             listaBuscador = Lista.FindAll(
-                page => page.Titulo.ToUpper().Contains(txt_buscar.Text.ToUpper())
-            );
+                page => page.Titulo.ToUpper().Contains(txt_Buscar.Text.ToUpper()));
+            //no funciona pero deberiamos hacerlo de otra manera para que busque coincidencias
             Session["listaBuscados"] = listaBuscador;
 
             /*Esto es para que recargue la pagina no?*/

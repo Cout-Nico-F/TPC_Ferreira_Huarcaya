@@ -9,22 +9,27 @@
                 <div class="col-md-12 col-md-offset-2">
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <input class="form-control" id="contrasenia" name="contrasenia" placeholder="Contraseña" type="text" required />
+                                <div class="container d-flex">
+                                     <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." />
+                                     <asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>
+                                </div>
                             </div>
                         </div>
                 </div>
             </div>
         </div>
     </div>
-            <!--<asp:TextBox runat="server" cssClass="txt-buscador" ID="TextBox1" placeholder="Search.." />   -->
     
     <br />
     <br />
     <!--Por ahora el buscador queda inactivo hasta encontrar porque no funciona -->
-    <div class="jumbotron-fluid">
-           <!--  <asp:TextBox runat="server" CssClass="txt-buscador" ID="txt_buscar" placeholder="Search.." />  -->
-        <!--<asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary btn-lg active" OnClick="btn_buscar_Click" ID="btn_buscar" /> -->
-    </div> 
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Hola bienvenido</h1>
+            <p class="lead">Seguimos trabajando..</p>
+        </div>
+    </div>
+
     <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />
@@ -44,8 +49,8 @@
                             <a href="CarritoCompra.aspx?idPagina=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>   Solicitar</a>
                             <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-plus-circle"></i>   Personalizar</a>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                 </div>
                         <%}%>
                 </div>
             </div>
