@@ -45,6 +45,16 @@ namespace Negocios
             SqlDataReader lectura = Leer();
             return lectura;
         }
-    
+
+        public void SetStoredProcedure(string storedProcedureQuery)
+        {
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.CommandText = storedProcedureQuery;
+        }
+
+        public void AgregarParametro(string clave, string valor)
+        {
+            Command.Parameters.AddWithValue(clave, valor);
+        }
     }
 }
