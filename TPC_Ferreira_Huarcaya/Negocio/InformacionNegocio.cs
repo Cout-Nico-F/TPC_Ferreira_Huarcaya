@@ -17,18 +17,7 @@ namespace Negocio
 
             List<InfoWeb> listaInfo = new List<InfoWeb>();
 
-            conexion.Conectar();
-
-            /*Es una vista muy basica*/
-
-            /* Error
-             * No funcionaba porque habia dropeado la tabla infoWeb y al crearla de nuevo no le inserte valores nuevamente
-             * */
-            string consulta = "Select ID_Usuarios,ID_Nivel,NombreApellido,Descripcion From VW_MostrarUsuario";
-
-            conexion.SetConsulta(consulta);
-
-            SqlDataReader lectura = conexion.Leer();
+            SqlDataReader lectura = conexion.Consulta_Rapida("select * From InfoWeb");
 
             while (lectura.Read())
             {

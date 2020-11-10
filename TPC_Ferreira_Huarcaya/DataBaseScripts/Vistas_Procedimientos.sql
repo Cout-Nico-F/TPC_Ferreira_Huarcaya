@@ -3,13 +3,6 @@ Use Ferreira_Huarcaya_DB
 
 -- Vistas
 
-/*Creacion*/
-Create view VW_MostrarUsuario as 
-Select I.ID_Usuarios,I.ID_Nivel,I.NombreApellido,I.Descripcion From InfoWeb As I
-/*Select*/
-Select * From VW_MostrarUsuario
-/*Esta es una vista innecesariamente innecesesaria*/
-
 -- Procedimientos Almacenados
 
 /*Buscador de usuarios*/

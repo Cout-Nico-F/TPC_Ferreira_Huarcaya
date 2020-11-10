@@ -32,8 +32,8 @@ namespace WebForms.ASPX
             catch (Exception ex)
             {
 
-                /*Session.Add("errorEncontrado", ex.ToString());
-                Response.Redirect("Error.aspx");*/
+                Session.Add("errorEncontrado", ex.ToString());
+                Response.Redirect("Error.aspx");
                 
             }
             
