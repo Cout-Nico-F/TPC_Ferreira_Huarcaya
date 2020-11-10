@@ -23,9 +23,9 @@
                         <%if(item.ID_Nivel == 3)
                             
                           {%>
-                <div class="col-lg-6 col-md-6">
+                 <div class="col-lg-6 col-md-6">
                     <div class="card">
-                        <div class="card-body">
+                         <div class="card-body">
                             <!--Se que no es la mejor foto pero es la unica que tengo -->
                             <img src="<%=item.UrlImagen%>" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
                             <h3><%=item.NombreApellido %></h3>
@@ -56,8 +56,8 @@
                                 <%}%>
                             
                       <% }%>              
-            </div>
-        </div>
+              </div>
+           </div>
     </section>
 
 </asp:Content>
