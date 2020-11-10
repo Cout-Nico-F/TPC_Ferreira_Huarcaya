@@ -7,18 +7,6 @@ Use Ferreira_Huarcaya_DB
 
 /*Buscador de usuarios*/
 -- Podria ser una vista tambien
-create procedure SP_BuscarUsuario(
-	 @NombreUsuario varchar(100),
-	 @Contrasenia varchar(200)
-)
-as
-begin
-	Select ID,NombreUsuario,Contrasenia From Usuarios Where NombreUsuario=@NombreUsuario and Contrasenia=@Contrasenia
-end
-
-exec SP_BuscarUsuario AlonsoHS20,AlonsoHuarcayaAdmin2
-
-Select * From Usuarios
 
 /*Agregar Usuarios*/
 
@@ -76,7 +64,7 @@ end
 
 /*		Crear cuenta a nuevo Usuario			*/
 
-create procedure SP_AgregarUsuario( -- Podriamos agregar tambien una fecha de registracion es un getdate()
+create procedure SP_CrearUsuario( -- Podriamos agregar tambien una fecha de registracion es un getdate()
 		--@ID smallint, -- Usuarios no deberia ser identity?? ya lo cambie 
 		@NombreUsuario varchar(200),
 		@Contrasenia varchar(200),
@@ -116,7 +104,7 @@ begin
 	end catch
 end
 
-Exec SP_AgregarUsuario
+Exec SP_CrearUsuario
 	@NombreUsuario = 'PruebaNombre01',
 	@Contrasenia = 'contra',
 	@ID_Nivel = 1,
@@ -126,3 +114,21 @@ Exec SP_AgregarUsuario
 	@TelefonoFijo = '4810292',
 	@FechaNacimiento = '05/01/2020', 
 	@EmailRecuperacion = 'prueba@hotmail.com'
+
+create procedure SP_BuscarUsuario(
+	@ID_Usuario smallint
+)
+as
+begin
+		begin try
+			Select ID From Usuarios Where ID = @ID_Usuario
+		end try
+		begin catch
+			Rollback transaction -- la base de datos vuelve a como estaba en caso que no no se haya podido insertar los datos 
+	-- Mensaje de error , severidad (int) > 16, estado (int) podemos usarlo en la aplicacion
+		RAISERROR('Error usuario no encontrado',16,2);
+		end catch
+end
+
+exec SP_BuscarUsuario 
+	@ID_Usuario = 8
