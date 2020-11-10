@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
         <div>
             <div>
-                <a href="Catalogo.aspx" class="btn btn-dark">Volver</a>
+                <a href="javascript:history.back()" class="btn btn-dark">Volver</a>
             </div>
             
             <%foreach (var item in listaCarrito)

@@ -12,6 +12,27 @@
     <title>Crear Cuenta</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
+        <a class="navbar-brand" href="#">
+             <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" style=" background-color: rgba(255, 0, 0, 0.5);"> <!-- No puedo hacer transparente el fonde de la imagen -->
+            FerreAlo</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent"><!-- el ID anterior era : navbarNavAltMarkup -->
+        <div class="navbar-nav mr-auto ml-auto text-center">
+            <a class="nav-link" href="Home.aspx">Home</a>
+            <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
+            <a class="nav-link" href="Info.aspx">Informacion</a>
+        </div>
+        <div>
+            <div class="boton-nav-user">
+                <a href="InicioSesion.aspx" style="color:white; margin-right:30px;"><i class="fas fa-user"></i></a>
+                <a href="CarritoCompra.aspx" style="color:white; margin-right:80px;"><i class="fas fa-shopping-cart"></i></a>   
+            </div>
+        </div>
+    </div>
+    </nav>
 
     <br />
     <br />

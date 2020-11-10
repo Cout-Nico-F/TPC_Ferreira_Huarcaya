@@ -75,7 +75,7 @@
                     <div>
                         <div class="boton-nav-user">
                             <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i></a>
-                            <a href="Login.aspx" style="color: white; margin-right: 80px;"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="CarritoCompra.aspx" style="color: white; margin-right: 80px;"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>

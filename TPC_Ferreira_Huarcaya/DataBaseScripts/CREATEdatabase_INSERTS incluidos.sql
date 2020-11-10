@@ -362,8 +362,8 @@ insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Contacto
 go
 
 /*				Tabla Informacion				*/
-insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion, urlImagen) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso', '../Imagenes/Alonso.jpg' )
-insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion, urlImagen) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas', '../Imagenes/NicolasFerreira.jpg' )
+insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion,urlImagen) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso', '../Imagenes/Alonso.jpg' )
+insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion,urlImagen) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas', '../Imagenes/NicolasFerreira.jpg' )
 go
 
 -- Cambios:
