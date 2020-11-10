@@ -37,22 +37,31 @@
                 <div class="col-md-12 col-md-offset-2">
                     <form id="contact" method="post" class="form" role="form" onsubmit="return validar();">
                         <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input class="form-control" id="nombre" name="name" placeholder="Nombre" type="text" required/>
+                            <div class="col-md-12 form-group">
+                                <asp:TextBox runat="server" ID="txtNombreApellido" Text="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-6 form-group">
-                                <input class="form-control" id="apellido" name="apellido" placeholder="Apellido" type="text" required/>
+                                <asp:TextBox runat="server" ID="txtTelefonoMovil" Text="Telefono Movil" CssClass="form-control"></asp:TextBox>
+                            </div>
+                             <div class="col-md-6 form-group">
+                                <asp:TextBox runat="server" ID="txtTelefonoFijo" Text="Telefono Fijo" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <asp:TextBox runat="server" ID="txtEmail" Text="Correo electronico" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Text="Fecha de Nacimiento" CssClass="form-control"></asp:TextBox><%--datetime porque la variable en el modelo tambien es datetime--%>
                             </div>
                              <div class="col-md-12 form-group">
-                                <input class="form-control" id="NombreUsu" name="NombreUsuario" placeholder="Nombre Usuario" type="text" required/>
+                               <asp:TextBox runat="server" ID="txtNombreUsuario" Text="Nombre Usuario" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-12 form-group">
-                                <input class="form-control" id="contrasenia" name="contrasenia" placeholder="Contraseña" type="text" required/>
+                                <asp:TextBox runat="server" ID="txt_Contrasenia" Text="Contraseña" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <br />
                         <div class="col-md-6 form-group">
-                            <button class="btn btn-primary">Enviar</button>
+                            <asp:Button Text="Crear Cuenta" runat="server" CssClass="btn btn-primary" ID="btn_CrearCuenta" OnClick="btn_CrearCuenta_Click" />
                         </div>
                     </form>
                 </div>

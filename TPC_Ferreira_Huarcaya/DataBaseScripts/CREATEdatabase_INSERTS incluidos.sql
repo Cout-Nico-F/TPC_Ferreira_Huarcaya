@@ -1,5 +1,5 @@
 
-Drop database Ferreira_Huarcaya_DB
+--Drop database Ferreira_Huarcaya_DB
 
 create database Ferreira_Huarcaya_DB
 go
@@ -96,7 +96,7 @@ create table PedidosWebPage (
 	go
 	
 create table Usuarios (
-	ID smallint not null,
+	ID smallint identity(1,1),
 	NombreUsuario varchar(100) not null,
 	Contrasenia varchar(200) not null, --tal vez a modificar a futuro cuando veamos como cifrarla o cuanto ocupa el hash.
 	ID_Nivel smallint not null
@@ -110,7 +110,8 @@ create table Datos_Personales (
 	Email varchar(200) not null,
 	Telefono_Fijo int null,
 	Fecha_Nac date not null,
-	Email_Recuperacion varchar(200) null
+	Email_Recuperacion varchar(200) null,
+	Fecha_Registro date not null
 )
 	go
 	
@@ -265,13 +266,13 @@ insert into Elementos(Descripcion,Costo) values ('Header',10)
 go
 --                                  Tablas No Maestras
 /*				Tabla Usuarios			*/
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (1,'JeremiasI21','Jere123',1)
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (2,'Lorena23','Lore321',1)
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (3,'JazminSR1','Jazz23',1)
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (4,'GabiF','GabFru24',1)
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (5,'AndreaA2','Andreita15',1)
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (6,'AlonsoHS20','AlonsohuarcayaAdmin2',3)
-insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (7,'NicoFerreira1','NicoFerreAdmin1',3)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('JeremiasI21','Jere123',1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('Lorena23','Lore321',1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('JazminSR1','Jazz23',1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('GabiF','GabFru24',1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('AndreaA2','Andreita15',1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('AlonsoHS20','AlonsohuarcayaAdmin2',3)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('NicoFerreira1','NicoFerreAdmin1',3)
 go
 /*				Tabla PedidosWebPage		*/
 insert into PedidosWebPage(ID_Usuario,ID_Categoria) values (1,2)
@@ -280,13 +281,13 @@ insert into PedidosWebPage(ID_Usuario,ID_Categoria) values (3,5)
 insert into PedidosWebPage(ID_Usuario,ID_Categoria) values (4,1)
 go
 /*				Tabla Datos Personales				*/
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (1,'Jeremias Inova','1143726710','JereIno21@hotmail.com','45232234','03/03/1986','JereIno21@hotmail.com')
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (2,'Lorena Menna','1143726710','LoreMe01@hotmail.com','45232234','03/03/1990','JereIno21@hotmail.com')
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (3,'Jazmin Serna','1143726710','JazminSR@hotmail.com','45232234','12/12/2005','JereIno21@hotmail.com')
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (4,'Gabriel Fernandez','114379384','GabrielFe21@hotmail.com','45232234','09/10/2000','JereIno21@hotmail.com')
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (5,'Andrea Ambar','1143726710','AndreaAA@hotmail.com','45232234','01/06/2002','JereIno21@hotmail.com')
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (6,'Alonso Huarcaya','1123390582','AlonsoHS20@hotmail.com','45232234','01/04/1999','JereIno21@hotmail.com')
-insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (1,'Jeremias Inova','1143726710','JereIno21@hotmail.com','45232234','03/03/1986','JereIno21@hotmail.com','01/02/2020')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (2,'Lorena Menna','1143726710','LoreMe01@hotmail.com','45232234','03/03/1990','JereIno21@hotmail.com','07/02/2020')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (3,'Jazmin Serna','1143726710','JazminSR@hotmail.com','45232234','12/12/2005','JereIno21@hotmail.com','01/01/2020')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (4,'Gabriel Fernandez','114379384','GabrielFe21@hotmail.com','45232234','09/10/2000','JereIno21@hotmail.com','01/01/2020')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (5,'Andrea Ambar','1143726710','AndreaAA@hotmail.com','45232234','01/06/2002','JereIno21@hotmail.com','02/06/2020')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (6,'Alonso Huarcaya','1123390582','AlonsoHS20@hotmail.com','45232234','01/04/1999','JereIno21@hotmail.com','03/01/2020')
+insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com','07/05/2019')
 go
 /*				Tabla Disposicion Elementos			*/
 insert into Disposicion_Elementos(Descripcion) values ('Arriba')

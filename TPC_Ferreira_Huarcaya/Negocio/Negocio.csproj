@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearCuentaNegocio.cs" />
     <Compile Include="DropdownsNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
     <Compile Include="InformacionNegocio.cs" />
