@@ -93,7 +93,7 @@ begin
 	begin try
 		begin transaction -- esto es una transaccion quiero que los dos o se ejecuten o no se ejecuten 
 	-- Insertamos un nuevo usuario a la tabla usuarios se crea una nueva ID pero para Datos personales la necesitamos, como hacenos?
-		insert into Usuarios(ID,NombreUsuario,Contrasenia,ID_Nivel) values (@NombreUsuario,@Contrasenia,@ID_Nivel)
+		insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values (@NombreUsuario,@Contrasenia,@ID_Nivel)
 		-- Insertamos datos en datos personales
 		Declare @ID_Usu smallint	
 		Set @ID_Usu = @@IDENTITY -- devuelve el ultimo id generado (nose si es obligatorio que sea Id identity)
@@ -115,3 +115,14 @@ begin
 		RAISERROR('Error al crear el usuario',16,1);
 	end catch
 end
+
+Exec SP_AgregarUsuario
+	@NombreUsuario = 'PruebaNombre01',
+	@Contrasenia = 'contra',
+	@ID_Nivel = 1,
+	@NombreApellido = 'Prueba Nombre',
+	@TelefonoMovil = '12233332',
+	@Email = 'prueba@hotmail.com',
+	@TelefonoFijo = '4810292',
+	@FechaNacimiento = '05/01/2020', 
+	@EmailRecuperacion = 'prueba@hotmail.com'
