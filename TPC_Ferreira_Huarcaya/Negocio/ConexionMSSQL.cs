@@ -42,8 +42,7 @@ namespace Negocios
         {
             Conectar();
             SetConsulta(consulta);
-            SqlDataReader lectura = Leer();
-            return lectura;
+            return Leer();
         }
 
         public void SetStoredProcedure(string storedProcedureQuery)
