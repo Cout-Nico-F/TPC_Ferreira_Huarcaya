@@ -126,6 +126,8 @@
     <Content Include="CSS\Estilos_Personalizar.css" />
     <Content Include="CSS\Estilos_Sesion.css" />
     <Content Include="CSS\Home.css" />
+    <Content Include="Imagenes\Alonso.jpg" />
+    <Content Include="Imagenes\NicolasFerreira.jpg" />
     <Content Include="Templates Prefabricados\Template_05\css\shop-homepage.css" />
     <Content Include="Templates Prefabricados\Template_05\gulpfile.js" />
     <Content Include="Templates Prefabricados\Template_05\index.html" />
@@ -2270,9 +2272,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imagenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{287c029d-dbfd-4f6c-ae8f-388465af5039}</Project>

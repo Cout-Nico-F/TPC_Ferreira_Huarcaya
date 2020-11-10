@@ -137,6 +137,7 @@ create table InfoWeb (
 	ID_Nivel smallint not null,
 	NombreApellido varchar(200) not null,
 	Descripcion varchar(200) not null,
+	urlImagen varchar(200) not null
 )
 
 
@@ -361,8 +362,8 @@ insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Contacto
 go
 
 /*				Tabla Informacion				*/
-insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso')
-insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas')
+insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion, urlImagen) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso', '../Imagenes/Alonso.jpg' )
+insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion, urlImagen) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas', '../Imagenes/NicolasFerreira.jpg' )
 go
 
 -- Cambios:
