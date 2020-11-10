@@ -16,34 +16,6 @@
 
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- Aca va una foto tuya Nico -->
-                            <img src="../Imagenes/user.png" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
-                            <h3>Nicolas Ferreira</h3>
-                            <h5>Tec.Univ en Programacion</h5>
-                            <!--Queda vacia para que agregues una descripcion breve de lo quieras -->
-                            <p></p>
-                            <div class="d-flex flex-row justify-content-center">
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                                 <div class="p-4">
-                                     <!--Opcional -->
-                                    <a href="#">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <%
                     foreach (Modelo.InfoWeb item in listaInfo)
@@ -55,7 +27,7 @@
                     <div class="card">
                         <div class="card-body">
                             <!--Se que no es la mejor foto pero es la unica que tengo -->
-                            <img src="<%=item.UrlImagen %>" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
+                            <img src="<%=item.UrlImagen%>" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
                             <h3><%=item.NombreApellido %></h3>
                             <h5>Tec.Univ en Programacion</h5>
                             <!-- No se que poner -->
