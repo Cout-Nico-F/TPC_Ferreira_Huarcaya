@@ -17,7 +17,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
             <style>
                 body
                 {
@@ -61,7 +60,7 @@
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
                 <a class="navbar-brand" href="#">
-                    <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="Imagen Carrito Compra" loading="lazy" style="background-color: rgba(255, 0, 0, 0.5);">
+                    <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="Imagen Carrito Compra" loading="lazy" style="background-color: rgba(255, 0, 0, 0.5);"/>
                     FerreAlo</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -97,11 +96,11 @@
                             <form class="col-12">
                                 <div class="form-group">
                                     <!-- <input id="email" type="email" class="form-control" placeholder="Correo Electronico" required /> -->
-                                    <asp:TextBox runat="server" ID="txtNombreUsuario" Text="NombreUsuario" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="NombreUsuario" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <!-- <input id="password" type="password" class="form-control" placeholder="Contraseña" required /> -->
-                                    <asp:TextBox runat="server" ID="txtPass" Text="Contraseña" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtPass" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button> -->
                                 <!-- <i class="fas fa-sign-in-alt"></i>  No puedo hacer que el icono este dentro de el boton quizas con grid o flexbox puede ser -->
