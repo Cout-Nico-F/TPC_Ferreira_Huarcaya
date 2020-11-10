@@ -26,6 +26,7 @@ namespace Negocio
                 aux.ID_Nivel = lectura.GetInt16(1);
                 aux.NombreApellido = lectura.GetString(2);
                 aux.Descripcion = lectura.GetString(3);
+                aux.UrlImagen = lectura.GetString(4);
 
                 listaInfo.Add(aux);
 
