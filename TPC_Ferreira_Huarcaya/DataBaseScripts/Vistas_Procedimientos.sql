@@ -1,65 +1,9 @@
 
 Use Ferreira_Huarcaya_DB
+go
+-- VISTAS
 
--- Vistas
-
--- Procedimientos Almacenados
-
-/*Buscador de usuarios*/
--- Podria ser una vista tambien
-
-/*Agregar Usuarios*/
-
-/*create procedure SP_AgregarUsuario(
-	 @NombreUsuario varchar(100),
-	 @Contrasenia varchar(200)
-)
-as
-begin
-	insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values (@NombreUsuario,@Contrasenia,1); 
-end
--- El 1 es porque estoy agregando un usuario normal */
-
-/*Agregar admin*/
-
-create procedure SP_AgregarAdmin(
-	 @NombreUsuario varchar(100),
-	 @Contrasenia varchar(200)
-)
-as
-begin
-	insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values (@NombreUsuario,@Contrasenia,3); 
-end
-
-/*Agregar gente staff*/
-
-create procedure SP_AgregarStaff(
-	 @NombreUsuario varchar(100),
-	 @Contrasenia varchar(200)
-)
-as
-begin
-	insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values (@NombreUsuario,@Contrasenia,2); 
-end
-
-/*Modificar Datos Personales*/
-
-create procedure SP_ModificarDatos(
-	@Id_Usuario smallint,
-	@Nombre_Y_Apellido varchar(200),
-	@telefono_Movil int,
-	@Email varchar(200),
-	@Telefono_Fijo int,
-	@Fecha_Nac date,
-	@Email_Recuperacion varchar(200)
-)
-as
-begin
-	insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion) values (@Id_Usuario,@Nombre_Y_Apellido,@telefono_Movil,@Email,@Telefono_Fijo,@Fecha_Nac,@Email_Recuperacion)
-end
--- Deberia ser quizas un trigger que vea si algunos campos son nulos porque por ejemplo el telefono fijo es opcional o sea que puede ser null
-
-
+-- PROCEDIMIENTOS ALMACENADOS
 
 
 /*		Crear cuenta a nuevo Usuario			*/
@@ -69,7 +13,7 @@ create procedure SP_CrearUsuario( -- Podriamos agregar tambien una fecha de regi
 		@NombreUsuario varchar(200),
 		@Contrasenia varchar(200),
 		@ID_Nivel smallint,
-		@NombreApellido smallint,
+		@NombreApellido varchar(200),
 		@TelefonoMovil int,
 		@Email varchar(200),
 		@TelefonoFijo int,
@@ -103,6 +47,8 @@ begin
 		RAISERROR('Error al crear el usuario',16,1);
 	end catch
 end
+go
+/*		Datos de Prueba para SP_CrearUsuario		*/
 
 Exec SP_CrearUsuario
 	@NombreUsuario = 'PruebaNombre01',
@@ -115,20 +61,73 @@ Exec SP_CrearUsuario
 	@FechaNacimiento = '05/01/2020', 
 	@EmailRecuperacion = 'prueba@hotmail.com'
 
-create procedure SP_BuscarUsuario(
-	@ID_Usuario smallint
+go
+/*	 Select para verificar si se ingreso un usuario Correctamente    */
+
+Select * From Usuarios 
+go
+/*		Observaciones	*/
+
+/*
+ 1 - Tenemos que hacer que no se puedan ingresar los mismo datos nuevamente, una forma que se me ocurre es que el Email tenga el atributo Unique
+ 2 - Quizas sacar el ID_Nivel porque en realidad cuando en el back de aplicacion tengo que mandar un ID_Nivel siempre mando 1 porque no tengo como saber si el que va a crear una cuenta es un cliente
+	 o admin o parte del staff
+*/
+
+create procedure SP_EditarDatosPersonales(
+		@id_Usuario smallint,
+		@NombreUsuario varchar(200),
+		@Contrasenia varchar(200),
+		@ID_Nivel smallint,
+		@NombreApellido varchar(200),
+		@TelefonoMovil int,
+		@Email varchar(200),
+		@TelefonoFijo int,
+		@FechaNacimiento date,
+		@EmailRecuperacion varchar(200),
+		@FechaRegistro date
 )
 as
-begin
+begin	
 		begin try
-			Select ID From Usuarios Where ID = @ID_Usuario
+			begin transaction -- para que se ejecute como un bloque si tira error alguno de los 2 update que me mande al catch
+				update Usuarios set  NombreUsuario = @NombreUsuario,Contrasenia = @Contrasenia,ID_Nivel = @ID_Nivel Where ID = @id_Usuario;
+				update Datos_Personales set Nombre_Y_Apellido = @NombreApellido, Telefono_Movil = @TelefonoMovil, Email = @Email,Telefono_Fijo = @TelefonoFijo, Fecha_Nac = @FechaNacimiento,Email_Recuperacion = @EmailRecuperacion,Fecha_Registro = @FechaRegistro where ID_Usuario = @id_Usuario;
+			commit transaction
 		end try
 		begin catch
-			Rollback transaction -- la base de datos vuelve a como estaba en caso que no no se haya podido insertar los datos 
-	-- Mensaje de error , severidad (int) > 16, estado (int) podemos usarlo en la aplicacion
-		RAISERROR('Error usuario no encontrado',16,2);
+			Rollback transaction
+			RAISERROR('Error al editar los datos',16,2);
 		end catch
 end
+go
+/*		Datos de prueba para SP_EditarDatosPersonales		*/
+Exec SP_EditarDatosPersonales
+	@id_Usuario = 8,
+	@NombreUsuario = 'PruebaCambio',
+	@Contrasenia = 'contraCambiada',
+	@ID_Nivel = 1,
+	@NombreApellido = 'Prueba Nombre',
+	@TelefonoMovil = '12233332',
+	@Email = 'prueba@hotmail.com',
+	@TelefonoFijo = '4810292',
+	@FechaNacimiento = '05/01/2020', 
+	@EmailRecuperacion = 'pruebaCambio@hotmail.com',
+	@FechaRegistro = '11/11/2020'
 
-exec SP_BuscarUsuario 
-	@ID_Usuario = 8
+/*	 Select para verificar si se ingreso un usuario Correctamente    */
+go
+Select * from Usuarios
+go
+Select * From Datos_Personales
+go
+
+/*		Observaciones		*/
+
+/*		
+1 - la idea es tener a los usuarios en un list antes y despues buscar coincidencias y si coinciden hace un update de la tabla, recibe un id porque si recibe cualquier otro dato que es modificable 
+	no me sirve para buscar coincidencia porque puede que no haya ninguna.
+2 - Nose si tira error en caso de que yo no le envie todos los datos en el set de update, tengo que probarlo por ahora recibe todos los datos, en caso de que no se pueda Fecha registro no va a ser modificable por el
+	 usuario asi como se creo se envia de nuevo el date.
+3 - Me sigue haciendo ruido el ID_Nivel el usuario no va a poder cambiar su id por uno de admin por ejemplo ( ID = 3 ) pero la tabla Usuario necesita un ID, cuando se crea la cuenta ya tiene el ID_Nivel = 1
+	entonces no va a poder cambiarlo a a mandarse el mismo numero de ID.

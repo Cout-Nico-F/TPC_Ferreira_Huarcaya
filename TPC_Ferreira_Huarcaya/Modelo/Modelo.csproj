@@ -51,6 +51,7 @@
     <Compile Include="Estilo.cs" />
     <Compile Include="Funcionalidad.cs" />
     <Compile Include="InfoWeb.cs" />
+    <Compile Include="NivelesDeAcceso.cs" />
     <Compile Include="Pagina.cs" />
     <Compile Include="PaginaWeb.cs" />
     <Compile Include="PedidoWebPage.cs" />
