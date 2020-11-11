@@ -25,7 +25,7 @@ namespace WebForms.ASPX
 
             using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
             {
-                using (SqlCommand cmd = new SqlCommand("Exec SP_CrearUsuario", sql))
+                using (SqlCommand cmd = new SqlCommand("SP_CrearUsuario", sql))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@NombreUsuario", txtNombreUsuario.Text));
@@ -41,6 +41,12 @@ namespace WebForms.ASPX
                     cmd.ExecuteNonQuery();
                 }
             }
+
+            /*Funcionnaaaaa te dejo a vos pasarlo a una funcion jaja
+             faltan las validaciones de cada textbox y validaciones en la base de datos
+            ademas que cuando aprete el boton se borren los datos pero eso es un clear para cada txt (creo)
+             */
+
 
 
         }
