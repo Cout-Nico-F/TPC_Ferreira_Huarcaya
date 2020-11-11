@@ -11,13 +11,10 @@ namespace Modelo
     {
         //public Int16 IdUsuario { get; set; } la tabla usuario ahora es identity el id
 
-        public string Nombre { get; set; }
-
-        public string Apellido { get; set; }
-
         public string NombreUsuario { get; set; }
 
-        public string Contraseña { get; set; }
+        public string Contrasenia { get; set; }
+        public NivelesDeAcceso Nivel { get; set; }
 
     }
 }

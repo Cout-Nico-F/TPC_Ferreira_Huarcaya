@@ -76,12 +76,12 @@ end
 
 /*		Crear cuenta a nuevo Usuario			*/
 
-create procedure SP_AgregarUsuario( -- Podriamos agregar tambien una fecha de registracion es un getdate()
+create procedure SP_CrearUsuario( -- Podriamos agregar tambien una fecha de registracion es un getdate()
 		--@ID smallint, -- Usuarios no deberia ser identity?? ya lo cambie 
 		@NombreUsuario varchar(200),
 		@Contrasenia varchar(200),
 		@ID_Nivel smallint,
-		@NombreApellido smallint,
+		@NombreApellido varchar(200),
 		@TelefonoMovil int,
 		@Email varchar(200),
 		@TelefonoFijo int,
@@ -116,7 +116,7 @@ begin
 	end catch
 end
 
-Exec SP_AgregarUsuario
+Exec SP_CrearUsuario
 	@NombreUsuario = 'PruebaNombre01',
 	@Contrasenia = 'contra',
 	@ID_Nivel = 1,
@@ -126,3 +126,4 @@ Exec SP_AgregarUsuario
 	@TelefonoFijo = '4810292',
 	@FechaNacimiento = '05/01/2020', 
 	@EmailRecuperacion = 'prueba@hotmail.com'
+-- Tenemos que hacer un check para que no se repita los mail o hacer que mail sea unique

@@ -20,17 +20,31 @@ namespace WebForms.ASPX
 
         protected void btn_CrearCuenta_Click(object sender, EventArgs e)
         {
-            /*DatosPersonales datPer = new DatosPersonales();
-            Usuario usu = new Usuario();
 
-            datPer.NombreApellido = txtNombreApellido.Text;
-            datPer.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
-            datPer.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-            datPer.Email = txtEmail.Text;
-            datPer.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil);
-            //falta el email recuperacion no lo puse a proposito*/
-            
+            Usuario usuario = new Usuario();
+            DatosPersonales datos = new DatosPersonales();
+            CrearCuentaNegocio crear = new CrearCuentaNegocio();
 
+            usuario.NombreUsuario = txtNombreUsuario.Text;
+            usuario.Contrasenia = txt_Contrasenia.Text;
+            usuario.Nivel.ID = 1;
+            datos.NombreApellido = txtNombreApellido.Text;
+            datos.TelefonoMovil = txtTelefonoMovil.Text;
+            datos.Email = txtEmail.Text;
+            datos.TelefonoFijo = txtTelefonoFijo.Text;
+            datos.FechaNacimiento = txtFechaNacimiento.Text;
+            datos.EmailRecuperacion = " "; //lo envio vacio
+
+            int NumValidacion = crear.CrearCuenta(usuario, datos);
+
+           if(NumValidacion != 1)
+            {
+                //aca va codigo
+            }
+            else
+            {
+                Response.Redirect("Error.aspx");
+            }
 
         }
     }
