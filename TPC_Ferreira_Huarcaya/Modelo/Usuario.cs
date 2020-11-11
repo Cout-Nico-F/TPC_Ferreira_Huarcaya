@@ -17,7 +17,7 @@ namespace Modelo
 
         public string NombreUsuario { get; set; }
 
-        public string Contraseña { get; set; }
+        public string Contrasenia { get; set; }
 
     }
 }

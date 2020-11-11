@@ -30,7 +30,7 @@ namespace Negocio
             {
                 Usuario aux = new Usuario();
                 aux.NombreUsuario = lectura.GetString(0);
-                aux.Contraseña = lectura.GetString(1);
+                aux.Contrasenia = lectura.GetString(1);
 
                 listaUsuarios.Add(aux);
             }

@@ -26,7 +26,7 @@ namespace WebForms.ASPX
 
 
             usu.NombreUsuario = txtNombreUsuario.Text;
-            usu.Contraseña = txtPass.Text;
+            usu.Contrasenia = txtPass.Text;
 
             // podria enviarle los dos string 
 
