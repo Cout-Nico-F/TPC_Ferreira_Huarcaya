@@ -10,87 +10,19 @@
      <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- Estilos CSS -->
-    <link href="Estilos_Personalizar.css" rel="stylesheet" />
+    <link href="../CSS/Estilos_Personalizar.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
 
     <title>Personalizacion de Paginas</title>
 
 </head>
-
 <body>
-    
-    <style>
-        :root{
-            --color:#808080;
-        }
-        body{
-            overflow: hidden;
-            font-weight: 300;
-            color:var(--color);
-        }
 
-        #sidebar-container{
-            min-height: 300vh;
-        }
-
-        .bg-primary {background-color: var(--color) !important} /*Se que important no se usa*/
-
-        .logo{
-            color:white;
-            text-align:center;
-            font-weight:bold;
-            font-size:50px;
-            font-family: 'Anton', sans-serif;
-
-        }
-        #sidebar-container .menu{
-            width: 20rem;
-        }
-        .a-dropdown{
-            padding:10px;
-            margin-top: 200px;
-        }
-        .b-dropdown{
-           padding:10px;
-           margin-top:20px;
-        }
-        .text-light{
-            font-weight:bold;
-            font-size:30px;
-            margin-left:20px;
-            color:white;
-        }
-        .tam-func{
-            padding-left:57px;
-        }
-         .tam-pag{
-            padding-left:115px;
-        }
-        .tam-sec{
-           padding-left:182px;
-        }
-        .tam-ele{
-            padding-left:186px;
-        }
-        .tam-disp{
-            padding-left:120px;
-        }
-        .tam-est{
-            padding-left:152px;
-        }
-        .tam-cat{
-            padding-left:195px;
-        }
-        .tam-col{
-            padding-left:222px;
-        }
-
-    </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
             <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" style="background-color: rgba(255, 0, 0, 0.5);">
-            <!-- No puedo hacer transparente el fonde de la imagen -->
+            <!-- No puedo hacer transparente el fonde de la imagen // Es porque el formato es png y ese formato no admite transparencias. necesita ser jpg-->
             FerreAlo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

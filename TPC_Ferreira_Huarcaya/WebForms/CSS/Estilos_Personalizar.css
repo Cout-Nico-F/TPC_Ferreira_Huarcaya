@@ -1,1 +1,80 @@
 ﻿
+:root {
+    --color: #808080;
+}
+
+body {
+    overflow: hidden;
+    font-weight: 300;
+    color: var(--color);
+}
+
+#sidebar-container {
+    min-height: 300vh;
+}
+
+.bg-primary {
+    background-color: var(--color) !important
+}
+/*Se que important no se usa*/
+
+.logo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: 'Anton', sans-serif;
+}
+
+#sidebar-container .menu {
+    width: 20rem;
+}
+
+.a-dropdown {
+    padding: 10px;
+    margin-top: 200px;
+}
+
+.b-dropdown {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.text-light {
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 20px;
+    color: white;
+}
+
+.tam-func {
+    padding-left: 57px;
+}
+
+.tam-pag {
+    padding-left: 115px;
+}
+
+.tam-sec {
+    padding-left: 182px;
+}
+
+.tam-ele {
+    padding-left: 186px;
+}
+
+.tam-disp {
+    padding-left: 120px;
+}
+
+.tam-est {
+    padding-left: 152px;
+}
+
+.tam-cat {
+    padding-left: 195px;
+}
+
+.tam-col {
+    padding-left: 222px;
+}
