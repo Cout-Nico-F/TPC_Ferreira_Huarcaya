@@ -56,33 +56,39 @@
                     <br />
                 </div>
                 <div class="col-md-12 col-md-offset-2">
-                    <form id="contact" method="post" class="form" role="form" onsubmit="return validar();">
+                    <form id="contact" method="post" class="form" role="form" ">
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <asp:TextBox runat="server" ID="txtNombreApellido" Text="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtNombreApellido" Placeholder="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtTelefonoMovil" Text="Telefono Movil" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtTelefonoMovil" Placeholder="Telefono Movil (opcional)" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtTelefonoFijo" Text="Telefono Fijo" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtTelefonoFijo" Placeholder="Telefono Fijo (opcional)" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtEmail" Text="Correo electronico" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtEmail" Placeholder="Correo electronico" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Text="Fecha de Nacimiento" CssClass="form-control"></asp:TextBox><%--datetime porque la variable en el modelo tambien es datetime--%>
+                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control"></asp:TextBox><%--datetime porque la variable en el modelo tambien es datetime--%>
                             </div>
                              <div class="col-md-12 form-group">
-                               <asp:TextBox runat="server" ID="txtNombreUsuario" Text="Nombre Usuario" CssClass="form-control"></asp:TextBox>
+                               <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-12 form-group">
-                                <asp:TextBox runat="server" ID="txt_Contrasenia" Text="Contraseña" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_Contrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
+                            </div>
+                             <div class="col-md-12 form-group">
+                                <asp:TextBox runat="server" ID="txtEmailRecuperacion" Placeholder="Email para recuperacion de cuenta(opcional)" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <br />
                         <div class="col-md-6 form-group">
                             <asp:Button Text="Crear Cuenta" runat="server" CssClass="btn btn-primary" ID="btn_CrearCuenta" OnClick="btn_CrearCuenta_Click" />
+                        </div>
+                        <div>
+                            <asp:Label Text="" runat="server" ID="lbl_texto"/>
                         </div>
                     </form>
                 </div>
