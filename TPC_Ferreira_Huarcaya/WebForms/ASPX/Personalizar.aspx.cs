@@ -80,7 +80,7 @@ namespace WebForms.ASPX
             ddl_Secciones.DataBind();
             ddl_Secciones.Items.Insert(0, new ListItem("[Secciones]", "0"));
 
-
+            /*Cada dropdown deberia servir como filtro para que muestre una vista previa (imagen) de un template que cumpla con los criterios que selecciones el cliente*/
 
 
             /*

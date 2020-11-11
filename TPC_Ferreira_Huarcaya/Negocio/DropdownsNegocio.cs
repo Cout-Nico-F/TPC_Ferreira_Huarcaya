@@ -12,7 +12,7 @@ namespace Negocio
 {
     public class DropdownsNegocio
     { 
-        public List<Color> ListarColores(string consultaSQL)
+       /* public List<Color> ListarColores(string consultaSQL)
         {
             ConexionMSSQL conexionMSSQL = new ConexionMSSQL();
 
@@ -32,7 +32,8 @@ namespace Negocio
             }
             conexionMSSQL.Desconectar();
             return lista;
-        }
+        }*/ 
+       /*No estamos usando esta list*/
 
         /// <summary>
         /// Consulta la base de datos y devuelve un dataset con el resultado de la consulta para ser utilizado en dropdowns u otros controles que utilizen dataset
