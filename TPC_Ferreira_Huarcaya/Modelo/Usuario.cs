@@ -19,5 +19,6 @@ namespace Modelo
 
         public string Contrasenia { get; set; }
 
+        public NivelAcceso NivelAcceso { get; set; }
     }
 }

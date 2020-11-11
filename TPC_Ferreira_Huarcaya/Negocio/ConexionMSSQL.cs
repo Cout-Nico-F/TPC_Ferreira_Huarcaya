@@ -51,7 +51,7 @@ namespace Negocios
             Command.CommandText = storedProcedureQuery;
         }
 
-        public void AgregarParametro(string clave, string valor)
+        public void AgregarParametro(string clave, string valor) /*no tiene que ser el valor de tipo string tiene que aceptar todos los tipos de la clase modelo*/
         {
             Command.Parameters.AddWithValue(clave, valor);
         }
