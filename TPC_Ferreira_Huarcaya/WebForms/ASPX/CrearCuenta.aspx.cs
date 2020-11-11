@@ -1,5 +1,6 @@
 ﻿using Modelo;
 using Negocio;
+using System.Threading;
 using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
+            lbl_texto.Visible = false;
 
         }
 
@@ -30,36 +31,33 @@ namespace WebForms.ASPX
 
                 user.NombreUsuario = txtNombreUsuario.Text;
                 user.Contrasenia = txt_Contrasenia.Text;
-                user.NivelAcceso.ID = 1;
+                user.id_Acceso = 1;
                 dat.NombreApellido = txtNombreApellido.Text;
-                dat.TelefonoMovil = txtTelefonoMovil.Text;
+                dat.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
                 dat.Email = txtEmail.Text;
-                dat.TelefonoFijo = txtTelefonoFijo.Text;
-                dat.FechaNacimiento = txtFechaNacimiento.Text;
+                dat.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
+                dat.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
                 dat.EmailRecuperacion = txtEmailRecuperacion.Text;
 
-                lbl_texto.Visible = false;
-
-                switch(cuentaNeg.Validaciones(user, dat))
+                switch (cuentaNeg.Validaciones(user, dat))
                 {
                     case 1:
                         {
                             cuentaNeg.CrearCuenta(user, dat);
+                            lbl_texto.Text = "Usuario creado correctamente";
+                            lbl_texto.Visible = true;
+                            Thread.Sleep(5000);
+                            Response.Redirect("CrearCuenta.aspx");
                         }
                         break;
                     case 2:
                         {
-                            lbl_texto.Text = "Debe llenar todos los campos";
                             lbl_texto.Visible = true;
-                        }break;
+                            lbl_texto.Text = "Debe llenar todos los campos";
+                            
+                        }
+                        break;
                 }
-              
-                   
-            
-                
-                    
-                
-
                 
 
                 /*using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
