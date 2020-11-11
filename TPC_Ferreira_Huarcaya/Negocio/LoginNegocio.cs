@@ -1,41 +1,45 @@
 ﻿using Modelo;
+using Negocios;
 using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Negocios;
 using System.Runtime.Remoting.Messaging;
+using System.Data;
 
 namespace Negocio
 {
     public class LoginNegocio
     {
-        public List<Usuario> login()
+        public int login(Usuario user)
         {
-            // recibo un usuario y devuelvo una lista para en el back de asp buscar la coincidadencia es mas engorroso asi pero debe funcionar
-            ConexionMSSQL conexion = new ConexionMSSQL();
 
-            List<Usuario> listaUsuarios = new List<Usuario>();
-
-            conexion.Conectar();
-            string consulta = "Select NombreUsuario,Contrasenia From Usuarios";
-
-            conexion.SetConsulta(consulta);
-
-            SqlDataReader lectura = conexion.Leer();
-
-            while (lectura.Read())
+            // set up connection and command 
+            using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
             {
-                Usuario aux = new Usuario();
-                aux.NombreUsuario = lectura.GetString(0);
-                aux.Contrasenia = lectura.GetString(1);
+                using (SqlCommand cmd = new SqlCommand("SP_ExisteUsuario", sql))
+                {
+                    // define command to be stored procedure 
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                listaUsuarios.Add(aux);
+                    // add parameter 
+                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario",user.NombreUsuario));
+                    cmd.Parameters.Add(new SqlParameter("@Contrasenia", user.Contrasenia));
+
+                    // open connection, execute command, close connection 
+                    sql.Open();
+                    int result = (int)cmd.ExecuteScalar();
+                    sql.Close();
+
+                    return result;
+                }
             }
-            conexion.Desconectar();
-            return listaUsuarios;
+            
+            
+
+
 
         }
     }

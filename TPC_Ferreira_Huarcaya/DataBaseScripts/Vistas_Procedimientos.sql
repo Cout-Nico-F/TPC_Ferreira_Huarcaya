@@ -129,3 +129,20 @@ go
 
 */
 
+create procedure SP_ExisteUsuario(
+	 @NombreUsuario varchar(200),
+	 @Contrasenia varchar(200)
+)
+as
+begin
+	If Exists (Select NombreUsuario,Contrasenia From Usuarios Where NombreUsuario = @NombreUsuario and Contrasenia = @Contrasenia)
+	select 1
+	else
+	select 0
+end
+
+Exec SP_ExisteUsuario
+	@NombreUsuario = 'JeremiasI21',
+	@Contrasenia = 'Jere123'
+
+Select * From Usuarios

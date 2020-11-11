@@ -19,49 +19,30 @@ namespace WebForms.ASPX
 
         protected void btn_Ingresar_Click(object sender, EventArgs e)
         {
-            List<Usuario> user = new List<Usuario>();
-            Usuario usu = new Usuario();
-
             LoginNegocio logNeg = new LoginNegocio();
+            Usuario user = new Usuario();
 
+            //aca deberia haber un metodo de validadicones
 
-            usu.NombreUsuario = txtNombreUsuario.Text;
-            usu.Contrasenia = txtPass.Text;
+            user.NombreUsuario = txtNombreUsuario.Text;
+            user.Contrasenia = txtPass.Text;
 
-            // podria enviarle los dos string 
+            int existe = logNeg.login(user);
 
-            user = logNeg.login(); // se supone que trae la lista completa de usuarios
-
-            //bool UsuarioExiste = BuscarUsuario(user,usu);// le envio la lista de usuarios y la variable usuario para comparar
-
-           /* if (UsuarioExiste)//funciona igual que c++ no? siempre es true
+            if(existe == 1)
             {
-                //codigo para usuario encontrado
                 Response.Redirect("Catalogo.aspx");
             }
             else
             {
-                //codigo para usuario no encontrado
                 Response.Redirect("Error.aspx");
-            }*/
-
-            
-        }
-        //private bool BuscarUsuario(List<Usuario>listaUsuario,Usuario usuario)
-        //{
-           /* foreach(var item in listaUsuario)
-            {
-                if(item.IdUsuario != 0 && txtNombreUsuario.Text == usuario.NombreUsuario && usuario.Contraseña == txtPass.Text)
-                {
-                    return true;
-                }
             }
-            return false;
-        }
+            /*
+             Podes probar con 
+            Nombre U: JeremiasI21
+            Contra : Jere123
+             */
 
-        private void Validaciones()
-        {
-            
-        }*/
+        }
     }
 }
