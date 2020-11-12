@@ -29,5 +29,15 @@ namespace WebForms.ASPX
             ddl_Funcionalidades.DataBind();
             ddl_Funcionalidades.Items.Insert(0, new ListItem("[Funcionalidades]", "0"));
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+            string func = ddl_Funcionalidades.SelectedValue;
+
+
+
+            Session["listaObjetos"] = func;
+        }
     }
 }

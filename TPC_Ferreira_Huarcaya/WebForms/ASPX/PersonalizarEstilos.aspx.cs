@@ -30,5 +30,18 @@ namespace WebForms.ASPX
             ddl_Estilos.Items.Insert(0, new ListItem("[Estilos]", "0"));
         }
 
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+            string est = ddl_Estilos.SelectedValue;
+
+            Session["listaObjetos"] = est;
+        }
+
+        protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string est = ddl_Estilos.SelectedValue;
+            BuscarImagen(est);
+        }
     }
 }

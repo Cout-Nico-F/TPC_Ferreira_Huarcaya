@@ -43,8 +43,8 @@
         <div style="text-align:center">
             <h1>Estilos</h1>
             <p>Elija un estilo para su Web</p>
-            <asp:DropDownList runat="server" ID="ddl_Estilos"></asp:DropDownList>
-            <a href="PersonalizarFuncionalidades.aspx">Seguir</a>
+            <asp:DropDownList runat="server" ID="ddl_Estilos" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
+            <asp:Button Text="Seguir" runat="server" Onclick="Unnamed_Click"/>
         </div>
     </form>
 </body>

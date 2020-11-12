@@ -44,7 +44,7 @@
             <h1>Funcionalidades</h1>
             <p>Elija un o mas funcionalidades para su Web</p>
             <asp:DropDownList runat="server" ID="ddl_Funcionalidades"></asp:DropDownList>
-             <a href="#">ConfirmarPedido</a>
+             <asp:Button Text="Terminar Pedido" runat="server" OnClick="Unnamed_Click"/>
         </div>
     </form>
 </body>

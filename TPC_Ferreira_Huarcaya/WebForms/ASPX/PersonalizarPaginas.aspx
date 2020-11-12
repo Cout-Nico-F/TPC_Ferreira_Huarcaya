@@ -44,12 +44,14 @@
             <h1>Paginas</h1>
             <p>Elija las paginas que conformaran su Web</p>
             <asp:DropDownList runat="server" ID="ddl_Paginas"></asp:DropDownList>
-            <a href="PersonalizarEstilos.aspx">Seguir</a>
+            <asp:Button Text="Seguir" runat="server" OnClick="Unnamed_Click"/>
         </div>
     </form>
 </body>
 </html>
-relacion colores
-colores x relacioncolores
-colores
-categorias
+<!-- Tablas que borre de la base de datos
+    relacion colores
+    colores x relacioncolores
+    colores
+    categorias
+    disposicion elementos -->

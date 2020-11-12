@@ -29,5 +29,17 @@ namespace WebForms.ASPX
             ddl_Paginas.DataBind();
             ddl_Paginas.Items.Insert(0, new ListItem("[Pagina]", "0"));
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+
+            string pag = ddl_Paginas.SelectedValue;
+
+            BuscarImagen(pag);
+
+            Session["listaObjetos"] = pag;
+
+        }
     }
 }
