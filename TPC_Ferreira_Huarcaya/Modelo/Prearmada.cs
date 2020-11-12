@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Estilo
+    public class Prearmada
     {
         public Int16 Id { get; set; }
 
         public string Descripcion { get; set; }
 
+        public string Titulo { get; set; }
+
+        public int Precio { get; set; }
+
+        public int LinkURL { get; set; }
     }
 }
