@@ -19,6 +19,6 @@ namespace Modelo
 
         public string Contrasenia { get; set; }
 
-        public Int16 id_Acceso { get; set; }
+        public Int16 Id_Acceso { get; set; }
     }
 }

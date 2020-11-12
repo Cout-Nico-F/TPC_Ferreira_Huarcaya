@@ -22,7 +22,7 @@ namespace Negocio
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@NombreUsuario",user.NombreUsuario));
                     cmd.Parameters.Add(new SqlParameter("@Contrasenia", user.Contrasenia));
-                    cmd.Parameters.Add(new SqlParameter("@ID_Nivel", user.id_Acceso));
+                    cmd.Parameters.Add(new SqlParameter("@ID_Nivel", user.Id_Acceso));
                     cmd.Parameters.Add(new SqlParameter("@NombreApellido", dat.NombreApellido));
                     cmd.Parameters.Add(new SqlParameter("@TelefonoMovil", dat.TelefonoMovil));
                     cmd.Parameters.Add(new SqlParameter("@Email", dat.Email));

@@ -31,7 +31,7 @@ namespace WebForms.ASPX
 
                 user.NombreUsuario = txtNombreUsuario.Text;
                 user.Contrasenia = txt_Contrasenia.Text;
-                user.id_Acceso = 1;
+                user.Id_Acceso = 1;
                 dat.NombreApellido = txtNombreApellido.Text;
                 dat.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
                 dat.Email = txtEmail.Text;
