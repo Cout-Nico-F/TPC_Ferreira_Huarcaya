@@ -76,6 +76,9 @@
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\Personalizar.aspx" />
+    <Content Include="ASPX\PersonalizarEstilos.aspx" />
+    <Content Include="ASPX\PersonalizarFuncionalidades.aspx" />
+    <Content Include="ASPX\PersonalizarPaginas.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
     <Content Include="ASPX\WebPages.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -1991,6 +1994,27 @@
     </Compile>
     <Compile Include="ASPX\Personalizar.aspx.designer.cs">
       <DependentUpon>Personalizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PersonalizarEstilos.aspx.cs">
+      <DependentUpon>PersonalizarEstilos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\PersonalizarEstilos.aspx.designer.cs">
+      <DependentUpon>PersonalizarEstilos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PersonalizarFuncionalidades.aspx.cs">
+      <DependentUpon>PersonalizarFuncionalidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\PersonalizarFuncionalidades.aspx.designer.cs">
+      <DependentUpon>PersonalizarFuncionalidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PersonalizarPaginas.aspx.cs">
+      <DependentUpon>PersonalizarPaginas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\PersonalizarPaginas.aspx.designer.cs">
+      <DependentUpon>PersonalizarPaginas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\RecuperarContaseña.aspx.cs">
       <DependentUpon>RecuperarContaseña.aspx</DependentUpon>

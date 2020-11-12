@@ -11,29 +11,6 @@ namespace Negocio
 {
     public class DropdownsNegocio
     { 
-       /* public List<Color> ListarColores(string consultaSQL)
-        {
-            ConexionMSSQL conexionMSSQL = new ConexionMSSQL();
-
-            List<Color> lista = new List<Color>();
-            conexionMSSQL.Conectar();
-            conexionMSSQL.SetConsulta(consultaSQL);
-
-            SqlDataReader lector = conexionMSSQL.Leer();
-
-            while(lector.Read())
-            {
-                Color aux = new Color();
-                aux.Id = lector.GetInt16(0);
-                aux.Descripcion = lector.GetString(1);
-
-                lista.Add(aux);
-            }
-            conexionMSSQL.Desconectar();
-            return lista;
-        }*/ 
-       /*No estamos usando esta list*/
-
         /// <summary>
         /// Consulta la base de datos y devuelve un dataset con el resultado de la consulta para ser utilizado en dropdowns u otros controles que utilizen dataset
         /// 
