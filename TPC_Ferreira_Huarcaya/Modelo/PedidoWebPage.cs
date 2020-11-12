@@ -14,11 +14,9 @@ namespace Modelo
 
         public Cliente Cliente { get; set; }//El pedido tiene un cliente ( que lo pidió )
 
-        public Categoria Categoria { get; set; }
+        public int Precio { get; set; } // Precio final que se setea en base a los costos.
 
-        public List<Seccion> Secciones { get; set; }
-
-        public int Precio { get; set; } // Precio final que se setea en base a los costos acumulados de las secciones que la componen.
+        public Estilo Estilo { get; set; }
 
     }
 }
