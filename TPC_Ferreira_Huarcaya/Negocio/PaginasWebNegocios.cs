@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelo;
 using System.Data.SqlClient;
-using Negocios;
 
 namespace Negocio
 {

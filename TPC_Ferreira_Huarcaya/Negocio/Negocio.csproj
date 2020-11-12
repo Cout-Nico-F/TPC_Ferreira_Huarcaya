@@ -45,7 +45,6 @@
     <Compile Include="DropdownsNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
     <Compile Include="FuncionalidadNegocio.cs" />
-    <Compile Include="FuncionalidadNegocios.cs" />
     <Compile Include="InformacionNegocio.cs" />
     <Compile Include="LoginNegocio.cs" />
     <Compile Include="PaginasWebNegocios.cs" />

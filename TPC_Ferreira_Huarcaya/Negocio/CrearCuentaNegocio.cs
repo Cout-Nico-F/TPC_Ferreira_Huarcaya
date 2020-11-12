@@ -1,6 +1,5 @@
 ﻿using System.Data.SqlClient;
 using Modelo;
-using Negocios;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -23,7 +23,7 @@
         <asp:Button Text="OK" runat="server" name="btn_FuncionalidadAM_OK" OnClick="btn_FuncionalidadAM_OK_Click"/>
     </form>
     
-    <script type="text/javascript">    
+<%--    <script type="text/javascript">    
         document.getElementById("input_Descripcion").getAttribute("placeholder") = <%Placeholder.ToString();%>; // estoy tratando de modificar el placeholder desde js. por ahora sin efecto (para la modificacion)
-    </script>
+    </script>--%>
 </asp:Content>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    class FuncionalidadNegocio
+    public class FuncionalidadNegocio
     {
         public int Agregar(Funcionalidad Func)
         {
