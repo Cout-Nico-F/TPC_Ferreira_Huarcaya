@@ -12,13 +12,13 @@
     <form>
         <div class="form-group">
             <label for="input_Descripcion">Descripcion</label>
-            <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder="" > </asp:TextBox> 
+            <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder=""> </asp:TextBox> 
             <!--<input runat="server" type="text" class="form-control" id="input_Descripcion" aria-describedby="DescHelp">-->
             <small id="DescHelp" class="form-text text-muted">Ingrese la descripcion de la funcionalidad.</small>
         </div>
         <div class="form-group">
             <label for="input_Costo">Costo</label>
-            <asp:TextBox runat="server" ID="txtBox_Costo"/> 
+            <asp:TextBox runat="server" ID="txtBox_Costo" TextMode="Number"/> 
             <!--<input runat="server" type="text" class="form-control" id="input_Costo"> -->
             <small id="CostoHelp" class="form-text text-muted">Ingrese el costo de la funcionalidad.</small>
         </div>
