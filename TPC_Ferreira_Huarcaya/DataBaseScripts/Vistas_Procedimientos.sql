@@ -129,6 +129,7 @@ go
 
 */
 
+
 create procedure SP_ExisteUsuario(
 	 @NombreUsuario varchar(200),
 	 @Contrasenia varchar(200)
@@ -141,8 +142,18 @@ begin
 	select 0
 end
 
+/*		Datos de	 Prueba			*/ 
 Exec SP_ExisteUsuario
 	@NombreUsuario = 'JeremiasI21',
 	@Contrasenia = 'Jere123'
 
+/*	 Select para verificar si se ingreso  Correctamente    */
 Select * From Usuarios
+
+/*			Observaciones			*/
+/*
+1 - El procedmiento me parece que esta bien, pero deberia recibir una contraseña ya encriptada desde la aplicacion para mas seguridad
+*/
+
+/*    Procedimientos que va a usar el admin		*/
+
