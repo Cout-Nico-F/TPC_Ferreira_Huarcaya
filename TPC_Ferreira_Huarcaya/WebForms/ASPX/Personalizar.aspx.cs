@@ -7,21 +7,42 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Modelo;
 
 namespace WebForms.ASPX
 {
     public partial class Personalizar : System.Web.UI.Page
     {
+        public List<Seccion> lista { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                IniciarLlenadoDeDropDowns();
+                DropdownsNegocio dropNeg = new DropdownsNegocio();
+                if(Session["listado"] == null)
+                {
+                    lista = dropNeg.listarSecciones();
+                }
+                else
+                {
+                    lista = ((List<Seccion>)Session["listado"]);
+                    Session["listado"] = null;
+                }
+            }
+            catch ( Exception ex)
+            {
+
+                Session.Add("errorEncontrado", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
-        private void IniciarLlenadoDeDropDowns()
+        private void IniciarLlenadoDeDropDownsSecciones()
         {
+            
+
+
+
+            /*
             DropdownsNegocio coloresNegocio = new DropdownsNegocio();
             
             //Colores

@@ -50,14 +50,13 @@
             <div id="sidebar-container" class="bg-primary">
                 <div class="menu">
                      <p class="logo">Menu Opciones</p>
-                     <asp:DropDownList ID="ddl_Funcionalidades" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block a-dropdown tam-func"></asp:DropDownList>
-                     <asp:DropDownList ID="ddl_Paginas" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-pag"></asp:DropDownList>
-                     <asp:DropDownList ID="ddl_Secciones" runat="server" CssClass="btn btn-secondary dropdown-toggle b-dropdown tam-sec"></asp:DropDownList>
-                     <asp:DropDownList ID="ddl_Elementos" runat="server" CssClass="btn btn-secondary dropdown-toggle b-dropdown tam-ele"></asp:DropDownList>
-                     <asp:DropDownList ID="ddl_DispElementos" runat="server" CssClass="btn btn-secondary dropdown-toggle b-dropdown tam-disp"></asp:DropDownList>
-                    <asp:DropDownList ID="ddl_Estilos" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-est"></asp:DropDownList>
-                    <asp:DropDownList ID="ddl_Categorias" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-cat"></asp:DropDownList>
-                    <asp:DropDownList ID="ddl_Colores" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-col"></asp:DropDownList>
+                    <%foreach (Modelo.Seccion item in lista)
+                        {%>
+                            <asp:DropDownList ID="ddl_Secciones" runat="server" CssClass="btn btn-secondary dropdown-toggle b-dropdown tam-sec" >
+                                <asp:ListItem Text="Hola" Value="1" />
+                             </asp:DropDownList>
+                        <%} %>
+                     
                 </div>
             </div>
         </div>
