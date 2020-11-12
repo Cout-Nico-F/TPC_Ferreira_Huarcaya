@@ -35,14 +35,5 @@ namespace Negocio
                 }
             }
         }
-        public int Validaciones(Usuario user,DatosPersonales dat)
-        {
-            if(user.NombreUsuario == "" || user.Contrasenia == "" || dat.NombreApellido == "" || dat.Email == "" || Convert.ToString(dat.FechaNacimiento) == "")
-            {
-                return 2;
-            }
-            return 1;
-        }
-
     }
 }

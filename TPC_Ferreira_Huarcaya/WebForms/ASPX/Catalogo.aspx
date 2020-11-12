@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <div class="container d-flex">
-                                     <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." />
+                                     <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" />
                                      <asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>
                                 </div>
                             </div>

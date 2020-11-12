@@ -21,7 +21,7 @@
         </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent"><!-- el ID anterior era : navbarNavAltMarkup -->
         <div class="navbar-nav mr-auto ml-auto text-center">
-            <a class="nav-link" href="Home.aspx">Home</a>
+            <a class="nav-link" href="Home.aspx">Home</a>   
             <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
             <a class="nav-link" href="Info.aspx">Informacion</a>
         </div>
@@ -71,7 +71,7 @@
                                 <asp:TextBox runat="server" ID="txtEmail" Placeholder="Correo electronico" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control"></asp:TextBox><%--datetime porque la variable en el modelo tambien es datetime--%>
+                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-12 form-group">
                                <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>

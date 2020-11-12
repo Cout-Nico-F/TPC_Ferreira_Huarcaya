@@ -39,55 +39,22 @@ namespace WebForms.ASPX
                 dat.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
                 dat.EmailRecuperacion = txtEmailRecuperacion.Text;
 
-                switch (cuentaNeg.Validaciones(user, dat))
-                {
-                    case 1:
-                        {
-                            try
-                            {
-                                cuentaNeg.CrearCuenta(user, dat);
-                                lbl_texto.Text = "Usuario creado correctamente";
-                                lbl_texto.Visible = true;
-                                Thread.Sleep(5000);
-                                Response.Redirect("CrearCuenta.aspx");
-                            }
-                            catch (SqlException sqlex)
-                            {
 
-                                Response.Redirect("Error.aspx");
-                                
-                            }
-                            
-                        }
-                        break;
-                    case 2:
-                        {
-                            lbl_texto.Visible = true;
-                            lbl_texto.Text = "Debe llenar todos los campos";
-                            
-                        }
-                        break;
+                try
+                {
+                    cuentaNeg.CrearCuenta(user, dat);
+                    lbl_texto.Visible = true;
+                    lbl_texto.Text = "Usuario creado correctamente";
+                    Thread.Sleep(5000);
+                    Response.Redirect("CrearCuenta.aspx");
                 }
-                
-
-                /*using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
+                catch (SqlException sqlex)
                 {
-                    using (SqlCommand cmd = new SqlCommand("SP_CrearUsuario", sql))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@NombreUsuario", txtNombreUsuario.Text));
-                        cmd.Parameters.Add(new SqlParameter("@Contrasenia", txt_Contrasenia.Text));
-                        cmd.Parameters.Add(new SqlParameter("@ID_Nivel", 1));
-                        cmd.Parameters.Add(new SqlParameter("@NombreApellido", txtNombreApellido.Text));
-                        cmd.Parameters.Add(new SqlParameter("@TelefonoMovil", txtTelefonoMovil.Text));
-                        cmd.Parameters.Add(new SqlParameter("@Email", txtEmail.Text));
-                        cmd.Parameters.Add(new SqlParameter("@TelefonoFijo", txtTelefonoFijo.Text));
-                        cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", txtFechaNacimiento.Text));
-                        cmd.Parameters.Add(new SqlParameter("@EmailRecuperacion", "Decimequeanda@hotmail.com"));
-                        sql.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                }*/
+
+                    Response.Redirect("Error.aspx");
+
+                }
+
             }
             catch (SqlException ex)
             {
