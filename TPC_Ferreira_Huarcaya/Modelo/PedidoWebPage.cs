@@ -18,5 +18,9 @@ namespace Modelo
 
         public Estilo Estilo { get; set; }
 
+        public List<Funcionalidad> Funcionalidades { get; set; }
+
+        int NumeroPaginas { get; set; }
+
     }
 }
