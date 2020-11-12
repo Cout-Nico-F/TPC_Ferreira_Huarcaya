@@ -60,10 +60,11 @@
                     <asp:DropDownList ID="ddl_Colores" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-col"></asp:DropDownList>
                 </div>
             </div>
+            <div>
+            <a href="AltasModificaciones/FuncionalidadesAM.aspx">Nueva Funcionalidad</a>
+            </div>
         </div>
-        <div>
-            
-        </div>
+        
         
         <!--<div class="grid">
             <div class="container">

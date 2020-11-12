@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocios
+namespace Negocio
 {
     public class ConexionMSSQL
     {
@@ -55,6 +55,16 @@ namespace Negocios
         {
             Command.Parameters.AddWithValue(clave, valor);
         }// para esto que me nombras en el comentario de arriba hay 2 opciones. o convertimos de string al tipo de dato necesario o hacemos que reciba un tipo Object. creo que el casteo es mas simple
+
+        public int SentenciaNonQuery (string sentencia)
+        {
+            Conectar();
+            Command.CommandType = CommandType.Text;
+            Command.CommandText = sentencia;
+            int rowsAfectadas = Command.ExecuteNonQuery();
+            Desconectar();
+            return rowsAfectadas;
+        }
 
     }
 }
