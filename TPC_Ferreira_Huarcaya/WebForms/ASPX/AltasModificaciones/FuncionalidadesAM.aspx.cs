@@ -17,16 +17,16 @@ namespace WebForms.ASPX.AltasModificaciones
         protected void Page_Load(object sender, EventArgs e)
         {
             NuevaFuncionalidad = new Funcionalidad();
-
-            input_Descripcion.Value = "Base de datos";
+            txtBox_Descripcion.Attributes.Add("Placeholder", "Prueba_Harcodeado");
         }
 
         protected void btn_FuncionalidadAM_OK_Click(object sender, EventArgs e)
         {
+
             //setear desde el input de usuario los campos
             //falta validar que sean correctos los datos.
-            NuevaFuncionalidad.Descripcion = input_Descripcion.Value;
-            NuevaFuncionalidad.Costo = Convert.ToInt32 ( input_Costo.Value ) ;
+            NuevaFuncionalidad.Descripcion = txtBox_Descripcion.Text;
+            NuevaFuncionalidad.Costo = Convert.ToInt32 ( txtBox_Costo.Text ) ;
             FuncionalidadNegocio funcionalidadNegocio = new FuncionalidadNegocio();
             
             //agregarlo a la base de datos

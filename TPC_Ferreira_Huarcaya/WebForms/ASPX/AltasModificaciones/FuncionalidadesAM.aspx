@@ -12,18 +12,17 @@
     <form>
         <div class="form-group">
             <label for="input_Descripcion">Descripcion</label>
-            <input runat="server" type="text" class="form-control" id="input_Descripcion" aria-describedby="DescHelp">
+            <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder="" > </asp:TextBox> 
+            <!--<input runat="server" type="text" class="form-control" id="input_Descripcion" aria-describedby="DescHelp">-->
             <small id="DescHelp" class="form-text text-muted">Ingrese la descripcion de la funcionalidad.</small>
         </div>
         <div class="form-group">
             <label for="input_Costo">Costo</label>
-            <input runat="server" type="text" class="form-control" id="input_Costo">
+            <asp:TextBox runat="server" ID="txtBox_Costo"/> 
+            <!--<input runat="server" type="text" class="form-control" id="input_Costo"> -->
             <small id="CostoHelp" class="form-text text-muted">Ingrese el costo de la funcionalidad.</small>
         </div>
         <asp:Button Text="OK" runat="server" name="btn_FuncionalidadAM_OK" OnClick="btn_FuncionalidadAM_OK_Click"/>
     </form>
-    
-<%--    <script type="text/javascript">    
-        document.getElementById("input_Descripcion").getAttribute("placeholder") = <%Placeholder.ToString();%>; // estoy tratando de modificar el placeholder desde js. por ahora sin efecto (para la modificacion)
-    </script>--%>
+
 </asp:Content>
