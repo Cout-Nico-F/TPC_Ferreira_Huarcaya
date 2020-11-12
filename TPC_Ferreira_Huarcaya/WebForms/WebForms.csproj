@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx" />
     <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
@@ -1928,6 +1929,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx.cs">
+      <DependentUpon>FuncionalidadesAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx.designer.cs">
+      <DependentUpon>FuncionalidadesAM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\CarritoCompra.aspx.cs">
       <DependentUpon>CarritoCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
