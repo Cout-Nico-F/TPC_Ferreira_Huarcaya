@@ -71,6 +71,7 @@
     <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
+    <Content Include="ASPX\EditarDatosPersonales.aspx" />
     <Content Include="ASPX\Error.aspx" />
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
@@ -1959,6 +1960,13 @@
     </Compile>
     <Compile Include="ASPX\CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\EditarDatosPersonales.aspx.cs">
+      <DependentUpon>EditarDatosPersonales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\EditarDatosPersonales.aspx.designer.cs">
+      <DependentUpon>EditarDatosPersonales.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>

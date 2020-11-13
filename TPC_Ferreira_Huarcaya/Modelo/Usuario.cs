@@ -10,7 +10,7 @@ namespace Modelo
     public class Usuario
     {
         //public Int16 IdUsuario { get; set; } la tabla usuario ahora es identity el id
-
+        public Int16 ID { get; set; }
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }

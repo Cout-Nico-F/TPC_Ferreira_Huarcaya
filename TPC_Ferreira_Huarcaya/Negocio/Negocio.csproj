@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrearCuentaNegocio.cs" />
+    <Compile Include="DatosPersonalesNegocios.cs" />
     <Compile Include="DropdownsNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
     <Compile Include="FuncionalidadNegocio.cs" />

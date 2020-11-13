@@ -14,7 +14,7 @@ create table Elementos (
 	Descripcion varchar(100) not null,
 	Costo int not null
 )
-Select * From Paginas
+Select Nombre_Y_Apellido,Telefono_Movil,Telefono_Fijo,Email,Fecha_Nac,Email_Recuperacion,Fecha_Registro From Datos_Personales Where ID_Usuario = 
 	go
 
 create table Funcionalidades (
