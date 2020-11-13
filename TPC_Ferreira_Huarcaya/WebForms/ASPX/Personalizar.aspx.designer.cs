@@ -42,33 +42,6 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.DropDownList ddl_Paginas;
 
         /// <summary>
-        /// ddl_Secciones control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Secciones;
-
-        /// <summary>
-        /// ddl_Elementos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Elementos;
-
-        /// <summary>
-        /// ddl_DispElementos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_DispElementos;
-
-        /// <summary>
         /// ddl_Estilos control.
         /// </summary>
         /// <remarks>
@@ -76,23 +49,5 @@ namespace WebForms.ASPX
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Estilos;
-
-        /// <summary>
-        /// ddl_Categorias control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Categorias;
-
-        /// <summary>
-        /// ddl_Colores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Colores;
     }
 }
