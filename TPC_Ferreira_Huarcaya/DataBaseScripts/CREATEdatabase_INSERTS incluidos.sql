@@ -9,12 +9,7 @@ go
 
 --Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
 
-create table Elementos (
-	ID smallint identity(1,1),
-	Descripcion varchar(100) not null,
-	Costo int not null
-)
-Select Nombre_Y_Apellido,Telefono_Movil,Telefono_Fijo,Email,Fecha_Nac,Email_Recuperacion,Fecha_Registro From Datos_Personales Where ID_Usuario = 
+
 	go
 
 create table Funcionalidades (
@@ -24,7 +19,7 @@ create table Funcionalidades (
 )
 	go
 -- No estoy tan seguro de que Funcionalidades tenga una relacion muchos a muchos
--- porque una pagina puede tener muchas funcionalidades pero una funcionalidad puede tener muchas paginas?
+-- porque una pagina puede tener muchas funcionalidades pero una funcionalidad puede tener muchas paginas?,-->(si puede pertenecer a muchas paginas una misma funcionalidad.)
 create table PaginaWeb(
 	ID smallint identity(1,1),
 	Titulo varchar(50) not null,
@@ -45,12 +40,6 @@ create table Niveles_Acceso (
 	go
 	
 create table Estilos (
-	ID smallint identity(1,1),
-	Descripcion varchar(100) not null
-)
-	go
-	
-create table Secciones (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null
 )
@@ -105,18 +94,15 @@ create table InfoWeb (
 	Descripcion varchar(200) not null,
 	urlImagen varchar(200) not null
 )
-
+go
 
 --Alter Tables de PK
-	alter table Elementos add constraint PK_Elementos primary key (ID)
-	go
+
 	alter table Funcionalidades add constraint PK_Funcionalidades primary key (ID)
 	go
 	alter table Niveles_Acceso add constraint PK_Niveles_Acceso primary key (ID)
 	go
 	alter table Estilos add constraint PK_Estilos primary key (ID)
-	go
-	alter table Secciones add constraint PK_Secciones primary key (ID)
 	go
 	alter table PedidosWebPage add constraint PK_PedidosWebPage primary key (ID)
 	go
@@ -132,16 +118,12 @@ create table InfoWeb (
 	go
 	alter table InfoWeb add constraint PKS_InfoWeb primary key (ID_Usuarios,ID_Nivel)
 	go
-	alter table Elementos_X_Paginas add constraint PKS_Elementos_X_Paginas primary key (ID_Pagina,ID_Elemento)
-
 --Alter Tables FK's
 	alter table PedidosWebPage add foreign key (ID_Usuario) references Usuarios(ID)
 	go
 	alter table Usuarios add foreign key (ID_Nivel) references Niveles_Acceso(ID)
 	go
 	alter table Datos_Personales add foreign key (ID_Usuario) references Usuarios(ID)
-	go
-	alter table Paginas add foreign key (ID_Seccion) references Secciones(ID)
 	go
 	alter table Funcionalidades_X_Paginas add foreign key (ID_Funcionalidad) references Funcionalidades(ID)
 	go
@@ -151,15 +133,9 @@ create table InfoWeb (
 	go
 	alter table InfoWeb add foreign key (ID_Nivel) references Niveles_Acceso(ID)
 	go
-	alter table Elementos_X_Paginas add foreign key (ID_Pagina) references Paginas(ID)
-	go
-	alter table  Elementos_X_Paginas add foreign key (ID_Elemento) references Elementos(ID)
 --Alter tables CHECKS
-	alter table Elementos add constraint CH_Elementos_Costo check (Costo >= 0)
-	go
 	alter table Funcionalidades add constraint CH_Funcionalidades_Costo check (Costo >= 0)
 	--Falta: Checks de varchars de espacio vacio, Check de Email valido
-
 
 -- Inserts into
 
@@ -179,16 +155,7 @@ insert into Funcionalidades(Descripcion,Costo) values ('Envio de Factura por Mai
 insert into Funcionalidades(Descripcion,Costo) values ('Evento alerta con boton',180)
 insert into Funcionalidades(Descripcion,Costo) values ('Evento pop-up',5000)
 go
-/*				Tabla Elementos			*/
-insert into Elementos(Descripcion,Costo) values ('Carousel',0)
-insert into Elementos(Descripcion,Costo) values ('Sticky navbar',10)
-insert into Elementos(Descripcion,Costo) values ('animation text',10)
-insert into Elementos(Descripcion,Costo) values ('Smooth Scroll',10)
-insert into Elementos(Descripcion,Costo) values ('Cover Image',0)
-insert into Elementos(Descripcion,Costo) values ('Grid',10)
-insert into Elementos(Descripcion,Costo) values ('Footer',10)
-insert into Elementos(Descripcion,Costo) values ('Header',10)
-go
+
 --                                  Tablas No Maestras
 /*				Tabla Usuarios			*/
 insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('JeremiasI21','Jere123',1)
@@ -211,11 +178,6 @@ insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,T
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (5,'Andrea Ambar','1143726710','AndreaAA@hotmail.com','45232234','01/06/2002','JereIno21@hotmail.com','02/06/2020')
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (6,'Alonso Huarcaya','1123390582','AlonsoHS20@hotmail.com','45232234','01/04/1999','JereIno21@hotmail.com','03/01/2020')
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com','07/05/2019')
-go
-/*			Tabla Secciones				*/
-insert into Secciones(Descripcion) values ('WebPages')
-insert into Secciones(Descripcion) values ('Contrataciones')
-insert into Secciones(Descripcion) values ('Arte')
 go
 /*			Tabla Estilos				*/		
 insert into Estilos(Descripcion) values ('Moderno')
