@@ -11,6 +11,7 @@ namespace WebForms.ASPX
 {
     public partial class PersonalizarEstilos : System.Web.UI.Page
     {
+        public string UrlImagen { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -40,10 +41,12 @@ namespace WebForms.ASPX
 
         protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /* PersonalizarUsuarioNegocio perNeg = new PersonalizarUsuarioNegocio();
-             string est = "Creativo";
-             string urlImagen;
-             urlImagen = perNeg.BuscarImagen(est);*/
+            PaginasWebNegocios perNeg = new PaginasWebNegocios();
+
+            string titulo = ddl_Estilos.SelectedItem.Text;
+            
+            UrlImagen = perNeg.BuscarImagen(titulo);
+
             Response.Redirect("PersonalizarFuncionalidades.aspx");
         }
     }

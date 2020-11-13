@@ -50,7 +50,6 @@
     <Compile Include="InformacionNegocio.cs" />
     <Compile Include="LoginNegocio.cs" />
     <Compile Include="PaginasWebNegocios.cs" />
-    <Compile Include="PersonalizarUsuarioNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

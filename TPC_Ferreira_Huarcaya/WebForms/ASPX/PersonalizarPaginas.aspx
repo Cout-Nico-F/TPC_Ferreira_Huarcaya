@@ -45,7 +45,13 @@
             <p>Elija las paginas que conformaran su Web</p>
             <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true"></asp:DropDownList>
             <asp:Button Text="Seguir" runat="server" OnClick="Unnamed_Click"/>
-        </div>      
+        </div>
+        <div style="text-align:center">
+            <h1>Funcionalidades</h1>
+            <p>Elija un o mas funcionalidades para su Web</p>
+            <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="true"></asp:DropDownList>
+             <asp:Button Text="Terminar Pedido" runat="server" OnClick="Unnamed_Click"/>
+        </div>
     </form>
 </body>
 </html>

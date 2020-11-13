@@ -45,12 +45,12 @@
             <p>Elija un estilo para su Web</p>
             <asp:DropDownList runat="server" ID="ddl_Estilos" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
             <asp:Button Text="Seguir" runat="server" OnClick="Unnamed_Click" />
-            <!--<div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="Iamgen no encontrada">
+            <div class="card" style="width: 18rem;">
+                <img src="<%=UrlImagen%>" class="card-img-top" alt="Iamgen no encontrada">
                 <div class="card-body">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
-            </div> -->
+            </div> 
         </div>
         <asp:ScriptManager runat="server" ID="ScriptManager1" />
         <asp:UpdatePanel runat="server" ID="up_Panel" UpdateMode="Conditional">
