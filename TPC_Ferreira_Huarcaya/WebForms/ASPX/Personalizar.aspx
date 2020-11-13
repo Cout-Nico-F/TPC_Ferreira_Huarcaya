@@ -61,7 +61,7 @@
 
             <div class="d-block" id="opciones_Admin">
                 <a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a>
-                
+                <asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-warning" OnClick="Baja_Funcionalidad_Click"/>
                 <a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a>
             </div>         
         </div>

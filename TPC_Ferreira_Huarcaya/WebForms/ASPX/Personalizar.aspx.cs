@@ -1,4 +1,5 @@
 ﻿using Negocio;
+using Modelo;
 using System.Data;
 using System.Data.SqlClient;
 using System;
@@ -44,6 +45,12 @@ namespace WebForms.ASPX
             ddl_Paginas.DataValueField = "ID";
             ddl_Paginas.DataBind();
             ddl_Paginas.Items.Insert(0, new ListItem("[Paginas]", "0"));
+        }
+
+        protected void Baja_Funcionalidad_Click(object sender, EventArgs e)
+        {
+           int id = Convert.ToInt32(ddl_Funcionalidades.SelectedItem.Value);
+           Response.Redirect("/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad = " + id);
         }
     }
 }
