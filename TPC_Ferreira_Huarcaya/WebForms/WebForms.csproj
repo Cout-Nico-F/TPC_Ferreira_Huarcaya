@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ASPX\AltasModificaciones\EstilosAM.aspx" />
     <Content Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx" />
     <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
@@ -1933,6 +1934,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASPX\AltasModificaciones\EstilosAM.aspx.cs">
+      <DependentUpon>EstilosAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\AltasModificaciones\EstilosAM.aspx.designer.cs">
+      <DependentUpon>EstilosAM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx.cs">
       <DependentUpon>FuncionalidadesAM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -29,7 +29,7 @@ namespace WebForms.ASPX
             ddl_Estilos.DataTextField = "Descripcion";
             ddl_Estilos.DataValueField = "ID";
             ddl_Estilos.DataBind();
-            ddl_Estilos.Items.Insert(0, new ListItem("[Estilos]", "0"));
+            ddl_Estilos.Items.Insert(0, new ListItem("[Estilo]", "0"));
 
             //Funcionalidades
             ddl_Funcionalidades.DataSource = dropdownsNegocio.ConsultaDataSet("Select * From Funcionalidades");

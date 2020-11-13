@@ -51,18 +51,21 @@
                 <div class="menu">
                     <p class="logo">Menu Opciones</p>
                     <asp:DropDownList ID="ddl_Funcionalidades" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block a-dropdown tam-func"></asp:DropDownList>
+                    <asp:Button Text="Agregar Funcionalidad" runat="server" CssClass="btn btn-success d-block" />
                     <asp:DropDownList ID="ddl_Paginas" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-pag"></asp:DropDownList>
+                    <asp:Button Text="Aceptar Cantidad de paginas" runat="server" CssClass="btn btn-success d-block" />
                     <asp:DropDownList ID="ddl_Estilos" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-est"></asp:DropDownList>
+                    <asp:Button Text="Elegir Estilo" runat="server" CssClass="btn btn-success d-block" />
                 </div>
             </div>
-            <div>
-                <a href="AltasModificaciones/FuncionalidadesAM.aspx">Nueva Funcionalidad</a>
-                <!-- Aca un button para fijar el numero de paginas ( el usuario pone el numero y apreta este boton para cargarlas en el pedido ) -->
-                <a href="AltasModificaciones/EstilosAM.aspx">Nuevo Estilo</a>
-            </div>
+
+            <div class="d-block" id="opciones_Admin">
+                <a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a>
+                
+                <a href="AltasModificaciones/EstiloAM.aspx" class="alert-link d-block">Nuevo Estilo</a>
+            </div>         
         </div>
     </form>
-
 </body>
 
 </html>
