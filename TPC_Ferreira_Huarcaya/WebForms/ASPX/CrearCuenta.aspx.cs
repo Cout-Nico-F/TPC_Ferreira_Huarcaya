@@ -17,7 +17,7 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            lbl_texto.Visible = false;
+           
 
         }
 
@@ -43,12 +43,12 @@ namespace WebForms.ASPX
                 try
                 {
                     cuentaNeg.CrearCuenta(user, dat);
-                    lbl_texto.Visible = true;
-                    lbl_texto.Text = "Usuario creado correctamente";
+                    //lbl_texto.Visible = true;
+                    //lbl_texto.Text = "Usuario creado correctamente";
                     Thread.Sleep(5000);
                     Response.Redirect("CrearCuenta.aspx");
                 }
-                catch (SqlException sqlex)
+                catch (SqlException)
                 {
 
                     Response.Redirect("Error.aspx");

@@ -10,17 +10,17 @@ namespace Negocio
 {
     public class PersonalizarUsuarioNegocio
     {
-        public int BuscarImagen(string img)
+        public string BuscarImagen(string img)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
 
-            SqlDataReader lectura = conexion.Consulta_Rapida("Select Url_Imagen From InfoPaginas");
+            SqlDataReader lectura = conexion.Consulta_Rapida("Select Url_Image From PaginaWeb Where Titulo = " + img + " )");
 
-            while (lectura.Read())
-            {
-                Pagina pag = new Pagina();
-                pag.Url_Imagen = lectura.GetString(0);
-            }
+            lectura.Read();
+            string UrlImagen;
+            UrlImagen = lectura.GetString(0);
+            conexion.Desconectar();
+            return UrlImagen;
 
         }
     }

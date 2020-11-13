@@ -43,9 +43,9 @@
         <div style="text-align:center">
             <h1>Paginas</h1>
             <p>Elija las paginas que conformaran su Web</p>
-            <asp:DropDownList runat="server" ID="ddl_Paginas"></asp:DropDownList>
+            <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true"></asp:DropDownList>
             <asp:Button Text="Seguir" runat="server" OnClick="Unnamed_Click"/>
-        </div>
+        </div>      
     </form>
 </body>
 </html>

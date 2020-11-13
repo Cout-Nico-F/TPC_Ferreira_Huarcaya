@@ -32,14 +32,7 @@ namespace WebForms.ASPX
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-
-
-            string pag = ddl_Paginas.SelectedValue;
-
-            BuscarImagen(pag);
-
-            Session["listaObjetos"] = pag;
-
+            Response.Redirect("PersonalizarEstilos.aspx");
         }
     }
 }

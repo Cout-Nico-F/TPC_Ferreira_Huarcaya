@@ -40,8 +40,11 @@ namespace WebForms.ASPX
 
         protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string est = ddl_Estilos.SelectedValue;
-            BuscarImagen(est);
+            /* PersonalizarUsuarioNegocio perNeg = new PersonalizarUsuarioNegocio();
+             string est = "Creativo";
+             string urlImagen;
+             urlImagen = perNeg.BuscarImagen(est);*/
+            Response.Redirect("PersonalizarFuncionalidades.aspx");
         }
     }
 }

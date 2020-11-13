@@ -14,6 +14,7 @@ create table Elementos (
 	Descripcion varchar(100) not null,
 	Costo int not null
 )
+Select * From Paginas
 	go
 
 create table Funcionalidades (
@@ -87,7 +88,7 @@ create table Paginas (
 	ID_Seccion smallint not null
 )
 	go
-	
+Select * From PaginaWeb
 create table Elementos_X_Paginas (
 	ID_Pagina smallint not null,
 	ID_Elemento smallint not null
