@@ -18,7 +18,7 @@ namespace WebForms.ASPX.ConfirmarBajas
             idRecibido = Convert.ToInt32(Request.QueryString["idFuncionalidad"]);
             FuncionalidadNegocio funNegocio = new FuncionalidadNegocio();
             var listaFuncionalidades = funNegocio.Listar();
-            Funcionalidad = listaFuncionalidades.Find( f => idRecibido == f.Id);
+            Funcionalidad = listaFuncionalidades.Find( f => idRecibido == f.Id );
         }
     }
 }

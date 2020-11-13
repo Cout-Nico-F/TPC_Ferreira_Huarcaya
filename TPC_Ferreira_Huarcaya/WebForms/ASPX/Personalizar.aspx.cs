@@ -49,7 +49,7 @@ namespace WebForms.ASPX
 
         protected void Baja_Funcionalidad_Click(object sender, EventArgs e)
         {
-           int id = Convert.ToInt32(ddl_Funcionalidades.SelectedItem.Value);
+           string id = ddl_Funcionalidades.SelectedItem.Value;
            Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
         }
     }
