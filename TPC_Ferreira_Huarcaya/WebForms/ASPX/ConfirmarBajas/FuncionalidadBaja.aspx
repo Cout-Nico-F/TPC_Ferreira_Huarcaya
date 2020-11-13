@@ -3,6 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1 class="jumbotron"> Confirmar baja de Funcionalidad del  </h1>
+    <h1 class="jumbotron"> Confirmar baja de la Funcionalidad <%=Funcionalidad.Descripcion %>   </h1>
 
 </asp:Content>
