@@ -62,7 +62,7 @@
             <div class="d-block" id="opciones_Admin">
                 <a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a>
                 
-                <a href="AltasModificaciones/EstiloAM.aspx" class="alert-link d-block">Nuevo Estilo</a>
+                <a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a>
             </div>         
         </div>
     </form>

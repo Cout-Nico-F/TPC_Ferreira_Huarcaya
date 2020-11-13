@@ -7,7 +7,7 @@ using Modelo;
 
 namespace Negocio
 {
-    class EstiloNegocio
+    public class EstiloNegocio
     {
         public int Agregar(Estilo estilo)
         {
