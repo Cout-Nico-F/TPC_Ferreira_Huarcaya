@@ -6,11 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <!--CDN Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
      <!--CDN Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!--CSS Estilos -->
-    <link href="../CSS/Estilos_Sesion.css" rel="stylesheet" />
+    <link href="#" rel="stylesheet" />
 
     <title>Iniciar Sesion</title>
 
@@ -60,7 +60,7 @@
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
                 <a class="navbar-brand" href="#">
-                    <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="Imagen Carrito Compra" loading="lazy" style="background-color: rgba(255, 0, 0, 0.5);"/>
+                    <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="Imagen Carrito Compra" style="background-color: rgba(255, 0, 0, 0.5);"/>
                     FerreAlo</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="form-group">
                                     <!-- <input id="password" type="password" class="form-control" placeholder="Contraseña" required /> -->
-                                    <asp:TextBox runat="server" ID="txtPass" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtPass" Placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button> -->
                                 <!-- <i class="fas fa-sign-in-alt"></i>  No puedo hacer que el icono este dentro de el boton quizas con grid o flexbox puede ser -->

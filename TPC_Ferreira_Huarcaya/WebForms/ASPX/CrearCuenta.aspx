@@ -41,9 +41,6 @@
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
 
     <form id="form1" runat="server">
        <div class="section">

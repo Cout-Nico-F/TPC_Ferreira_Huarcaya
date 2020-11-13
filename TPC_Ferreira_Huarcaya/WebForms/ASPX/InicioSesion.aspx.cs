@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Modelo;
 using Negocio;
+using System.Text.RegularExpressions;
 
 namespace WebForms.ASPX
 {
@@ -27,6 +28,8 @@ namespace WebForms.ASPX
             user.NombreUsuario = txtNombreUsuario.Text;
             user.Contrasenia = txtPass.Text;
 
+            //ValidacionesConER();
+
             int existe = logNeg.login(user);
 
             if(existe == 1)
@@ -44,5 +47,10 @@ namespace WebForms.ASPX
              */
 
         }
+        /*private void ValidacionesConER()
+        {
+
+        }*/
+
     }
 }
