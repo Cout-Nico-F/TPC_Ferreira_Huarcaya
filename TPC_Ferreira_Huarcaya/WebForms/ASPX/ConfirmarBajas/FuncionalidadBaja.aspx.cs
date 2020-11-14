@@ -14,7 +14,7 @@ namespace WebForms.ASPX.ConfirmarBajas
         protected int idRecibido;
         public Funcionalidad Funcionalidad { get; set; }
 
-        public FuncionalidadNegocio FunNegocio { get; }
+        public FuncionalidadNegocio FunNegocio { get; set; }
 
         public FuncionalidadBaja()
         {
