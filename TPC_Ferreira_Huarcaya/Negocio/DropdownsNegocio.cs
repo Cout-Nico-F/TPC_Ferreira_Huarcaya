@@ -29,6 +29,63 @@ namespace Negocio
             connection.Close();
             return dataSet;
         }
+        public List<Pagina> listarPaginas()
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            List<Pagina> lista = new List<Pagina>();
+
+            var lectura = conexion.Consulta_Rapida("Select * From Paginas");
+
+            while(lectura.Read())
+            {
+                Pagina aux = new Pagina();
+                aux.ID = lectura.GetInt16(0);
+                aux.Descripcion = lectura.GetString(1);
+
+                lista.Add(aux);
+            }
+            conexion.Desconectar();
+            return lista;
+
+        }
+        public List<Funcionalidad> listarFuncionalidades()
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            List<Funcionalidad> lista = new List<Funcionalidad>();
+
+            var lectura = conexion.Consulta_Rapida("Select * From Funcionalidades");
+
+            while (lectura.Read())
+            {
+                Funcionalidad aux = new Funcionalidad();
+                aux.Id = lectura.GetInt16(0);
+                aux.Descripcion = lectura.GetString(1);
+
+                lista.Add(aux);
+            }
+            conexion.Desconectar();
+            return lista;
+
+        }
+        public List<Estilo> listarEstilos()
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            List<Estilo> lista = new List<Estilo>();
+
+            var lectura = conexion.Consulta_Rapida("Select * From Estilos");
+
+            while (lectura.Read())
+            {
+                Estilo aux = new Estilo();
+                aux.Id = lectura.GetInt16(0);
+                aux.Descripcion = lectura.GetString(1);
+
+                lista.Add(aux);
+            }
+            conexion.Desconectar();
+            return lista;
+
+        }
     }
    
 }
