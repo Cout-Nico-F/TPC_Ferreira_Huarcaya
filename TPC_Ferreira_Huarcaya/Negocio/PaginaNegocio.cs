@@ -10,7 +10,7 @@ namespace Negocio
 {
     public class PaginaNegocio
     {
-        public List<Pagina> listarPaginas()
+        public List<Pagina> Listar()
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
             List<Pagina> lista = new List<Pagina>();

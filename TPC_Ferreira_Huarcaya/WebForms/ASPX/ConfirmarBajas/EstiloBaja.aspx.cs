@@ -15,8 +15,6 @@ namespace WebForms.ASPX.ConfirmarBajas
 
         public Estilo EstiloSeleccionado { get; set; }
 
-        public int prueba { get; set; }
-
         public EstiloNegocio EstNegocio { get; set; }
 
         public EstiloBaja()
