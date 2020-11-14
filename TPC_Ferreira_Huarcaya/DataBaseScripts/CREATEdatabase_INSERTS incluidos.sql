@@ -112,7 +112,7 @@ go
 	go
 	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_Funcionalidad) references Funcionalidades(ID)
 	go
-	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_PedidosWebPage) references PedidosWebPage(ID)
+	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_PedidoWebPage) references PedidosWebPage(ID)
 	go
 	alter table InfoWeb add foreign key (ID_Usuarios) references Usuarios(ID)
 	go
@@ -169,11 +169,11 @@ insert into Estilos(Descripcion,Url_Imagen) values ('Flat design','../Imagenes/I
 insert into Estilos(Descripcion,Url_Imagen) values ('Material design','../Imagenes/ImagenesPaginas/Material.png')
 go
 /*			Tabla Paginas				*/
-insert into Paginas(ID_Seccion,Descripcion)	values (1,'Home/Detalles/Contacto')
-insert into Paginas(ID_Seccion,Descripcion)	values (1,'Home')
-insert into Paginas(ID_Seccion,Descripcion)	values (1,'Contacto')
-insert into Paginas(ID_Seccion,Descripcion)	values (1,'Informacion')
-insert into Paginas(ID_Seccion,Descripcion)	values (1,'Login')
+insert into Paginas(Descripcion) values ('Home/Detalles/Contacto')
+insert into Paginas(Descripcion) values ('Home')
+insert into Paginas(Descripcion) values ('Contacto')
+insert into Paginas(Descripcion) values ('Informacion')
+insert into Paginas(Descripcion) values ('Login')
 go
 /*				Tabla Funcionalidades x PedidosWebPage			*/
 --estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.
