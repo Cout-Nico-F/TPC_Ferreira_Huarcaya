@@ -9,9 +9,6 @@ go
 
 --Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
 
-
-	go
-
 create table Funcionalidades (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
