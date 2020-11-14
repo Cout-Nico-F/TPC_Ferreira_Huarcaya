@@ -11,7 +11,7 @@ namespace WebForms.ASPX.AltasModificaciones
 {
 
 
-    public partial class EstilosAM
+    public partial class PaginasAM
     {
 
         /// <summary>
@@ -24,12 +24,30 @@ namespace WebForms.ASPX.AltasModificaciones
         protected global::System.Web.UI.WebControls.TextBox txtBox_Descripcion;
 
         /// <summary>
-        /// txtBox_Url_Imagen control.
+        /// input_Descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBox_Url_Imagen;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText input_Descripcion;
+
+        /// <summary>
+        /// txtBox_Costo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBox_Costo;
+
+        /// <summary>
+        /// input_Costo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText input_Costo;
     }
 }

@@ -22,6 +22,7 @@ namespace WebForms.ASPX.AltasModificaciones
             //setear desde el input de usuario los campos
             //falta validar que sean correctos los datos.
             NuevoEstilo.Descripcion = txtBox_Descripcion.Text;
+            NuevoEstilo.Url_Imagen = txtBox_Url_Imagen.Text;
             EstiloNegocio estiloNegocio = new EstiloNegocio();
 
             //agregarlo a la base de datos

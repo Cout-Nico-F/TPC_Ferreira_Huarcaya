@@ -43,7 +43,6 @@
         </div>
     </nav>
 
-
     <form id="form1" runat="server">
 
         <div class="d-flex">
@@ -53,7 +52,7 @@
                     <asp:DropDownList ID="ddl_Funcionalidades" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block a-dropdown tam-func"></asp:DropDownList>
                     <asp:Button Text="Agregar Funcionalidad" runat="server" CssClass="btn btn-success d-block" />
                     <asp:DropDownList ID="ddl_Paginas" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-pag"></asp:DropDownList>
-                    <asp:Button Text="Aceptar Cantidad de paginas" runat="server" CssClass="btn btn-success d-block" />
+                    <asp:Button Text="Agregar pagina" runat="server" CssClass="btn btn-success d-block" />
                     <asp:DropDownList ID="ddl_Estilos" runat="server" CssClass="btn btn-secondary dropdown-toggle d-block b-dropdown tam-est"></asp:DropDownList>
                     <asp:Button Text="Elegir Estilo" runat="server" CssClass="btn btn-success d-block" />
                 </div>
@@ -63,6 +62,7 @@
                 <a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a>
                 <asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-warning" OnClick="Baja_Funcionalidad_Click"/>
                 <a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a>
+                <asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" CssClass="btn btn-warning" OnClick="Btn_Estilo_Baja_Click"/>
             </div>         
         </div>
     </form>

@@ -43,5 +43,13 @@ namespace Negocio
             conexion.Desconectar();
             return lista;
         }
+
+        public int Eliminar(Int16 id)//tal vez serviria un procedimiento almacenado que solo elimine si la sentencia afecta 1 sola row?
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("Delete from Funcionalidades where ID ="+ id);
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
     }
 }

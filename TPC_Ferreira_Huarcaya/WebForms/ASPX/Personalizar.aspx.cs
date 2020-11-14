@@ -52,5 +52,11 @@ namespace WebForms.ASPX
            string id = ddl_Funcionalidades.SelectedItem.Value;
            Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
         }
+
+        protected void Btn_Estilo_Baja_Click(object sender, EventArgs e)
+        {
+            string id = ddl_Estilos.SelectedItem.Value;
+            Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
+        }
     }
 }
