@@ -11,12 +11,18 @@ namespace WebForms.ASPX
 {
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
-        public List<string> listaFuncionalidades { get; set; }
+        public Funcionalidad Funcionalidades { get; set; }
+        public Pagina Paginas { get; set; }
+        public Estilo Estilo { get; set; }
+        public List<Funcionalidad> ListaFuncionalidades { get; set; }
+        public List<Pagina> ListaPaginas { get; set; }
+        public List<Estilo> ListaEstilos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
+                
             }
         }
         private void IniciarLlenadoDeDropDownPaginas()
@@ -49,10 +55,45 @@ namespace WebForms.ASPX
 
         }
 
-        protected void ddl_Funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-            listaFuncionalidades = null;
-            listaFuncionalidades.Add(ddl_Funcionalidades.Text);
+            ListaFuncionalidades = new List<Funcionalidad>();
+            FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
+            var listaFuncionalidades = funNeg.Listar();
+
+            Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
+
+            Funcionalidades = listaFuncionalidades.Find(x => id == x.Id);
+
+            ListaFuncionalidades.Add(Funcionalidades);
+        }
+
+        protected void btn_AgregarPagina_Click(object sender, EventArgs e)
+        {
+            ListaPaginas = new List<Pagina>();
+            PaginaNegocio pagNeg = new PaginaNegocio();
+
+            var listaPagina = pagNeg.listarPaginas();
+
+            Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
+
+            Paginas = listaPagina.Find(x => id == x.ID);
+
+            ListaPaginas.Add(Paginas);
+
+        }
+
+        protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListaEstilos = new List<Estilo>();
+            EstiloNegocio estNeg = new EstiloNegocio();
+
+            var listaEstilo = estNeg.Listar();
+
+            Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
+            Estilo = listaEstilo.Find(x => id == x.Id);
+
+            ListaEstilos.Add(Estilo);
         }
     }
 }

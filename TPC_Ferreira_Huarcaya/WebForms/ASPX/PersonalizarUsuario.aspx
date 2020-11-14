@@ -46,29 +46,46 @@
                     <h1>Paginas</h1>
                     <p>Elija la cantidad de paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true"></asp:DropDownList>
+                    <asp:Button Text="Agregar" runat="server" id="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click"/>
                 </div>
                 <div style="text-align: center">
                     <h1>Estilo</h1>
                     <p>Elija el estilo que quiera que tenga su web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
+                    <%if(!(ListaEstilos == null))
+                        {%>
+                            <%foreach (var item in ListaEstilos)
+                                { %>
+                                    <img src="<%=item.Url_Imagen%>" alt="Iamgen no encontrada" />
+                                <% }%>
+                                 
+                       <% } %>
                 </div>
                 <div style="text-align: center">
                     <h1>Funcionalidades</h1>
                     <p>Elija un o mas funcionalidades para su Web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="true" OnSelectedIndexChanged="ddl_Funcionalidades_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="false"></asp:DropDownList>
+                    <asp:Button Text="Agregar" runat="server" ID="btn_Agregar" OnClick="btn_Agregar_Click" />
                 </div>
+                <%if (!(ListaFuncionalidades == null))
+                    {%>
                 <table>
                     <tr>
-                         <th>Funcionalidades</th>
-                         <td>Costo</td>
+                        <th>Paginas</th>
+                        <th>Funcionalidades</th>
+                        <td>Costo</td>
                     </tr>
-                    <%foreach (var item in listaFuncionalidades)
+
+                    <%foreach (var item in ListaFuncionalidades)
                         { %>
                     <tr>
-                        <td><%=item%></td>
+                        <td><%=item.Descripcion%></td>
+                        <td><%=item.Costo %></td>
                     </tr>
-                   <%} %>
+                    <%} %>
                 </table>
+                <%}%>
+                
 
             </ContentTemplate>
         </asp:UpdatePanel>

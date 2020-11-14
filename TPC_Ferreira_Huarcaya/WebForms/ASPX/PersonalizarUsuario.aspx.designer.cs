@@ -33,6 +33,15 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.DropDownList ddl_Paginas;
 
         /// <summary>
+        /// Control btn_AgregarPagina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_AgregarPagina;
+
+        /// <summary>
         /// Control ddl_Estilos.
         /// </summary>
         /// <remarks>
@@ -49,5 +58,14 @@ namespace WebForms.ASPX
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Funcionalidades;
+
+        /// <summary>
+        /// Control btn_Agregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Agregar;
     }
 }

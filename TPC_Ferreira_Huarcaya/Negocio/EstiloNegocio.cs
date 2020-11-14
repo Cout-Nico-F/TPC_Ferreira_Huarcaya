@@ -44,6 +44,7 @@ namespace Negocio
                 Estilo est = new Estilo();
                 est.Id = lectura.GetInt16(0);
                 est.Descripcion = lectura.GetString(1);
+                est.Url_Imagen = lectura.GetString(2);
                 lista.Add(est);
             }
             conexion.Desconectar();
