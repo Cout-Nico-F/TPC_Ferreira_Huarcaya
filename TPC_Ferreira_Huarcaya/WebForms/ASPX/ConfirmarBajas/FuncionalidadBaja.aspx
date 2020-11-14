@@ -7,5 +7,8 @@
     <h3> Esta accion eliminara la funcionalidad de la base de datos </h3>
 
     <asp:Button ID="btn_Baja_Funcionalidad" Text="Si, deseo eliminar permanentemente esta funcionalidad"  runat="server" CssClass="btn btn-danger" OnClick="Btn_Baja_Funcionalidad_Click"/>
+        <br />
+        <br />
+    <a href="../Personalizar.aspx" class="btn btn-info">No, no quiero eliminar esta funcionalidad ahora.</a>
     </div>
 </asp:Content>

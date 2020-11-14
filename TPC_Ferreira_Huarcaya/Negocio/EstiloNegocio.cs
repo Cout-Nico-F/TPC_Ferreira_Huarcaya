@@ -32,5 +32,30 @@ namespace Negocio
             return UrlImagen;
 
         }
+
+        public List<Estilo> Listar()
+        {
+            List<Estilo> lista = new List<Estilo>();
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            var lectura = conexion.Consulta_Rapida("select * from Estilos");
+
+            while (lectura.Read())
+            {
+                Estilo est = new Estilo();
+                est.Id = lectura.GetInt16(0);
+                est.Descripcion = lectura.GetString(1);
+                lista.Add(est);
+            }
+            conexion.Desconectar();
+            return lista;
+        }
+
+        public int Eliminar(Int16 id)//tal vez serviria un procedimiento almacenado que solo elimine si la sentencia afecta 1 sola row?
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("Delete from Estilos where ID =" + id);
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
     }
 }

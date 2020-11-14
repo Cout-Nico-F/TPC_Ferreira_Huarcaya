@@ -71,6 +71,7 @@
     <Content Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx" />
     <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
+    <Content Include="ASPX\ConfirmarBajas\EstiloBaja.aspx" />
     <Content Include="ASPX\ConfirmarBajas\FuncionalidadBaja.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
     <Content Include="ASPX\EditarDatosPersonales.aspx" />
@@ -1894,6 +1895,13 @@
     </Compile>
     <Compile Include="ASPX\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\ConfirmarBajas\EstiloBaja.aspx.cs">
+      <DependentUpon>EstiloBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\ConfirmarBajas\EstiloBaja.aspx.designer.cs">
+      <DependentUpon>EstiloBaja.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\ConfirmarBajas\FuncionalidadBaja.aspx.cs">
       <DependentUpon>FuncionalidadBaja.aspx</DependentUpon>
