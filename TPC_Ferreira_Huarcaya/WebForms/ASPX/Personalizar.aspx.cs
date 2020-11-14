@@ -61,7 +61,8 @@ namespace WebForms.ASPX
 
         protected void Btn_Pagina_Baja_Click(object sender, EventArgs e)
         {
-
+            string id = ddl_Paginas.SelectedItem.Value;
+            Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id);
         }
     }
 }

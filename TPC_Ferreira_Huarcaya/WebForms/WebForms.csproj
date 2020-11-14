@@ -74,6 +74,7 @@
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\ConfirmarBajas\EstiloBaja.aspx" />
     <Content Include="ASPX\ConfirmarBajas\FuncionalidadBaja.aspx" />
+    <Content Include="ASPX\ConfirmarBajas\PaginaBaja.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
     <Content Include="ASPX\EditarDatosPersonales.aspx" />
     <Content Include="ASPX\Error.aspx" />
@@ -1917,6 +1918,13 @@
     </Compile>
     <Compile Include="ASPX\ConfirmarBajas\FuncionalidadBaja.aspx.designer.cs">
       <DependentUpon>FuncionalidadBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\ConfirmarBajas\PaginaBaja.aspx.cs">
+      <DependentUpon>PaginaBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\ConfirmarBajas\PaginaBaja.aspx.designer.cs">
+      <DependentUpon>PaginaBaja.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\CrearCuenta.aspx.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
