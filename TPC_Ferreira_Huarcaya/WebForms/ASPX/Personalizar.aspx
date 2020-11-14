@@ -63,6 +63,9 @@
                 <asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-warning" OnClick="Baja_Funcionalidad_Click"/>
                 <a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a>
                 <asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" CssClass="btn btn-warning" OnClick="Btn_Estilo_Baja_Click"/>
+                <a href="AltasModificaciones/PaginasAM.aspx" class="alert-link d-block">Nueva Pagina</a>
+                <asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" CssClass="btn btn-warning" OnClick="Btn_Pagina_Baja_Click"/>
+
             </div>         
         </div>
     </form>

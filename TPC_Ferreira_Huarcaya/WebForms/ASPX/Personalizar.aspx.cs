@@ -58,5 +58,10 @@ namespace WebForms.ASPX
             string id = ddl_Estilos.SelectedItem.Value;
             Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
         }
+
+        protected void Btn_Pagina_Baja_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
