@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="ASPX\AltasModificaciones\EstilosAM.aspx" />
     <Content Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx" />
+    <Content Include="ASPX\AltasModificaciones\PaginasAM.aspx" />
     <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\ConfirmarBajas\EstiloBaja.aspx" />
@@ -1881,6 +1882,13 @@
     </Compile>
     <Compile Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx.designer.cs">
       <DependentUpon>FuncionalidadesAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\AltasModificaciones\PaginasAM.aspx.cs">
+      <DependentUpon>PaginasAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\AltasModificaciones\PaginasAM.aspx.designer.cs">
+      <DependentUpon>PaginasAM.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\CarritoCompra.aspx.cs">
       <DependentUpon>CarritoCompra.aspx</DependentUpon>
