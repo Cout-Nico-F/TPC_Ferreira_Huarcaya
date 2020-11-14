@@ -47,13 +47,24 @@
                             <p class="card-text"><%=item.Descripcion %></p>
                             <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>  Vista Previa</a>
                             <a href="CarritoCompra.aspx?idPagina=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>   Solicitar</a>
-                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-plus-circle"></i>   Personalizar</a>
                         </div>
                      </div>
                  </div>
                         <%}%>
                 </div>
+            <div class="col md-5 col-sm-4">
+                    <div class="card text-center" style="margin-bottom: 40px;">
+                        <img src="../Imagenes/ImagenesPaginas/Blanco.jpg" class="card-img-top" alt="No se encontro la imagen" />
+                        <div class="card-body">
+                            <h5 class="card-title">Template Vacio</h5>
+                            <p class="card-text">Template en blanco para personalizar</p>
+                            <a href="#" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>  Vista Previa</a>
+                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-plus-circle"></i>   Personalizar</a>
+                        </div>
+                     </div>
+                 </div>
             </div>
+         
         </section>
 
     <footer>
