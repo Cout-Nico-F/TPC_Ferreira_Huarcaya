@@ -13,8 +13,6 @@ namespace WebForms.ASPX
     {
         public List<PaginaWeb> Lista { get; set; }
 
-        public PaginaWeb Buscador { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -41,9 +39,14 @@ namespace WebForms.ASPX
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        protected void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
             List<PaginaWeb> listaBuscador = new List<PaginaWeb>();
 
-            if(Session["listaBuscados"] == null)
+            if (Session["listadoBuscados"] == null)
             {
                 Session.Add("listadoBuscados", listaBuscador);
             }
@@ -55,8 +58,8 @@ namespace WebForms.ASPX
             listaBuscador = Lista.FindAll(
                 page => page.Titulo.ToUpper().Contains(txt_Buscar.Text.ToUpper()));
             //no funciona pero deberiamos hacerlo de otra manera para que busque coincidencias
-            Session["listaBuscados"] = listaBuscador;
-
+            Session["listadoBuscados"] = listaBuscador;
+            
             /*Esto es para que recargue la pagina no?*/
             Response.Redirect("Catalogo.aspx");
         }

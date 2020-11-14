@@ -10,8 +10,8 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <div class="container d-flex">
-                                     <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" />
-                                     <asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>
+                                     <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
+                                     <!--<asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>-->
                                 </div>
                             </div>
                         </div>
@@ -35,6 +35,11 @@
     <br />
     <section id="facilities">
         <div class="container">
+            <%
+                if (Lista.Count == 0)
+                {%>
+                    <h3 style="color:white; margin-left: 1vw; ">No hay articulos que coincidan con tu busqueda.</h3>
+            <% }%>
             <div class="row">
                 <%
                         foreach(Modelo.PaginaWeb item in Lista)
