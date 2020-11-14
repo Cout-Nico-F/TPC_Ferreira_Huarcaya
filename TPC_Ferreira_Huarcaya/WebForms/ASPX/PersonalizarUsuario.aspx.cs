@@ -11,12 +11,13 @@ namespace WebForms.ASPX
 {
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
-        public Funcionalidad Funcionalidades { get; set; }
+        public Funcionalidad Funcionalidad { get; set; }
         public Pagina Paginas { get; set; }
         public Estilo Estilo { get; set; }
-        public List<Funcionalidad> ListaFuncionalidades { get; set; }
+        public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
         public List<Pagina> ListaPaginas { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
+        public FuncionalidadNegocio FunNegocio { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,6 +25,16 @@ namespace WebForms.ASPX
                 IniciarLlenadoDeDropDownPaginas();
                 
             }
+            if (ListaFuncionalidadesAgregadas == null)
+            {
+                ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
+            }
+           if(Session["listaFuncionalidadesSelec"] == null)
+            {
+                Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
+            }
+           
+
         }
         private void IniciarLlenadoDeDropDownPaginas()
         {
@@ -57,15 +68,19 @@ namespace WebForms.ASPX
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-            ListaFuncionalidades = new List<Funcionalidad>();
+           
             FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
             var listaFuncionalidades = funNeg.Listar();
 
             Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
 
-            Funcionalidades = listaFuncionalidades.Find(x => id == x.Id);
+            Funcionalidad = listaFuncionalidades.Find(x => id == x.Id);
 
-            ListaFuncionalidades.Add(Funcionalidades);
+            ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
+
+            ListaFuncionalidadesAgregadas.Add(Funcionalidad);
+
+            Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
         }
 
         protected void btn_AgregarPagina_Click(object sender, EventArgs e)
@@ -94,6 +109,44 @@ namespace WebForms.ASPX
             Estilo = listaEstilo.Find(x => id == x.Id);
 
             ListaEstilos.Add(Estilo);
+        }
+
+        protected void bnt_Funcionalidad_Baja_Click(object sender, EventArgs e)
+        {
+            string id = ddl_Funcionalidades.SelectedItem.Value;
+            Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
+        }
+
+        protected void btn_Estilo_Baja_Click(object sender, EventArgs e)
+        {
+            string id = ddl_Estilos.SelectedItem.Value;
+            Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
+        }
+
+        protected void btn_Baja_Estilo_Click(object sender, EventArgs e)
+        {
+            if(ddl_Estilos.SelectedIndex == 0)
+            {
+                return;
+            }
+            FunNegocio.Eliminar(Funcionalidad.Id);//el metodo permite usar un if para comprobar que se pudo eliminar (1) o que no afecto ninguna row (0)
+            Response.Redirect("../PersonalizarUsuario.aspx");
+        }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Paginas_Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Pagina_Baja_Click(object sender, EventArgs e)
+        {
+                string id = ddl_Paginas.SelectedItem.Value;
+                Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id); 
         }
     }
 }

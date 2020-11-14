@@ -10,7 +10,7 @@
      <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!-- Estilos CSS -->
-  
+   <link href="../CSS/Estilos_PersonalizarUsuario.css" type="text/css" rel="stylesheet"/>
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
 
@@ -64,28 +64,66 @@
                 <div style="text-align: center">
                     <h1>Funcionalidades</h1>
                     <p>Elija un o mas funcionalidades para su Web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="false"></asp:DropDownList>
-                    <asp:Button Text="Agregar" runat="server" ID="btn_Agregar" OnClick="btn_Agregar_Click" />
+                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades"></asp:DropDownList>
+                    <asp:Button Text="Agregar" runat="server" ID="btn_Agregar" OnClick="btn_Agregar_Click" AutoPostBack="true"/>
                 </div>
-                <%if (!(ListaFuncionalidades == null))
-                    {%>
+                <%if (!(ListaFuncionalidadesAgregadas == null))
+                                                {%>
                 <table>
                     <tr>
                         <th>Paginas</th>
                         <th>Funcionalidades</th>
-                        <td>Costo</td>
+                        <th>Costo</th>
                     </tr>
 
-                    <%foreach (var item in ListaFuncionalidades)
-                        { %>
+                    <%foreach (var item in ListaFuncionalidadesAgregadas)
+                      { %>
                     <tr>
+                     
                         <td><%=item.Descripcion%></td>
                         <td><%=item.Costo %></td>
+                         
                     </tr>
-                    <%} %>
+                     <%} %>
                 </table>
                 <%}%>
-                
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <table class="egt" style="text-align:center;">
+                   <tr>
+                       <th scope="row">Opciones</th>
+                       <th>Paginas</th>
+                       <th>Estilos</th>
+                       <th>Funcionalidades</th>
+                   </tr>
+                   <tr>
+                       <th>Agregar</th>
+                       <td><a href="AltasModificaciones/PaginasAM.aspx" class="alert-link d-block">Nueva Pagina</a></td>
+                       <td><a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a></td>
+                       <td><a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a></td>
+                   </tr>
+                    <tr>
+                        <th>Modificar</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                       <th>Eliminar</th>
+                        <td><asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" CssClass="btn btn-danger" OnClick="btn_Pagina_Baja_Click" /></td>
+                        <td><asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" CssClass="btn btn-danger" OnClick="btn_Estilo_Baja_Click"/></td>
+                        <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-danger" Onclick="bnt_Funcionalidad_Baja_Click"/></td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                <br />
+                <br />
 
             </ContentTemplate>
         </asp:UpdatePanel>

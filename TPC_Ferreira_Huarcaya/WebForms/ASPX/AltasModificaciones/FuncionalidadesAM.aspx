@@ -7,7 +7,7 @@
 
     
 
-    <a href="../Personalizar.aspx">Volver</a>
+    <a href="../PersonalizarUsuario.aspx">Volver</a>
 
     <form>
         <div class="form-group">
