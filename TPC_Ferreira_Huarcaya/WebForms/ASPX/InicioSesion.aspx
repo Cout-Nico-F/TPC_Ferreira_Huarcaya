@@ -74,6 +74,7 @@
                     <div>
                         <div class="boton-nav-user">
                             <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i></a>
+                            <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i></a>
                         </div>
                     </div>
                 </div>

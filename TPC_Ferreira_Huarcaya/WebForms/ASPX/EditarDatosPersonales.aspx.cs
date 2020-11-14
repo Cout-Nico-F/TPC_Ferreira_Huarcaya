@@ -13,27 +13,59 @@ namespace WebForms.ASPX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id;
-            DatosPersonales dat = new DatosPersonales();
-            DatosPersonalesNegocios edNeg = new DatosPersonalesNegocios();
+            if (!IsPostBack)
+            {
+                try
+                {
+                    int id;
+                    DatosPersonales dat = new DatosPersonales();
+                    DatosPersonalesNegocios edNeg = new DatosPersonalesNegocios();
 
-           // id = BuscarUsuario();
+                    id = 1; // estoy forzando el id enviado aca
 
-            //dat = edNeg.TraerDatos(id);
+                    dat = edNeg.TraerDatos(id); //esta mal la conexion a la DB sqlexception must declare scalar @id_Usuario en command = executeNonQuery();
 
-            //Mostrarlos en el placeholder de cada textbox 
-            txt_NombreApellido.Attributes.Add("placeholder", dat.NombreApellido);
-            txtTelefono_Movil.Attributes.Add("placeholder",Convert.ToString(dat.TelefonoMovil));
-            txt_TelefonoFijo.Attributes.Add("placeholder",Convert.ToString(dat.TelefonoFijo));
-            txt_Email.Attributes.Add("placeholder",dat.Email);
-            txt_EmailRecuperacion.Attributes.Add("placeholder",dat.EmailRecuperacion);
-            txt_FechaNac.Attributes.Add("placeholder",Convert.ToString(dat.FechaNacimiento));
+                    //Muestra en cada textbox los datos que encontro del usuario
+
+                    txtNombreApellido.Text = dat.NombreApellido;
+                    txtTelefonoMovil.Text = Convert.ToString(dat.TelefonoMovil);
+                    txtTelefonoFijo.Text = Convert.ToString(dat.TelefonoFijo);
+                    txtEmail.Text = dat.Email;
+                    txtEmailRecuperacion.Text = dat.EmailRecuperacion;
+                    txtFechaNacimiento.Text = Convert.ToString(dat.FechaNacimiento);
+                }
+                catch (Exception ex)
+                {
+                    // el usuario no fue encontrado o hubo un error inesperado
+                    Response.Redirect("Error.aspx");
+                }
+
+            }
 
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+        protected void btn_Cancelar_Click(object sender, EventArgs e)
         {
-          
+            
+        }
+
+        protected void btn_Cambio_Click(object sender, EventArgs e)
+        {
+
+            //validar primero que los campos no sean vacios
+
+            //enviarlo de nuevo a la DB con update
+            DatosPersonales datos = new  DatosPersonales();
+
+            datos.NombreApellido = txtNombreApellido.Text;
+            datos.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
+            datos.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
+            datos.Email = txtEmail.Text;
+            datos.EmailRecuperacion = txtEmailRecuperacion.Text;
+            datos.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+
+            //ActualizarDatos(datos);
+
         }
     }
 }

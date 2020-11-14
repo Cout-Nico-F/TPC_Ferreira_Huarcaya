@@ -15,66 +15,84 @@ namespace WebForms.ASPX
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control form2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
-        /// Control txt_NombreApellido.
+        /// Control txtNombreApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_NombreApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreApellido;
 
         /// <summary>
-        /// Control txtTelefono_Movil.
+        /// Control txtTelefonoMovil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono_Movil;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoMovil;
 
         /// <summary>
-        /// Control txt_TelefonoFijo.
+        /// Control txtTelefonoFijo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_TelefonoFijo;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoFijo;
 
         /// <summary>
-        /// Control txt_Email.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Email;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// Control txt_FechaNac.
+        /// Control txtFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_FechaNac;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaNacimiento;
 
         /// <summary>
-        /// Control txt_EmailRecuperacion.
+        /// Control txtEmailRecuperacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_EmailRecuperacion;
+        protected global::System.Web.UI.WebControls.TextBox txtEmailRecuperacion;
+
+        /// <summary>
+        /// Control btn_Cambio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Cambio;
+
+        /// <summary>
+        /// Control btn_Cancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Cancelar;
     }
 }

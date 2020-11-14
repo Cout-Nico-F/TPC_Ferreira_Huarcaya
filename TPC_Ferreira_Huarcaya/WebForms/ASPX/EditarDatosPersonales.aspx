@@ -39,16 +39,56 @@
     </div>
     </nav>
 
-    <form id="form1" runat="server">
-        <div>
-            <asp:TextBox runat="server" id="txt_NombreApellido"/>
-            <asp:TextBox runat="server" id="txtTelefono_Movil"/>
-            <asp:TextBox runat="server" id="txt_TelefonoFijo"/> 
-            <asp:TextBox runat="server" id="txt_Email"/> 
-            <asp:TextBox runat="server" id="txt_FechaNac"/> 
-            <asp:TextBox runat="server" id="txt_EmailRecuperacion"/> 
-            <asp:Button Text="Aplicar Cambios" runat="server" cssClass="btn btn-dark" OnClick="Unnamed_Click"/>
+         <form id="form2" runat="server">
+       <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="section-title">Creando Cuenta...</h2>
+                    <p class="section-description">__________  __________   ____________  ________   _____________   __________   ____________</p>
+                    <br />
+                    <br />
+                </div>
+                <div class="col-md-12 col-md-offset-2">
+                    <form id="contact" method="post" class="form" role="form" ">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <asp:Label Text="Nombre y Apellido" runat="server" />
+                                <asp:TextBox runat="server" ID="txtNombreApellido" Placeholder="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
+                            </div>
+                             <div class="col-md-12 form-group">
+                                 <asp:Label Text="Telefono Movil" runat="server" />
+                                <asp:TextBox runat="server" ID="txtTelefonoMovil" Placeholder="Telefono Movil (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                            </div>
+                             <div class="col-md-12 form-group">
+                                <asp:Label Text="Telefono Fijo" runat="server" />
+                                 <asp:TextBox runat="server" ID="txtTelefonoFijo" Placeholder="Telefono Fijo (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <asp:Label Text="Correo electronico" runat="server" />
+                                <asp:TextBox runat="server" ID="txtEmail" Placeholder="Correo electronico" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                            </div>
+                            <asp:Label Text="Fecha de Nacimiento" runat="server" />
+                            <div class="col-md-12 form-group">
+                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                             <div class="col-md-12 form-group">
+                                 <asp:Label Text="Email para recuperar la cuenta" runat="server" />
+                                <asp:TextBox runat="server" ID="txtEmailRecuperacion" Placeholder="Email para recuperacion de cuenta(opcional)" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-md-6 form-group">
+                            <asp:Button Text="Aplicar Cambios" runat="server" CssClass="btn btn-primary" ID="btn_Cambio" OnClick="btn_Cambio_Click"  />
+                        </div>
+                         <div class="col-md-6 form-group">
+                            <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-primary" ID="btn_Cancelar" OnClick="btn_Cancelar_Click"  />
+                             <a href="javascript:history.back()" class="btn btn-primary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>
+    </div>
 </body>
 </html>
