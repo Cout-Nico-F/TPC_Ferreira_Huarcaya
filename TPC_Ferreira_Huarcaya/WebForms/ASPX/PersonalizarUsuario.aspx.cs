@@ -11,7 +11,7 @@ namespace WebForms.ASPX
 {
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
-        public Funcionalidad Funcionalidad { get; set; }
+        public List<string> listaFuncionalidades { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -51,8 +51,8 @@ namespace WebForms.ASPX
 
         protected void ddl_Funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Funcionalidad> lista = ddl_Funcionalidades.SelectedValue;
-
+            listaFuncionalidades = null;
+            listaFuncionalidades.Add(ddl_Funcionalidades.Text);
         }
     }
 }

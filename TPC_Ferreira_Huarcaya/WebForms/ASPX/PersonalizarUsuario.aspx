@@ -39,6 +39,7 @@
     </div>
     </nav>
     <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />    
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <div style="text-align: center">
@@ -54,8 +55,21 @@
                 <div style="text-align: center">
                     <h1>Funcionalidades</h1>
                     <p>Elija un o mas funcionalidades para su Web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="true"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="true" OnSelectedIndexChanged="ddl_Funcionalidades_SelectedIndexChanged"></asp:DropDownList>
                 </div>
+                <table>
+                    <tr>
+                         <th>Funcionalidades</th>
+                         <td>Costo</td>
+                    </tr>
+                    <%foreach (var item in listaFuncionalidades)
+                        { %>
+                    <tr>
+                        <td><%=item%></td>
+                    </tr>
+                   <%} %>
+                </table>
+
             </ContentTemplate>
         </asp:UpdatePanel>
        
