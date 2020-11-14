@@ -20,7 +20,7 @@
 <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
-             <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" style=" background-color: rgba(255, 0, 0, 0.5);" /> <!-- No puedo hacer transparente el fonde de la imagen -->
+             <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt=""  style=" background-color: rgba(255, 0, 0, 0.5);" /> <!-- No puedo hacer transparente el fonde de la imagen -->
             FerreAlo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,21 +39,40 @@
     </div>
     </nav>
     <form id="form1" runat="server">
-        <div style="text-align:center">
-            <h1>Paginas</h1>
-            <p>Elija la cantidad de paginas que conformaran su Web</p>
-            <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true"></asp:DropDownList>
-        </div>
-         <div style="text-align:center">
-            <h1>Estilo</h1>
-            <p>Elija el estilo que quiera que tenga su web</p>
-            <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true"></asp:DropDownList>
-        </div>
-        <div style="text-align:center">
-            <h1>Funcionalidades</h1>
-            <p>Elija un o mas funcionalidades para su Web</p>
-            <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="true"></asp:DropDownList>
-        </div>
+        <asp:ScriptManager runat="server" />    
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <div style="text-align: center">
+                    <h1>Paginas</h1>
+                    <p>Elija la cantidad de paginas que conformaran su Web</p>
+                    <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true"></asp:DropDownList>
+                </div>
+                <div style="text-align: center">
+                    <h1>Estilo</h1>
+                    <p>Elija el estilo que quiera que tenga su web</p>
+                    <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true"></asp:DropDownList>
+                </div>
+                <div style="text-align: center">
+                    <h1>Funcionalidades</h1>
+                    <p>Elija un o mas funcionalidades para su Web</p>
+                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades" AutoPostBack="true" OnSelectedIndexChanged="ddl_Funcionalidades_SelectedIndexChanged"></asp:DropDownList>
+                </div>
+                <table>
+                    <tr>
+                         <th>Funcionalidades</th>
+                         <td>Costo</td>
+                    </tr>
+                    <%foreach (var item in listaFuncionalidades)
+                        { %>
+                    <tr>
+                        <td><%=item%></td>
+                    </tr>
+                   <%} %>
+                </table>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+       
        
        
 
