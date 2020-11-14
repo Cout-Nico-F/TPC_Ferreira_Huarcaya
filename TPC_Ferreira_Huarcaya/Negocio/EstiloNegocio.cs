@@ -14,6 +14,8 @@ namespace Negocio
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
             int rowsAfectadas = conexion.SentenciaNonQuery("insert into Estilos(Descripcion) values('"+ estilo.Descripcion +"')");
+            // estilos ahora tiene un UrlImagen entonces podemos usar el boton que nos mostro maxi apra agregar imagenes, guardarlas en una carpeta, traer la ruta y la ruta la enviamos
+            // a la BD con este insert tambien
             conexion.Desconectar();
             return rowsAfectadas;
         }

@@ -28,6 +28,7 @@ namespace WebForms.ASPX
             ddl_Paginas.DataValueField = "ID";
             ddl_Paginas.DataBind();
             ddl_Paginas.Items.Insert(0, new ListItem("[Pagina]", "0"));
+            //Paginas tambien podria tener una url_Imagen 
             
             //Estilos
             ddl_Estilos.DataSource = estNeg.ConsultaDataSet("Select * From Estilos");
