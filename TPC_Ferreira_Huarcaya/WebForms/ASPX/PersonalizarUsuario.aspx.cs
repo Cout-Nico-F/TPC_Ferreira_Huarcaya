@@ -11,6 +11,7 @@ namespace WebForms.ASPX
 {
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
+        public Funcionalidad Funcionalidad { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,11 +25,8 @@ namespace WebForms.ASPX
 
             //Paginas
 
-            List<Pagina> listPagina = estNeg.listarPaginas();
-            List<Funcionalidad> listFunc = estNeg.listarFuncionalidades();
-            List<Estilo> listEstilo = estNeg.listarEstilos();
 
-            ddl_Paginas.DataSource = listPagina;
+            ddl_Paginas.DataSource = estNeg.ConsultaDataSet("Select * From Paginas");
             ddl_Paginas.DataTextField = "Descripcion";
             ddl_Paginas.DataValueField = "ID";
             ddl_Paginas.DataBind();
@@ -36,14 +34,14 @@ namespace WebForms.ASPX
             //Paginas tambien podria tener una url_Imagen */
 
             //Estilos
-            ddl_Estilos.DataSource = listEstilo;
+            ddl_Estilos.DataSource = estNeg.ConsultaDataSet("Select * From Estilos");
             ddl_Estilos.DataTextField = "Descripcion";
             ddl_Estilos.DataValueField = "ID";
             ddl_Estilos.DataBind();
             ddl_Estilos.Items.Insert(0, new ListItem("[Estilos]", "0"));
 
             //Funcionalidades
-            ddl_Funcionalidades.DataSource = listPagina;
+            ddl_Funcionalidades.DataSource = estNeg.ConsultaDataSet("Select * From Funcionalidades"); ;
             ddl_Funcionalidades.DataTextField = "Descripcion";
             ddl_Funcionalidades.DataValueField = "ID";
             ddl_Funcionalidades.DataBind();
@@ -51,9 +49,10 @@ namespace WebForms.ASPX
 
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+        protected void ddl_Funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Response.Redirect("PersonalizarEstilos.aspx");
+            List<Funcionalidad> lista = ddl_Funcionalidades.SelectedValue;
+
         }
     }
 }
