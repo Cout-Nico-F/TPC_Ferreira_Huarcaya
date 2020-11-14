@@ -41,7 +41,8 @@ create table Niveles_Acceso (
 	
 create table Estilos (
 	ID smallint identity(1,1),
-	Descripcion varchar(100) not null
+	Descripcion varchar(100) not null,
+	Url_Imagen varchar(200) not null
 )
 	go
 	
@@ -180,9 +181,9 @@ insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,T
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com','07/05/2019')
 go
 /*			Tabla Estilos				*/		
-insert into Estilos(Descripcion) values ('Moderno')
-insert into Estilos(Descripcion) values ('Flat design')
-insert into Estilos(Descripcion) values ('Material design')
+insert into Estilos(Descripcion,Url_Imagen) values ('Moderno')
+insert into Estilos(Descripcion,Url_Imagen) values ('Flat design')
+insert into Estilos(Descripcion,Url_Imagen) values ('Material design')
 go
 /*			Tabla Paginas				*/
 insert into Paginas(ID_Seccion,Descripcion)	values (1,'Home/Detalles/Contacto')
@@ -201,12 +202,9 @@ insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,2)
 go
 
 /*				Tabla Pagina Web					*/
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Admin SB2','Pagina para administrar ventas,negocio,programas,etc','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginas/Page_Admin.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Creativo','Pagina fabricada con base de Bootstrap para negocio','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginas/Page_Creative.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('E-commerce','Esta es una tienda solamente virtual','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Page_Agency.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Portfolio Stylish','Portfolio para presentar en una entrevista de trabajo','../Templates Prefabricados/Template_04/index.html','../Imagenes/ImagenesPaginas/Page_Portfolio.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Shop online','Template simple para vender online','../Templates Prefabricados/Template_05/index.html','../Imagenes/ImagenesPaginas/Page_Home.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Contacto','Es un formulario de contacto monocromatico muy agredable a la vista','../Templates Prefabricados/Template_06/index.html','../Imagenes/ImagenesPaginas/Page_Contacto.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Full Widht Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginas/ImagenesFull.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Blos Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginas/Blog.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
 go
 
 /*				Tabla Informacion				*/
