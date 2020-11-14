@@ -31,7 +31,7 @@ namespace Negocio
             //nose donde poner el select
             return aux;
         }
-        public int ActualizarDatos(DatosPersonales dat)
+        /*public int ActualizarDatos(DatosPersonales dat)
         {
             int RowsModificadas;
 
@@ -40,6 +40,6 @@ namespace Negocio
             //hace un return de la rows que modificaron si es mas de 1 se modificaron correctamente
 
             return RowsModificadas;
-        }
+        }*/
     }
 }
