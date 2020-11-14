@@ -7,16 +7,13 @@ go
 use Ferreira_Huarcaya_DB
 go
 
---Tablas Maestro (Orden:Reloj segun DER Draw.io desde Elementos)
-
 create table Funcionalidades (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
 	Costo int not null
 )
 	go
--- No estoy tan seguro de que Funcionalidades tenga una relacion muchos a muchos
--- porque una pagina puede tener muchas funcionalidades pero una funcionalidad puede tener muchas paginas?,-->(si puede pertenecer a muchas paginas una misma funcionalidad.)
+
 create table PaginaWeb(
 	ID smallint identity(1,1),
 	Titulo varchar(50) not null,
@@ -31,11 +28,7 @@ create table Niveles_Acceso (
 	Descripcion varchar(100) not null
 )
 	go
-	
---Fin de tablas maestro.
-	
-	go
-	
+
 create table Estilos (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
@@ -72,17 +65,12 @@ create table Datos_Personales (
 create table Paginas (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
-	ID_Seccion smallint not null
 )
+
 	go
-create table Elementos_X_Paginas (
-	ID_Pagina smallint not null,
-	ID_Elemento smallint not null
-)
-	go
-create table Funcionalidades_X_Paginas (
+create table Funcionalidades_X_PedidosWebPage (
 	ID_Funcionalidad smallint not null,
-	ID_Pagina smallint not null
+	ID_PedidoWebPage smallint not null
 )
 create table InfoWeb (
 	ID_Usuarios smallint not null,
@@ -109,7 +97,7 @@ go
 	go
 	alter table Paginas add constraint PK_Paginas primary key (ID)
 	go
-	alter table Funcionalidades_X_Paginas add constraint PKS_Funcionalidades_X_Paginas primary key (ID_Funcionalidad, ID_Pagina)
+	alter table Funcionalidades_X_PedidosWebPage add constraint PKS_Funcionalidades_X_Pedidos primary key (ID_Funcionalidad, ID_PedidoWebPage)
 	go
 	alter table PaginaWeb add constraint PK_PaginaWeb primary key (ID)
 	go
@@ -122,9 +110,9 @@ go
 	go
 	alter table Datos_Personales add foreign key (ID_Usuario) references Usuarios(ID)
 	go
-	alter table Funcionalidades_X_Paginas add foreign key (ID_Funcionalidad) references Funcionalidades(ID)
+	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_Funcionalidad) references Funcionalidades(ID)
 	go
-	alter table Funcionalidades_X_Paginas add foreign key (ID_Pagina) references Paginas(ID)
+	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_PedidosWebPage) references PedidosWebPage(ID)
 	go
 	alter table InfoWeb add foreign key (ID_Usuarios) references Usuarios(ID)
 	go
@@ -153,7 +141,6 @@ insert into Funcionalidades(Descripcion,Costo) values ('Evento alerta con boton'
 insert into Funcionalidades(Descripcion,Costo) values ('Evento pop-up',5000)
 go
 
---                                  Tablas No Maestras
 /*				Tabla Usuarios			*/
 insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('JeremiasI21','Jere123',1)
 insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('Lorena23','Lore321',1)
@@ -188,18 +175,17 @@ insert into Paginas(ID_Seccion,Descripcion)	values (1,'Contacto')
 insert into Paginas(ID_Seccion,Descripcion)	values (1,'Informacion')
 insert into Paginas(ID_Seccion,Descripcion)	values (1,'Login')
 go
-/*				Tabla Funcionalidades x Paginas			*/
-insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (1,1)
-insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,1)
-insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (3,2)
-insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (4,1)
-insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (5,1)
-insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (2,2)
+/*				Tabla Funcionalidades x PedidosWebPage			*/
+--estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.
+
+/*insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (1,1)
 go
+*/
+
 
 /*				Tabla Pagina Web					*/
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Full Widht Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginas/ImagenesFull.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Blos Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginas/Blog.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Full Width Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginas/ImagenesFull.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Blog Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginas/Blog.png')
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
 go
 
@@ -208,21 +194,4 @@ insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion,urlImagen) v
 insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion,urlImagen) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas', '../Imagenes/NicolasFerreira.jpg' )
 go
 
--- Cambios:
--- Saque los not nulls a los identity pk: parece que se arreglo el problema de que empezaba en el ID 2 o ID 6, no lo probe del todo
--- Cambie el formato de los inserts
--- agregue la tabla Funcionalidades_X_Paginas con sus PKs y FKs
--- Agregue una tabla PaginaWeb hice si alter table de PK y le agregue unos inserts
--- Cree otra tabla InfoWeb con dos PKs y FKs de id_usuario y id_datos personales 
-
--- Problemas:
--- insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (1,2) cuando los id se repiten los los inserts ocurre un error por ejemplo no puedo hacer esto
-/*
-insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (1,2)
-insert into Colores_X_RelacionColores(ID_Color,ID_RelacionColor) values (1,2)
-
--- esto lo mismo los dos IDs ultimos tiran error porque se repiten 
-insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (1,1,3)
-insert into Elementos_X_Paginas(ID_Pagina,ID_Disposicion,ID_Elemento) values (4,1,3)
-*/
 
