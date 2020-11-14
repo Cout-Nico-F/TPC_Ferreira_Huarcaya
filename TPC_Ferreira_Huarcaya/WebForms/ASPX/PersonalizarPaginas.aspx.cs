@@ -22,12 +22,26 @@ namespace WebForms.ASPX
         {
             DropdownsNegocio estNeg = new DropdownsNegocio();
 
-            //Estilos
+            //Paginas
             ddl_Paginas.DataSource = estNeg.ConsultaDataSet("Select * From Paginas");
             ddl_Paginas.DataTextField = "Descripcion";
             ddl_Paginas.DataValueField = "ID";
             ddl_Paginas.DataBind();
             ddl_Paginas.Items.Insert(0, new ListItem("[Pagina]", "0"));
+            
+            //Estilos
+            ddl_Estilos.DataSource = estNeg.ConsultaDataSet("Select * From Estilos");
+            ddl_Estilos.DataTextField = "Descripcion";
+            ddl_Estilos.DataValueField = "ID";
+            ddl_Estilos.DataBind();
+            ddl_Estilos.Items.Insert(0, new ListItem("[Estilos]", "0"));
+
+            //Funcionalidades
+            ddl_Funcionalidades.DataSource = estNeg.ConsultaDataSet("Select * From Funcionalidades");
+            ddl_Funcionalidades.DataTextField = "Descripcion";
+            ddl_Funcionalidades.DataValueField = "ID";
+            ddl_Funcionalidades.DataBind();
+            ddl_Funcionalidades.Items.Insert(0, new ListItem("[Funcionalidades]", "0"));
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)

@@ -78,7 +78,6 @@ create table Paginas (
 	ID_Seccion smallint not null
 )
 	go
-Select * From PaginaWeb
 create table Elementos_X_Paginas (
 	ID_Pagina smallint not null,
 	ID_Elemento smallint not null
@@ -181,9 +180,9 @@ insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,T
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com','07/05/2019')
 go
 /*			Tabla Estilos				*/		
-insert into Estilos(Descripcion,Url_Imagen) values ('Moderno')
-insert into Estilos(Descripcion,Url_Imagen) values ('Flat design')
-insert into Estilos(Descripcion,Url_Imagen) values ('Material design')
+insert into Estilos(Descripcion,Url_Imagen) values ('Moderno','../Imagenes/ImagenesPaginas/Moderno.jpg')
+insert into Estilos(Descripcion,Url_Imagen) values ('Flat design','../Imagenes/ImagenesPaginas/Flat.jpg')
+insert into Estilos(Descripcion,Url_Imagen) values ('Material design','../Imagenes/ImagenesPaginas/Material.png')
 go
 /*			Tabla Paginas				*/
 insert into Paginas(ID_Seccion,Descripcion)	values (1,'Home/Detalles/Contacto')
