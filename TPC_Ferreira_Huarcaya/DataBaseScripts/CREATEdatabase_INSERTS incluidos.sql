@@ -89,8 +89,14 @@ create table Paginas_X_PedidosWebPage (
 	ID_PedidoWebPage smallint not null
 )
 	go
+create table PedidosPaginaPrediseniada (
+	ID smallint not null,
+	ID_Usuario smallint not null,
+	ID_PaginaWeb smallint not null
+)
 --Alter Tables de PK
-
+	alter table PedidosPaginaPrediseniada add constraint PK_PedidosPrediseniadas primary key (ID)
+	go
 	alter table Funcionalidades add constraint PK_Funcionalidades primary key (ID)
 	go
 	alter table Niveles_Acceso add constraint PK_Niveles_Acceso primary key (ID)
@@ -133,6 +139,10 @@ create table Paginas_X_PedidosWebPage (
 	alter table Paginas_X_PedidosWebPage add foreign key (ID_PedidoWebPage) references PedidosWebPage(ID)
 	go
 	alter table PedidosWebPage add foreign key (ID_Estilo) references Estilos(ID)
+	go
+	alter table PedidosPaginaPrediseniada add foreign key (ID_Usuario) references Usuarios(ID)
+	go
+	alter table PedidosPaginaPrediseniada add foreign key (ID_PaginaWeb) references PaginaWeb(ID)
 	go
 --Alter tables CHECKS
 	alter table Funcionalidades add constraint CH_Funcionalidades_Costo check (Costo >= 0)
