@@ -22,6 +22,7 @@ namespace Negocio
                 Pagina aux = new Pagina();
                 aux.ID = lectura.GetInt16(0);
                 aux.Descripcion = lectura.GetString(1);
+                aux.Url_Imagen = lectura.GetString(2);
 
                 lista.Add(aux);
             }

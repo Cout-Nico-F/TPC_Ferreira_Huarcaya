@@ -11,6 +11,7 @@
                             <div class="col-md-12 form-group">
                                 <div class="container d-flex">
                                      <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
+                                     <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="true"/>
                                      <!--<asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>-->
                                 </div>
                             </div>

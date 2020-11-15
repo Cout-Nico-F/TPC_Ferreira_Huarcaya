@@ -70,5 +70,10 @@ namespace WebForms.ASPX
             /*Esto es para que recargue la pagina no?*/
             Response.Redirect("Catalogo.aspx");
         }
+
+        protected void ch_MostrarTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("Catalogo.aspx");
+        }
     }
 }
