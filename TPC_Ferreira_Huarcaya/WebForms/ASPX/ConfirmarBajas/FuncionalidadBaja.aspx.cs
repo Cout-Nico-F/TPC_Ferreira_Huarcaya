@@ -35,7 +35,7 @@ namespace WebForms.ASPX.ConfirmarBajas
         protected void Btn_Baja_Funcionalidad_Click(object sender, EventArgs e)
         {
             FunNegocio.Eliminar(Funcionalidad.Id);//el metodo permite usar un if para comprobar que se pudo eliminar (1) o que no afecto ninguna row (0)
-            Response.Redirect("../Personalizar.aspx");
+            Response.Redirect("../PersonalizarUsuario.aspx");
         }
     }
 }

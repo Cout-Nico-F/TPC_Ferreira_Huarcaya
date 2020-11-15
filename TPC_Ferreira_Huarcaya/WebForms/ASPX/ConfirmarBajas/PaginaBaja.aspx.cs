@@ -35,7 +35,7 @@ namespace WebForms.ASPX.ConfirmarBajas
         protected void btn_Baja_Pagina_Click(object sender, EventArgs e)
         {
             PagNeg.Eliminar(PaginaSeleccionada.ID);
-            Response.Redirect("../Personalizar.aspx");
+            Response.Redirect("../PersonalizarUsuario.aspx");
         }
     }
 }

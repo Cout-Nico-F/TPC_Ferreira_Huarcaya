@@ -37,7 +37,7 @@ namespace WebForms.ASPX.ConfirmarBajas
         protected void Btn_Baja_Estilo_Click(object sender, EventArgs e)
         {
             EstNegocio.Eliminar(EstiloSeleccionado.Id);
-            Response.Redirect("../Personalizar.aspx");
+            Response.Redirect("../PersonalizarUsuario.aspx");
         }
     }
 }
