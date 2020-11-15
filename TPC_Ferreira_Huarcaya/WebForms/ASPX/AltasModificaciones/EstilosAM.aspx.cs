@@ -32,7 +32,7 @@ namespace WebForms.ASPX.AltasModificaciones
             }
             //mostrar popup o pantalla de Exito al agregar.
             //label.text = 
-            Response.Redirect("../Personalizar.aspx");
+            Response.Redirect("../PersonalizarUsuario.aspx");
         }
     }
 }

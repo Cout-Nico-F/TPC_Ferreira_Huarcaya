@@ -26,7 +26,7 @@ namespace WebForms.ASPX.AltasModificaciones
             {
                 Response.Redirect("../Error.aspx");
             }
-            else Response.Redirect("../Personalizar.aspx");
+            else Response.Redirect("../PersonalizarUsuario.aspx");
         }
     }
 }

@@ -17,7 +17,6 @@ namespace WebForms.ASPX.AltasModificaciones
         protected void Page_Load(object sender, EventArgs e)
         {
             NuevaFuncionalidad = new Funcionalidad();
-            txtBox_Descripcion.Attributes.Add("Placeholder", "Prueba_Harcodeado");
         }
 
         protected void btn_FuncionalidadAM_OK_Click(object sender, EventArgs e)
