@@ -46,7 +46,7 @@
                 <div style="text-align: center">
                     <h1>Paginas</h1>
                     <p>Elija la cantidad de paginas que conformaran su Web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" id="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click"/>
                 </div>
                 <div style="text-align: center">
@@ -56,9 +56,14 @@
                         
                     <%if(!(ListaEstilos == null))
                         {%>
-                            <%foreach (var item in ListaEstilos)
+                            <%foreach (var est in ListaEstilos)
                                 { %>
-                                    <img src="<%=item.Url_Imagen%>" alt="Iamgen no encontrada" />
+                                <%foreach (var pag in ListaPaginaSeleccionada)
+                                    { %>
+                                          <img src="<%=est.Url_Imagen%>" alt="Imagen Estilo no encontrada" />
+                                          <img src="<%=pag.Url_Imagen%>" alt="Imagen Pagina no enontrada" />
+                                    <%} %>
+                                  
                                 <% }%>
                                  
                        <% } %>
@@ -82,7 +87,7 @@
                       { %>
                     <tr>
                      
-                        <td><%=item.Descripcion%></td>
+                        <td><%=item.Descripcion%><asp:Button Text="Baja" runat="server" ID="btn_Remover_Funcionalidad" OnClick="btn_Remover_Funcionalidad_Click" /></td>
                         <td><%=item.Costo %></td>
                          
                     </tr>

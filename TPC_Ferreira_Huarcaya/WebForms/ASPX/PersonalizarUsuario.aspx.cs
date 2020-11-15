@@ -14,11 +14,14 @@ namespace WebForms.ASPX
         public Funcionalidad Funcionalidad { get; set; }
         public Pagina Paginas { get; set; }
         public Estilo Estilo { get; set; }
+        public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
         public List<Pagina> ListaPaginas { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
+        public List<Pagina> ListaPaginaSeleccionada { get; set; }
         public FuncionalidadNegocio FunNegocio { get; set; }
         public Usuario Usuario { get; set; }
+        public List<Funcionalidad> EliminarFuncionalidad { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -150,6 +153,34 @@ namespace WebForms.ASPX
         {
             string id = ddl_Paginas.SelectedItem.Value;
             Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id);
+        }
+
+        protected void btn_Remover_Funcionalidad_Click(object sender, EventArgs e)
+        {
+            EliminarFuncionalidad = new List<Funcionalidad>();
+            FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
+
+            var Funcionalidad = funNeg.Listar();
+
+            Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
+
+            BajaFuncionalidad = Funcionalidad.Find(x => id == x.Id);
+
+            EliminarFuncionalidad.Remove(BajaFuncionalidad);
+        }
+
+        protected void ddl_Paginas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListaPaginaSeleccionada = new List<Pagina>();
+            PaginaNegocio pagNeg = new PaginaNegocio();
+
+            var listaPaginas = pagNeg.Listar();
+
+            Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
+            // a Paginas se le asigna un null porque??
+             Paginas = ListaPaginaSeleccionada.Find(x => id == x.ID);
+
+            ListaPaginaSeleccionada.Add(Paginas);
         }
     }
 }
