@@ -13,7 +13,7 @@ create table Funcionalidades (
 	Costo int not null
 )
 	go
-
+	Select * From Usuarios
 create table PaginaWeb(
 	ID smallint identity(1,1),
 	Titulo varchar(50) not null,

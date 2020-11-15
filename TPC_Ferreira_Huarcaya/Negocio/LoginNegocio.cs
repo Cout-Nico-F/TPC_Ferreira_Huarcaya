@@ -12,34 +12,24 @@ namespace Negocio
 {
     public class LoginNegocio
     {
-        public int login(Usuario user)
+        public Usuario login(Usuario user)
         {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            SqlDataReader lectura = conexion.Consulta_Rapida("Select ID,NombreUsuario,Contrasenia,ID_Nivel From Usuarios Where NombreUsuario = '" + user.NombreUsuario+"' and Contrasenia = '"+user.Contrasenia+"'");
 
-            // set up connection and command 
-            using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
+            Usuario aux = new Usuario();
+
+            if (lectura.Read())
             {
-                using (SqlCommand cmd = new SqlCommand("SP_ExisteUsuario", sql))
-                {
-                    // define command to be stored procedure 
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // add parameter 
-                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario",user.NombreUsuario));
-                    cmd.Parameters.Add(new SqlParameter("@Contrasenia", user.Contrasenia));
-
-                    // open connection, execute command, close connection 
-                    sql.Open();
-                    int result = (int)cmd.ExecuteScalar();
-                    sql.Close();
-
-                    return result;
-                }
+                aux.ID = lectura.GetInt16(0);
+                aux.NombreUsuario = lectura.GetString(1);
+                aux.Contrasenia = lectura.GetString(2);
+                aux.Id_Acceso = lectura.GetInt16(3);
             }
-            
-            
-
-
+            conexion.Desconectar();
+            return aux;
 
         }
+
     }
 }

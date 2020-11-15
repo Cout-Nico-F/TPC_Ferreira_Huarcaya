@@ -20,6 +20,20 @@ namespace WebForms.ASPX
         public FuncionalidadNegocio FunNegocio { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                Usuario user = (Usuario)Session["usersession"];
+                if(user == null)
+                {
+                    Response.Redirect("InicioSesion.aspx");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();

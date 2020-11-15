@@ -12,9 +12,16 @@ namespace WebForms.ASPX
     public partial class Catalogo : System.Web.UI.Page
     {
         public List<PaginaWeb> Lista { get; set; }
+        public Usuario Usuario { get; set; } // properti para poder usarla en el front
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario = (Usuario)Session["usersession"];
+           
+            if (Usuario == null)
+            {
+                Response.Redirect("InicioSesion.aspx");
+            }
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();

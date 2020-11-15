@@ -13,6 +13,7 @@ namespace WebForms.ASPX
 {
     public partial class InicioSesion : System.Web.UI.Page
     {
+        public Usuario Usuario { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,6 +21,7 @@ namespace WebForms.ASPX
 
         protected void btn_Ingresar_Click(object sender, EventArgs e)
         {
+
             LoginNegocio logNeg = new LoginNegocio();
             Usuario user = new Usuario();
 
@@ -30,10 +32,12 @@ namespace WebForms.ASPX
 
             //ValidacionesConER();
 
-            int existe = logNeg.login(user);
+            Usuario = logNeg.login(user);
 
-            if(existe == 1)
+            if (Usuario.ID != 0)
             {
+                //deja entrar a todos los usuarios
+                Session.Add("usersession", user);
                 Response.Redirect("Catalogo.aspx");
             }
             else
@@ -45,12 +49,8 @@ namespace WebForms.ASPX
             Nombre U: JeremiasI21
             Contra : Jere123
              */
-
-        }
-        /*private void ValidacionesConER()
-        {
-
-        }*/
+         }
 
     }
+
 }

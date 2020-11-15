@@ -47,8 +47,12 @@
                         {%>
                 <div class="col md-5 col-sm-4">
                     <div class="container">
-                         <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"<i class="fas fa-trash"></i></a>
-                         <a href="AgregarPaginaWeb.aspx"><i class="fas fa-plus"></i></a>
+                        <%if (Usuario.Id_Acceso == 3)
+                            {%>
+                            <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"<i class="fas fa-trash"></i></a>
+                            <a href="AgregarPaginaWeb.aspx"><i class="fas fa-plus"></i></a>
+                        <%} %>
+                         
                     </div>
                     <div class="card text-center" style="margin-bottom: 40px;">
                         <img src=<%=item.Url_Imagen %> class="card-img-top" alt="No se encontro la imagen" />
