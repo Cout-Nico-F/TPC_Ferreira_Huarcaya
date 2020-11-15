@@ -10,7 +10,8 @@ go
 create table Funcionalidades (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
-	Costo int not null
+	Costo int not null,
+	Habilitado bit not null
 )
 	go
 
@@ -19,7 +20,9 @@ create table PaginaWeb(
 	Titulo varchar(50) not null,
 	Descripcion varchar(200) not null,
 	Url_Pagina varchar(100) not null,
-	Url_Image varchar(100) null
+	Url_Image varchar(100) null,
+	Habilitado bit not null,
+	Precio int not null
 )
 	go
 	
@@ -32,7 +35,8 @@ create table Niveles_Acceso (
 create table Estilos (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
-	Url_Imagen varchar(200) not null
+	Url_Imagen varchar(200) not null,
+	Habilitado bit not null
 )
 	go
 	
@@ -40,7 +44,7 @@ create table PedidosWebPage (
 	ID smallint identity(1,1),
 	ID_Usuario smallint not null,
 	ID_Estilo smallint not null,
-
+	PrecioTotal int not null
 )
 	go
 	
@@ -48,7 +52,10 @@ create table Usuarios (
 	ID smallint identity(1,1),
 	NombreUsuario varchar(100) not null,
 	Contrasenia varchar(200) not null, --tal vez a modificar a futuro cuando veamos como cifrarla o cuanto ocupa el hash.
-	ID_Nivel smallint not null
+	ID_Nivel smallint not null,
+	Descripcion varchar(200) null,
+	urlImagen varchar(200) null,
+	Habilitado bit not null
 )
 	go
 	
@@ -67,21 +74,14 @@ create table Datos_Personales (
 create table Paginas (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
-	Url_Imagen varchar(100) not null
+	Url_Imagen varchar(100) not null,
+	Habilitado bit not null
 )
 
 	go
 create table Funcionalidades_X_PedidosWebPage (
 	ID_Funcionalidad smallint not null,
 	ID_PedidoWebPage smallint not null
-)
-	go
-create table InfoWeb (
-	ID_Usuarios smallint not null,
-	ID_Nivel smallint not null,
-	NombreApellido varchar(200) not null,
-	Descripcion varchar(200) not null,
-	urlImagen varchar(200) not null
 )
 	go
 create table Paginas_X_PedidosWebPage (
@@ -92,7 +92,8 @@ create table Paginas_X_PedidosWebPage (
 create table PedidosPaginaPrediseniada (
 	ID smallint not null,
 	ID_Usuario smallint not null,
-	ID_PaginaWeb smallint not null
+	ID_PaginaWeb smallint not null,
+	Precio int not null
 )
 --Alter Tables de PK
 	alter table PedidosPaginaPrediseniada add constraint PK_PedidosPrediseniadas primary key (ID)
@@ -115,8 +116,6 @@ create table PedidosPaginaPrediseniada (
 	go
 	alter table PaginaWeb add constraint PK_PaginaWeb primary key (ID)
 	go
-	alter table InfoWeb add constraint PKS_InfoWeb primary key (ID_Usuarios,ID_Nivel)
-	go
 	alter table Paginas_X_PedidosWebPage add constraint PKS_Paginas_X_Pedidos primary key (ID_Pagina, ID_PedidoWebPage)
 	go
 --Alter Tables FK's
@@ -129,10 +128,6 @@ create table PedidosPaginaPrediseniada (
 	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_Funcionalidad) references Funcionalidades(ID)
 	go
 	alter table Funcionalidades_X_PedidosWebPage add foreign key (ID_PedidoWebPage) references PedidosWebPage(ID)
-	go
-	alter table InfoWeb add foreign key (ID_Usuarios) references Usuarios(ID)
-	go
-	alter table InfoWeb add foreign key (ID_Nivel) references Niveles_Acceso(ID)
 	go
 	alter table Paginas_X_PedidosWebPage add foreign key (ID_Pagina) references Paginas(ID)
 	go
@@ -158,23 +153,24 @@ insert into Niveles_Acceso(Descripcion) values ('Admin')
 go
 
 /*				Tabla Funcionalidades	*/
-insert into Funcionalidades(Descripcion,Costo) values ('Conexion Base de Datos',0)
-insert into Funcionalidades(Descripcion,Costo) values ('Envio mail automatico',100)
-insert into Funcionalidades(Descripcion,Costo) values ('Evento envial mail con boton',1000)
-insert into Funcionalidades(Descripcion,Costo) values ('Implementacion de Google Maps',999)
-insert into Funcionalidades(Descripcion,Costo) values ('Envio de Factura por Mail',250)
-insert into Funcionalidades(Descripcion,Costo) values ('Evento alerta con boton',180)
-insert into Funcionalidades(Descripcion,Costo) values ('Evento pop-up',5000)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Conexion Base de Datos',0,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Envio mail automatico',100,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Evento envial mail con boton',1000,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Implementacion de Google Maps',999,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Envio de Factura por Mail',250,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Evento alerta con boton',180,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Evento pop-up',5000,1)
+insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Prueba Deshabilitado',5000,0)
 go
 
 /*				Tabla Usuarios			*/
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('JeremiasI21','Jere123',1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('Lorena23','Lore321',1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('JazminSR1','Jazz23',1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('GabiF','GabFru24',1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('AndreaA2','Andreita15',1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('AlonsoHS20','AlonsohuarcayaAdmin2',3)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel) values ('NicoFerreira1','NicoFerreAdmin1',3)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('JeremiasI21','Jere123',1,0)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('Lorena23','Lore321',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('JazminSR1','Jazz23',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('GabiF','GabFru24',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('AndreaA2','Andreita15',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('AlonsoHS20','AlonsohuarcayaAdmin2',3,1,'Estudiante UTN-FRPG','../Imagenes/Alonso.jpg')
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('NicoFerreira1','NicoFerreAdmin1',3,1,'Estudiante UTN-FRPG','../Imagenes/NicolasFerreira.jpg')
 go
 /*				Tabla PedidosWebPage		*/
 
@@ -190,14 +186,14 @@ insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,T
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com','07/05/2019')
 go
 /*			Tabla Estilos				*/		
-insert into Estilos(Descripcion,Url_Imagen) values ('Moderno','../Imagenes/ImagenesPaginaWeb/Moderno.jpg')
-insert into Estilos(Descripcion,Url_Imagen) values ('Flat design','../Imagenes/ImagenesPaginaWeb/Flat.jpg')
-insert into Estilos(Descripcion,Url_Imagen) values ('Material design','../Imagenes/ImagenesPaginaWeb/Material.png')
+insert into Estilos(Descripcion,Url_Imagen,Habilitado) values ('Moderno','../Imagenes/ImagenesPaginaWeb/Moderno.jpg',1)
+insert into Estilos(Descripcion,Url_Imagen,Habilitado) values ('Flat design','../Imagenes/ImagenesPaginaWeb/Flat.jpg',1)
+insert into Estilos(Descripcion,Url_Imagen,Habilitado) values ('Material design','../Imagenes/ImagenesPaginaWeb/Material.png',1)
 go
 /*			Tabla Paginas				*/
-insert into Paginas(Descripcion,Url_Imagen) values ('Home','../Imagenes/ImagenesPaginas/Home.jpg')
-insert into Paginas(Descripcion,Url_Imagen) values ('Contacto','../Imagenes/ImagenesPaginas/Contacto.jpg')
-insert into Paginas(Descripcion,Url_Imagen) values ('Login','../Imagenes/ImagenesPaginas/Login.jpg')
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Home','../Imagenes/ImagenesPaginas/Home.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Contacto','../Imagenes/ImagenesPaginas/Contacto.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Login','../Imagenes/ImagenesPaginas/Login.jpg',1)
 go
 /*				Tabla Funcionalidades x PedidosWebPage			*/
 --estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.
@@ -208,15 +204,10 @@ go
 
 
 /*				Tabla Pagina Web					*/
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Full Width Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginaWeb/ImagenesFull.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Blog Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginaWeb/Blog.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png')
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png')
-go
-
-/*				Tabla Informacion				*/
-insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion,urlImagen) values (6,'Alonso Huarcaya',3,'Hola me llamo Alonso', '../Imagenes/Alonso.jpg' )
-insert into InfoWeb(ID_Usuarios,NombreApellido,ID_Nivel,Descripcion,urlImagen) values (7,'Nicolas Ferreira',3,'Hola me llamo Nicolas', '../Imagenes/NicolasFerreira.jpg' )
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Full Width Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginaWeb/ImagenesFull.png',10000,1)
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Blog Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginaWeb/Blog.png',11000,1)
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png',12000,1)
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Prueba1','Template Prueba Bajas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png',1000,1)
 go
 
 
