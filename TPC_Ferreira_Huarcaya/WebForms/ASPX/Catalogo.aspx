@@ -34,6 +34,7 @@
     <br />
     <br />
     <section id="facilities">
+        <!-- Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id); -->
         <div class="container">
             <%
                 if (Lista.Count == 0)
@@ -45,6 +46,10 @@
                         foreach(Modelo.PaginaWeb item in Lista)
                         {%>
                 <div class="col md-5 col-sm-4">
+                    <div class="container">
+                         <a href="#"><i class="fas fa-trash"></i></a> 
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
                     <div class="card text-center" style="margin-bottom: 40px;">
                         <img src=<%=item.Url_Imagen %> class="card-img-top" alt="No se encontro la imagen" />
                         <div class="card-body">

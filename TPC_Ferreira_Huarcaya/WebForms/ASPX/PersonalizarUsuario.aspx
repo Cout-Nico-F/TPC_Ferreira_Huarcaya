@@ -18,6 +18,7 @@
 
 </head>
 <body>
+   
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
              <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt=""  style=" background-color: rgba(255, 0, 0, 0.5);" /> <!-- No puedo hacer transparente el fonde de la imagen -->
@@ -52,6 +53,7 @@
                     <h1>Estilo</h1>
                     <p>Elija el estilo que quiera que tenga su web</p>
                     <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
+                     <%="" %>
                     <%if(!(ListaEstilos == null))
                         {%>
                             <%foreach (var item in ListaEstilos)

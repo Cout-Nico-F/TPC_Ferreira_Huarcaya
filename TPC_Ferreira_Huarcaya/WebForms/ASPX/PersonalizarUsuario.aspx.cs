@@ -88,7 +88,7 @@ namespace WebForms.ASPX
             ListaPaginas = new List<Pagina>();
             PaginaNegocio pagNeg = new PaginaNegocio();
 
-            var listaPagina = pagNeg.listarPaginas();
+            var listaPagina = pagNeg.Listar();
 
             Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
 
