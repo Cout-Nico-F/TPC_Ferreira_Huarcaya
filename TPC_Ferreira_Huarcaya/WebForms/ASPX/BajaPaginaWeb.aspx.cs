@@ -13,10 +13,10 @@ namespace WebForms.ASPX
     {
         protected int idRecibido;
         public PaginaWeb PaginaSeleccionada { get; set; }
-        public PaginasWebNegocios PagNeg { get; set; }
+        public PaginasWebNegocios pagNeg { get; set; }
         public Baja_PaginaWeb()
         {
-            PagNeg = new PaginasWebNegocios();
+            pagNeg = new PaginasWebNegocios();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,14 +27,14 @@ namespace WebForms.ASPX
             }
             idRecibido = Convert.ToInt16(Request.QueryString["idPaginaWeb"]);
 
-            var listaPaginasWeb = PagNeg.listaPaginassWeb();
+            var listaPaginasWeb = pagNeg.listaPaginassWeb();
 
             PaginaSeleccionada = listaPaginasWeb.Find(pag => idRecibido == pag.ID);
        
         }
         protected void btn_Confirmar_Click(object sender, EventArgs e)
         {
-            PagNeg.Eliminar(PaginaSeleccionada.ID);
+            pagNeg.Eliminar(PaginaSeleccionada.ID);
             Response.Redirect("Catalogo.aspx");
         }
     }

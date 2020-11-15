@@ -83,6 +83,7 @@
     <Content Include="ASPX\Info.aspx" />
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
+    <Content Include="ASPX\ModificarPaginaWeb.aspx" />
     <Content Include="ASPX\Personalizar.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
@@ -1985,6 +1986,13 @@
     </Compile>
     <Compile Include="ASPX\InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\ModificarPaginaWeb.aspx.cs">
+      <DependentUpon>ModificarPaginaWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\ModificarPaginaWeb.aspx.designer.cs">
+      <DependentUpon>ModificarPaginaWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Personalizar.aspx.cs">
       <DependentUpon>Personalizar.aspx</DependentUpon>
