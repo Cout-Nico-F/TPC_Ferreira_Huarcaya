@@ -39,6 +39,8 @@ create table Estilos (
 create table PedidosWebPage (
 	ID smallint identity(1,1),
 	ID_Usuario smallint not null,
+	ID_Estilo smallint not null,
+
 )
 	go
 	
@@ -73,6 +75,7 @@ create table Funcionalidades_X_PedidosWebPage (
 	ID_Funcionalidad smallint not null,
 	ID_PedidoWebPage smallint not null
 )
+	go
 create table InfoWeb (
 	ID_Usuarios smallint not null,
 	ID_Nivel smallint not null,
@@ -80,8 +83,12 @@ create table InfoWeb (
 	Descripcion varchar(200) not null,
 	urlImagen varchar(200) not null
 )
-go
-
+	go
+create table Paginas_X_PedidosWebPage (
+	ID_Pagina smallint not null,
+	ID_PedidoWebPage smallint not null
+)
+	go
 --Alter Tables de PK
 
 	alter table Funcionalidades add constraint PK_Funcionalidades primary key (ID)
@@ -104,6 +111,8 @@ go
 	go
 	alter table InfoWeb add constraint PKS_InfoWeb primary key (ID_Usuarios,ID_Nivel)
 	go
+	alter table Paginas_X_PedidosWebPage add constraint PKS_Paginas_X_Pedidos primary key (ID_Pagina, ID_PedidoWebPage)
+	go
 --Alter Tables FK's
 	alter table PedidosWebPage add foreign key (ID_Usuario) references Usuarios(ID)
 	go
@@ -118,6 +127,12 @@ go
 	alter table InfoWeb add foreign key (ID_Usuarios) references Usuarios(ID)
 	go
 	alter table InfoWeb add foreign key (ID_Nivel) references Niveles_Acceso(ID)
+	go
+	alter table Paginas_X_PedidosWebPage add foreign key (ID_Pagina) references Paginas(ID)
+	go
+	alter table Paginas_X_PedidosWebPage add foreign key (ID_PedidoWebPage) references PedidosWebPage(ID)
+	go
+	alter table PedidosWebPage add foreign key (ID_Estilo) references Estilos(ID)
 	go
 --Alter tables CHECKS
 	alter table Funcionalidades add constraint CH_Funcionalidades_Costo check (Costo >= 0)

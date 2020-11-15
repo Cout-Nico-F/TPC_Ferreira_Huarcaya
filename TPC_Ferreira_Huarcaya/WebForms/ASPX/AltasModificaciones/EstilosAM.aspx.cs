@@ -31,7 +31,9 @@ namespace WebForms.ASPX.AltasModificaciones
                 Response.Redirect("../Error.aspx");
             }
             //mostrar popup o pantalla de Exito al agregar.
-            //label.text = 
+            //label.text = Exito!
+            //Hacer Visible por propiedad a un boton que estaba oculto: Volver. 
+            //ese boton volver va a tner la linea de codigo de redirect que esta aca abajo.
             Response.Redirect("../PersonalizarUsuario.aspx");
         }
     }

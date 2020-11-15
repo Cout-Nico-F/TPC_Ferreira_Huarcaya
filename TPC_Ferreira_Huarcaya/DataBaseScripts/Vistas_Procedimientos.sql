@@ -8,8 +8,7 @@ go
 
 /*		Crear cuenta a nuevo Usuario			*/
 
-create procedure SP_CrearUsuario( -- Podriamos agregar tambien una fecha de registracion es un getdate()
-		--@ID smallint, -- Usuarios no deberia ser identity?? ya lo cambie 
+create procedure SP_CrearUsuario( 
 		@NombreUsuario varchar(200),
 		@Contrasenia varchar(200),
 		@ID_Nivel smallint,
@@ -70,12 +69,16 @@ go
 
 /*
  1 - Tenemos que hacer que no se puedan ingresar los mismo datos nuevamente, una forma que se me ocurre es que el Email tenga el atributo Unique
+ -- si, me parece bien. El email y el nombre de usuario deberian ser unique para que no pueda tener 2 cuentas el mismo email, ni existir 2 veces el mismo nombre de usuario.
+	
  2 - Quizas sacar el ID_Nivel porque en realidad cuando en el back de aplicacion tengo que mandar un ID_Nivel siempre mando 1 porque no tengo como saber si el que va a crear una cuenta es un cliente
 	 o admin o parte del staff
+	 
+	 -- se me ocurre que solo el admin pueda crear cuentas de tipo staff y admin para solucionar lo que me decis en el punto 2.
 */
 
 create procedure SP_EditarDatosPersonales(
-		@id_Usuario smallint,
+		@id_Usuario smallint, --el id de usuario no deberia poder editarse ya que es identity y identifica al usuario permanentemente aunque cambie su nombre y otros datos.
 		@NombreUsuario varchar(200),
 		@Contrasenia varchar(200),
 		@NombreApellido varchar(200),
@@ -93,7 +96,7 @@ begin
 		end try
 		begin catch
 			Rollback transaction
-			RAISERROR('Error al editar los datos',16,2);
+			RAISERROR('Error al editar los datos, compruebe que el id de usuario ingresado es correcto',16,2);
 		end catch
 end
 go
@@ -157,3 +160,5 @@ Select * From Usuarios
 
 /*    Procedimientos que va a usar el admin		*/
 
+
+--Trigger
