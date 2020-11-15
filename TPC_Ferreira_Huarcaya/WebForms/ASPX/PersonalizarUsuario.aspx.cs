@@ -86,68 +86,87 @@ namespace WebForms.ASPX
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
+            if(ddl_Funcionalidades.SelectedIndex != 0)
+            {
+                FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
+                var listaFuncionalidades = funNeg.Listar();
 
-            FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
-            var listaFuncionalidades = funNeg.Listar();
+                Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
 
-            Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
+                Funcionalidad = listaFuncionalidades.Find(x => id == x.Id);
 
-            Funcionalidad = listaFuncionalidades.Find(x => id == x.Id);
+                ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
 
-            ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
+                ListaFuncionalidadesAgregadas.Add(Funcionalidad);
 
-            ListaFuncionalidadesAgregadas.Add(Funcionalidad);
-
-            Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
+                Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
+            }
+           
         }
 
         protected void btn_AgregarPagina_Click(object sender, EventArgs e)
         {
-            ListaPaginas = new List<Pagina>();
-            PaginaNegocio pagNeg = new PaginaNegocio();
+            if(ddl_Paginas.SelectedIndex != 0)
+            {
+                ListaPaginas = new List<Pagina>();
+                PaginaNegocio pagNeg = new PaginaNegocio();
 
-            var listaPagina = pagNeg.Listar();
+                var listaPagina = pagNeg.Listar();
 
-            Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
+                Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
 
-            Paginas = listaPagina.Find(x => id == x.ID);
+                Paginas = listaPagina.Find(x => id == x.ID);
 
-            ListaPaginas.Add(Paginas);
+                ListaPaginas.Add(Paginas);
+            }
+          
         }
 
         protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListaEstilos = new List<Estilo>();
-            EstiloNegocio estNeg = new EstiloNegocio();
+            if(Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
+            {
+                ListaEstilos = new List<Estilo>();
+                EstiloNegocio estNeg = new EstiloNegocio();
 
-            var listaEstilo = estNeg.Listar();
+                var listaEstilo = estNeg.Listar();
 
-            Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
-            Estilo = listaEstilo.Find(x => id == x.Id);
+                Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
+                Estilo = listaEstilo.Find(x => id == x.Id);
 
-            ListaEstilos.Add(Estilo);
+                ListaEstilos.Add(Estilo);
+            }
+      
         }
 
         protected void bnt_Funcionalidad_Baja_Click(object sender, EventArgs e)
         {
-            string id = ddl_Funcionalidades.SelectedItem.Value;
-            Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
+            if(ddl_Funcionalidades.SelectedIndex != 0)
+            {
+                string id = ddl_Funcionalidades.SelectedItem.Value;
+                Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
+            }
+          
         }
 
         protected void btn_Estilo_Baja_Click(object sender, EventArgs e)
         {
-            string id = ddl_Estilos.SelectedItem.Value;
-            Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
+            if(ddl_Estilos.SelectedIndex != 0)
+            {
+                string id = ddl_Estilos.SelectedItem.Value;
+                Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
+            }
+           
         }
 
         protected void btn_Baja_Estilo_Click(object sender, EventArgs e)
         {
-            if (ddl_Estilos.SelectedIndex == 0)
+            if (ddl_Estilos.SelectedIndex != 0)
             {
-                return;
+                FunNegocio.Eliminar(Funcionalidad.Id);//el metodo permite usar un if para comprobar que se pudo eliminar (1) o que no afecto ninguna row (0)
+                Response.Redirect("../PersonalizarUsuario.aspx");
             }
-            FunNegocio.Eliminar(Funcionalidad.Id);//el metodo permite usar un if para comprobar que se pudo eliminar (1) o que no afecto ninguna row (0)
-            Response.Redirect("../PersonalizarUsuario.aspx");
+           
         }
 
         protected void btn_Pagina_Baja_Click(object sender, EventArgs e)
@@ -158,30 +177,38 @@ namespace WebForms.ASPX
 
         protected void btn_Remover_Funcionalidad_Click(object sender, EventArgs e)
         {
-            EliminarFuncionalidad = new List<Funcionalidad>();
-            FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
+            if(ddl_Funcionalidades.SelectedIndex != 0){
 
-            var Funcionalidad = funNeg.Listar();
+                EliminarFuncionalidad = new List<Funcionalidad>();
+                FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
 
-            Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
+                var Funcionalidad = funNeg.Listar();
 
-            BajaFuncionalidad = Funcionalidad.Find(x => id == x.Id);
+                Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
 
-            EliminarFuncionalidad.Remove(BajaFuncionalidad);
+                BajaFuncionalidad = Funcionalidad.Find(x => id == x.Id);
+
+                EliminarFuncionalidad.Remove(BajaFuncionalidad);
+
+            }
+            
         }
 
         protected void ddl_Paginas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListaPaginasSeleccion = new List<Pagina>();
-            PaginaNegocio pagNeg = new PaginaNegocio();
+            if (Convert.ToInt16(ddl_Paginas.SelectedItem.Value) != 0)
+            {
+                ListaPaginasSeleccion = new List<Pagina>();
+                PaginaNegocio pagNeg = new PaginaNegocio();
 
-            var listaPaginas = pagNeg.Listar();
+                var listaPaginas = pagNeg.Listar();
 
-            Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
-            // a Paginas se le asigna un null porque??
-             Paginas = listaPaginas.Find(x => id == x.ID);
+                Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
+                // a Paginas se le asigna un null porque??
+                Paginas = listaPaginas.Find(x => id == x.ID);
 
-            ListaPaginasSeleccion.Add(Paginas);
+                ListaPaginasSeleccion.Add(Paginas);
+            }           
         }
     }
 }
