@@ -23,17 +23,16 @@ namespace WebForms.ASPX
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
-                
             }
             if (ListaFuncionalidadesAgregadas == null)
             {
                 ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
             }
-           if(Session["listaFuncionalidadesSelec"] == null)
+            if (Session["listaFuncionalidadesSelec"] == null)
             {
                 Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
             }
-           
+
 
         }
         private void IniciarLlenadoDeDropDownPaginas()
@@ -68,7 +67,7 @@ namespace WebForms.ASPX
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-           
+
             FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
             var listaFuncionalidades = funNeg.Listar();
 
@@ -95,7 +94,6 @@ namespace WebForms.ASPX
             Paginas = listaPagina.Find(x => id == x.ID);
 
             ListaPaginas.Add(Paginas);
-
         }
 
         protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,7 +123,7 @@ namespace WebForms.ASPX
 
         protected void btn_Baja_Estilo_Click(object sender, EventArgs e)
         {
-            if(ddl_Estilos.SelectedIndex == 0)
+            if (ddl_Estilos.SelectedIndex == 0)
             {
                 return;
             }
@@ -133,20 +131,10 @@ namespace WebForms.ASPX
             Response.Redirect("../PersonalizarUsuario.aspx");
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btn_Paginas_Agregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btn_Pagina_Baja_Click(object sender, EventArgs e)
         {
-                string id = ddl_Paginas.SelectedItem.Value;
-                Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id); 
+            string id = ddl_Paginas.SelectedItem.Value;
+            Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id);
         }
     }
 }
