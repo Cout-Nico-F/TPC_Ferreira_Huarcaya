@@ -11,7 +11,7 @@
                             <div class="col-md-12 form-group">
                                 <div class="container d-flex">
                                      <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
-                                     <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="true"/>
+                                     <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="false"/>
                                      <!--<asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>-->
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                 </div>
             <div class="col md-5 col-sm-4">
                     <div class="card text-center" style="margin-bottom: 40px;">
-                        <img src="../Imagenes/ImagenesPaginas/Blanco.jpg" class="card-img-top" alt="No se encontro la imagen" />
+                        <img src="../Imagenes/ImagenesPaginaWeb/Blanco.jpg" class="card-img-top" alt="No se encontro la imagen" />
                         <div class="card-body">
                             <h5 class="card-title">Template Vacio</h5>
                             <p class="card-text">Template en blanco para personalizar</p>

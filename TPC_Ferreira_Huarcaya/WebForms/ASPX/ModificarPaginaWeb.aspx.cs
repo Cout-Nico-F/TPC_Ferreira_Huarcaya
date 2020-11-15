@@ -39,14 +39,14 @@ namespace WebForms.ASPX
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
         {
-            PaginaWeb pag = new PaginaWeb();
+            /*PaginaWeb pag = new PaginaWeb();
             pag.ID = PaginaSeleccionada.ID;
             pag.Titulo = txtTitulo.Text;
             pag.Descripcion = txtDescripcion.Text;
             pag.Url_PaginaWeb = txtUrlPaginaWeb.Text;
             pag.Url_Imagen = txtUrlImagen.Text;
 
-            int rowsAfectados = Modificar(pag);
+            //int rowsAfectados = Modificar(pag);
             if(rowsAfectados != 0)
             {
                 Response.Redirect("Catalogo.aspx");
@@ -54,7 +54,7 @@ namespace WebForms.ASPX
             else
             {
                 Response.Redirect("Error.aspx");
-            }
+            }*/
         }
     }
 }

@@ -46,8 +46,11 @@
                                 <asp:TextBox runat="server" ID="txtUrlPagina" CssClass="form-control" ></asp:TextBox>
                             </div>
                             <div>
+                                <asp:Label Text="Ingrese la url de la imagen" runat="server" />
+                                <asp:TextBox runat="server" ID="txtUrlImagen" cssClass="form-control" />  
+                                <!-- Esto para despues
                                 <label for="fileImagen">Ingrese una imagen para para la pagina web</label>
-                                <input type="file" class="form-control" id="fileImagen" runat="server" />
+                                <input type="file" class="form-control" id="fileImagen" runat="server" /> -->
                             </div>
                         </div>
                         <br />

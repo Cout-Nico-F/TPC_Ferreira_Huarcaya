@@ -18,7 +18,7 @@
 
 </head>
 <body>
-   
+       
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
              <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt=""  style=" background-color: rgba(255, 0, 0, 0.5);" /> <!-- No puedo hacer transparente el fonde de la imagen -->
@@ -43,13 +43,24 @@
         <asp:ScriptManager runat="server" />    
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                <div style="text-align: center">
+                     <div style="text-align: right">
                     <h1>Paginas</h1>
                     <p>Elija la cantidad de paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" id="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click"/>
-                </div>
-                <div style="text-align: center">
+                     <%if(!(ListaPaginasSeleccion == null))
+                        {%>
+                            <%foreach (var pag in ListaPaginasSeleccion)
+                                { %>
+                                
+                                   <img src="<%=pag.Url_Imagen%>" alt="Imagen Pagina no encontrada" class="rounded float-left"/>
+                                   
+                                  
+                                <% }%>
+                                 
+                       <% } %>
+                </div>               
+                <div style="text-align: right">
                     <h1>Estilo</h1>
                     <p>Elija el estilo que quiera que tenga su web</p>
                     <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
@@ -58,11 +69,9 @@
                         {%>
                             <%foreach (var est in ListaEstilos)
                                 { %>
-                                <%foreach (var pag in ListaPaginaSeleccionada)
-                                    { %>
-                                          <img src="<%=est.Url_Imagen%>" alt="Imagen Estilo no encontrada" />
-                                          <img src="<%=pag.Url_Imagen%>" alt="Imagen Pagina no enontrada" />
-                                    <%} %>
+                                
+                                   <img src="<%=est.Url_Imagen%>" alt="Imagen Estilo no encontrada" class="rounded float-left" />
+                                   
                                   
                                 <% }%>
                                  

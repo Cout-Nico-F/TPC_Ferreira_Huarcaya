@@ -17,6 +17,7 @@ namespace WebForms.ASPX
         public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
         public List<Pagina> ListaPaginas { get; set; }
+        public List<Pagina> ListaPaginasSeleccion { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
         public List<Pagina> ListaPaginaSeleccionada { get; set; }
         public FuncionalidadNegocio FunNegocio { get; set; }
@@ -171,16 +172,16 @@ namespace WebForms.ASPX
 
         protected void ddl_Paginas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListaPaginaSeleccionada = new List<Pagina>();
+            ListaPaginasSeleccion = new List<Pagina>();
             PaginaNegocio pagNeg = new PaginaNegocio();
 
             var listaPaginas = pagNeg.Listar();
 
             Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
             // a Paginas se le asigna un null porque??
-             Paginas = ListaPaginaSeleccionada.Find(x => id == x.ID);
+             Paginas = listaPaginas.Find(x => id == x.ID);
 
-            ListaPaginaSeleccionada.Add(Paginas);
+            ListaPaginasSeleccion.Add(Paginas);
         }
     }
 }

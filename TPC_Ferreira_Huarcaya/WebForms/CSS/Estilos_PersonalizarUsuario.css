@@ -4,3 +4,7 @@
 td{
     margin-left:10px;
 }
+.img-fluid{
+    max-width:10%;
+    height:auto;
+}

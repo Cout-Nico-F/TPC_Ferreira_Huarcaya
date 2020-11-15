@@ -25,13 +25,13 @@ namespace WebForms.ASPX
 
             //Lo que Maxi nos enseño
             //la ruta es distinta entre nosotros dos podriamos poner un Or o algo asi
-            string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + DateTime.Now.ToString("h:mm:ss tt");
-            fileImagen.PostedFile.SaveAs(ruta);
+            /*string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + DateTime.Now.ToString("h:mm:ss tt");
+            fileImagen.PostedFile.SaveAs(ruta);*/
 
             pag.Titulo = txtTitulo.Text;
             pag.Descripcion = txtDescripcion.Text;
             pag.Url_PaginaWeb = txtUrlPagina.Text;
-            pag.Url_Imagen = ruta;
+            pag.Url_Imagen = txtUrlImagen.Text;
             //tambien tengo que cargar la url imagen
 
             int rowsAfectados = pagNeg.EnviarDatos(pag);

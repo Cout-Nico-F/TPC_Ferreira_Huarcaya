@@ -43,16 +43,16 @@ namespace Negocio
         {
             //insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('" + pag.Titulo + "," + pag.Descripcion + "," + pag.Url_PaginaWeb + "," + pag.Url_Imagen + "')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('" + pag.Titulo + "," + pag.Descripcion + "," + pag.Url_PaginaWeb + "," + pag.Url_Imagen +"')");
             conexion.Desconectar();
             return rowsAfectadas;
         }
-        public int Modificar(PaginaWeb pag)
+       /* public int Modificar(PaginaWeb pag)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo=" + pag.Titulo + ",""Descripcion=" + pag.Descripcion + ",""Url_Pagina=" + pag.Url_PaginaWeb + ",""Url_Image=" + pag.Url_Imagen + ",""Where ID=" + pag.ID + "");
+            //int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo=" + pag.Titulo + ",""Descripcion=" + pag.Descripcion + ",""Url_Pagina=" + pag.Url_PaginaWeb + ",""Url_Image=" + pag.Url_Imagen + ",""Where ID=" + pag.ID + "");
             conexion.Desconectar();
-            return rowsAfectadas;
-        }
+            //return rowsAfectadas;
+        }*/
     }
 }

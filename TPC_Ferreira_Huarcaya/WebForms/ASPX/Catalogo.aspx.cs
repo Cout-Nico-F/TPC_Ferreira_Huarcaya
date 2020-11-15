@@ -16,12 +16,13 @@ namespace WebForms.ASPX
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario = (Usuario)Session["usersession"];
-           
-            if (Usuario == null)
-            {
-                Response.Redirect("InicioSesion.aspx");
-            }
+
+             Usuario = (Usuario)Session["usersession"];
+             // No es necesario el if para catalogo
+             /*if (Usuario == null)
+             {
+                 Response.Redirect("InicioSesion.aspx");
+             }*/
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();
