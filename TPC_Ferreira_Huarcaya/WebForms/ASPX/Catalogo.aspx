@@ -47,7 +47,7 @@
                         {%>
                 <div class="col md-5 col-sm-4">
                     <div class="container">
-                         <a href="#"><i class="fas fa-trash"></i></a> 
+                         <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"<i class="fas fa-trash"></i></a>
                         <a href="#"><i class="fas fa-plus"></i></a>
                     </div>
                     <div class="card text-center" style="margin-bottom: 40px;">

@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ASPX\AgregarPaginaWeb.aspx" />
     <Content Include="ASPX\AltasModificaciones\EstilosAM.aspx" />
     <Content Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx" />
     <Content Include="ASPX\AltasModificaciones\PaginasAM.aspx" />
+    <Content Include="ASPX\BajaPaginaWeb.aspx" />
     <Content Include="ASPX\CarritoCompra.aspx" />
     <Content Include="ASPX\Catalogo.aspx" />
     <Content Include="ASPX\ConfirmarBajas\EstiloBaja.aspx" />
@@ -1871,6 +1873,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASPX\AgregarPaginaWeb.aspx.cs">
+      <DependentUpon>AgregarPaginaWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\AgregarPaginaWeb.aspx.designer.cs">
+      <DependentUpon>AgregarPaginaWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\AltasModificaciones\EstilosAM.aspx.cs">
       <DependentUpon>EstilosAM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1891,6 +1900,13 @@
     </Compile>
     <Compile Include="ASPX\AltasModificaciones\PaginasAM.aspx.designer.cs">
       <DependentUpon>PaginasAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\BajaPaginaWeb.aspx.cs">
+      <DependentUpon>BajaPaginaWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\BajaPaginaWeb.aspx.designer.cs">
+      <DependentUpon>BajaPaginaWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\CarritoCompra.aspx.cs">
       <DependentUpon>CarritoCompra.aspx</DependentUpon>

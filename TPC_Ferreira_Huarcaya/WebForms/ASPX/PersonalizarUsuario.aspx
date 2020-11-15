@@ -53,7 +53,7 @@
                     <h1>Estilo</h1>
                     <p>Elija el estilo que quiera que tenga su web</p>
                     <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
-                     <%="" %>
+                        
                     <%if(!(ListaEstilos == null))
                         {%>
                             <%foreach (var item in ListaEstilos)

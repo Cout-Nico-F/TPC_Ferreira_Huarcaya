@@ -187,6 +187,7 @@ go
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Full Width Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginas/ImagenesFull.png')
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Blog Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginas/Blog.png')
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
 go
 
 /*				Tabla Informacion				*/

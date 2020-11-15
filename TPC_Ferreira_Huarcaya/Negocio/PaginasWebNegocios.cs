@@ -32,5 +32,12 @@ namespace Negocio
             conexion.Desconectar();
             return listaPaginaWeb;
         }
+        public int Eliminar(Int16 id)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("Delete from PaginaWeb where ID =" + id);
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
     }
 }
