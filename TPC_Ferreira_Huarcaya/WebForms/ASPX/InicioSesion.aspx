@@ -10,7 +10,7 @@
      <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!--CSS Estilos -->
-    <link href="#" rel="stylesheet" />
+    <link href="../CSS/Estilos_InicioSesion.css" rel="stylesheet" />
 
     <title>Iniciar Sesion</title>
 
@@ -18,43 +18,7 @@
 <body>
     <form id="form1" runat="server">
             <style>
-                body
-                {
-                    background-image:url(https://www.xtrafondos.com/wallpapers/resized/bosque-de-pinos-en-la-niebla-3340.jpg?s=large);
-                    background-size:cover;
-                }
-                .col-12{
-                     padding:1em;
-                }
-                .col-12 img
-                {
-                    margin-top:-80px;
-                    margin-bottom:40px;
-                    background-color:transparent;
-                }
-                .btn btn-primary
-                {
-                   resize:vertical
-                }
-                .form-control
-                {
-                    padding:20px;
-                    width:400px;
-                    margin-left:30px;
-                }
-                .btn-Ingresar{
-                    width:100px;
-                    height:40px;
-                    margin-left:175px;
-                    background-color:rgb(107, 155, 243);
-                    border:none;
-                    color:white;
-                    margin-top:10px;
-                }
-                .btn-Ingresar:hover
-                {
-                    background-color:rgb(73, 129, 236);
-                }
+               
 
             </style>
 

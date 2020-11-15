@@ -1,0 +1,38 @@
+﻿body {
+    background-image: url(https://www.xtrafondos.com/wallpapers/resized/bosque-de-pinos-en-la-niebla-3340.jpg?s=large);
+    background-size: cover;
+}
+
+.col-12 {
+    padding: 1em;
+}
+
+    .col-12 img {
+        margin-top: -80px;
+        margin-bottom: 40px;
+        background-color: transparent;
+    }
+
+.btn btn-primary {
+    resize: vertical
+}
+
+.form-control {
+    padding: 20px;
+    width: 400px;
+    margin-left: 30px;
+}
+
+.btn-Ingresar {
+    width: 100px;
+    height: 40px;
+    margin-left: 175px;
+    background-color: rgb(107, 155, 243);
+    border: none;
+    color: white;
+    margin-top: 10px;
+}
+
+    .btn-Ingresar:hover {
+        background-color: rgb(73, 129, 236);
+    }

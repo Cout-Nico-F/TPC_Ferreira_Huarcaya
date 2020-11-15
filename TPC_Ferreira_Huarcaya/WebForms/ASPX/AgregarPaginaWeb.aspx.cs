@@ -1,5 +1,6 @@
 ﻿using Modelo;
 using Negocio;
+using System.Web.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,15 @@ namespace WebForms.ASPX
             PaginaWeb pag = new PaginaWeb();
             PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
+            //Lo que Maxi nos enseño
+            //la ruta es distinta entre nosotros dos podriamos poner un Or o algo asi
+            string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + DateTime.Now.ToString("h:mm:ss tt");
+            fileImagen.PostedFile.SaveAs(ruta);
+
             pag.Titulo = txtTitulo.Text;
             pag.Descripcion = txtDescripcion.Text;
             pag.Url_PaginaWeb = txtUrlPagina.Text;
+            pag.Url_Imagen = ruta;
             //tambien tengo que cargar la url imagen
 
             int rowsAfectados = pagNeg.EnviarDatos(pag);
