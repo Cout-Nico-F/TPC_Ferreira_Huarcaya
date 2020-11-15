@@ -18,12 +18,13 @@ namespace WebForms.ASPX
         public List<Pagina> ListaPaginas { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
         public FuncionalidadNegocio FunNegocio { get; set; }
+        public Usuario Usuario { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                Usuario user = (Usuario)Session["usersession"];
-                if(user == null)
+                Usuario  = (Usuario)Session["usersession"];
+                if(Usuario == null)
                 {
                     Response.Redirect("InicioSesion.aspx");
                 }

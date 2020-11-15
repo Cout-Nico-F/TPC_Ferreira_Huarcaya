@@ -13,7 +13,7 @@ create table Funcionalidades (
 	Costo int not null
 )
 	go
-	Select * From Usuarios
+
 create table PaginaWeb(
 	ID smallint identity(1,1),
 	Titulo varchar(50) not null,
@@ -65,6 +65,7 @@ create table Datos_Personales (
 create table Paginas (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
+	Url_Imagen varchar(100) not null
 )
 
 	go
@@ -164,16 +165,14 @@ insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,T
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (7,'Nicolas Ferreira','1132937793','NicoFerre@hotmail.com','45232234','01/02/1997','JereIno21@hotmail.com','07/05/2019')
 go
 /*			Tabla Estilos				*/		
-insert into Estilos(Descripcion,Url_Imagen) values ('Moderno','../Imagenes/ImagenesPaginas/Moderno.jpg')
-insert into Estilos(Descripcion,Url_Imagen) values ('Flat design','../Imagenes/ImagenesPaginas/Flat.jpg')
-insert into Estilos(Descripcion,Url_Imagen) values ('Material design','../Imagenes/ImagenesPaginas/Material.png')
+insert into Estilos(Descripcion,Url_Imagen) values ('Moderno','../Imagenes/ImagenesPaginaWeb/Moderno.jpg')
+insert into Estilos(Descripcion,Url_Imagen) values ('Flat design','../Imagenes/ImagenesPaginaWeb/Flat.jpg')
+insert into Estilos(Descripcion,Url_Imagen) values ('Material design','../Imagenes/ImagenesPaginaWeb/Material.png')
 go
 /*			Tabla Paginas				*/
-insert into Paginas(Descripcion) values ('Home/Detalles/Contacto')
-insert into Paginas(Descripcion) values ('Home')
-insert into Paginas(Descripcion) values ('Contacto')
-insert into Paginas(Descripcion) values ('Informacion')
-insert into Paginas(Descripcion) values ('Login')
+insert into Paginas(Descripcion,Url_Imagen) values ('Home','../Imagenes/ImagenesPaginas/Home.jpg')
+insert into Paginas(Descripcion,Url_Imagen) values ('Contacto','../Imagenes/ImagenesPaginas/Contacto.jpg')
+insert into Paginas(Descripcion,Url_Imagen) values ('Login','../Imagenes/ImagenesPaginas/Login.jpg')
 go
 /*				Tabla Funcionalidades x PedidosWebPage			*/
 --estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.

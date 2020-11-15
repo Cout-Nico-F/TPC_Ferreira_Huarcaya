@@ -95,8 +95,9 @@
                 <br />
                 <br />
                 <br />
-
-                <table class="egt" style="text-align:center;">
+                <%if (Usuario.Id_Acceso == 3)
+                    { %>
+                    <table class="table" style="text-align:center;">
                    <tr>
                        <th scope="row">Opciones</th>
                        <th>Paginas</th>
@@ -122,6 +123,9 @@
                         <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-danger" Onclick="bnt_Funcionalidad_Baja_Click"/></td>
                     </tr>
                 </table>
+
+                <%} %>
+                
                 <br />
                 <br />
                 <br />
