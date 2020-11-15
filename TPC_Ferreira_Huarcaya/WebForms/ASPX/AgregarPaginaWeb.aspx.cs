@@ -9,27 +9,35 @@ using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
-   
     public partial class Agregar_PaginaWeb : System.Web.UI.Page
     {
-        protected int idRecibido;
-        public PaginaWeb PaginaSeleccionada { get; set; }
-        public PaginasWebNegocios PagNeg { get; set; }
-        public Agregar_PaginaWeb()
-        {
-            PagNeg = new PaginasWebNegocios();
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["idPaginaWeb"] == null)
+           
+            
+        }
+
+        protected void btn_Cambios_Click(object sender, EventArgs e)
+        {
+            PaginaWeb pag = new PaginaWeb();
+            PaginasWebNegocios pagNeg = new PaginasWebNegocios();
+
+            pag.Titulo = txtTitulo.Text;
+            pag.Descripcion = txtDescripcion.Text;
+            pag.Url_PaginaWeb = txtUrlPagina.Text;
+            //tambien tengo que cargar la url imagen
+
+            int rowsAfectados = pagNeg.EnviarDatos(pag);
+            
+            if(rowsAfectados > 0)
+            {
+                Response.Redirect("Catalogo.aspx");
+            }
+            else
             {
                 Response.Redirect("Error.aspx");
             }
-            idRecibido = Convert.ToInt16(Request.QueryString["idPaginaWeb"]);
 
-            var listaPaginasWeb = PagNeg.listaPaginassWeb();
-            PaginaSeleccionada = listaPaginasWeb.Find(pag => idRecibido == pag.ID); 
-            
         }
     }
 }

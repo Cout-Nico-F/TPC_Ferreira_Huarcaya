@@ -39,5 +39,13 @@ namespace Negocio
             conexion.Desconectar();
             return rowsAfectadas;
         }
+        public int EnviarDatos(PaginaWeb pag)
+        {
+            //insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('" + pag.Titulo + "," + pag.Descripcion + "," + pag.Url_PaginaWeb + "," + pag.Url_Imagen + "')");
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
     }
 }

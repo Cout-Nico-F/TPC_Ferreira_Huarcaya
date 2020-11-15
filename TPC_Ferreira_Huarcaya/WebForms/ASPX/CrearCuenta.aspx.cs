@@ -21,7 +21,7 @@ namespace WebForms.ASPX
 
         }
 
-        protected void btn_CrearCuenta_Click(object sender, EventArgs e)
+        protected void btn_CrearCuenta_Click1(object sender, EventArgs e)
         {
             try
             {
@@ -62,14 +62,12 @@ namespace WebForms.ASPX
                 Response.Redirect("Error.aspx");
             }
 
-            
+
 
             /*
              faltan las validaciones de cada textbox y validaciones en la base de datos
             ademas que cuando aprete el boton se borren los datos pero eso es un clear para cada txt (creo)
              */
-
         }
-       
     }
 }
