@@ -9,6 +9,6 @@
     <asp:Button ID="btn_Baja_Funcionalidad" Text="Si, deseo eliminar permanentemente esta funcionalidad"  runat="server" CssClass="btn btn-danger" OnClick="Btn_Baja_Funcionalidad_Click"/>
         <br />
         <br />
-    <a href="../Personalizar.aspx" class="btn btn-info">No, no quiero eliminar esta funcionalidad ahora.</a>
+    <a href="../PersonalizarUsuario.aspx" class="btn btn-info">No, no quiero eliminar esta funcionalidad ahora.</a>
     </div>
 </asp:Content>
