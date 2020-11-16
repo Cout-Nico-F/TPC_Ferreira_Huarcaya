@@ -94,7 +94,8 @@ create table PedidosPaginaPrediseniada (
 	ID smallint not null,
 	ID_Usuario smallint not null,
 	ID_PaginaWeb smallint not null,
-	Precio int not null
+	Precio int not null,
+	Fecha date not null
 )
 --Alter Tables de PK
 	alter table PedidosPaginaPrediseniada add constraint PK_PedidosPrediseniadas primary key (ID)
