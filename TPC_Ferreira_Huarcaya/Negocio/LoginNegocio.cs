@@ -28,6 +28,7 @@ namespace Negocio
             }
             conexion.Desconectar();
             return aux;
+            //si me envia todos los datos correctamente
 
         }
 

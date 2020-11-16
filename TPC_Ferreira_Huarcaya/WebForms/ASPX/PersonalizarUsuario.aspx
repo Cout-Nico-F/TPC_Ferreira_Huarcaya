@@ -19,9 +19,9 @@
 </head>
 <body>
        
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
-             <img src="../Imagenes/icono_ecommerce.png" width="30" height="30" class="d-inline-block align-top" alt=""  style=" background-color: rgba(255, 0, 0, 0.5);" /> <!-- No puedo hacer transparente el fonde de la imagen -->
+             <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color:transparent"> <!-- No puedo hacer transparente el fonde de la imagen -->
             FerreAlo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,14 +31,19 @@
             <a class="nav-link" href="Home.aspx">Home</a>
             <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
             <a class="nav-link" href="Info.aspx">Informacion</a>
+            <a class="nav-link" href="PersonalizarUsuario.aspx">Crea tu propia Pagina Web</a>
         </div>
         <div>
             <div class="boton-nav-user">
-                <a href="InicioSesion.aspx" style="color:white; margin-right:30px;"><i class="fas fa-user"></i></a> 
+                <a href="InicioSesion.aspx" style="color:white; margin-right:30px;"><i class="fas fa-user"></i></a>
+                <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i></a>
+                <!-- Carrito no lo vamos a usar por lo menos aca -->
+                <!--<a href="CarritoCompra.aspx" style="color:white; margin-right:80px;"><i class="fas fa-shopping-cart"></i></a> -->
             </div>
         </div>
     </div>
     </nav>
+
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server" />    
         <asp:UpdatePanel runat="server">
@@ -47,7 +52,7 @@
                     <h1>Paginas</h1>
                     <p>Elija la cantidad de paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
-                    <asp:Button Text="Agregar" runat="server" id="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click"/>
+                    <asp:Button Text="Agregar" runat="server" id="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
                      <%if(!(ListaPaginasSeleccion == null))
                         {%>
                             <%foreach (var pag in ListaPaginasSeleccion)
@@ -87,7 +92,6 @@
                                                 {%>
                 <table>
                     <tr>
-                        <th>Paginas</th>
                         <th>Funcionalidades</th>
                         <th>Costo</th>
                     </tr>
@@ -103,6 +107,17 @@
                      <%} %>
                 </table>
                 <%}%>
+                <table>
+                    <tr>
+                        <th>Paginas</th>
+                    </tr>
+                    <%foreach (var item in ListaPaginasAgregadas)
+                        {%>
+                        <tr>
+                            <td><%=item.Descripcion%></td> <!--Me faltaba el igual y me decia que falta el punto y coma -->
+                        </tr>
+                    <%} %>
+                </table>
 
                 <br />
                 <br />

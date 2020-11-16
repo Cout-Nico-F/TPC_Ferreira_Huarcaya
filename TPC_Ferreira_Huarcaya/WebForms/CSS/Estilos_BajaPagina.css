@@ -1,0 +1,32 @@
+﻿body {
+    background-image: url(../Imagenes/Fondo_BajaPaginas.jpg);
+    background-size: cover;
+}
+
+#facilities .card:hover {
+    transform: translateX(-10px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+#facilitie .card:hover {
+    transform: translateX(-10px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+    .grid-container div {
+        text-align: center;
+    }
+
+.item1 {
+    max-width: 900px;
+    height: auto;
+    grid-column-start: 5;
+    grid-column-end: 10;
+}

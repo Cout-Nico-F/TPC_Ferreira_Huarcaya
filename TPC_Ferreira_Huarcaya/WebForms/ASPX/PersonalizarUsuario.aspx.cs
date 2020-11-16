@@ -16,7 +16,7 @@ namespace WebForms.ASPX
         public Estilo Estilo { get; set; }
         public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
-        public List<Pagina> ListaPaginas { get; set; }
+        public List<Pagina> ListaPaginasAgregadas { get; set; }
         public List<Pagina> ListaPaginasSeleccion { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
         public List<Pagina> ListaPaginaSeleccionada { get; set; }
@@ -47,9 +47,17 @@ namespace WebForms.ASPX
             {
                 ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
             }
+            if(ListaPaginasAgregadas == null)
+            {
+                ListaPaginasAgregadas = new List<Pagina>();
+            }
             if (Session["listaFuncionalidadesSelec"] == null)
             {
                 Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
+            }
+            if(Session["listaPaginasSelec"] == null)
+            {
+                Session.Add("listaPaginasSelec", ListaPaginasAgregadas);
             }
 
 
@@ -108,7 +116,7 @@ namespace WebForms.ASPX
         {
             if(ddl_Paginas.SelectedIndex != 0)
             {
-                ListaPaginas = new List<Pagina>();
+                ListaPaginasAgregadas = new List<Pagina>();
                 PaginaNegocio pagNeg = new PaginaNegocio();
 
                 var listaPagina = pagNeg.Listar();
@@ -117,7 +125,9 @@ namespace WebForms.ASPX
 
                 Paginas = listaPagina.Find(x => id == x.ID);
 
-                ListaPaginas.Add(Paginas);
+                ListaPaginasAgregadas.Add(Paginas);
+
+                Session["listaPaginasSelec"] = ListaPaginasAgregadas;
             }
           
         }
