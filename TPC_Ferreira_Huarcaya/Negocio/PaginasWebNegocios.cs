@@ -16,7 +16,7 @@ namespace Negocio
 
             List<PaginaWeb> listaPaginaWeb = new List<PaginaWeb>();
 
-            SqlDataReader lectura = conexion.Consulta_Rapida("Select ID,Titulo,Descripcion,Url_Pagina,Url_Image From PaginaWeb");
+            SqlDataReader lectura = conexion.Consulta_Rapida("Select ID,Titulo,Descripcion,Url_Pagina,Url_Image,Habilitado,Precio From PaginaWeb");
 
             while (lectura.Read())
             {
@@ -26,6 +26,8 @@ namespace Negocio
                 aux.Descripcion = lectura.GetString(2);
                 aux.Url_PaginaWeb = lectura.GetString(3);
                 aux.Url_Imagen = lectura.GetString(4);
+                aux.Habilitado = lectura.GetBoolean(5);
+                aux.Precio = lectura.GetInt32(6);
 
                 listaPaginaWeb.Add(aux);
             }
@@ -47,12 +49,13 @@ namespace Negocio
             conexion.Desconectar();
             return rowsAfectadas;
         }
-       /* public int Modificar(PaginaWeb pag)
+        public int Modificar(PaginaWeb pag)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            //int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo=" + pag.Titulo + ",""Descripcion=" + pag.Descripcion + ",""Url_Pagina=" + pag.Url_PaginaWeb + ",""Url_Image=" + pag.Url_Imagen + ",""Where ID=" + pag.ID + "");
+            int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo='" + pag.Titulo + "',Descripcion=" + pag.Descripcion + ",Url_Pagina=" + pag.Url_PaginaWeb + ",Url_Image=" + pag.Url_Imagen + ",Habilitado="+pag.Habilitado+",Precio="+pag.Precio+" Where ID=" + pag.ID);
+            //"update articulos set descripcion='"+descri+"', precio="+precio+" where codigo=" + cod;
             conexion.Desconectar();
-            //return rowsAfectadas;
-        }*/
+            return rowsAfectadas;
+        }
     }
 }

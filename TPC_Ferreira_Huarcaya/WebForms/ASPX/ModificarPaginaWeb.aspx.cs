@@ -30,23 +30,34 @@ namespace WebForms.ASPX
 
             PaginaSeleccionada = listaPaginasWeb.Find(pag => idRecibido == pag.ID);
 
-            txtTitulo.Text = PaginaSeleccionada.Titulo;
-            txtDescripcion.Text = PaginaSeleccionada.Descripcion;
-            txtUrlPaginaWeb.Text = PaginaSeleccionada.Url_PaginaWeb;
-            txtUrlImagen.Text = PaginaSeleccionada.Url_Imagen;
+            if (!IsPostBack)
+            {
+                txtTitulo.Text = PaginaSeleccionada.Titulo;
+                txtDescripcion.Text = PaginaSeleccionada.Descripcion;
+                txtUrlPaginaWeb.Text = PaginaSeleccionada.Url_PaginaWeb;
+                txtUrlImagen.Text = PaginaSeleccionada.Url_Imagen;
+                txtHabilitado.Text = Convert.ToString(PaginaSeleccionada.Habilitado);
+                txtPrecio.Text = Convert.ToString(PaginaSeleccionada.Precio);
+            }
+            
 
         }
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
         {
-            /*PaginaWeb pag = new PaginaWeb();
+            PaginaWeb pag = new PaginaWeb();
+            PaginasWebNegocios pagNeg = new PaginasWebNegocios();
+
             pag.ID = PaginaSeleccionada.ID;
             pag.Titulo = txtTitulo.Text;
             pag.Descripcion = txtDescripcion.Text;
             pag.Url_PaginaWeb = txtUrlPaginaWeb.Text;
             pag.Url_Imagen = txtUrlImagen.Text;
+            pag.Habilitado = Convert.ToBoolean(txtHabilitado.Text);
+            pag.Precio = Convert.ToInt32(txtPrecio.Text);
 
-            //int rowsAfectados = Modificar(pag);
+            int rowsAfectados = pagNeg.Modificar(pag);
+            
             if(rowsAfectados != 0)
             {
                 Response.Redirect("Catalogo.aspx");
@@ -54,7 +65,7 @@ namespace WebForms.ASPX
             else
             {
                 Response.Redirect("Error.aspx");
-            }*/
+            }
         }
     }
 }
