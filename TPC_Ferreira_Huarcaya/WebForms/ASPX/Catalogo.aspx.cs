@@ -18,11 +18,6 @@ namespace WebForms.ASPX
         {
 
              Usuario = (Usuario)Session["usersession"];
-             // No es necesario el if para catalogo
-             /*if (Usuario == null)
-             {
-                 Response.Redirect("InicioSesion.aspx");
-             }*/
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();

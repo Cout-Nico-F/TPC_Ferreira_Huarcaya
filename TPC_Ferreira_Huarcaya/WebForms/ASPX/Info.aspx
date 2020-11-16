@@ -18,17 +18,17 @@
                 <div class="col-lg-6 col-md-6">
                 </div>
                 <%
-                    foreach (Modelo.InfoWeb item in listaInfo)
+                    foreach (Modelo.Usuario item in listaInfo)
                     {%>
-                        <%if(item.ID_Nivel == 3)
+                        <%if(item.Id_Acceso == 3)
                             
                           {%>
                  <div class="col-lg-6 col-md-6">
                     <div class="card">
                          <div class="card-body">
                             <!--Se que no es la mejor foto pero es la unica que tengo -->
-                            <img src="<%=item.UrlImagen%>" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
-                            <h3><%=item.NombreApellido %></h3>
+                            <img src="<%=item.Url_Imagen%>" alt="Imagen no encontrada" class="img-fluid rounded-circle w-50 mb-3" />
+                            <h3><%=item.Nombre %></h3>
                             <h5>Tec.Univ en Programacion</h5>
                             <!-- No se que poner -->
                             <p><%=item.Descripcion %></p>

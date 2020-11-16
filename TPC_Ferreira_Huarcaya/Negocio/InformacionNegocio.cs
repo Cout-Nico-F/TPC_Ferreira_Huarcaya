@@ -10,22 +10,22 @@ namespace Negocio
 {
     public class InformacionNegocio
     {
-        public List<InfoWeb> ListarInfo()
+        public List<Usuario> ListarInfo()
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
 
-            List<InfoWeb> listaInfo = new List<InfoWeb>();
+            List<Usuario> listaInfo = new List<Usuario>();
 
-            SqlDataReader lectura = conexion.Consulta_Rapida("select * From InfoWeb");
+            SqlDataReader lectura = conexion.Consulta_Rapida("select ID,Id_Acceso,Url_Imagen,Nombre,Descripcion From Usuarios");
 
             while (lectura.Read())
             {
-                InfoWeb aux = new InfoWeb();
-                aux.ID_Usuario = lectura.GetInt16(0);
-                aux.ID_Nivel = lectura.GetInt16(1);
-                aux.NombreApellido = lectura.GetString(2);
-                aux.Descripcion = lectura.GetString(3);
-                aux.UrlImagen = lectura.GetString(4);
+                Usuario aux = new Usuario();
+                aux.ID = lectura.GetInt16(0);
+                aux.Id_Acceso = lectura.GetInt16(1);
+                aux.Url_Imagen = lectura.GetString(2);
+                aux.Nombre = lectura.GetString(3);
+                aux.Descripcion = lectura.GetString(4);
 
                 listaInfo.Add(aux);
 

@@ -11,7 +11,7 @@ namespace WebForms.ASPX
 {
     public partial class Contacto : System.Web.UI.Page
     {
-        public List<InfoWeb> listaInfo { get; set; }
+        public List<Usuario> listaInfo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -25,7 +25,7 @@ namespace WebForms.ASPX
                 }
                 else
                 {
-                    listaInfo = (List<InfoWeb>)Session["listadoInfo"];
+                    listaInfo = (List<Usuario>)Session["listadoInfo"];
                     Session["listadoInfo"] = null;
                 }
             }

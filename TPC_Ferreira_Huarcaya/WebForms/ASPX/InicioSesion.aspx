@@ -16,11 +16,8 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
-            <style>
-               
 
-            </style>
+    <form id="form1" runat="server">
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
                 <a class="navbar-brand" href="#">
@@ -50,6 +47,7 @@
             <br />
             <br />
             <br />
+        
             <div>
                 <div class="modal-dialog text-center">
                     <div class="col-sm-12">
@@ -59,15 +57,11 @@
                             </div>
                             <form class="col-12">
                                 <div class="form-group">
-                                    <!-- <input id="email" type="email" class="form-control" placeholder="Correo Electronico" required /> -->
                                     <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="NombreUsuario" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <!-- <input id="password" type="password" class="form-control" placeholder="Contraseña" required /> -->
                                     <asp:TextBox runat="server" ID="txtPass" Placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                 </div>
-                                <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button> -->
-                                <!-- <i class="fas fa-sign-in-alt"></i>  No puedo hacer que el icono este dentro de el boton quizas con grid o flexbox puede ser -->
                                 <asp:Button Text="Ingresar" runat="server" CssClass="btn-Ingresar" ID="btn_Ingresar" OnClick="btn_Ingresar_Click" />
                             </form>
                             <div class="col-12">
@@ -76,7 +70,6 @@
                                 <br />
                                 <label>Olvido su contraseña</label>
                                 <a href="RecuperarContraseña.aspx">Recuperar contraseña</a>
-
                             </div>
                         </div>
                     </div>

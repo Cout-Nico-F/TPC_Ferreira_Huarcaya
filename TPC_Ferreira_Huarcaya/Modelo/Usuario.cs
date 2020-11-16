@@ -20,5 +20,7 @@ namespace Modelo
         public string Contrasenia { get; set; }
 
         public Int16 Id_Acceso { get; set; }
+        public string Descripcion { get; set; }
+        public string Url_Imagen { get; set; }
     }
 }

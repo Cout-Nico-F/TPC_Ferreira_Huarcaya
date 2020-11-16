@@ -37,7 +37,7 @@ namespace WebForms.ASPX
             if (Usuario.ID != 0)
             {
                 //deja entrar a todos los usuarios
-                Session.Add("usersession", user);
+                Session.Add("usersession", Usuario);// tenia user en vez de Usuario vamos a ver si funciona ahora
                 Response.Redirect("Catalogo.aspx");
             }
             else

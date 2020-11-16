@@ -23,7 +23,7 @@
     
     <br />
     <br />
-    <!--Por ahora el buscador queda inactivo hasta encontrar porque no funciona -->
+
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Hola bienvenido</h1>
@@ -34,8 +34,8 @@
     <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />
+
     <section id="facilities">
-        <!-- Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id); -->
         <div class="container">
             <%
                 if (Lista.Count == 0)
@@ -47,12 +47,14 @@
                         foreach(Modelo.PaginaWeb item in Lista)
                         {%>
                 <div class="col md-5 col-sm-4">
+
                     <div class="container">
-                       
-                            <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"<i class="fas fa-trash"></i></a>
-                            <a href="AgregarPaginaWeb.aspx"><i class="fas fa-plus"></i></a>
-                            <a href="ModificarPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-tools"></i></a>
-                      
+                          <%if (Usuario.Id_Acceso == 3)
+                              { %>
+                                 <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"<i class="fas fa-trash"></i></a>
+                                 <a href="AgregarPaginaWeb.aspx"><i class="fas fa-plus"></i></a>
+                                 <a href="ModificarPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-tools"></i></a>
+                            <%} %>
                          
                     </div>
                     <div class="card text-center" style="margin-bottom: 40px;">
@@ -67,6 +69,7 @@
                  </div>
                         <%}%>
                 </div>
+            <!-- Este es es template vacio que esta siendo reemplazado por el boton de Crea tu paginas web en el navbar 
             <div class="col md-5 col-sm-4">
                     <div class="card text-center" style="margin-bottom: 40px;">
                         <img src="../Imagenes/ImagenesPaginaWeb/Blanco.jpg" class="card-img-top" alt="No se encontro la imagen" />
@@ -78,7 +81,7 @@
                         </div>
                      </div>
                  </div>
-            </div>
+            </div> -->
          
         </section>
 
