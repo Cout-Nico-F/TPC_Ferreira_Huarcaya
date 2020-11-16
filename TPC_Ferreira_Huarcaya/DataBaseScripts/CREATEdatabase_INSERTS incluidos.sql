@@ -75,7 +75,7 @@ create table Datos_Personales (
 create table Paginas (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,
-	Url_Imagen varchar(100) not null,
+	Url_Imagen varchar(100) null,
 	Habilitado bit not null
 )
 
