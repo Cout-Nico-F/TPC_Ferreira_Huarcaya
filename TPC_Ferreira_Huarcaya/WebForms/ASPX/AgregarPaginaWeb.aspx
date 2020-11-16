@@ -52,6 +52,10 @@
                                 <label for="fileImagen">Ingrese una imagen para para la pagina web</label>
                                 <input type="file" class="form-control" id="fileImagen" runat="server" /> -->
                             </div>
+                             <div class="col-md-12 form-group">
+                                 <asp:Label Text="Ingrese el precio de la Pagina Web" runat="server" />
+                                <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" TextMode="Number" ></asp:TextBox>
+                            </div>
                         </div>
                         <br />
                         <div class="col-md-6 form-group">

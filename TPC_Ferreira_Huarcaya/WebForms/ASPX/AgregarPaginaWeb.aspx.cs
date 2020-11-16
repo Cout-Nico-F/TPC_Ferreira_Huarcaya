@@ -32,6 +32,9 @@ namespace WebForms.ASPX
             pag.Descripcion = txtDescripcion.Text;
             pag.Url_PaginaWeb = txtUrlPagina.Text;
             pag.Url_Imagen = txtUrlImagen.Text;
+            pag.Habilitado = true; //lo mando asi por ahora
+            pag.Precio = Convert.ToInt32(txtPrecio.Text);
+
 
             //tambien tengo que cargar la url imagen
 

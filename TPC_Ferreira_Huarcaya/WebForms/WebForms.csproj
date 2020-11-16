@@ -87,6 +87,7 @@
     <Content Include="ASPX\Personalizar.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
+    <Content Include="ASPX\RecursosAdmin.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -2015,6 +2016,13 @@
     </Compile>
     <Compile Include="ASPX\RecuperarContaseña.aspx.designer.cs">
       <DependentUpon>RecuperarContaseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\RecursosAdmin.aspx.cs">
+      <DependentUpon>RecursosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\RecursosAdmin.aspx.designer.cs">
+      <DependentUpon>RecursosAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Masters\Master1.Master.cs">
       <DependentUpon>Master1.Master</DependentUpon>

@@ -16,6 +16,9 @@ namespace Modelo
 
         public string Url_PaginaWeb { get; set; }
         public string Url_Imagen { get; set; }
+        public bool Habilitado { get; set; }
+        public Int32 Precio { get; set; }
+        //deberia ser decimal igual el precio le ponemos nosotro lo digo porque en caso de una promocion o algo asi seria el precio menos un 5% ponele y nos da un numero con coma
 
     }
 }
