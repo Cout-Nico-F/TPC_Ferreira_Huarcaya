@@ -44,7 +44,8 @@ create table PedidosWebPage (
 	ID smallint identity(1,1),
 	ID_Usuario smallint not null,
 	ID_Estilo smallint not null,
-	PrecioTotal int not null
+	PrecioTotal int not null,
+	Fecha date not null
 )
 	go
 	
@@ -172,9 +173,6 @@ insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('And
 insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('AlonsoHS20','AlonsohuarcayaAdmin2',3,1,'Estudiante UTN-FRPG','../Imagenes/Alonso.jpg')
 insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('NicoFerreira1','NicoFerreAdmin1',3,1,'Estudiante UTN-FRPG','../Imagenes/NicolasFerreira.jpg')
 go
-/*				Tabla PedidosWebPage		*/
-
-/* NO HACE FALTA QUE TENGA DATOS*/
 
 /*				Tabla Datos Personales				*/
 insert into Datos_Personales(ID_Usuario,Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Fecha_Nac,Email_Recuperacion,Fecha_Registro) values (1,'Jeremias Inova','1143726710','JereIno21@hotmail.com','45232234','03/03/1986','JereIno21@hotmail.com','01/02/2020')
@@ -195,14 +193,33 @@ insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Home','../Imagen
 insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Contacto','../Imagenes/ImagenesPaginas/Contacto.jpg',1)
 insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Login','../Imagenes/ImagenesPaginas/Login.jpg',1)
 go
-/*				Tabla Funcionalidades x PedidosWebPage			*/
+
 --estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.
-
-/*insert into Funcionalidades_X_Paginas(ID_Funcionalidad,ID_Pagina) values (1,1)
+--pedidos de prueba para poder probar la vista
+insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha) values (1,1,19000,'01/01/2020')
+insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha) values (2,1,18000,'01/01/2020')
+insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha) values (3,2,10000,'01/01/2020')
 go
-*/
+/*insert into Funcionalidades_X_PedidosWebPage*/
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (1,1)
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (2,1)
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (4,1)
 
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (6,2)
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (4,2)
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (3,2)
 
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (8,3)
+insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (2,3)
+go
+/*insert into Paginas_X_PedidosWebPage*/
+insert into paginas_X_pedidoswebpage (ID_Pagina,ID_Pedidowebpage) values (1,1)
+insert into paginas_X_pedidoswebpage (ID_Pagina,ID_Pedidowebpage) values (3,1)
+
+insert into paginas_X_pedidoswebpage (ID_Pagina,ID_Pedidowebpage) values (1,2)
+
+insert into paginas_X_pedidoswebpage (ID_Pagina,ID_Pedidowebpage) values (1,3)
+go
 /*				Tabla Pagina Web					*/
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Full Width Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginaWeb/ImagenesFull.png',10000,1)
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Blog Spot','Template para armar un blog','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginaWeb/Blog.png',11000,1)
