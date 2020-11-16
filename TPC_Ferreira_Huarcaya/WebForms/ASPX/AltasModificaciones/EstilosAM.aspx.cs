@@ -23,6 +23,7 @@ namespace WebForms.ASPX.AltasModificaciones
             //falta validar que sean correctos los datos.
             NuevoEstilo.Descripcion = txtBox_Descripcion.Text;
             NuevoEstilo.Url_Imagen = txtBox_Url_Imagen.Text;
+            NuevoEstilo.Habilitado = true;
             EstiloNegocio estiloNegocio = new EstiloNegocio();
 
             //agregarlo a la base de datos

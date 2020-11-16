@@ -10,7 +10,7 @@
         <asp:Button ID="btn_Baja_Pagina" Text="Si, deseo eliminar permanentemente esta pagina" runat="server" CssClass="btn btn-danger" OnClick="btn_Baja_Pagina_Click" />
         <br />
         <br />
-        <a href="../Personalizar.aspx" class="btn btn-info">No, no quiero eliminar este estilo ahora.</a>
+        <a href="../PersonalizarUsuario.aspx" class="btn btn-info">No, no quiero eliminar este estilo ahora.</a>
     </div>
 
 </asp:Content>

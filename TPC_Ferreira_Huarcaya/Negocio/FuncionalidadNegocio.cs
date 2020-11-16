@@ -17,7 +17,7 @@ namespace Negocio
         public int Agregar(Funcionalidad Func)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Funcionalidades(Descripcion, Costo) values('" + Func.Descripcion + "' , '" + Func.Costo + "')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Funcionalidades(Descripcion, Costo,Habilitado) values('" + Func.Descripcion + "' , '" + Func.Costo + "','"+Func.Habilitado+"')");
             conexion.Desconectar();
             return rowsAfectadas;
         }

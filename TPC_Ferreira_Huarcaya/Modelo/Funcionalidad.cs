@@ -13,6 +13,7 @@ namespace Modelo
         public string Descripcion { get; set; }
 
         public Int32 Costo { get; set; } //Se me ocurre usar Costo para cada cosa que suma al Precio final. ( para diferenciar )
+        public bool Habilitado { get; set; }
 
     }
 }

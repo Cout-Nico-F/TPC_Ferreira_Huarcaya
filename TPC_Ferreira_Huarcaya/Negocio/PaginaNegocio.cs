@@ -34,7 +34,7 @@ namespace Negocio
         public int Agregar(Pagina pag)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into paginas (descripcion) values ('" + pag.Descripcion + "')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into paginas (descripcion,Url_Imagen,Habilitado) values ('" + pag.Descripcion + "','"+pag.Url_Imagen+"','"+pag.Habilitado+"')");
             conexion.Desconectar();
             return rowsAfectadas;
         }

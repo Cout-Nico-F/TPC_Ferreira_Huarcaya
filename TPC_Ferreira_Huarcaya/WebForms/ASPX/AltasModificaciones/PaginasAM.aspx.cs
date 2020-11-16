@@ -20,6 +20,8 @@ namespace WebForms.ASPX.AltasModificaciones
         protected void Btn_PaginaAM_OK_Click(object sender, EventArgs e)
         {
             Pagina.Descripcion = txtBox_Descripcion.Text;
+            Pagina.Habilitado = true;
+
             PaginaNegocio PagNeg = new PaginaNegocio();
 
             if (PagNeg.Agregar(Pagina) < 1)

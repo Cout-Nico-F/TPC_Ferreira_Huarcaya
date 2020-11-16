@@ -147,7 +147,7 @@
                     </tr>
                     <tr>
                        <th>Eliminar</th>
-                        <td><asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" CssClass="btn btn-danger" OnClick="btn_Pagina_Baja_Click" /></td>
+                        <td><asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" CssClass="btn btn-danger" Onclick="btn_Pagina_Baja_Click" /></td>
                         <td><asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" CssClass="btn btn-danger" OnClick="btn_Estilo_Baja_Click"/></td>
                         <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-danger" Onclick="bnt_Funcionalidad_Baja_Click"/></td>
                     </tr>

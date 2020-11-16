@@ -26,6 +26,7 @@ namespace WebForms.ASPX.AltasModificaciones
             //falta validar que sean correctos los datos.
             NuevaFuncionalidad.Descripcion = txtBox_Descripcion.Text;
             NuevaFuncionalidad.Costo = Convert.ToInt32 ( txtBox_Costo.Text ) ;
+            NuevaFuncionalidad.Habilitado = true;
             FuncionalidadNegocio funcionalidadNegocio = new FuncionalidadNegocio();
             
             //agregarlo a la base de datos

@@ -169,21 +169,7 @@ namespace WebForms.ASPX
            
         }
 
-        protected void btn_Baja_Estilo_Click(object sender, EventArgs e)
-        {
-            if (ddl_Estilos.SelectedIndex != 0)
-            {
-                FunNegocio.Eliminar(Funcionalidad.Id);//el metodo permite usar un if para comprobar que se pudo eliminar (1) o que no afecto ninguna row (0)
-                Response.Redirect("../PersonalizarUsuario.aspx");
-            }
-           
-        }
-
-        protected void btn_Pagina_Baja_Click(object sender, EventArgs e)
-        {
-            string id = ddl_Paginas.SelectedItem.Value;
-            Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id);
-        }
+       
 
         protected void btn_Remover_Funcionalidad_Click(object sender, EventArgs e)
         {
@@ -219,6 +205,15 @@ namespace WebForms.ASPX
 
                 ListaPaginasSeleccion.Add(Paginas);
             }           
+        }
+
+        protected void btn_Pagina_Baja_Click(object sender, EventArgs e)
+        {
+            if (ddl_Paginas.SelectedIndex != 0)
+            {
+                string id = ddl_Paginas.SelectedItem.Value;
+                Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id);
+            }
         }
     }
 }

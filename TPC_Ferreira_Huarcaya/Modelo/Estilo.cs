@@ -13,6 +13,7 @@ namespace Modelo
         public string Descripcion { get; set; }
 
         public string Url_Imagen { get; set; }
+        public bool Habilitado { get; set; }
 
     }
 }

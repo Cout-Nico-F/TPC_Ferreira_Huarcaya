@@ -13,7 +13,7 @@ namespace Negocio
         public int Agregar(Estilo estilo)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Estilos(Descripcion, Url_Imagen) values('"+ estilo.Descripcion +"','" + estilo.Url_Imagen +"')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Estilos(Descripcion, Url_Imagen,Habilitado) values('"+ estilo.Descripcion +"','" + estilo.Url_Imagen +"','"+estilo.Habilitado+"')");
             // estilos ahora tiene un UrlImagen entonces podemos usar el boton que nos mostro maxi apra agregar imagenes, guardarlas en una carpeta, traer la ruta y la ruta la enviamos
             // a la BD con este insert tambien
             conexion.Desconectar();
