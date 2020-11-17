@@ -10,7 +10,7 @@
      <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!-- Estilos CSS -->
-   <link href="../CSS/Estilos_PersonalizarUsuario.css" type="text/css" rel="stylesheet"/>
+    <link href="../CSS/Estilos_PersonalizarUsuario.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
 
@@ -58,7 +58,7 @@
                             <%foreach (var pag in ListaPaginasSeleccion)
                                 { %>
                                 
-                                   <img src="<%=pag.Url_Imagen%>" alt="Imagen Pagina no encontrada" class="rounded float-left"/>
+                                   <img src="<%=pag.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height:20%; width:23%;"/>
                                    
                                   
                                 <% }%>
@@ -75,7 +75,7 @@
                             <%foreach (var est in ListaEstilos)
                                 { %>
                                 
-                                   <img src="<%=est.Url_Imagen%>" alt="Imagen Estilo no encontrada" class="rounded float-left" />
+                                   <img src="<%=est.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height:20%; width:23%;"/>
                                    
                                   
                                 <% }%>
