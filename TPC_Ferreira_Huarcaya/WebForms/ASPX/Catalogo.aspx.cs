@@ -17,7 +17,11 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
 
-             Usuario = (Usuario)Session["usersession"];
+             Usuario = (Usuario)Session["usersession"];//tengo que validar que si o si este ingresado porque si no no puedo filtrar por id acceso en en front
+             if(Usuario == null)
+            {
+                Response.Redirect("InicioSesion.aspx");
+            }
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();
@@ -34,10 +38,11 @@ namespace WebForms.ASPX
             catch (Exception ex)
             {
 
-                Session.Add("errorEncontrado",ex.ToString());
+                Session.Add("errorEncontrado", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
-           
+
+
         }
 
         protected void txt_Buscar_TextChanged(object sender, EventArgs e)
