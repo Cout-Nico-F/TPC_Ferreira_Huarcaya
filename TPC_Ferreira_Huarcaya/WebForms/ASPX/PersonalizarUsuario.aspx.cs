@@ -224,6 +224,7 @@ namespace WebForms.ASPX
 
         protected void btn_Funcionalidad_Modificacion_Click(object sender, EventArgs e)
         {
+            Response.Redirect("AltasModificaciones/FuncionalidadesAM.aspx?idFuncionalidad=" + ddl_Funcionalidades.SelectedItem.Value);
 
         }
 

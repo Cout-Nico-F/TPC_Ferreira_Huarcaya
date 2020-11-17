@@ -51,5 +51,12 @@ namespace Negocio
             conexion.Desconectar();
             return rowsAfectadas;
         }
+        public int Modificar(Funcionalidad fun)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("update funcionalidades set Descripcion='" + fun.Descripcion + "',Costo=" + fun.Costo + ",Habilitado=" + Convert.ToInt16(fun.Habilitado) + " Where ID=" + fun.Id);
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
     }
 }
