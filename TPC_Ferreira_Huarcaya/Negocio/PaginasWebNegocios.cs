@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Modelo;
+using System.Data.SqlClient;
+using System.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Modelo;
-using System.Data.SqlClient;
+
 
 namespace Negocio
 {
@@ -55,6 +57,26 @@ namespace Negocio
             int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo=" + pag.Titulo + ",Descripcion=" + pag.Descripcion + ",Url_Pagina=" + pag.Url_PaginaWeb + ",Url_Image=" + pag.Url_Imagen + ",Habilitado="+pag.Habilitado+",Precio="+pag.Precio+" Where ID='" + pag.ID);
             conexion.Desconectar();
             return rowsAfectadas;
+        }
+        public void ActualizarDatos(Usuario usu,DatosPersonales dat)
+        {
+            using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_EditarDatosPersonales", sql))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@id_Usuario", usu.ID));
+                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario",usu.NombreUsuario));
+                    cmd.Parameters.Add(new SqlParameter("@Contrasenia", usu.Contrasenia));
+                    cmd.Parameters.Add(new SqlParameter("@NombreApellido", dat.NombreApellido));
+                    cmd.Parameters.Add(new SqlParameter("@TelefonoMovil", dat.TelefonoMovil));
+                    cmd.Parameters.Add(new SqlParameter("@Email", dat.Email));
+                    cmd.Parameters.Add(new SqlParameter("@TelefonoFijo",dat.TelefonoFijo));
+                    cmd.Parameters.Add(new SqlParameter("@EmailRecuperacion",dat.EmailRecuperacion));
+                    sql.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

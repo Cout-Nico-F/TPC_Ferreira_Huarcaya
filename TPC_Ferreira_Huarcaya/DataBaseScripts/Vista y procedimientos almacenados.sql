@@ -96,14 +96,15 @@ create procedure SP_EditarDatosPersonales(
 		@NombreApellido varchar(200),
 		@TelefonoMovil int,
 		@Email varchar(200),
-		@TelefonoFijo int
+		@TelefonoFijo int,
+		@EmailRecuperacion varchar(200)
 )
 as
 begin	
 		begin try
 			begin transaction -- para que se ejecute como un bloque si tira error alguno de los 2 update que me mande al catch
 				update Usuarios set  NombreUsuario = @NombreUsuario,Contrasenia = @Contrasenia Where ID = @id_Usuario;
-				update Datos_Personales set Nombre_Y_Apellido = @NombreApellido, Telefono_Movil = @TelefonoMovil, Email = @Email,Telefono_Fijo = @TelefonoFijo where ID_Usuario = @id_Usuario;
+				update Datos_Personales set Nombre_Y_Apellido = @NombreApellido, Telefono_Movil = @TelefonoMovil, Email = @Email,Telefono_Fijo = @TelefonoFijo,Email_Recuperacion=@EmailRecuperacion where ID_Usuario = @id_Usuario;
 			commit transaction
 		end try
 		begin catch
@@ -115,7 +116,7 @@ go
 
 /*	Datos de prueba para SP_EditarDatosPersonales */		
 Exec SP_EditarDatosPersonales
-	@id_Usuario = 10,
+	@id_Usuario = 9,
 	@NombreUsuario = 'PruebaCambio',
 	@Contrasenia = 'contraCambiada',
 	@NombreApellido = 'Prueba Nombre',
@@ -124,7 +125,6 @@ Exec SP_EditarDatosPersonales
 	@TelefonoFijo = '4810292'
 
 go
-
 
 /*Tenemos pensado usar triggers para insted of delete en funcionalidades, paginas, estilos y usuarios*/
 /*Y varios procedimientos almacenados mas. (por ejemplo para agregar un pedido con sus paginas y funcionalidades)*/

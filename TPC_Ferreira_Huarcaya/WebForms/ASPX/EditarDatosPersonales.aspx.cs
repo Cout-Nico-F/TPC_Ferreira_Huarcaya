@@ -21,7 +21,7 @@ namespace WebForms.ASPX
                     DatosPersonales dat = new DatosPersonales();
                     DatosPersonalesNegocios edNeg = new DatosPersonalesNegocios();
 
-                    id = 1; // estoy forzando el id enviado aca
+                    id = 8; // estoy forzando el id enviado aca
 
                     dat = edNeg.TraerDatos(id); //esta mal la conexion a la DB sqlexception must declare scalar @id_Usuario en command = executeNonQuery();
 
@@ -56,6 +56,8 @@ namespace WebForms.ASPX
 
             //enviarlo de nuevo a la DB con update
             DatosPersonales datos = new  DatosPersonales();
+            Usuario usu = new Usuario();
+            PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
             datos.NombreApellido = txtNombreApellido.Text;
             datos.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
@@ -63,8 +65,12 @@ namespace WebForms.ASPX
             datos.Email = txtEmail.Text;
             datos.EmailRecuperacion = txtEmailRecuperacion.Text;
             datos.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            usu.NombreUsuario = txtNombreUsuario.Text;
+            usu.Contrasenia = txtContrasenia.Text;
+            usu.ID = 8; // estoy harcodeando el id usuario
 
-            //ActualizarDatos(datos);
+
+            pagNeg.ActualizarDatos(usu,datos);
 
         }
     }

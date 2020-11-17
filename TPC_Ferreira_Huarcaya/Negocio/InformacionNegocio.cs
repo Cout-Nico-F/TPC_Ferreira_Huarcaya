@@ -16,7 +16,7 @@ namespace Negocio
 
             List<Usuario> listaInfo = new List<Usuario>();
 
-            SqlDataReader lectura = conexion.Consulta_Rapida("select ID,Id_Acceso,Url_Imagen,Nombre,Descripcion From Usuarios");
+            SqlDataReader lectura = conexion.Consulta_Rapida("select ID,Id_Acceso,Url_Imagen,Descripcion From Usuarios");
 
             while (lectura.Read())
             {
@@ -24,8 +24,7 @@ namespace Negocio
                 aux.ID = lectura.GetInt16(0);
                 aux.Id_Acceso = lectura.GetInt16(1);
                 aux.Url_Imagen = lectura.GetString(2);
-                aux.Nombre = lectura.GetString(3);
-                aux.Descripcion = lectura.GetString(4);
+                aux.Descripcion = lectura.GetString(3);
 
                 listaInfo.Add(aux);
 

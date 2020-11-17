@@ -43,8 +43,6 @@ namespace WebForms.ASPX
                 try
                 {
                     cuentaNeg.CrearCuenta(user, dat);
-                    //lbl_texto.Visible = true;
-                    //lbl_texto.Text = "Usuario creado correctamente";
                     Thread.Sleep(5000);
                     Response.Redirect("Catalogo.aspx");
                 }

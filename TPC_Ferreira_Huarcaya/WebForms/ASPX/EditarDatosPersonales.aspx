@@ -18,7 +18,7 @@
 <body>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
-             <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color:transparent"> <!-- No puedo hacer transparente el fonde de la imagen -->
+             <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color:transparent" /> <!-- No puedo hacer transparente el fonde de la imagen -->
             FerreAlo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,8 +32,6 @@
         <div>
             <div class="boton-nav-user">
                 <a href="InicioSesion.aspx" style="color:white; margin-right:30px;"><i class="fas fa-user"></i></a>
-                <!-- Carrito no lo vamos a usar por lo menos aca -->
-                <!--<a href="CarritoCompra.aspx" style="color:white; margin-right:80px;"><i class="fas fa-shopping-cart"></i></a> -->
             </div>
         </div>
     </div>
@@ -55,6 +53,14 @@
                             <div class="col-md-12 form-group">
                                 <asp:Label Text="Nombre y Apellido" runat="server" />
                                 <asp:TextBox runat="server" ID="txtNombreApellido" Placeholder="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
+                            </div>
+                             <div class="col-md-6 form-group">
+                                 <asp:Label Text="Telefono Movil" runat="server" />
+                                <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>
+                            </div>
+                             <div class="col-md-6 form-group">
+                                 <asp:Label Text="Telefono Movil" runat="server" />
+                                <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-12 form-group">
                                  <asp:Label Text="Telefono Movil" runat="server" />
