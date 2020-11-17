@@ -51,10 +51,18 @@ namespace Negocio
             return lista;
         }
 
-        public int Eliminar(Int16 id)//tal vez serviria un procedimiento almacenado que solo elimine si la sentencia afecta 1 sola row?
+        public int Eliminar(Int16 id)//este delete se va a convertir en update de habilitado con un trigger (instead of delete)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
             int rowsAfectadas = conexion.SentenciaNonQuery("Delete from Estilos where ID =" + id);
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
+
+        public int Modificar(Estilo estilo)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("update Estilos set Descripcion='" + estilo.Descripcion + "',Url_Imagen='" + estilo.Url_Imagen + "',Habilitado=" + Convert.ToInt16( estilo.Habilitado ) + " Where ID=" + estilo.Id);
             conexion.Desconectar();
             return rowsAfectadas;
         }
