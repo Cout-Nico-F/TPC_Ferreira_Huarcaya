@@ -24,22 +24,22 @@ namespace WebForms.ASPX
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
         {
-            if (!(txtTitulo.Text == "" || txtDescripcion.Text == "" || txtUrlImagen.Text == ""))
+            if (!(txtTitulo.Text == "" || txtDescripcion.Text == "" ))
             {
                 PaginaWeb pag = new PaginaWeb();
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
                 //Lo que Maxi nos enseño
                 //la ruta es distinta entre nosotros dos podriamos poner un Or o algo asi
-                /*string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + DateTime.Now.ToString("h:mm:ss tt");
-                fileImagen.PostedFile.SaveAs(ruta);*/
+                string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + DateTime.Now.ToString("h:mm:ss tt");
+                fileImagen.PostedFile.SaveAs(ruta);
 
                 // int validacion = Validaciones();
 
                 pag.Titulo = txtTitulo.Text;
                 pag.Descripcion = txtDescripcion.Text;
                 pag.Url_PaginaWeb = txtUrlPagina.Text;
-                pag.Url_Imagen = txtUrlImagen.Text;
+                pag.Url_Imagen = ruta;
                 pag.Habilitado = true; //lo mando asi por ahora
                 pag.Precio = Convert.ToInt32(txtPrecio.Text);
 
@@ -59,6 +59,7 @@ namespace WebForms.ASPX
             else
             {
 
+
             }
            
 
@@ -66,11 +67,11 @@ namespace WebForms.ASPX
 
         protected void txtPrevia_Click(object sender, EventArgs e)
         {
-            if(!(txtTitulo.Text == "" || txtDescripcion.Text == "" || txtUrlImagen.Text == ""))
+            if(!(txtTitulo.Text == "" || txtDescripcion.Text == "" ))
             {
                 PaginaWebVistaPrevia.Titulo = txtTitulo.Text;
                 PaginaWebVistaPrevia.Descripcion = txtDescripcion.Text;
-                PaginaWebVistaPrevia.Url_Imagen = txtUrlImagen.Text;
+                //PaginaWebVistaPrevia.Url_Imagen = txtUrlImagen.Text;
             }
             else
             {

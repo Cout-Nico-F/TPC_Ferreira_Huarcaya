@@ -58,9 +58,9 @@
                                    <asp:TextBox runat="server" ID="txtUrlPagina" CssClass="form-control" ></asp:TextBox>
                             </div>
                              <div class="col md-6 form-group">
-                                <asp:Label Text="Ingrese la url de la imagen" runat="server" />
-                                <asp:TextBox runat="server" ID="txtUrlImagen" cssClass="form-control" />  
-                            </div>
+                                 <asp:Label Text="Seleccionar imagen a subir" runat="server"/>
+                                <input type="file" class="form-control-file" id="fileImagen" runat="server" />
+                            </div> 
                              <div class="col-md-12 form-group">
                                  <asp:Label Text="Ingrese el precio de la Pagina Web" runat="server" />
                                 <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" TextMode="Number" ></asp:TextBox>
@@ -68,7 +68,7 @@
                         </div>
                         <br />
                         <div class="col-md-12 form-group">
-                             <asp:Button Text="Aplicar Cambios" runat="server" CssClass="btn btn-info" ID="txt_Cambios" Onclick="btn_Cambios_Click" />
+                             <asp:Button Text="Agregar Pagina" runat="server" CssClass="btn btn-info" ID="txt_Cambios" Onclick="btn_Cambios_Click" />
                               <a href="Catalogo.aspx" class="btn btn-danger">Cancelar</a>
                              <asp:Button Text="Vista Previa" runat="server" CssClass="btn btn-info" ID="txtPrevia" OnClick="txtPrevia_Click" OnclientClick="OpenModal()"/>
                         </div>
