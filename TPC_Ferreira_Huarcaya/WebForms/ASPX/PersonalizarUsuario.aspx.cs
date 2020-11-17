@@ -215,5 +215,20 @@ namespace WebForms.ASPX
                 Response.Redirect("/ASPX/ConfirmarBajas/PaginaBaja.aspx?idPagina=" + id);
             }
         }
+
+        protected void btn_Pagina_Modificacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Funcionalidad_Modificacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Estilo_Modificacion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

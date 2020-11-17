@@ -1,10 +1,12 @@
-﻿table,th,td{
+﻿table, th, td {
     border: 1px solid black;
 }
-td{
-    margin-left:10px;
+
+td {
+    margin-left: 10px;
 }
-.img-fluid{
-    max-width:10%;
-    height:auto;
+
+.img-fluid {
+    max-width: 10%;
+    height: auto;
 }

@@ -52,8 +52,7 @@ namespace Negocio
         public int Modificar(PaginaWeb pag)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo='" + pag.Titulo + "',Descripcion=" + pag.Descripcion + ",Url_Pagina=" + pag.Url_PaginaWeb + ",Url_Image=" + pag.Url_Imagen + ",Habilitado="+pag.Habilitado+",Precio="+pag.Precio+" Where ID=" + pag.ID);
-            //"update articulos set descripcion='"+descri+"', precio="+precio+" where codigo=" + cod;
+            int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo=" + pag.Titulo + ",Descripcion=" + pag.Descripcion + ",Url_Pagina=" + pag.Url_PaginaWeb + ",Url_Image=" + pag.Url_Imagen + ",Habilitado="+pag.Habilitado+",Precio="+pag.Precio+" Where ID='" + pag.ID);
             conexion.Desconectar();
             return rowsAfectadas;
         }

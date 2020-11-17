@@ -48,7 +48,7 @@
         <asp:ScriptManager runat="server" />    
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                     <div style="text-align: right">
+                     <div style="text-align: center">
                     <h1>Paginas</h1>
                     <p>Elija la cantidad de paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
@@ -65,7 +65,7 @@
                                  
                        <% } %>
                 </div>               
-                <div style="text-align: right">
+                <div style="text-align: center">
                     <h1>Estilo</h1>
                     <p>Elija el estilo que quiera que tenga su web</p>
                     <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
@@ -88,35 +88,42 @@
                     <asp:DropDownList runat="server" ID="ddl_Funcionalidades"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" ID="btn_Agregar" OnClick="btn_Agregar_Click" AutoPostBack="true"/>
                 </div>
-                <%if (!(ListaFuncionalidadesAgregadas == null))
-                                                {%>
-                <table>
-                    <tr>
-                        <th>Funcionalidades</th>
-                        <th>Costo</th>
-                    </tr>
 
+                <%if (!(ListaFuncionalidadesAgregadas == null))
+                  {%>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Funcionalidades</th>
+                            <th>Costo</th>
+                            <th>Descartar Funcionalidad</th>
+                        </tr>
+                    </thead>
+                    
                     <%foreach (var item in ListaFuncionalidadesAgregadas)
-                      { %>
-                    <tr>
-                     
-                        <td><%=item.Descripcion%><asp:Button Text="Baja" runat="server" ID="btn_Remover_Funcionalidad" OnClick="btn_Remover_Funcionalidad_Click" /></td>
-                        <td><%=item.Costo %></td>
-                         
-                    </tr>
+                        { %>
+                    <tbody>
+                        <tr>
+                            <td><%=item.Descripcion%></td>
+                            <td>$ <%=item.Costo %></td>
+                            <td><asp:Button Text="Baja" runat="server" ID="btn_Remover_Funcionalidad" OnClick="btn_Remover_Funcionalidad_Click" /></td>
+
+                            <%foreach (var pag in ListaPaginasAgregadas)
+                                {%>
+                            <td><%=pag.Descripcion%></td>
+                            <!--Me faltaba el igual y me decia que falta el punto y coma -->
+                            <%} %>
+                        </tr>
                      <%} %>
+                    </tbody>
+                  
                 </table>
                 <%}%>
                 <table>
                     <tr>
                         <th>Paginas</th>
                     </tr>
-                    <%foreach (var item in ListaPaginasAgregadas)
-                        {%>
-                        <tr>
-                            <td><%=item.Descripcion%></td> <!--Me faltaba el igual y me decia que falta el punto y coma -->
-                        </tr>
-                    <%} %>
+                   
                 </table>
 
                 <br />
@@ -126,31 +133,37 @@
                 <br />
                 <%if (Usuario.Id_Acceso == 3)
                     { %>
-                    <table class="table" style="text-align:center;">
-                   <tr>
-                       <th scope="row">Opciones</th>
-                       <th>Paginas</th>
-                       <th>Estilos</th>
-                       <th>Funcionalidades</th>
-                   </tr>
-                   <tr>
-                       <th>Agregar</th>
-                       <td><a href="AltasModificaciones/PaginasAM.aspx" class="alert-link d-block">Nueva Pagina</a></td>
-                       <td><a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a></td>
-                       <td><a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a></td>
-                   </tr>
-                    <tr>
-                        <th>Modificar</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                       <th>Eliminar</th>
-                        <td><asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" CssClass="btn btn-danger" Onclick="btn_Pagina_Baja_Click" /></td>
-                        <td><asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" CssClass="btn btn-danger" OnClick="btn_Estilo_Baja_Click"/></td>
-                        <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-danger" Onclick="bnt_Funcionalidad_Baja_Click"/></td>
-                    </tr>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Opciones</th>
+                                <th scope="col">Paginas</th>
+                                <th scope="col">Estilos</th>
+                                <th scope="col">Funcionalidades</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Agregar</th>
+                                <td><a href="AltasModificaciones/PaginasAM.aspx" class="btn btn-outline-success">Nueva Pagina</a></td>
+                                <td><a href="AltasModificaciones/EstilosAM.aspx" class="btn btn-outline-success">Nuevo Estilo</a></td>
+                                <td><a href="AltasModificaciones/FuncionalidadesAM.aspx" class="btn btn-outline-success">Nueva Funcionalidad</a></td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row">Modificar</th>
+                                <td><asp:Button ID="btn_Pagina_Modificacion" Text="Modificacion Pagina elegida" runat="server" CssClass="btn btn-outline-warning" OnClick="btn_Pagina_Modificacion_Click" /></td>
+                                <td><asp:Button ID="btn_Estilo_Modificacion" Text="btn_Estilo_Modificacion" runat="server" CssClass="btn btn-outline-warning" Onclick="btn_Estilo_Modificacion_Click"/></td>
+                                <td><asp:Button ID="btn_Funcionalidad_Modificacion" Text="btn_Funcionalidad_Modificacion" runat="server" CssClass="btn btn-outline-warning" Onclick="btn_Funcionalidad_Modificacion_Click"/></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Eliminar</th>
+                                <td><asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" cssClass="btn btn-outline-danger" OnClick="btn_Pagina_Baja_Click" /></td>
+                                <td><asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" cssClass="btn btn-outline-danger" OnClick="btn_Estilo_Baja_Click" /></td>
+                                <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" cssClass="btn btn-outline-danger" OnClick="bnt_Funcionalidad_Baja_Click" /></td>
+                            </tr>
+                        </tbody>
                 </table>
 
                 <%} %>

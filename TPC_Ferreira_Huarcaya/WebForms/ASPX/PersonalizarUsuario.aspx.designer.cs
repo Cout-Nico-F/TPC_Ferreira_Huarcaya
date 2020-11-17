@@ -78,6 +78,33 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.Button btn_Remover_Funcionalidad;
 
         /// <summary>
+        /// Control btn_Pagina_Modificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Pagina_Modificacion;
+
+        /// <summary>
+        /// Control btn_Estilo_Modificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Estilo_Modificacion;
+
+        /// <summary>
+        /// Control btn_Funcionalidad_Modificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Funcionalidad_Modificacion;
+
+        /// <summary>
         /// Control btn_Pagina_Baja.
         /// </summary>
         /// <remarks>
