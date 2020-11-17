@@ -14,21 +14,38 @@ namespace WebForms.ASPX.AltasModificaciones
         public Pagina Pagina { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Pagina = new Pagina();
+            if (Request.QueryString["idPAgina"] != null)
+            {//si es modificacion
+
+            }
+            else
+            {//si es alta
+                Pagina = new Pagina();
+            }
+           
         }
 
         protected void Btn_PaginaAM_OK_Click(object sender, EventArgs e)
         {
-            Pagina.Descripcion = txtBox_Descripcion.Text;
-            Pagina.Habilitado = true;
+            if (Request.QueryString["idPAgina"] != null)
+            {//si es modificacion
 
-            PaginaNegocio PagNeg = new PaginaNegocio();
-
-            if (PagNeg.Agregar(Pagina) < 1)
-            {
-                Response.Redirect("../Error.aspx");
             }
-            else Response.Redirect("../PersonalizarUsuario.aspx");
+            else
+            {//si es alta
+                Pagina.Descripcion = txtBox_Descripcion.Text;
+                Pagina.Habilitado = true;
+
+                PaginaNegocio PagNeg = new PaginaNegocio();
+
+                if (PagNeg.Agregar(Pagina) < 1)
+                {
+                    Response.Redirect("../Error.aspx");
+                }
+                else Response.Redirect("../PersonalizarUsuario.aspx");
+            }
+
+            
         }
     }
 }

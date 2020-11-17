@@ -229,7 +229,7 @@ namespace WebForms.ASPX
 
         protected void btn_Estilo_Modificacion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AltasModificaciones/EstilosModificacion.aspx?idEstilo=" + ddl_Estilos.SelectedItem.Value);
+            Response.Redirect("AltasModificaciones/EstilosAM.aspx?idEstilo=" + ddl_Estilos.SelectedItem.Value);
         }
     }
 }
