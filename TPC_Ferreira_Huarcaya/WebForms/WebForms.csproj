@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="ASPX\AgregarPaginaWeb.aspx" />
     <Content Include="ASPX\AltasModificaciones\EstilosAM.aspx" />
-    <Content Include="ASPX\AltasModificaciones\EstilosModificacion.aspx" />
     <Content Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx" />
     <Content Include="ASPX\AltasModificaciones\PaginasAM.aspx" />
     <Content Include="ASPX\BajaPaginaWeb.aspx" />
@@ -1891,13 +1890,6 @@
     </Compile>
     <Compile Include="ASPX\AltasModificaciones\EstilosAM.aspx.designer.cs">
       <DependentUpon>EstilosAM.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASPX\AltasModificaciones\EstilosModificacion.aspx.cs">
-      <DependentUpon>EstilosModificacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\AltasModificaciones\EstilosModificacion.aspx.designer.cs">
-      <DependentUpon>EstilosModificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\AltasModificaciones\FuncionalidadesAM.aspx.cs">
       <DependentUpon>FuncionalidadesAM.aspx</DependentUpon>

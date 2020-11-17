@@ -10,6 +10,10 @@
             <label for="txtBox_Descripcion">Descripcion</label>
             <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder=""> </asp:TextBox> 
             <small id="DescHelp" class="form-text text-muted">Ingrese la descripcion de la pagina.</small>
+            <label for="txtBox_Url_Imagen">Url_Imagen</label>
+            <asp:TextBox runat="server" ID="txtBox_Url_Imagen" Placeholder=""> </asp:TextBox> 
+            <small id="UrlHelp" class="form-text text-muted">Ingrese la URL de la imagen de la pagina.(proximamente posibilidad de subir un archivo imagen)</small>
+            <!-- -->
         </div>
         <asp:Button Text="OK" runat="server" ID="btn_PaginaAM_OK" OnClick="Btn_PaginaAM_OK_Click"/>
     </form>

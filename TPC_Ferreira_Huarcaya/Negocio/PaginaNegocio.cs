@@ -46,5 +46,12 @@ namespace Negocio
             conexion.Desconectar();
             return rowsAfectadas;
         }
+        public int Modificar(Pagina pagina)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowsAfectadas = conexion.SentenciaNonQuery("update paginas set Descripcion='" + pagina.Descripcion + "',Url_Imagen='" + pagina.Url_Imagen + "',Habilitado=" + Convert.ToInt16(pagina.Habilitado) + " Where ID=" + pagina.ID);
+            conexion.Desconectar();
+            return rowsAfectadas;
+        }
     }
 }
