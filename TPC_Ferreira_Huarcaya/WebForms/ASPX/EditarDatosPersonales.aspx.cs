@@ -11,48 +11,53 @@ namespace WebForms.ASPX
 {
     public partial class EditarDatosPersonales : System.Web.UI.Page
     {
+        public Usuario Usuario { get; set; }
+        public Int16 idUsuario; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            Usuario = (Usuario)Session["usersession"];
+            if(Usuario != null)
             {
-                try
+                if (!IsPostBack)
                 {
-                    int id;
-                    DatosPersonales dat = new DatosPersonales();
-                    DatosPersonalesNegocios edNeg = new DatosPersonalesNegocios();
+                    try
+                    { 
+                        DatosPersonales dat = new DatosPersonales();
+                        DatosPersonalesNegocios edNeg = new DatosPersonalesNegocios();
 
-                    id = 8; // estoy forzando el id enviado aca
+                        dat = edNeg.TraerDatos(Usuario.ID); //esta mal la conexion a la DB sqlexception must declare scalar @id_Usuario en command = executeNonQuery();
 
-                    dat = edNeg.TraerDatos(id); //esta mal la conexion a la DB sqlexception must declare scalar @id_Usuario en command = executeNonQuery();
+                        idUsuario = Usuario.ID; //guardo el id de la session en una variable
 
-                    //Muestra en cada textbox los datos que encontro del usuario
+                        //Muestra en cada textbox los datos que encontro del usuario
 
-                    txtNombreApellido.Text = dat.NombreApellido;
-                    txtTelefonoMovil.Text = Convert.ToString(dat.TelefonoMovil);
-                    txtTelefonoFijo.Text = Convert.ToString(dat.TelefonoFijo);
-                    txtEmail.Text = dat.Email;
-                    txtEmailRecuperacion.Text = dat.EmailRecuperacion;
-                    txtFechaNacimiento.Text = Convert.ToString(dat.FechaNacimiento);
-                }
-                catch (Exception ex)
-                {
-                    // el usuario no fue encontrado o hubo un error inesperado
-                    Response.Redirect("Error.aspx");
+                        txtNombreApellido.Text = dat.NombreApellido;
+                        txtTelefonoMovil.Text = Convert.ToString(dat.TelefonoMovil);
+                        txtTelefonoFijo.Text = Convert.ToString(dat.TelefonoFijo);
+                        txtEmail.Text = dat.Email;
+                        txtEmailRecuperacion.Text = dat.EmailRecuperacion;
+                        txtContrasenia.Text = Usuario.Contrasenia;
+                        txtNombreUsuario.Text = Usuario.NombreUsuario;
+                    }
+                    catch (Exception)
+                    {
+                        // el usuario no fue encontrado o hubo un error inesperado
+                        Response.Redirect("Error.aspx");
+                    }
+
                 }
 
             }
+            else
+            {
+                Response.Redirect("InicioSesion.aspx");//si no esta logeado me manda a iniciar sesion
+            }
 
         }
-
-        protected void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         protected void btn_Cambio_Click(object sender, EventArgs e)
         {
 
-            //validar primero que los campos no sean vacios
+            //validar primero que los campos no sean vacios (los campos opcionales son los unicos vacios)
 
             //enviarlo de nuevo a la DB con update
             DatosPersonales datos = new  DatosPersonales();
@@ -64,10 +69,9 @@ namespace WebForms.ASPX
             datos.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
             datos.Email = txtEmail.Text;
             datos.EmailRecuperacion = txtEmailRecuperacion.Text;
-            datos.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             usu.NombreUsuario = txtNombreUsuario.Text;
             usu.Contrasenia = txtContrasenia.Text;
-            usu.ID = 8; // estoy harcodeando el id usuario
+            usu.ID = idUsuario; //le envio el id guardo en el page load
 
 
             pagNeg.ActualizarDatos(usu,datos);

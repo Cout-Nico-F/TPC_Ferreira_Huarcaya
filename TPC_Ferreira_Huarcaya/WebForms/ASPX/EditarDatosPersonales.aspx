@@ -55,11 +55,11 @@
                                 <asp:TextBox runat="server" ID="txtNombreApellido" Placeholder="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-6 form-group">
-                                 <asp:Label Text="Telefono Movil" runat="server" />
+                                 <asp:Label Text="Nombre Usuario" runat="server" />
                                 <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-6 form-group">
-                                 <asp:Label Text="Telefono Movil" runat="server" />
+                                 <asp:Label Text="Contraseña" runat="server" />
                                 <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
                             </div>
                              <div class="col-md-12 form-group">
@@ -74,10 +74,6 @@
                                 <asp:Label Text="Correo electronico" runat="server" />
                                 <asp:TextBox runat="server" ID="txtEmail" Placeholder="Correo electronico" CssClass="form-control" TextMode="Email"></asp:TextBox>
                             </div>
-                            <asp:Label Text="Fecha de Nacimiento" runat="server" />
-                            <div class="col-md-12 form-group">
-                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
-                            </div>
                              <div class="col-md-12 form-group">
                                  <asp:Label Text="Email para recuperar la cuenta" runat="server" />
                                 <asp:TextBox runat="server" ID="txtEmailRecuperacion" Placeholder="Email para recuperacion de cuenta(opcional)" CssClass="form-control" TextMode="Email"></asp:TextBox>
@@ -88,7 +84,6 @@
                             <asp:Button Text="Aplicar Cambios" runat="server" CssClass="btn btn-primary" ID="btn_Cambio" OnClick="btn_Cambio_Click"  />
                         </div>
                          <div class="col-md-6 form-group">
-                            <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-primary" ID="btn_Cancelar" OnClick="btn_Cancelar_Click"  />
                              <a href="javascript:history.back()" class="btn btn-primary">Cancelar</a>
                         </div>
                     </form>

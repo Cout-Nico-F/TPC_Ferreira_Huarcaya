@@ -28,7 +28,7 @@ namespace Negocio
                     cmd.Parameters.Add(new SqlParameter("@Email", dat.Email));
                     cmd.Parameters.Add(new SqlParameter("@TelefonoFijo", dat.TelefonoFijo));
                     cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", dat.FechaNacimiento));
-                    cmd.Parameters.Add(new SqlParameter("@EmailRecuperacion", "Decimequeanda@hotmail.com"));
+                    cmd.Parameters.Add(new SqlParameter("@EmailRecuperacion", dat.EmailRecuperacion));
                     sql.Open();
                     cmd.ExecuteNonQuery();
                 }
