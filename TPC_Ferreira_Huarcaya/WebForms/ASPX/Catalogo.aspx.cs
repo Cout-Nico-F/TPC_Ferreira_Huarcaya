@@ -40,11 +40,6 @@ namespace WebForms.ASPX
            
         }
 
-        protected void btn_buscar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         protected void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
             List<PaginaWeb> listaBuscador = new List<PaginaWeb>();

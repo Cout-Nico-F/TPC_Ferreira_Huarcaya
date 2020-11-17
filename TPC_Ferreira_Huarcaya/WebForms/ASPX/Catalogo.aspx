@@ -12,7 +12,6 @@
                                 <div class="container d-flex">
                                      <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
                                      <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="false"/>
-                                     <!--<asp:Button Text="Buscar" runat="server" OnClick="btn_buscar_Click" ID="btn_buscar" CssClass="btn btn-info"/>-->
                                 </div>
                             </div>
                         </div>
@@ -68,19 +67,6 @@
                  </div>
                         <%}%>
                 </div>
-            <!-- Este es es template vacio que esta siendo reemplazado por el boton de Crea tu paginas web en el navbar 
-            <div class="col md-5 col-sm-4">
-                    <div class="card text-center" style="margin-bottom: 40px;">
-                        <img src="../Imagenes/ImagenesPaginaWeb/Blanco.jpg" class="card-img-top" alt="No se encontro la imagen" />
-                        <div class="card-body">
-                            <h5 class="card-title">Template Vacio</h5>
-                            <p class="card-text">Template en blanco para personalizar</p>
-                            <a href="#" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>  Vista Previa</a>
-                            <a href="Personalizar.aspx" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-plus-circle"></i>   Personalizar</a>
-                        </div>
-                     </div>
-                 </div>
-            </div> -->
          
         </section>
 
