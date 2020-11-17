@@ -6,7 +6,6 @@ go
 
 use Ferreira_Huarcaya_DB
 go
-Select Nombre_Y_Apellido,Telefono_Movil From Datos_Personales Where ID_Usuario= 1
 create table Funcionalidades (
 	ID smallint identity(1,1),
 	Descripcion varchar(100) not null,

@@ -85,9 +85,6 @@ Exec SP_CrearUsuario
 	@EmailRecuperacion = 'prueba@hotmail.com'
 
 go
-
-Select * From Usuarios
-
  /*Procedimiento usado para editar los datos personales de un usuario*/
 create procedure SP_EditarDatosPersonales(
 		@id_Usuario smallint,
