@@ -133,7 +133,6 @@
                 <br />
                 <%if (Usuario.Id_Acceso == 3)
                     { %>
-<<<<<<< Updated upstream
                     <table class="table table-striped table-dark">
                         <thead>
                             <tr>
@@ -165,33 +164,6 @@
                                 <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" cssClass="btn btn-outline-danger" OnClick="bnt_Funcionalidad_Baja_Click" /></td>
                             </tr>
                         </tbody>
-=======
-                    <table class="table" style="text-align:center;">
-                   <tr>
-                       <th scope="row">Opciones</th>
-                       <th>Paginas</th>
-                       <th>Estilos</th>
-                       <th>Funcionalidades</th>
-                   </tr>
-                   <tr>
-                       <th>Agregar</th>
-                       <td><a href="AltasModificaciones/PaginasAM.aspx" class="alert-link d-block">Nueva Pagina</a></td>
-                       <td><a href="AltasModificaciones/EstilosAM.aspx" class="alert-link d-block">Nuevo Estilo</a></td>
-                       <td><a href="AltasModificaciones/FuncionalidadesAM.aspx" class="alert-link d-block">Nueva Funcionalidad</a></td>
-                   </tr>
-                    <tr>
-                        <th>Modificar</th>
-                        <td><a href="AltasModificaciones/PaginasAM.aspx?idPagina="<%=ddl_Paginas.SelectedItem.Value%></a>Modificar Pagina elegida</td>
-                        <td><a href="AltasModificaciones/EstilosAM.aspx?idEstilo="<%=ddl_Estilos.SelectedItem.Value%></a>Modificar Estilo elegido</td>
-                        <td><a href="AltasModificaciones/FuncionalidadesAM.aspx?idFuncionalidad="<%ddl_Funcionalidades.SelectedItem.Value%></a>Modificar Funcionalidad elegida</td>
-                    </tr>
-                    <tr>
-                       <th>Eliminar</th>
-                        <td><asp:Button ID="btn_Pagina_Baja" Text="Baja de Pagina elegida" runat="server" CssClass="btn btn-danger" OnClick="btn_Pagina_Baja_Click" /></td>
-                        <td><asp:Button ID="btn_Estilo_Baja" Text="Baja de Estilo elegido" runat="server" CssClass="btn btn-danger" OnClick="btn_Estilo_Baja_Click"/></td>
-                        <td><asp:Button ID="bnt_Funcionalidad_Baja" Text="Baja de Funcionalidad elegida" runat="server" CssClass="btn btn-danger" Onclick="bnt_Funcionalidad_Baja_Click"/></td>
-                    </tr>
->>>>>>> Stashed changes
                 </table>
 
                 <%} %>
