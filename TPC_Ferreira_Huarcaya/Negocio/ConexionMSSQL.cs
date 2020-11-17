@@ -51,10 +51,10 @@ namespace Negocio
             Command.CommandText = storedProcedureQuery;
         }
 
-        public void AgregarParametro(string clave, string valor) /*no tiene que ser el valor de tipo string tiene que aceptar todos los tipos de la clase modelo*/
+        public void AgregarParametro(string clave, string valor) 
         {
             Command.Parameters.AddWithValue(clave, valor);
-        }// para esto que me nombras en el comentario de arriba hay 2 opciones. o convertimos de string al tipo de dato necesario o hacemos que reciba un tipo Object. creo que el casteo es mas simple
+        }
 
         public int SentenciaNonQuery (string sentencia)
         {

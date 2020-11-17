@@ -50,7 +50,7 @@
             <ContentTemplate>
                      <div style="text-align: center">
                     <h1>Paginas</h1>
-                    <p>Elija la cantidad de paginas que conformaran su Web</p>
+                    <p>Elija las paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" id="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
                      <%if(!(ListaPaginasSeleccion == null))
@@ -153,9 +153,9 @@
 
                             <tr>
                                 <th scope="row">Modificar</th>
-                                <td><asp:Button ID="btn_Pagina_Modificacion" Text="Modificacion Pagina elegida" runat="server" CssClass="btn btn-outline-warning" OnClick="btn_Pagina_Modificacion_Click" /></td>
-                                <td><asp:Button ID="btn_Estilo_Modificacion" Text="btn_Estilo_Modificacion" runat="server" CssClass="btn btn-outline-warning" Onclick="btn_Estilo_Modificacion_Click"/></td>
-                                <td><asp:Button ID="btn_Funcionalidad_Modificacion" Text="btn_Funcionalidad_Modificacion" runat="server" CssClass="btn btn-outline-warning" Onclick="btn_Funcionalidad_Modificacion_Click"/></td>
+                                <td><asp:Button ID="btn_Pagina_Modificacion" Text="Modificacion de Pagina elegida" runat="server" CssClass="btn btn-outline-warning" OnClick="btn_Pagina_Modificacion_Click" /></td>
+                                <td><asp:Button ID="btn_Estilo_Modificacion" Text="Modificacion de estilo elegido" runat="server" CssClass="btn btn-outline-warning" Onclick="btn_Estilo_Modificacion_Click"/></td>
+                                <td><asp:Button ID="btn_Funcionalidad_Modificacion" Text="Modificacion de funcionalidad elegida" runat="server" CssClass="btn btn-outline-warning" Onclick="btn_Funcionalidad_Modificacion_Click"/></td>
                             </tr>
                             <tr>
                                 <th scope="row">Eliminar</th>

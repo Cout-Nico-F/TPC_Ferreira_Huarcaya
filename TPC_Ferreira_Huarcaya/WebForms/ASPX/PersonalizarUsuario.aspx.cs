@@ -218,7 +218,8 @@ namespace WebForms.ASPX
 
         protected void btn_Pagina_Modificacion_Click(object sender, EventArgs e)
         {
-
+            //validar si hay una pagina elegida en el dropdown
+            Response.Redirect("AltasModificaciones/PaginasAM.aspx?idPagina=" + ddl_Paginas.SelectedItem.Value);
         }
 
         protected void btn_Funcionalidad_Modificacion_Click(object sender, EventArgs e)
