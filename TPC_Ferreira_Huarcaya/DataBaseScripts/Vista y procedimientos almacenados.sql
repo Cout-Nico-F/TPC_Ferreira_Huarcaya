@@ -48,7 +48,7 @@ begin
 	begin try
 		begin transaction
 		-- Insertamos un nuevo usuario a la tabla usuarios
-		insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values (@NombreUsuario,@Contrasenia,@ID_Nivel,1)
+		insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values (@NombreUsuario,@Contrasenia,@ID_Nivel,1)--habilitado siempre viene en 1
 		-- Insertamos datos en datos personales
 		Declare @ID_Usu smallint	
 		Set @ID_Usu = @@IDENTITY -- devuelve el ultimo id generado
@@ -86,7 +86,7 @@ Exec SP_CrearUsuario
 
 go
 
-
+Select * From Usuarios
 
  /*Procedimiento usado para editar los datos personales de un usuario*/
 create procedure SP_EditarDatosPersonales(
