@@ -13,12 +13,10 @@ namespace WebForms.ASPX
     {
         public Funcionalidad Funcionalidad { get; set; }
         public Estilo EstiloSeleccionado { get; set; }
-        public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
         public List<Pagina> ListaPaginasAgregadas { get; set; }
         public Pagina PaginaSeleccionada { get; set; }
         public Usuario Usuario { get; set; }
-        public List<Funcionalidad> EliminarFuncionalidad { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
