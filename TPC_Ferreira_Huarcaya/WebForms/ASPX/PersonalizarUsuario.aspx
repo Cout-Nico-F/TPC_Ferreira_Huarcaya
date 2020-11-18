@@ -94,6 +94,7 @@
                             <td>$ <%=item.Costo %></td>
                             <td>
                                 <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>">Remover funcionalidad</a>
+                            </td>
                         </tr>
                         <%} %>
                     </tbody>
@@ -117,6 +118,9 @@
                                 {%>
                             <tr>
                                 <td><%=pag.Descripcion%></td>
+                                <td>
+                                <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>">Remover pagina</a>
+                                </td>
                             </tr>
                             <%} %>
                             <%}%>

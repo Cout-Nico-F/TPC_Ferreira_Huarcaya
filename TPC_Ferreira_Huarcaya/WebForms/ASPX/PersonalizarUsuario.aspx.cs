@@ -48,6 +48,10 @@ namespace WebForms.ASPX
             {
                 RemoverFuncionalidad();
             }
+            if (Request.QueryString["IdRemoverPagina"] != null)
+            {
+                RemoverPagina();
+            }
 
         }
         private void IniciarLlenadoDeDropDownPaginas()
@@ -219,6 +223,21 @@ namespace WebForms.ASPX
             ListaFuncionalidadesAgregadas.RemoveAt(indiceBuscado);
 
             Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
+            Response.Redirect("PersonalizarUsuario.aspx");
+        }
+
+        void RemoverPagina()
+        {
+            Int16 id = Convert.ToInt16(Request.QueryString["IdRemoverPagina"]);
+            PaginaNegocio pagNeg = new PaginaNegocio();
+            var listaPaginasCompleta = pagNeg.Listar();
+            var pag = listaPaginasCompleta.Find(p => p.ID == id);
+
+            ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
+            int indiceBuscado = ListaPaginasAgregadas.FindIndex(item => item.ID == pag.ID);
+            ListaPaginasAgregadas.RemoveAt(indiceBuscado);
+
+            Session["listaPaginasSelec"] = ListaPaginasAgregadas;
             Response.Redirect("PersonalizarUsuario.aspx");
         }
 
