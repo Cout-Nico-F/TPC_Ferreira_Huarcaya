@@ -93,7 +93,7 @@
                             <td><%=item.Descripcion%></td>
                             <td>$ <%=item.Costo %></td>
                             <td>
-                                <asp:Button Text="Baja" runat="server" ID="btn_Remover_Funcionalidad" OnClick="btn_Remover_Funcionalidad_Click" /></td>
+                                <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>">Remover funcionalidad</a>
                         </tr>
                         <%} %>
                     </tbody>

@@ -69,15 +69,6 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.Button btn_Agregar_Funcionalidad;
 
         /// <summary>
-        /// btn_Remover_Funcionalidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Remover_Funcionalidad;
-
-        /// <summary>
         /// btn_Pagina_Modificacion control.
         /// </summary>
         /// <remarks>

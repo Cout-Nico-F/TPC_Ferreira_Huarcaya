@@ -60,6 +60,10 @@ namespace WebForms.ASPX
             {
                 Session.Add("listaPaginasSelec", ListaPaginasAgregadas);
             }
+            if (Request.QueryString["IdRemoverFuncionalidad"] != null)
+            {
+                RemoverFuncionalidad();
+            }
 
 
         }
@@ -165,32 +169,11 @@ namespace WebForms.ASPX
            
         }
 
-       
-
-        protected void btn_Remover_Funcionalidad_Click(object sender, EventArgs e)
-        {
-            if(ddl_Funcionalidades.SelectedIndex != 0){
-
-                EliminarFuncionalidad = new List<Funcionalidad>();
-                FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
-
-                var Funcionalidad = funNeg.Listar();
-
-                Int16 id = Convert.ToInt16(ddl_Funcionalidades.SelectedItem.Value);
-
-                BajaFuncionalidad = Funcionalidad.Find(x => id == x.Id);
-
-                EliminarFuncionalidad.Remove(BajaFuncionalidad);
-
-            }
-            
-        }
-
+      
         protected void ddl_Paginas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt16(ddl_Paginas.SelectedItem.Value) != 0)
             {
-                PaginaSeleccionada = new Pagina();
                 PaginaNegocio pagNeg = new PaginaNegocio();
 
                 var listaPaginas = pagNeg.Listar();
@@ -205,7 +188,6 @@ namespace WebForms.ASPX
         {
             if (Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
             {
-                EstiloSeleccionado = new Estilo();
                 EstiloNegocio estNeg = new EstiloNegocio();
 
                 var listaEstilo = estNeg.Listar();
@@ -240,6 +222,21 @@ namespace WebForms.ASPX
         protected void btn_Estilo_Modificacion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AltasModificaciones/EstilosAM.aspx?idEstilo=" + ddl_Estilos.SelectedItem.Value);
+        }
+
+        void RemoverFuncionalidad()
+        {
+            Int16 id = Convert.ToInt16 (Request.QueryString["IdRemoverFuncionalidad"]);
+            FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
+            var listaFuncionalidadesCompleta = funNeg.Listar();
+            int funcIndex = listaFuncionalidadesCompleta.FindIndex(x => x.Id == id);
+
+            ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
+
+            ListaFuncionalidadesAgregadas.RemoveAt(funcIndex);
+            
+            Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
+            Response.Redirect("PersonalizarUsuario.aspx");
         }
     }
 }
