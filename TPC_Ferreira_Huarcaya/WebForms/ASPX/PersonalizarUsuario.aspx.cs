@@ -48,11 +48,6 @@ namespace WebForms.ASPX
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
-                if (Session["listaFuncionalidadesSelec"] != null)
-                {
-                    ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
-                }
-                
             }
             if (Session["listaFuncionalidadesSelec"] != null)
             {
@@ -63,9 +58,9 @@ namespace WebForms.ASPX
                 Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
             }
 
-            
-            
-            if(Session["listaPaginasSelec"] == null)
+
+
+            if (Session["listaPaginasSelec"] == null)
             {
                 Session.Add("listaPaginasSelec", ListaPaginasAgregadas);
             }
@@ -113,7 +108,7 @@ namespace WebForms.ASPX
 
         protected void btn_Agregar_Funcionalidad_Click(object sender, EventArgs e)
         {
-            if(ddl_Funcionalidades.SelectedIndex != 0)
+            if (ddl_Funcionalidades.SelectedIndex != 0)
             {
                 FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
                 var listaFuncionalidades = funNeg.Listar();
@@ -140,14 +135,14 @@ namespace WebForms.ASPX
                 Session["listaFuncionalidad"] = ListaFuncionalidadAgregadas;
 
             }*/
-           
+
         }
 
         protected void btn_AgregarPagina_Click(object sender, EventArgs e)
         {
-            if(ddl_Paginas.SelectedIndex != 0)
+            if (ddl_Paginas.SelectedIndex != 0)
             {
-                ListaPaginasAgregadas = (List<Pagina>) Session["listaPaginasSelec"];
+                ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
                 PaginaNegocio pagNeg = new PaginaNegocio();
 
                 var listaCompletaPaginas = pagNeg.Listar();
@@ -158,32 +153,32 @@ namespace WebForms.ASPX
 
                 Session["listaPaginasSelec"] = ListaPaginasAgregadas;
             }
-          
+
         }
 
-        
+
 
         protected void bnt_Funcionalidad_Baja_Click(object sender, EventArgs e)
         {
-            if(ddl_Funcionalidades.SelectedIndex != 0)
+            if (ddl_Funcionalidades.SelectedIndex != 0)
             {
                 string id = ddl_Funcionalidades.SelectedItem.Value;
                 Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
             }
-          
+
         }
 
         protected void btn_Estilo_Baja_Click(object sender, EventArgs e)
         {
-            if(ddl_Estilos.SelectedIndex != 0)
+            if (ddl_Estilos.SelectedIndex != 0)
             {
                 string id = ddl_Estilos.SelectedItem.Value;
                 Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
             }
-           
+
         }
 
-      
+
         protected void ddl_Paginas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt16(ddl_Paginas.SelectedItem.Value) != 0)
@@ -192,10 +187,10 @@ namespace WebForms.ASPX
 
                 var listaPaginas = pagNeg.Listar();
 
-                Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);                
+                Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
 
                 PaginaSeleccionada = listaPaginas.Find(x => id == x.ID);
-            }           
+            }
         }
 
         protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,7 +235,7 @@ namespace WebForms.ASPX
 
         void RemoverFuncionalidad()
         {
-            Int16 id = Convert.ToInt16 (Request.QueryString["IdRemoverFuncionalidad"]);
+            Int16 id = Convert.ToInt16(Request.QueryString["IdRemoverFuncionalidad"]);
             FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
             var listaFuncionalidadesCompleta = funNeg.Listar();
             var func = listaFuncionalidadesCompleta.Find(x => x.Id == id);
@@ -248,7 +243,7 @@ namespace WebForms.ASPX
             ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
             int indiceBuscado = ListaFuncionalidadesAgregadas.FindIndex(f => f.Id == func.Id);
             ListaFuncionalidadesAgregadas.RemoveAt(indiceBuscado);
-            
+
             Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
             Response.Redirect("PersonalizarUsuario.aspx");
         }
