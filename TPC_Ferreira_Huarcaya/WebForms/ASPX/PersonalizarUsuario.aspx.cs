@@ -36,6 +36,15 @@ namespace WebForms.ASPX
 
             //    throw;
             //}
+            if (ListaFuncionalidadesAgregadas == null)
+            {
+                ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
+            }
+            if (ListaPaginasAgregadas == null)
+            {
+                ListaPaginasAgregadas = new List<Pagina>();
+            }
+
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
@@ -43,27 +52,28 @@ namespace WebForms.ASPX
                 {
                     ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
                 }
+                
             }
             if (Session["listaFuncionalidadesSelec"] != null)
             {
                 ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
             }
-            if (ListaFuncionalidadesAgregadas == null)
-            {
-                ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
-            }
-            if(ListaPaginasAgregadas == null)
-            {
-                ListaPaginasAgregadas = new List<Pagina>();
-            }
-            if (Session["listaFuncionalidadesSelec"] == null)
+            else
             {
                 Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
             }
+
+            
+            
             if(Session["listaPaginasSelec"] == null)
             {
                 Session.Add("listaPaginasSelec", ListaPaginasAgregadas);
             }
+            else
+            {
+                ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
+            }
+
             if (Request.QueryString["IdRemoverFuncionalidad"] != null)
             {
                 RemoverFuncionalidad();
@@ -233,11 +243,11 @@ namespace WebForms.ASPX
             Int16 id = Convert.ToInt16 (Request.QueryString["IdRemoverFuncionalidad"]);
             FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
             var listaFuncionalidadesCompleta = funNeg.Listar();
-            int funcIndex = listaFuncionalidadesCompleta.FindIndex(x => x.Id == id);
+            var func = listaFuncionalidadesCompleta.Find(x => x.Id == id);
 
             ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
-
-            ListaFuncionalidadesAgregadas.RemoveAt(funcIndex);
+            int indiceBuscado = ListaFuncionalidadesAgregadas.FindIndex(f => f.Id == func.Id);
+            ListaFuncionalidadesAgregadas.RemoveAt(indiceBuscado);
             
             Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
             Response.Redirect("PersonalizarUsuario.aspx");
