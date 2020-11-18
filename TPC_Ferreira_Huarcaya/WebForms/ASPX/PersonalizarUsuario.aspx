@@ -144,8 +144,12 @@
                 <br />
                 <br />
                 <br />
-                <%if (Usuario.Id_Acceso == 3)
-                    { %>
+               <%-- <%if (Session["usersession"] != null)
+                {%>
+
+                   
+                <%if (Usuario.Id_Acceso == 3 )
+                    { %>--%>
                 <table class="table table-striped table-dark">
                     <thead>
                         <tr>
@@ -185,8 +189,8 @@
                     </tbody>
                 </table>
 
-                <%} %>
-
+             <%--   <%} %>
+              <% } %>--%>
                 <br />
                 <br />
                 <br />
