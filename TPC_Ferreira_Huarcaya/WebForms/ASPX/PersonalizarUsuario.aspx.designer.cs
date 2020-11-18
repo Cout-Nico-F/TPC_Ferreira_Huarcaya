@@ -60,13 +60,13 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.DropDownList ddl_Funcionalidades;
 
         /// <summary>
-        /// btn_Agregar control.
+        /// btn_Agregar_Funcionalidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Agregar;
+        protected global::System.Web.UI.WebControls.Button btn_Agregar_Funcionalidad;
 
         /// <summary>
         /// btn_Remover_Funcionalidad control.

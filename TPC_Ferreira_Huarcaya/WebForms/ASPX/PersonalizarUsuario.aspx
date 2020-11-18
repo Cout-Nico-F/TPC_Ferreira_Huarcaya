@@ -87,7 +87,7 @@
                     <h1>Funcionalidades</h1>
                     <p>Elija un o mas funcionalidades para su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Funcionalidades"></asp:DropDownList>
-                    <asp:Button Text="Agregar" runat="server" ID="btn_Agregar" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
+                    <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
                 </div>
 
                 
