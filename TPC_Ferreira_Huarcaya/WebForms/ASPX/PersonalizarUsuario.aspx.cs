@@ -39,10 +39,14 @@ namespace WebForms.ASPX
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
-                if (Session["listaPaginasSelec"] != null)
+                if (Session["listaFuncionalidadesSelec"] != null)
                 {
-                    ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
+                    ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
                 }
+            }
+            if (Session["listaFuncionalidadesSelec"] != null)
+            {
+                ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
             }
             if (ListaFuncionalidadesAgregadas == null)
             {
