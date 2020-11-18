@@ -23,6 +23,8 @@ namespace WebForms.ASPX
         public FuncionalidadNegocio FunNegocio { get; set; }
         public Usuario Usuario { get; set; }
         public List<Funcionalidad> EliminarFuncionalidad { get; set; }
+        //agregados
+        public List<Funcionalidad> ListaFuncionalidadAgregadas { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -94,7 +96,7 @@ namespace WebForms.ASPX
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-            if(ddl_Funcionalidades.SelectedIndex != 0)
+            /*if(ddl_Funcionalidades.SelectedIndex != 0)
             {
                 FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
                 var listaFuncionalidades = funNeg.Listar();
@@ -108,6 +110,18 @@ namespace WebForms.ASPX
                 ListaFuncionalidadesAgregadas.Add(Funcionalidad);
 
                 Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
+            }*/
+
+            if(ddl_Funcionalidades.SelectedIndex != 0)
+            {
+                Funcionalidad fun = ddl_Funcionalidades.SelectedValue; //me tiene que devolver el nombre y el costo
+
+                ListaFuncionalidadAgregadas = ((List<Funcionalidad>)Session["listaFuncionalidad"]);
+
+                ListaFuncionalidadAgregadas.Add(fun);
+
+                Session["listaFuncionalidad"] = ListaFuncionalidadAgregadas;
+
             }
            
         }

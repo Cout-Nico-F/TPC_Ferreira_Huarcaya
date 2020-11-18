@@ -19,7 +19,7 @@ create table PaginaWeb(
 	Titulo varchar(50) not null,
 	Descripcion varchar(200) not null,
 	Url_Pagina varchar(100) not null,
-	Url_Image varchar(100) null,
+	Url_Image varchar(200) null,
 	Habilitado bit not null,
 	Precio int not null
 )

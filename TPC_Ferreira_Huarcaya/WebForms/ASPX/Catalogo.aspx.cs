@@ -18,10 +18,10 @@ namespace WebForms.ASPX
         {
 
              Usuario = (Usuario)Session["usersession"];//tengo que validar que si o si este ingresado porque si no no puedo filtrar por id acceso en en front
-             if(Usuario == null)
+             /*if(Usuario == null) lo borro por ahora para que no me pida el login a cada rato
             {
                 Response.Redirect("InicioSesion.aspx");
-            }
+            }*/
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();

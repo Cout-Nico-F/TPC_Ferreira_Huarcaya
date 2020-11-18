@@ -31,7 +31,8 @@ namespace WebForms.ASPX
 
                 //Lo que Maxi nos enseño
                 //la ruta es distinta entre nosotros dos podriamos poner un Or o algo asi
-                string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + DateTime.Now.ToString("h:mm:ss tt");
+                //DateTime.Now.ToString("h:mm:ss tt")
+                string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + "prueba.jpg" ;
                 fileImagen.PostedFile.SaveAs(ruta);
 
                 // int validacion = Validaciones();
