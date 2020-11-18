@@ -55,17 +55,10 @@
                     <p>Elija las paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
-                    <%if (!(ListaPaginasSeleccion == null))
-                        {%>
-                    <%foreach (var pag in ListaPaginasSeleccion)
-                        { %>
-
-                    <img src="<%=pag.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 20%; width: 23%;" />
-
-
+                    <%if (!(PaginaSeleccionada == null))
+                       {%>
+                        <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 20%; width: 23%;" />
                     <% }%>
-
-                    <% } %>
                 </div>
                 <div style="text-align: center">
                     <h1>Estilo</h1>

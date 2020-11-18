@@ -12,12 +12,11 @@ namespace WebForms.ASPX
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
         public Funcionalidad Funcionalidad { get; set; }
-        public Pagina Pagina { get; set; }
         public Estilo Estilo { get; set; }
         public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
         public List<Pagina> ListaPaginasAgregadas { get; set; }
-        public List<Pagina> ListaPaginasSeleccion { get; set; }
+        public Pagina PaginaSeleccionada { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
         public Usuario Usuario { get; set; }
         public List<Funcionalidad> EliminarFuncionalidad { get; set; }
@@ -41,7 +40,10 @@ namespace WebForms.ASPX
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
-                lis
+                if (Session["listaPaginasSelec"] != null)
+                {
+                    ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
+                }
             }
             if (ListaFuncionalidadesAgregadas == null)
             {
@@ -135,9 +137,7 @@ namespace WebForms.ASPX
 
                 Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
 
-                Pagina = listaCompletaPaginas.Find(x => id == x.ID);
-
-                ListaPaginasAgregadas.Add(Pagina);
+                ListaPaginasAgregadas.Add(listaCompletaPaginas.Find(x => id == x.ID));
 
                 Session["listaPaginasSelec"] = ListaPaginasAgregadas;
             }
@@ -206,16 +206,14 @@ namespace WebForms.ASPX
         {
             if (Convert.ToInt16(ddl_Paginas.SelectedItem.Value) != 0)
             {
-                ListaPaginasSeleccion = new List<Pagina>();
+                PaginaSeleccionada = new Pagina();
                 PaginaNegocio pagNeg = new PaginaNegocio();
 
                 var listaPaginas = pagNeg.Listar();
 
-                Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
-                // a Paginas se le asigna un null porque??
-                Pagina = listaPaginas.Find(x => id == x.ID);
+                Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);                
 
-                ListaPaginasSeleccion.Add(Pagina);
+                PaginaSeleccionada = listaPaginas.Find(x => id == x.ID);
             }           
         }
 
