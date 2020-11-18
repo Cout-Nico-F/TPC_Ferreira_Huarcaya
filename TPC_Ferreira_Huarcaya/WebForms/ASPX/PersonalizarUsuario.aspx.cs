@@ -12,7 +12,7 @@ namespace WebForms.ASPX
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
         public Funcionalidad Funcionalidad { get; set; }
-        public Pagina Paginas { get; set; }
+        public Pagina Pagina { get; set; }
         public Estilo Estilo { get; set; }
         public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
@@ -94,9 +94,9 @@ namespace WebForms.ASPX
 
         }
 
-        protected void btn_Agregar_Click(object sender, EventArgs e)
+        protected void btn_Agregar_Funcionalidad_Click(object sender, EventArgs e)
         {
-            /*if(ddl_Funcionalidades.SelectedIndex != 0)
+            if(ddl_Funcionalidades.SelectedIndex != 0)
             {
                 FuncionalidadNegocio funNeg = new FuncionalidadNegocio();
                 var listaFuncionalidades = funNeg.Listar();
@@ -110,9 +110,9 @@ namespace WebForms.ASPX
                 ListaFuncionalidadesAgregadas.Add(Funcionalidad);
 
                 Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
-            }*/
+            }
 
-            if(ddl_Funcionalidades.SelectedIndex != 0)
+            /*if(ddl_Funcionalidades.SelectedIndex != 0)
             {
                 Funcionalidad fun = ddl_Funcionalidades.SelectedValue; //me tiene que devolver el nombre y el costo
 
@@ -122,7 +122,7 @@ namespace WebForms.ASPX
 
                 Session["listaFuncionalidad"] = ListaFuncionalidadAgregadas;
 
-            }
+            }*/
            
         }
 
@@ -130,16 +130,16 @@ namespace WebForms.ASPX
         {
             if(ddl_Paginas.SelectedIndex != 0)
             {
-                ListaPaginasAgregadas = new List<Pagina>();
+                ListaPaginasAgregadas = (List<Pagina>) Session["listaPaginasSelec"];
                 PaginaNegocio pagNeg = new PaginaNegocio();
 
-                var listaPagina = pagNeg.Listar();
+                var listaCompletaPaginas = pagNeg.Listar();
 
                 Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
 
-                Paginas = listaPagina.Find(x => id == x.ID);
+                Pagina = listaCompletaPaginas.Find(x => id == x.ID);
 
-                ListaPaginasAgregadas.Add(Paginas);
+                ListaPaginasAgregadas.Add(Pagina);
 
                 Session["listaPaginasSelec"] = ListaPaginasAgregadas;
             }
@@ -215,9 +215,9 @@ namespace WebForms.ASPX
 
                 Int16 id = Convert.ToInt16(ddl_Paginas.SelectedItem.Value);
                 // a Paginas se le asigna un null porque??
-                Paginas = listaPaginas.Find(x => id == x.ID);
+                Pagina = listaPaginas.Find(x => id == x.ID);
 
-                ListaPaginasSeleccion.Add(Paginas);
+                ListaPaginasSeleccion.Add(Pagina);
             }           
         }
 
