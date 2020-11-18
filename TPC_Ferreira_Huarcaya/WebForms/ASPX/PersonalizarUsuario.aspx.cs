@@ -19,31 +19,29 @@ namespace WebForms.ASPX
         public List<Pagina> ListaPaginasAgregadas { get; set; }
         public List<Pagina> ListaPaginasSeleccion { get; set; }
         public List<Estilo> ListaEstilos { get; set; }
-        public List<Pagina> ListaPaginaSeleccionada { get; set; }
-        public FuncionalidadNegocio FunNegocio { get; set; }
         public Usuario Usuario { get; set; }
         public List<Funcionalidad> EliminarFuncionalidad { get; set; }
-        //agregados
-        public List<Funcionalidad> ListaFuncionalidadAgregadas { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                Usuario  = (Usuario)Session["usersession"];
-                if(Usuario == null)
-                {
-                    Response.Redirect("InicioSesion.aspx");
-                }
+            //try
+            //{
+            //    Usuario  = (Usuario)Session["usersession"];
+            //    if(Usuario == null)
+            //    {
+            //        Response.Redirect("InicioSesion.aspx");
+            //    }
 
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
+                lis
             }
             if (ListaFuncionalidadesAgregadas == null)
             {
