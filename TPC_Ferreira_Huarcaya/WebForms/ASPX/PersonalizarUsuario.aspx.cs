@@ -34,44 +34,20 @@ namespace WebForms.ASPX
 
             //    throw;
             //}
-            if (ListaFuncionalidadesAgregadas == null)
-            {
-                ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
-            }
-            if (ListaPaginasAgregadas == null)
-            {
-                ListaPaginasAgregadas = new List<Pagina>();
-            }
-
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
             }
-            if (Session["listaFuncionalidadesSelec"] != null)
-            {
-                ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
-            }
-            else
-            {
-                Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
-            }
 
+            Inicializar_listas();
 
+            Actualizar_listas();
 
-            if (Session["listaPaginasSelec"] == null)
-            {
-                Session.Add("listaPaginasSelec", ListaPaginasAgregadas);
-            }
-            else
-            {
-                ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
-            }
-
+            //Escucha al boton remover
             if (Request.QueryString["IdRemoverFuncionalidad"] != null)
             {
                 RemoverFuncionalidad();
             }
-
 
         }
         private void IniciarLlenadoDeDropDownPaginas()
@@ -244,6 +220,42 @@ namespace WebForms.ASPX
 
             Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
             Response.Redirect("PersonalizarUsuario.aspx");
+        }
+
+        void Inicializar_listas()
+        {
+            //inicializacion de listas si fuearan null
+            if (ListaFuncionalidadesAgregadas == null)
+            {
+                ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
+            }
+            if (ListaPaginasAgregadas == null)
+            {
+                ListaPaginasAgregadas = new List<Pagina>();
+            }
+        }
+        void Actualizar_listas()
+        {
+            //actualizacion de las listas de agregados de la session
+            //funcionalidades
+            if (Session["listaFuncionalidadesSelec"] != null)
+            {
+                ListaFuncionalidadesAgregadas = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
+            }
+            else
+            {
+                Session.Add("listaFuncionalidadesSelec", ListaFuncionalidadesAgregadas);
+            }
+            //Paginas
+
+            if (Session["listaPaginasSelec"] == null)
+            {
+                Session.Add("listaPaginasSelec", ListaPaginasAgregadas);
+            }
+            else
+            {
+                ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
+            }
         }
     }
 }
