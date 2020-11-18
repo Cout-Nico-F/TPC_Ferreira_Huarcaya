@@ -12,12 +12,11 @@ namespace WebForms.ASPX
     public partial class PersonalizarPaginas : System.Web.UI.Page
     {
         public Funcionalidad Funcionalidad { get; set; }
-        public Estilo Estilo { get; set; }
+        public Estilo EstiloSeleccionado { get; set; }
         public Funcionalidad BajaFuncionalidad { get; set; }
         public List<Funcionalidad> ListaFuncionalidadesAgregadas { get; set; }
         public List<Pagina> ListaPaginasAgregadas { get; set; }
         public Pagina PaginaSeleccionada { get; set; }
-        public List<Estilo> ListaEstilos { get; set; }
         public Usuario Usuario { get; set; }
         public List<Funcionalidad> EliminarFuncionalidad { get; set; }
 
@@ -144,22 +143,7 @@ namespace WebForms.ASPX
           
         }
 
-        protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
-            {
-                ListaEstilos = new List<Estilo>();
-                EstiloNegocio estNeg = new EstiloNegocio();
-
-                var listaEstilo = estNeg.Listar();
-
-                Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
-                Estilo = listaEstilo.Find(x => id == x.Id);
-
-                ListaEstilos.Add(Estilo);
-            }
-      
-        }
+        
 
         protected void bnt_Funcionalidad_Baja_Click(object sender, EventArgs e)
         {
@@ -215,6 +199,21 @@ namespace WebForms.ASPX
 
                 PaginaSeleccionada = listaPaginas.Find(x => id == x.ID);
             }           
+        }
+
+        protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
+            {
+                EstiloSeleccionado = new Estilo();
+                EstiloNegocio estNeg = new EstiloNegocio();
+
+                var listaEstilo = estNeg.Listar();
+
+                Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
+                EstiloSeleccionado = listaEstilo.Find(x => id == x.Id);
+            }
+
         }
 
         protected void btn_Pagina_Baja_Click(object sender, EventArgs e)

@@ -55,7 +55,7 @@
                     <p>Elija las paginas que conformaran su Web</p>
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
-                    <%if (!(PaginaSeleccionada == null))
+                    <%if (PaginaSeleccionada != null)
                        {%>
                         <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 20%; width: 23%;" />
                     <% }%>
@@ -65,16 +65,10 @@
                     <p>Elija el estilo que quiera que tenga su web</p>
                     <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
 
-                    <%if (!(ListaEstilos == null))
-                        {%>
-                    <%foreach (var est in ListaEstilos)
-                        { %>
-
-                    <img src="<%=est.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 20%; width: 23%;" />
-
+                    <%if (EstiloSeleccionado != null)
+                       {%>
+                    <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 20%; width: 23%;" />
                     <% }%>
-
-                    <% } %>
                 </div>
                 <div style="text-align: center">
                     <h1>Funcionalidades</h1>
