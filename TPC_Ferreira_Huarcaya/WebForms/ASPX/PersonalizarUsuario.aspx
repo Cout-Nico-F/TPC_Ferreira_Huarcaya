@@ -21,7 +21,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
-            <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color: transparent">
+            <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color: transparent" />
             <!-- No puedo hacer transparente el fonde de la imagen -->
             FerreAlo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,99 +46,147 @@
         </div>
     </nav>
 
+    <style>
+
+        .container-paginas{
+            min-height:100vh;
+        }
+        body div .fondo1 {
+            background-color:antiquewhite;
+        }
+         body div .fondo2 {
+            background-color:grey;
+        }
+          body div .fondo3 {
+            background-color:red
+        }
+        .container-estilos{
+             min-height:100vh;
+        }
+        .container-funcionalidades{
+            min-height:100vh;
+        }
+
+    </style>
+
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server" />
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                <div style="text-align: center">
-                    <h1>Paginas</h1>
-                    <p>Elija las paginas que conformaran su Web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
-                    <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
-                    <%if (PaginaSeleccionada != null)
-                        {%>
-                    <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 20%; width: 23%;" />
-                    <% }%>
-                </div>
-                <div style="text-align: center">
-                    <h1>Estilo</h1>
-                    <p>Elija el estilo que quiera que tenga su web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
+                <div class="fondo1">
+                     <div class="container container-paginas">
+                    <div style="text-align: center">
+                         <br />
+                        <br />
+                        <h1>Paso 1:</h1>
+                        <h1>Paginas</h1>
+                        <p>Elija las paginas que conformaran su Web</p>
+                        <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
+                        <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
+                        <%if (PaginaSeleccionada != null)
+                            {%>
+                        <br />
+                        <br />
+                        <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 50%; width: 80%;" />
+                        <% }%>
+                        <div class="float-md-right">
+                            <%if (!(ListaFuncionalidadesAgregadas == null))
+                                {%>
+                            <table id="Paginas-Agregadas" class="table table-striped table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>Paginas</th>
+                                        <th>Accion</th>
+                                    </tr>
+                                </thead>
 
-                    <%if (EstiloSeleccionado != null)
-                        {%>
-                    <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 20%; width: 23%;" />
-                    <% }%>
-                </div>
-                <div style="text-align: center">
-                    <h1>Funcionalidades</h1>
-                    <p>Elija un o mas funcionalidades para su Web</p>
-                    <asp:DropDownList runat="server" ID="ddl_Funcionalidades"></asp:DropDownList>
-                    <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
-                </div>
-                <table id="Funcionalidades-Agregadas">
-                    <thead>
-                        <tr>
-                            <th>Funcionalidades</th>
-                            <th>Costo</th>
-                            <th>Accion</th>
-                        </tr>
-                    </thead>
-                    <%if (!(ListaFuncionalidadesAgregadas == null))
-                        {%>
-                    <%foreach (var item in ListaFuncionalidadesAgregadas)
-                        { %>
-                    <tbody>
-                        <tr>
-                            <td><%=item.Descripcion%></td>
-                            <td>$ <%=item.Costo %></td>
-                            <td>
-                                <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>">Remover funcionalidad</a>
-                            </td>
-                        </tr>
-                        <%} %>
-                    </tbody>
+                                <tbody>
 
-                </table>
-                <%}%>
+                                    <%foreach (var pag in ListaPaginasAgregadas)
+                                        {%>
+                                    <tr>
+                                        <td><%=pag.Descripcion%></td>
+                                        <td>
+                                            <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>">Remover pagina</a>
+                                        </td>
+                                    </tr>
+                                    <%} %>
+                                    <%}%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+               
+                <div class="fondo2">
+                     <div class="container container-estilos" >
+                    <div style="text-align: center">
+                         <br />
+                        <br />
+                        <h1>Paso 2:</h1>
+                        <h1>Estilo</h1>
+                        <p>Elija el estilo que quiera que tenga su web</p>
+                        <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
 
-                <div class="float-md-right">
-                    <table id="Paginas-Agregadas">
+                        <%if (EstiloSeleccionado != null)
+                            {%>
+                        <br />
+                        <br />
+                        <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 50%; width: 80%;" />
+                        <% }%>
+                    </div>
+                </div>
+                </div>
+               
+                <div class="fondo3">
+                      <div class="container container-funcionalidades">
+                    <div style="text-align: center">
+                        <br />
+                        <br />
+                        <h1>Paso 3:</h1>
+                        <h1>Funcionalidades</h1>
+                        <p>Elija un o mas funcionalidades para su Web</p>
+                        <asp:DropDownList runat="server" ID="ddl_Funcionalidades" CssClass="btn btn-dark"></asp:DropDownList>
+                        <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
+                    </div>
+                          <br />
+                          <br />
+                    <table id="Funcionalidades-Agregadas" class="table table-striped table-dark">
                         <thead>
                             <tr>
-                                <th>Paginas</th>
+                                <th>Funcionalidades</th>
+                                <th>Costo</th>
                                 <th>Accion</th>
                             </tr>
                         </thead>
-
+                        <%if (!(ListaFuncionalidadesAgregadas == null))
+                            {%>
+                        <%foreach (var item in ListaFuncionalidadesAgregadas)
+                            { %>
                         <tbody>
-                            <%if (!(ListaFuncionalidadesAgregadas == null))
-                                {%>
-                            <%foreach (var pag in ListaPaginasAgregadas)
-                                {%>
                             <tr>
-                                <td><%=pag.Descripcion%></td>
+                                <td><%=item.Descripcion%></td>
+                                <td>$ <%=item.Costo %></td>
                                 <td>
-                                <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>">Remover pagina</a>
+                                    <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>">Remover funcionalidad</a>
                                 </td>
                             </tr>
                             <%} %>
-                            <%}%>
                         </tbody>
+
                     </table>
+                    <%}%>
                 </div>
+                </div>
+              
+               
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <%-- <%if (Session["usersession"] != null)
-                {%>
-
-                   
-                <%if (Usuario.Id_Acceso == 3 )
-                    { %>--%>
                 <table class="table table-striped table-dark">
                     <thead>
                         <tr>
@@ -178,8 +226,6 @@
                     </tbody>
                 </table>
 
-                <%--   <%} %>
-              <% } %>--%>
                 <br />
                 <br />
                 <br />

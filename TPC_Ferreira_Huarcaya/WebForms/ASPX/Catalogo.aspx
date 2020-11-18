@@ -48,13 +48,10 @@
                 <div class="col md-5 col-sm-4">
 
                     <div class="container">
-                                <%if (Usuario.Id_Acceso == 3)
-                                    { %>
+                               
                                      <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-trash"></i></a>
                                     <a href="AgregarPaginaWeb.aspx"><i class="fas fa-plus"></i></a>
                                     <a href="ModificarPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-tools"></i></a>
-
-                                <%} %>
                                 
                          
                     </div>
