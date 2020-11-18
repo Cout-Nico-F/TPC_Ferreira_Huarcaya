@@ -56,8 +56,8 @@
                     <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
                     <%if (PaginaSeleccionada != null)
-                       {%>
-                        <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 20%; width: 23%;" />
+                        {%>
+                    <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 20%; width: 23%;" />
                     <% }%>
                 </div>
                 <div style="text-align: center">
@@ -66,7 +66,7 @@
                     <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged"></asp:DropDownList>
 
                     <%if (EstiloSeleccionado != null)
-                       {%>
+                        {%>
                     <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 20%; width: 23%;" />
                     <% }%>
                 </div>
@@ -76,9 +76,7 @@
                     <asp:DropDownList runat="server" ID="ddl_Funcionalidades"></asp:DropDownList>
                     <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
                 </div>
-
-                
-                   <table id="Funcionalidades-Agregadas">
+                <table id="Funcionalidades-Agregadas">
                     <thead>
                         <tr>
                             <th>Funcionalidades</th>
@@ -87,7 +85,7 @@
                         </tr>
                     </thead>
                     <%if (!(ListaFuncionalidadesAgregadas == null))
-                  {%>
+                        {%>
                     <%foreach (var item in ListaFuncionalidadesAgregadas)
                         { %>
                     <tbody>
@@ -95,13 +93,13 @@
                             <td><%=item.Descripcion%></td>
                             <td>$ <%=item.Costo %></td>
                             <td>
-                            <asp:Button Text="Baja" runat="server" ID="btn_Remover_Funcionalidad" OnClick="btn_Remover_Funcionalidad_Click" /></td>
+                                <asp:Button Text="Baja" runat="server" ID="btn_Remover_Funcionalidad" OnClick="btn_Remover_Funcionalidad_Click" /></td>
                         </tr>
                         <%} %>
                     </tbody>
 
-                   </table>
-                 <%}%>
+                </table>
+                <%}%>
 
                 <div class="float-md-right">
                     <table id="Paginas-Agregadas">
@@ -114,13 +112,13 @@
 
                         <tbody>
                             <%if (!(ListaFuncionalidadesAgregadas == null))
-                              {%>
+                                {%>
                             <%foreach (var pag in ListaPaginasAgregadas)
                                 {%>
                             <tr>
                                 <td><%=pag.Descripcion%></td>
                             </tr>
-                              <%} %>
+                            <%} %>
                             <%}%>
                         </tbody>
                     </table>
@@ -131,7 +129,7 @@
                 <br />
                 <br />
                 <br />
-               <%-- <%if (Session["usersession"] != null)
+                <%-- <%if (Session["usersession"] != null)
                 {%>
 
                    
@@ -176,7 +174,7 @@
                     </tbody>
                 </table>
 
-             <%--   <%} %>
+                <%--   <%} %>
               <% } %>--%>
                 <br />
                 <br />
