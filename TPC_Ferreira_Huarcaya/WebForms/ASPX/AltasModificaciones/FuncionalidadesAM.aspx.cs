@@ -46,45 +46,66 @@ namespace WebForms.ASPX.AltasModificaciones
 
         protected void btn_FuncionalidadAM_OK_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["idFuncionalidad"] != null)
-            {//si es modificacion
-                Funcionalidad funModificada = new Funcionalidad();
+            lblDescripcion.Text = "";
+            lblPrecio.Text = "";
 
-                funModificada.Id = FuncionalidadElegida.Id;
-                funModificada.Descripcion = txtBox_Descripcion.Text;
-                funModificada.Costo = Convert.ToInt32(txtBox_Costo.Text);
-                funModificada.Habilitado = true;
+            if (Validaciones())
+            {
+                if (Request.QueryString["idFuncionalidad"] != null)
+                {//si es modificacion
+                    Funcionalidad funModificada = new Funcionalidad();
 
-                int rowsAfectadas = FunNegocio.Modificar(funModificada);
+                    funModificada.Id = FuncionalidadElegida.Id;
+                    funModificada.Descripcion = txtBox_Descripcion.Text;
+                    funModificada.Costo = Convert.ToInt32(txtBox_Costo.Text);
+                    funModificada.Habilitado = true;
 
-                if (rowsAfectadas == 1)
-                {
-                    Response.Redirect("../PersonalizarUsuario.aspx");
+                    int rowsAfectadas = FunNegocio.Modificar(funModificada);
+
+                    if (rowsAfectadas == 1)
+                    {
+                        Response.Redirect("../PersonalizarUsuario.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Error.aspx");
+                    }
+
                 }
                 else
-                {
-                    Response.Redirect("Error.aspx");
-                }
+                {//si es alta
+                 //setear desde el input de usuario los campos
+                 //falta validar que sean correctos los datos.
+                    NuevaFuncionalidad.Descripcion = txtBox_Descripcion.Text;
+                    NuevaFuncionalidad.Costo = Convert.ToInt32(txtBox_Costo.Text);
+                    NuevaFuncionalidad.Habilitado = true;
+                    FuncionalidadNegocio funcionalidadNegocio = new FuncionalidadNegocio();
 
-            }
-            else
-            {//si es alta
-             //setear desde el input de usuario los campos
-             //falta validar que sean correctos los datos.
-                NuevaFuncionalidad.Descripcion = txtBox_Descripcion.Text;
-                NuevaFuncionalidad.Costo = Convert.ToInt32(txtBox_Costo.Text);
-                NuevaFuncionalidad.Habilitado = true;
-                FuncionalidadNegocio funcionalidadNegocio = new FuncionalidadNegocio();
-
-                //agregarlo a la base de datos
-                if (funcionalidadNegocio.Agregar(NuevaFuncionalidad) < 1)//si hubo error
-                {
-                    Response.Redirect("../Error.aspx");
+                    //agregarlo a la base de datos
+                    if (funcionalidadNegocio.Agregar(NuevaFuncionalidad) < 1)//si hubo error
+                    {
+                        Response.Redirect("../Error.aspx");
+                    }
+                    //mostrar popup o pantalla de Exito al agregar.
+                    //label.text = 
+                    Response.Redirect("../PersonalizarUsuario.aspx");
                 }
-                //mostrar popup o pantalla de Exito al agregar.
-                //label.text = 
-                Response.Redirect("../PersonalizarUsuario.aspx");
             }
+          
+        }
+        private bool Validaciones()
+        {
+            if(txtBox_Descripcion.Text == "")
+            {
+                lblDescripcion.Text = "El campos Descripcion esta vacio";
+                return false;
+            }
+            if(txtBox_Costo.Text == "")
+            {
+                lblPrecio.Text = "El campo Precio esta vacio";
+                return false;
+            }
+            return true;
         }
     }
 }

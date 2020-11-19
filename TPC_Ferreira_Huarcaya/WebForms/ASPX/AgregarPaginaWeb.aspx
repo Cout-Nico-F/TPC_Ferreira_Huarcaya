@@ -47,15 +47,18 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <asp:Label Text="Ingrese un Titulo" runat="server" />
-                                <asp:TextBox runat="server" ID="txtTitulo" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtTitulo" CssClass="form-control" placeholder="Titulo"></asp:TextBox>
+                                <asp:Label Text="" runat="server"  ID="lblTitulo"/>
                             </div>
                              <div class="col-md-12 form-group">
                                 <asp:Label Text="Ingrese una descripcion" runat="server" />
-                                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" ></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" placeholder="Descripcion" ></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblDescripcion" />
                             </div>
                              <div class="col-md-6 form-group">
                                    <asp:Label Text="Ingrese la url del index de la pagina" runat="server" />
-                                   <asp:TextBox runat="server" ID="txtUrlPagina" CssClass="form-control" ></asp:TextBox>
+                                   <asp:TextBox runat="server" ID="txtUrlPagina" CssClass="form-control" placeholder="../Templates/Paginas/index.html" ></asp:TextBox>
+                                   <asp:Label Text="" runat="server" ID="lblUrlPagina"/>
                             </div>
                              <div class="col md-6 form-group">
                                  <asp:Label Text="Seleccionar imagen a subir" runat="server"/>
@@ -63,7 +66,8 @@
                             </div> 
                              <div class="col-md-12 form-group">
                                  <asp:Label Text="Ingrese el precio de la Pagina Web" runat="server" />
-                                <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" TextMode="Number" ></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" TextMode="Number" placeholder="1000 $"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblPrecio" />
                             </div>
                         </div>
                         <br />

@@ -58,9 +58,11 @@
                             <form class="col-12">
                                 <div class="form-group">
                                     <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="NombreUsuario" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label Text="" runat="server" ID="lblNombreUsuario" />
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox runat="server" ID="txtPass" Placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                    <asp:Label Text="" runat="server" ID="lblContrasenia" />
                                 </div>
                                 <asp:Button Text="Ingresar" runat="server" CssClass="btn-Ingresar" ID="btn_Ingresar" OnClick="btn_Ingresar_Click" />
                             </form>

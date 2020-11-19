@@ -12,17 +12,18 @@
     <form>
         <div class="form-group">
             <label for="input_Descripcion">Descripcion</label>
-            <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder=""> </asp:TextBox> 
-            <!--<input runat="server" type="text" class="form-control" id="input_Descripcion" aria-describedby="DescHelp">-->
+            <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder=""> </asp:TextBox>
             <small id="DescHelp" class="form-text text-muted">Ingrese la descripcion de la funcionalidad.</small>
+            <asp:Label Text="" runat="server" ID="lblDescripcion" />
         </div>
         <div class="form-group">
             <label for="input_Costo">Costo</label>
-            <asp:TextBox runat="server" ID="txtBox_Costo" TextMode="Number"/> 
+            <asp:TextBox runat="server" ID="txtBox_Costo" TextMode="Number" />
             <!--<input runat="server" type="text" class="form-control" id="input_Costo"> -->
             <small id="CostoHelp" class="form-text text-muted">Ingrese el costo de la funcionalidad.</small>
+            <asp:Label Text="" runat="server" ID="lblPrecio"/>
         </div>
-        <asp:Button Text="OK" runat="server" name="btn_FuncionalidadAM_OK" OnClick="btn_FuncionalidadAM_OK_Click"/>
+        <asp:Button Text="OK" runat="server" name="btn_FuncionalidadAM_OK" OnClick="btn_FuncionalidadAM_OK_Click" />
     </form>
 
 </asp:Content>

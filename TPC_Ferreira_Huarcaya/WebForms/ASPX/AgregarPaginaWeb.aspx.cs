@@ -24,19 +24,20 @@ namespace WebForms.ASPX
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
         {
-            if (!(txtTitulo.Text == "" || txtDescripcion.Text == "" ))
+            lblTitulo.Text = "";
+            lblDescripcion.Text = "";
+            lblPrecio.Text = "";
+            //esto es por ahora deberia ser un clear de los label
+
+            if (Validaciones())
             {
+                
                 PaginaWeb pag = new PaginaWeb();
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
-                //Lo que Maxi nos enseño
-                //la ruta es distinta entre nosotros dos podriamos poner un Or o algo asi
-                //DateTime.Now.ToString("h:mm:ss tt")
                 string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + "prueba.jpg" ;
                 fileImagen.PostedFile.SaveAs(ruta);
-
-                // int validacion = Validaciones();
-
+             
                 pag.Titulo = txtTitulo.Text;
                 pag.Descripcion = txtDescripcion.Text;
                 pag.Url_PaginaWeb = txtUrlPagina.Text;
@@ -44,7 +45,6 @@ namespace WebForms.ASPX
                 pag.Habilitado = true; //lo mando asi por ahora
                 pag.Precio = Convert.ToInt32(txtPrecio.Text);
 
-                //tambien tengo que cargar la url imagen
 
                 int rowsAfectados = pagNeg.EnviarDatos(pag);
 
@@ -57,18 +57,12 @@ namespace WebForms.ASPX
                     Response.Redirect("Error.aspx");
                 }
             }
-            else
-            {
-
-
-            }
-           
 
         }
 
         protected void txtPrevia_Click(object sender, EventArgs e)
         {
-            if(!(txtTitulo.Text == "" || txtDescripcion.Text == "" ))
+            if(Validaciones())
             {
                 PaginaWebVistaPrevia.Titulo = txtTitulo.Text;
                 PaginaWebVistaPrevia.Descripcion = txtDescripcion.Text;
@@ -81,6 +75,26 @@ namespace WebForms.ASPX
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "OpenModal();", true);
             }
            
+        }
+
+        private bool Validaciones()
+        {
+            if(txtTitulo.Text == "")
+            {
+                lblTitulo.Text = "El campos titulo esta vacio";
+                return false;
+            }
+            if(txtDescripcion.Text == "")
+            {
+                lblDescripcion.Text = "El campo descripcion esta vacio";
+                return false;
+            }
+            if(txtPrecio.Text == "")
+            {
+                lblPrecio.Text = "El campo Precio esta vacio";
+                return false;
+            }
+            return true;
         }
         
     }

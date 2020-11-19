@@ -42,41 +42,54 @@ namespace WebForms.ASPX.AltasModificaciones
 
         protected void Btn_PaginaAM_OK_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["idPagina"] != null)
-            {//si es modificacion
-                Pagina pagModificada = new Pagina();
-                pagModificada.ID = _Pagina.ID;
-                pagModificada.Descripcion = txtBox_Descripcion.Text;
-                pagModificada.Url_Imagen = txtBox_Url_Imagen.Text;
-                pagModificada.Habilitado = true;
+            lblDescripcion.Text = "";
 
-                int rowsAfectadas = PaginaNegocio.Modificar(pagModificada);
+            if (Validaciones())
+            {
+                if (Request.QueryString["idPagina"] != null)
+                {//si es modificacion
+                    Pagina pagModificada = new Pagina();
+                    pagModificada.ID = _Pagina.ID;
+                    pagModificada.Descripcion = txtBox_Descripcion.Text;
+                    pagModificada.Url_Imagen = txtBox_Url_Imagen.Text;
+                    pagModificada.Habilitado = true;
 
-                if (rowsAfectadas == 1)
-                {
-                    Response.Redirect("../PersonalizarUsuario.aspx");
+                    int rowsAfectadas = PaginaNegocio.Modificar(pagModificada);
+
+                    if (rowsAfectadas == 1)
+                    {
+                        Response.Redirect("../PersonalizarUsuario.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Error.aspx");
+                    }
                 }
                 else
-                {
-                    Response.Redirect("Error.aspx");
+                {//si es alta
+                    _Pagina.Descripcion = txtBox_Descripcion.Text;
+                    _Pagina.Url_Imagen = txtBox_Url_Imagen.Text;
+                    _Pagina.Habilitado = true;
+
+                    PaginaNegocio PagNeg = new PaginaNegocio();
+
+                    if (PagNeg.Agregar(_Pagina) < 1)
+                    {
+                        Response.Redirect("../Error.aspx");
+                    }
+                    else Response.Redirect("../PersonalizarUsuario.aspx");
                 }
             }
-            else
-            {//si es alta
-                _Pagina.Descripcion = txtBox_Descripcion.Text;
-                _Pagina.Url_Imagen = txtBox_Url_Imagen.Text;
-                _Pagina.Habilitado = true;
-
-                PaginaNegocio PagNeg = new PaginaNegocio();
-
-                if (PagNeg.Agregar(_Pagina) < 1)
-                {
-                    Response.Redirect("../Error.aspx");
-                }
-                else Response.Redirect("../PersonalizarUsuario.aspx");
-            }
-
             
+        }
+        private bool Validaciones()
+        {
+            if(txtBox_Descripcion.Text == "")
+            {
+                lblDescripcion.Text = "El campo Descripcion no puede estar vacio";
+                return false;
+            }
+            return true;
         }
     }
 }

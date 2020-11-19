@@ -45,27 +45,60 @@ namespace WebForms.ASPX
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
         {
-            PaginaWeb pag = new PaginaWeb();
-            PaginasWebNegocios pagNeg = new PaginasWebNegocios();
+            lblDescripcion.Text = "";
+            lblHabilitado.Text = "";
+            lblPrecio.Text = "";
+            lblTitulo.Text = "";
 
-            pag.ID = PaginaSeleccionada.ID;
-            pag.Titulo = txtTitulo.Text;
-            pag.Descripcion = txtDescripcion.Text;
-            pag.Url_PaginaWeb = txtUrlPaginaWeb.Text;
-            pag.Url_Imagen = txtUrlImagen.Text;
-            pag.Habilitado = Convert.ToBoolean(txtHabilitado.Text);
-            pag.Precio = Convert.ToInt32(txtPrecio.Text);
+            if (Validaciones())
+            {
+                PaginaWeb pag = new PaginaWeb();
+                PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
-            int rowsAfectados = pagNeg.Modificar(pag);
-            
-            if(rowsAfectados != 0)
-            {
-                Response.Redirect("Catalogo.aspx");
+                pag.ID = PaginaSeleccionada.ID;
+                pag.Titulo = txtTitulo.Text;
+                pag.Descripcion = txtDescripcion.Text;
+                pag.Url_PaginaWeb = txtUrlPaginaWeb.Text;
+                pag.Url_Imagen = txtUrlImagen.Text;
+                pag.Habilitado = Convert.ToBoolean(txtHabilitado.Text);
+                pag.Precio = Convert.ToInt32(txtPrecio.Text);
+
+                int rowsAfectados = pagNeg.Modificar(pag);
+
+                if (rowsAfectados != 0)
+                {
+                    Response.Redirect("Catalogo.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Error.aspx");
+                }
             }
-            else
+           
+        }
+        private bool Validaciones()
+        {
+            if(txtTitulo.Text == "")
             {
-                Response.Redirect("Error.aspx");
+                lblTitulo.Text = "El campos Titulo esta vacio";
+                return false;
             }
+            if(txtDescripcion.Text == "")
+            {
+                lblDescripcion.Text = "El campo Descripcion esta vacion";
+                return false;
+            }
+            if(txtHabilitado.Text == "")
+            {
+                lblHabilitado.Text = "El campo habilitado esta vacio";
+                return false;
+            }
+            if(txtPrecio.Text == "")
+            {
+                lblPrecio.Text = "El campo Precio esta vacio";
+                return false;
+            }
+            return true;
         }
     }
 }

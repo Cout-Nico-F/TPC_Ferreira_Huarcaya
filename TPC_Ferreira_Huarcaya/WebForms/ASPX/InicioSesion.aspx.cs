@@ -21,35 +21,49 @@ namespace WebForms.ASPX
 
         protected void btn_Ingresar_Click(object sender, EventArgs e)
         {
+            //esto es como un clear
+            lblContrasenia.Text = "";
+            lblNombreUsuario.Text = "";
 
-            LoginNegocio logNeg = new LoginNegocio();
-            Usuario user = new Usuario();
 
-            //aca deberia haber un metodo de validadicones
-
-            user.NombreUsuario = txtNombreUsuario.Text;
-            user.Contrasenia = txtPass.Text;
-
-            //ValidacionesConER();
-
-            Usuario = logNeg.login(user);
-
-            if (Usuario.ID != 0)
+            if (Validaciones())
             {
-                //deja entrar a todos los usuarios
-                Session.Add("usersession", Usuario);// tenia user en vez de Usuario vamos a ver si funciona ahora
-                Response.Redirect("Catalogo.aspx");
+                LoginNegocio logNeg = new LoginNegocio();
+                Usuario user = new Usuario();
+
+                user.NombreUsuario = txtNombreUsuario.Text;
+                user.Contrasenia = txtPass.Text;
+
+                Usuario = logNeg.login(user);
+
+                if (Usuario.ID != 0)
+                {
+                    Session.Add("usersession", Usuario);
+                    Response.Redirect("Catalogo.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Error.aspx");
+                }
+               
             }
-            else
+
+        }
+        private bool Validaciones()
+        {
+            if(txtNombreUsuario.Text == "")
             {
-                Response.Redirect("Error.aspx");
+                lblNombreUsuario.Text = "El campos Nombre Usuario no puede estar vacio";
+                return false;
             }
-            /*
-             Podes probar con 
-            Nombre U: JeremiasI21
-            Contra : Jere123
-             */
-         }
+            if(txtPass.Text == "")
+            {
+                lblContrasenia.Text = "El campo Contraseña no puede estar vacio";
+                return false;
+            }
+            return true;
+
+        }
 
     }
 

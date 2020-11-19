@@ -46,47 +46,61 @@ namespace WebForms.ASPX.AltasModificaciones
 
         protected void EstiloAM_OK_Click(object sender, EventArgs e)
         {
+            lblDescripcion.Text = "";
 
-            if (Request.QueryString["idEstilo"] != null)
-            {//si es modificacion
-                Estilo estiloModificado = new Estilo();
+            if (Validaciones())
+            {
+                if (Request.QueryString["idEstilo"] != null)
+                {//si es modificacion
+                    Estilo estiloModificado = new Estilo();
 
-                estiloModificado.Id = EstiloSeleccionado.Id;
-                estiloModificado.Descripcion = txtBox_Descripcion.Text;
-                estiloModificado.Url_Imagen = txtBox_Url_Imagen.Text;
-                estiloModificado.Habilitado = true;
+                    estiloModificado.Id = EstiloSeleccionado.Id;
+                    estiloModificado.Descripcion = txtBox_Descripcion.Text;
+                    estiloModificado.Url_Imagen = txtBox_Url_Imagen.Text;
+                    estiloModificado.Habilitado = true;
 
-                int rowsAfectados = EstiloNegocio.Modificar(estiloModificado);
+                    int rowsAfectados = EstiloNegocio.Modificar(estiloModificado);
 
-                if (rowsAfectados == 1)
-                {
-                    Response.Redirect("../PersonalizarUsuario.aspx");
+                    if (rowsAfectados == 1)
+                    {
+                        Response.Redirect("../PersonalizarUsuario.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Error.aspx");
+                    }
                 }
                 else
-                {
-                    Response.Redirect("Error.aspx");
-                }
-            }
-            else
-            {//si es alta
-             //setear desde el input de usuario los campos
-             //falta validar que sean correctos los datos.
-                NuevoEstilo.Descripcion = txtBox_Descripcion.Text;
-                NuevoEstilo.Url_Imagen = txtBox_Url_Imagen.Text;
-                NuevoEstilo.Habilitado = true;
-                EstiloNegocio estiloNegocio = new EstiloNegocio();
+                {//si es alta
+                 //setear desde el input de usuario los campos
+                 //falta validar que sean correctos los datos.
+                    NuevoEstilo.Descripcion = txtBox_Descripcion.Text;
+                    NuevoEstilo.Url_Imagen = txtBox_Url_Imagen.Text;
+                    NuevoEstilo.Habilitado = true;
+                    EstiloNegocio estiloNegocio = new EstiloNegocio();
 
-                //agregarlo a la base de datos
-                if (estiloNegocio.Agregar(NuevoEstilo) < 1)//si hubo error
-                {
-                    Response.Redirect("../Error.aspx");
+                    //agregarlo a la base de datos
+                    if (estiloNegocio.Agregar(NuevoEstilo) < 1)//si hubo error
+                    {
+                        Response.Redirect("../Error.aspx");
+                    }
+                    //mostrar popup o pantalla de Exito al agregar.
+                    //label.text = Exito!
+                    //Hacer Visible por propiedad a un boton que estaba oculto: Volver. 
+                    //ese boton volver va a tner la linea de codigo de redirect que esta aca abajo.
+                    Response.Redirect("../PersonalizarUsuario.aspx");
                 }
-                //mostrar popup o pantalla de Exito al agregar.
-                //label.text = Exito!
-                //Hacer Visible por propiedad a un boton que estaba oculto: Volver. 
-                //ese boton volver va a tner la linea de codigo de redirect que esta aca abajo.
-                Response.Redirect("../PersonalizarUsuario.aspx");
             }
+           
+        }
+        private bool Validaciones()
+        {
+            if(txtBox_Descripcion.Text == "")
+            {
+                lblDescripcion.Text = "El campo Descripcion esta vacio";
+                return false;
+            }
+            return true;
         }
     }
 }

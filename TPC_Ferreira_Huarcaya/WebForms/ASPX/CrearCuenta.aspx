@@ -57,25 +57,29 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <asp:TextBox runat="server" ID="txtNombreApellido" Placeholder="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
+                                <asp:Label Text="" runat="server" ID="lblNombreApellido"/>
                             </div>
                              <div class="col-md-6 form-group">
                                 <asp:TextBox runat="server" ID="txtTelefonoMovil" Placeholder="Telefono Movil (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
-                                
                             </div>
                              <div class="col-md-6 form-group">
                                 <asp:TextBox runat="server" ID="txtTelefonoFijo" Placeholder="Telefono Fijo (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
                             </div>
                             <div class="col-md-6 form-group">
                                 <asp:TextBox runat="server" ID="txtEmail" Placeholder="Correo electronico" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                                <asp:Label Text="" runat="server" ID="lblMail"/>
                             </div>
                             <div class="col-md-6 form-group">
                                 <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                <asp:Label Text="" runat="server" ID="lblFechaNaci"/>
                             </div>
                              <div class="col-md-12 form-group">
                                <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblNombreUsuario"/>
                             </div>
                              <div class="col-md-12 form-group">
-                                <asp:TextBox runat="server" ID="txt_Contrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblContrasenia"/>
                             </div>
                              <div class="col-md-12 form-group">
                                 <asp:TextBox runat="server" ID="txtEmailRecuperacion" Placeholder="Email para recuperacion de cuenta(opcional)" CssClass="form-control" TextMode="Email"></asp:TextBox>

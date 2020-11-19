@@ -53,14 +53,17 @@
                             <div class="col-md-12 form-group">
                                 <asp:Label Text="Nombre y Apellido" runat="server" />
                                 <asp:TextBox runat="server" ID="txtNombreApellido" Placeholder="Nombre/s y Apellido/s" CssClass="form-control"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblNombreApellido"/>
                             </div>
                              <div class="col-md-6 form-group">
                                  <asp:Label Text="Nombre Usuario" runat="server" />
                                 <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblNombreUsuario"/>
                             </div>
                              <div class="col-md-6 form-group">
                                  <asp:Label Text="Contraseña" runat="server" />
                                 <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="lblContrasenia"/>
                             </div>
                              <div class="col-md-12 form-group">
                                  <asp:Label Text="Telefono Movil" runat="server" />
@@ -73,6 +76,7 @@
                             <div class="col-md-12 form-group">
                                 <asp:Label Text="Correo electronico" runat="server" />
                                 <asp:TextBox runat="server" ID="txtEmail" Placeholder="Correo electronico" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                                <asp:Label Text="" runat="server" ID="lblMail"/>
                             </div>
                              <div class="col-md-12 form-group">
                                  <asp:Label Text="Email para recuperar la cuenta" runat="server" />
@@ -84,7 +88,7 @@
                             <asp:Button Text="Aplicar Cambios" runat="server" CssClass="btn btn-primary" ID="btn_Cambio" OnClick="btn_Cambio_Click"  />
                         </div>
                          <div class="col-md-6 form-group">
-                             <a href="javascript:history.back()" class="btn btn-primary">Cancelar</a>
+                             <a href="Catalogo.aspx" class="btn btn-primary">Cancelar</a>
                         </div>
                     </form>
                 </div>

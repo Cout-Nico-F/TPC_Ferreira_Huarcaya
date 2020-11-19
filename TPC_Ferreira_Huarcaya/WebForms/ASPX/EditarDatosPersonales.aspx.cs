@@ -56,26 +56,58 @@ namespace WebForms.ASPX
         }
         protected void btn_Cambio_Click(object sender, EventArgs e)
         {
+            lblContrasenia.Text = "";
+            lblMail.Text = "";
+            lblNombreApellido.Text = "";
+            lblNombreUsuario.Text = "";
 
-            //validar primero que los campos no sean vacios (los campos opcionales son los unicos vacios)
+            if (Validaciones())
+            {
 
-            //enviarlo de nuevo a la DB con update
-            DatosPersonales datos = new  DatosPersonales();
-            Usuario usu = new Usuario();
-            PaginasWebNegocios pagNeg = new PaginasWebNegocios();
+                //enviarlo de nuevo a la DB con update
+                DatosPersonales datos = new DatosPersonales();
+                Usuario usu = new Usuario();
+                PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
-            datos.NombreApellido = txtNombreApellido.Text;
-            datos.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
-            datos.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
-            datos.Email = txtEmail.Text;
-            datos.EmailRecuperacion = txtEmailRecuperacion.Text;
-            usu.NombreUsuario = txtNombreUsuario.Text;
-            usu.Contrasenia = txtContrasenia.Text;
-            usu.ID = idUsuario; //le envio el id guardo en el page load
+                datos.NombreApellido = txtNombreApellido.Text;
+                datos.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
+                datos.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
+                datos.Email = txtEmail.Text;
+                datos.EmailRecuperacion = txtEmailRecuperacion.Text;
+                usu.NombreUsuario = txtNombreUsuario.Text;
+                usu.Contrasenia = txtContrasenia.Text;
+                usu.ID = idUsuario; //le envio el id guardo en el page load
 
 
-            pagNeg.ActualizarDatos(usu,datos);
+                pagNeg.ActualizarDatos(usu, datos);
 
+                Response.Redirect("Catalogo.aspx");
+            }
+
+        }
+        private bool Validaciones()
+        {
+            if(txtNombreApellido.Text == "")
+            {
+                lblNombreApellido.Text = "El campos Nombre Apellido no puede estar vacio";
+                return false;
+            }
+            if(txtNombreUsuario.Text == "")
+            {
+                lblNombreUsuario.Text = "El campo Nombre Usuario no puede estar vacio";
+                return false;
+            }
+            if(txtContrasenia.Text == "")
+            {
+                lblContrasenia.Text = "El campo contraseña no puede estar vacio";
+                return false;
+            }
+            if(txtEmail.Text == "")
+            {
+                lblMail.Text = "El campo Mail no puede estar vacio";
+                return false;
+            }
+            return true;
         }
     }
 }
