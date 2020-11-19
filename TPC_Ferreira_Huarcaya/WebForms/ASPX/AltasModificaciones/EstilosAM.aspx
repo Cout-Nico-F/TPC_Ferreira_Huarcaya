@@ -9,8 +9,11 @@
         <div class="form-group">
             <label for="txtBox_Descripcion">Descripcion</label>
             <asp:TextBox runat="server" ID="txtBox_Descripcion" Placeholder=""> </asp:TextBox> 
-            <small id="DescHelp" class="form-text text-muted">Ingrese la descripcion del estilo.</small>
             <asp:Label Text="" runat="server" ID="lblDescripcion"/>
+            <small id="DescHelp" class="form-text text-muted">Ingrese la descripcion del estilo.</small>
+            
+            </div>
+        <div class="form-group">
             <!--Temporal hasta lograr la subida de imagen como mostro maxi en la ultima clase -->
             <label for="txtBox_Url_Imagen">Url_Imagen</label>
             <asp:TextBox runat="server" ID="txtBox_Url_Imagen" Placeholder=""> </asp:TextBox> 

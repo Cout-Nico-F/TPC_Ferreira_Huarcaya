@@ -102,18 +102,6 @@ namespace WebForms.ASPX
                 Session["listaFuncionalidadesSelec"] = ListaFuncionalidadesAgregadas;
             }
 
-            /*if(ddl_Funcionalidades.SelectedIndex != 0)
-            {
-                Funcionalidad fun = ddl_Funcionalidades.SelectedValue; //me tiene que devolver el nombre y el costo
-
-                ListaFuncionalidadAgregadas = ((List<Funcionalidad>)Session["listaFuncionalidad"]);
-
-                ListaFuncionalidadAgregadas.Add(fun);
-
-                Session["listaFuncionalidad"] = ListaFuncionalidadAgregadas;
-
-            }*/
-
         }
 
         protected void btn_AgregarPagina_Click(object sender, EventArgs e)
@@ -196,19 +184,31 @@ namespace WebForms.ASPX
 
         protected void btn_Pagina_Modificacion_Click(object sender, EventArgs e)
         {
-            //validar si hay una pagina elegida en el dropdown
-            Response.Redirect("AltasModificaciones/PaginasAM.aspx?idPagina=" + ddl_Paginas.SelectedItem.Value);
+            if(ddl_Paginas.SelectedIndex != 0)
+            {
+                //validar si hay una pagina elegida en el dropdown
+                Response.Redirect("AltasModificaciones/PaginasAM.aspx?idPagina=" + ddl_Paginas.SelectedItem.Value);
+            }
+          
         }
 
         protected void btn_Funcionalidad_Modificacion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AltasModificaciones/FuncionalidadesAM.aspx?idFuncionalidad=" + ddl_Funcionalidades.SelectedItem.Value);
+            if(ddl_Funcionalidades.SelectedIndex != 0)
+            {
+                Response.Redirect("AltasModificaciones/FuncionalidadesAM.aspx?idFuncionalidad=" + ddl_Funcionalidades.SelectedItem.Value);
+            }
+           
 
         }
 
         protected void btn_Estilo_Modificacion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AltasModificaciones/EstilosAM.aspx?idEstilo=" + ddl_Estilos.SelectedItem.Value);
+            if(ddl_Estilos.SelectedIndex != 0)
+            {
+                Response.Redirect("AltasModificaciones/EstilosAM.aspx?idEstilo=" + ddl_Estilos.SelectedItem.Value);
+            }
+           
         }
 
         void RemoverFuncionalidad()
