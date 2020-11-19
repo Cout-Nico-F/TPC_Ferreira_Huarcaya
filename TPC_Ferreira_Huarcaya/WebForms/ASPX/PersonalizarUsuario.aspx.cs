@@ -20,20 +20,7 @@ namespace WebForms.ASPX
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Usuario  = (Usuario)Session["usersession"];
-            //    if(Usuario == null)
-            //    {
-            //        Response.Redirect("InicioSesion.aspx");
-            //    }
-
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
+           
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDownPaginas();
@@ -59,7 +46,6 @@ namespace WebForms.ASPX
             DropdownsNegocio estNeg = new DropdownsNegocio();
 
             //Paginas
-
 
             ddl_Paginas.DataSource = estNeg.ConsultaDataSet("Select * From Paginas");
             ddl_Paginas.DataTextField = "Descripcion";

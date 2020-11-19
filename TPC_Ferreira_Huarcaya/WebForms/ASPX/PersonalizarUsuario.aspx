@@ -107,7 +107,7 @@
                                     <tr>
                                         <td><%=pag.Descripcion%></td>
                                         <td>
-                                            <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>">Remover pagina</a>
+                                            <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>" class="btn btn-outline-info">Remover pagina</a>
                                         </td>
                                     </tr>
                                     <%} %>
@@ -146,7 +146,7 @@
                         <br />
                         <h1>Paso 3:</h1>
                         <h1>Funcionalidades</h1>
-                        <p>Elija un o mas funcionalidades para su Web</p>
+                        <p>Elija una o mas funcionalidades para su Web</p>
                         <asp:DropDownList runat="server" ID="ddl_Funcionalidades" CssClass="btn btn-dark"></asp:DropDownList>
                         <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
                     </div>
@@ -160,6 +160,7 @@
                                 <th>Accion</th>
                             </tr>
                         </thead>
+
                         <%if (!(ListaFuncionalidadesAgregadas == null))
                             {%>
                         <%foreach (var item in ListaFuncionalidadesAgregadas)
@@ -169,7 +170,7 @@
                                 <td><%=item.Descripcion%></td>
                                 <td>$ <%=item.Costo %></td>
                                 <td>
-                                    <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>">Remover funcionalidad</a>
+                                    <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>" class="btn btn-outline-info">Remover funcionalidad</a>
                                 </td>
                             </tr>
                             <%} %>
@@ -235,7 +236,15 @@
         </asp:UpdatePanel>
 
 
-
+        <script>
+            window.onload = function () {
+                var pos = window.name || 10;
+                window.scrollTo(10, pos);
+            }
+            window.onunload = function () {
+                window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
+            }
+        </script>
 
     </form>
 </body>
