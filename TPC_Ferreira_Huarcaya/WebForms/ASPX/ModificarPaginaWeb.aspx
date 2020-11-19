@@ -81,10 +81,6 @@
                                 <asp:TextBox runat="server" ID="txtUrlImagen" Placeholder="Url a la imagen de la Pagina Web" CssClass="form-control" ></asp:TextBox>
                             </div>
                             <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtHabilitado" Placeholder="deshabilitar : false , habilitado : true" CssClass="form-control" ></asp:TextBox>
-                                <asp:Label Text="" runat="server" ID="lblHabilitado" />
-                            </div>
-                            <div class="col-md-6 form-group">
                                 <asp:TextBox runat="server" ID="txtPrecio" Placeholder="Ingrese el precio" CssClass="form-control" TextMode="Number" ></asp:TextBox>
                                 <asp:Label Text="" runat="server" ID="lblPrecio" />
                             </div>

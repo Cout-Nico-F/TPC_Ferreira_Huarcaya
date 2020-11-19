@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Master1.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="WebForms.ASPX.Catalogo" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,23 +8,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-2">
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <div class="container d-flex">
-                                     <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
-                                     <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="false"/>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <div class="container d-flex">
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
+                                <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="false" />
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <br />
     <br />
 
-      <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Hola bienvenido</h1>
             <p class="lead">Seguimos trabajando..</p>
@@ -39,12 +40,14 @@
             <%
                 if (Lista.Count == 0)
                 {%>
-                    <h3 style="color:white; margin-left: 1vw; ">No hay articulos que coincidan con tu busqueda.</h3>
+            <h3 style="color: white; margin-left: 1vw;">No hay articulos que coincidan con tu busqueda.</h3>
             <% }%>
             <div class="row">
                 <%
                     foreach (Modelo.PaginaWeb item in Lista)
-                    {%>
+                    {
+                        if (item.Habilitado)
+                        {%>
                 <div class="col md-5 col-sm-4">
 
                     <div class="container">
@@ -65,7 +68,8 @@
                         </div>
                     </div>
                 </div>
-                <%}%>
+                      <%}
+                    }%>
             </div>
     </section>
 
@@ -78,6 +82,6 @@
             });
         </script>
     </footer>
-   
+
 
 </asp:Content>

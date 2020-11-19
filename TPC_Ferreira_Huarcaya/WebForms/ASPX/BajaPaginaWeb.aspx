@@ -14,7 +14,7 @@
     <!--Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@500&display=swap" rel="stylesheet">
     
-    <title>Eliminar Pagina Web</title>
+    <title>Baja de Pagina Web</title>
 
 </head>
 <body>
@@ -23,7 +23,7 @@
         <div style="text-align: center;">
             <div class="jumbotron">
                 <h1>Confirmar Baja de la Pagina Web</h1>
-                <h3>Esta accion eliminara la pagina web de la base de datos</h3>
+                <h3>Esta accion deshabilitará esta pagina web y ya no se listará como una opcion disponible</h3>
             </div>
            
             <br />
