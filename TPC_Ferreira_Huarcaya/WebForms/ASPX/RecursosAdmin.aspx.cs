@@ -30,5 +30,10 @@ namespace WebForms.ASPX
                 throw;
             }*/
         }
+
+        protected void btn_Consulta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

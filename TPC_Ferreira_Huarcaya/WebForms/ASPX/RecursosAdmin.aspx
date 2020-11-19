@@ -12,11 +12,24 @@
      <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" >
      <!--Google Fonts -->
-   
+
+    <!--JS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <title>Recursos Admin</title>
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Datatable -->
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
+    <script src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
 </head>
 <body>
+
+    <style>
+        
+    </style>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
              <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color:transparent"> <!-- No puedo hacer transparente el fonde de la imagen -->
@@ -45,7 +58,7 @@
     <form id="form1" runat="server">
         <br />
         <br />
-        <h1 style="text-align:center;color:white;">Vista Lista de Pedidos</h1>
+        <h1 style="text-align:center;">Vista Lista de Pedidos</h1>
         <div class="table-responsive-md">
             <table class="table table-hover table-dark ">
                 <thead>
@@ -90,6 +103,46 @@
                 </tbody>
             </table>
         </div>
+
+       
+        <div class="container">
+            <div class="container d-flex">
+                 <h1>Lista de Pedidos </h1>
+                <br />
+               
+            </div>            
+            <table class="table table-fluid" id="myTable">
+                <thead>
+                    <tr>
+                        <th>Fecha Pedido</th>
+                        <th>ID Pedido</th>
+                        <th>ID Usuario</th>
+                        <th>Descripcion Estilo</th>
+                        <th>Cantidad Paginas</th>
+                        <th>Cantidad Funcionalidades</th>
+                        <th> <asp:TextBox runat="server" /> </th><!--Si pongo un boton se hace aun mas chico tenemos que usar el txtchanged -->
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                         <td>El Pepe</td>
+                         <td>askjdas</td>
+                     </tr>
+                    <tr>
+                         <td>Ete Seech</td>
+                        <td>asdasd</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#myTable').DataTable();
+            });
+        </script>
     </form>
+
+    
 </body>
 </html>

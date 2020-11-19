@@ -13,6 +13,5 @@
     width:9%;
 }
 body {
-    background-image: url(../Imagenes/FondoAdmin.jpg);
-    background-size:cover;
+   background-color:white;
 }
