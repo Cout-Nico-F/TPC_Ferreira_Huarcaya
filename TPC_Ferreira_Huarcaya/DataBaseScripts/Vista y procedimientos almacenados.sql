@@ -126,3 +126,33 @@ go
 /*Tenemos pensado usar triggers para insted of delete en funcionalidades, paginas, estilos y usuarios*/
 /*Y varios procedimientos almacenados mas. (por ejemplo para agregar un pedido con sus paginas y funcionalidades)*/
 --Triggers
+CREATE TRIGGER tr_Eliminar_Funcionalidad ON Funcionalidades
+INSTEAD OF DELETE
+AS
+BEGIN
+	UPDATE Funcionalidades SET Habilitado = 0 WHERE id = (SELECT id FROM deleted)
+END
+go
+
+CREATE TRIGGER tr_Eliminar_Estilo ON Estilos
+INSTEAD OF DELETE
+AS
+BEGIN
+	UPDATE Estilos SET Habilitado = 0 WHERE id = (SELECT id FROM deleted)
+END
+go
+
+CREATE TRIGGER tr_Eliminar_Pagina ON Paginas
+INSTEAD OF DELETE
+AS
+BEGIN
+	UPDATE Paginas SET Habilitado = 0 WHERE id = (SELECT id FROM deleted)
+END
+go
+
+CREATE TRIGGER tr_Eliminar_Usuario ON Usuarios
+INSTEAD OF DELETE
+AS
+BEGIN
+	UPDATE Usuarios SET Habilitado = 0 WHERE id = (SELECT id FROM deleted)
+END
