@@ -1,0 +1,18 @@
+﻿table tr th {
+    width: 10%;
+    height: 50%;
+}
+
+.txt_table {
+    height: 30px;
+}
+.tam-lista{
+    width:7%;
+}
+.tam_txt{
+    width:9%;
+}
+body {
+    background-image: url(../Imagenes/FondoAdmin.jpg);
+    background-size:cover;
+}

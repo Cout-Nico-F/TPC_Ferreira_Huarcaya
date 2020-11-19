@@ -11,20 +11,16 @@ namespace WebForms.ASPX
 {
     public partial class RecursosAdmin : System.Web.UI.Page
     {
-
         public Usuario Usuario { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            //lo saco por ahora porque cuando me redireccina me lleva a catalogo.aspx
+            /*try
             {
                 Usuario = (Usuario)Session["usersession"];
                 if (Usuario == null)
                 {
                     Response.Redirect("InicioSesion.aspx");
-                }
-                if(Usuario.Id_Acceso != 3)
-                {
-
                 }
 
             }
@@ -32,7 +28,7 @@ namespace WebForms.ASPX
             {
 
                 throw;
-            }
+            }*/
         }
     }
 }
