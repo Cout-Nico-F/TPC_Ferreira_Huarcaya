@@ -89,6 +89,9 @@
                         <div class="col-md-6 form-group">
                             <asp:Button Text="Crear Cuenta" runat="server" CssClass="btn btn-primary" ID="btn_CrearCuenta" Onclick="btn_CrearCuenta_Click1" />
                         </div>
+                         <div class="col-md-6 form-group">
+                            <asp:Button Text="Comprobar" runat="server" CssClass="btn btn-primary" ID="btn_Comprobar" Onclick="btn_Comprobar_Click" />
+                        </div>
                     </form>
                 </div>
             </div>

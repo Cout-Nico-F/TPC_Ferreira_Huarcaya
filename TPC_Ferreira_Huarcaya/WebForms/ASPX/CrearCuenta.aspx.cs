@@ -2,6 +2,7 @@
 using Negocio;
 using System.Threading;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,7 @@ namespace WebForms.ASPX
 
         protected void btn_CrearCuenta_Click1(object sender, EventArgs e)
         {
-            lblNombreApellido.Text = "";
-            lblContrasenia.Text = "";
-            lblFechaNaci.Text = "";
-            lblNombreUsuario.Text = "";
-            lblMail.Text = "";
+            LimpiarLabels();
 
             if (Validaciones())
             {
@@ -68,15 +65,26 @@ namespace WebForms.ASPX
                 }
             }
 
-            /*
-             faltan las validaciones de cada textbox y validaciones en la base de datos
-            ademas que cuando aprete el boton se borren los datos pero eso es un clear para cada txt (creo)
-             */
         }
+        protected void btn_Comprobar_Click(object sender, EventArgs e)
+        {
+            lblMail.Text = "";
 
+            Regex regex = new Regex("\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+            if (regex.IsMatch(txtEmail.Text))
+            {
+                lblMail.Text = "El formato es correcto";
+                
+
+            }
+            else
+            {
+                lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
+            }
+        }
         private bool Validaciones()
         {
-            if(txtNombreApellido.Text == "")
+            if (txtNombreApellido.Text == "")
             {
                 lblNombreApellido.Text = "El campo Nombre y Apellido no puede quedar vacio";
                 return false;
@@ -96,12 +104,28 @@ namespace WebForms.ASPX
                 lblNombreUsuario.Text = "El campos Nombre Usuario no puede quedar vacio";
                 return false;
             }
-            if(txtContrasenia.Text == "")
+            if (txtContrasenia.Text == "")
             {
                 lblContrasenia.Text = "El campos Contraseña esta vacio";
                 return false;
             }
+            Regex regex = new Regex(@"^[A-Za-z]+@[a-zA-Z]+$");
+            if (!( regex.IsMatch(txtEmail.Text)))
+            {
+                lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
+                return false;
+            }
             return true;
         }
+        private void LimpiarLabels()
+        {
+            lblNombreApellido.Text = "";
+            lblContrasenia.Text = "";
+            lblFechaNaci.Text = "";
+            lblNombreUsuario.Text = "";
+            lblMail.Text = "";
+        }
+
+       
     }
 }
