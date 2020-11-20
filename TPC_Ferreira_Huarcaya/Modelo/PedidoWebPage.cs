@@ -12,15 +12,11 @@ namespace Modelo
 
         public string Comentarios { get; set; }
 
-        public Cliente Cliente { get; set; }//El pedido tiene un cliente ( que lo pidió )
+        public Cliente Cliente { get; set; }//El cliente que lo pidio
 
-        public int Precio { get; set; } // Precio final que se setea en base a los costos de funcionalidades y cantidad de paginas.
+        public int Precio { get; set; }//el precio a la fecha que se hizo el pedido
 
-        public Estilo Estilo { get; set; }
-
-        public List<Funcionalidad> Funcionalidades { get; set; }
-
-        int NumeroPaginas { get; set; }
+        public PaginaWeb WebPage { get; set; }
 
     }
 }
