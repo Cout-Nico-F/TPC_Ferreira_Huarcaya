@@ -36,6 +36,7 @@ namespace WebForms.ASPX
                 txtDescripcion.Text = PaginaSeleccionada.Descripcion;
                 txtUrlPaginaWeb.Text = PaginaSeleccionada.Url_PaginaWeb;
                 txtUrlImagen.Text = PaginaSeleccionada.Url_Imagen;
+                txtHabilitado.Text = Convert.ToString(PaginaSeleccionada.Habilitado);
                 txtPrecio.Text = Convert.ToString(PaginaSeleccionada.Precio);
             }
             
@@ -47,6 +48,7 @@ namespace WebForms.ASPX
             lblDescripcion.Text = "";
             lblPrecio.Text = "";
             lblTitulo.Text = "";
+            lblHabilitado.Text = "";
 
             if (Validaciones())
             {
@@ -59,7 +61,7 @@ namespace WebForms.ASPX
                 pag.Url_PaginaWeb = txtUrlPaginaWeb.Text;
                 pag.Url_Imagen = txtUrlImagen.Text;
                 pag.Precio = Convert.ToInt32(txtPrecio.Text);
-                pag.Habilitado = true;
+                pag.Habilitado = Convert.ToBoolean(txtHabilitado.Text);
 
                 int rowsAfectados = pagNeg.Modificar(pag);
 
@@ -86,12 +88,17 @@ namespace WebForms.ASPX
                 lblDescripcion.Text = "El campo Descripcion esta vacion";
                 return false;
             }
-            
             if(txtPrecio.Text == "")
             {
                 lblPrecio.Text = "El campo Precio esta vacio";
                 return false;
             }
+            if(txtHabilitado.Text == "")
+            {
+                lblHabilitado.Text = "El campo Habilitado esta vacio";
+                return false;
+            }
+
             return true;
         }
     }
