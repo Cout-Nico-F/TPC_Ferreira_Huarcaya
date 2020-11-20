@@ -40,7 +40,7 @@ namespace WebForms.ASPX
             //el cliente se va a sacar de la Session["Usuario"]
             pedido.Comentarios = txtBox_Comentarios.Text;
             pedido.Precio = item.Precio;
-            pedido.WebPage = item;
+           // pedido.WebPage = item;
 
 
             

@@ -12,11 +12,11 @@ namespace Modelo
 
         public string Comentarios { get; set; }
 
-        public Cliente Cliente { get; set; }//El cliente que lo pidio
+        public Int16 Id_Cliente { get; set; }//El cliente que lo pidio
 
         public int Precio { get; set; }//el precio a la fecha que se hizo el pedido
 
-        public PaginaWeb WebPage { get; set; }
+        public Int16 Id_WebPage { get; set; }
 
     }
 }
