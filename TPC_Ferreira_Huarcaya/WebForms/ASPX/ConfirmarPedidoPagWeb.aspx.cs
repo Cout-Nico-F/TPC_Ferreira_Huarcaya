@@ -35,15 +35,14 @@ namespace WebForms.ASPX
 
         protected void btn_Confirmar_Click(object sender, EventArgs e)
         {
-            //este boton va a desencadenar el armado de objeto PedidoWebPage y que se enviara a la base de datos
             PedidoWebPage pedido = new PedidoWebPage();
-            //el cliente se va a sacar de la Session["Usuario"]
+            
             pedido.Comentarios = txtBox_Comentarios.Text;
             pedido.Precio = item.Precio;
-           // pedido.WebPage = item;
+            pedido.Id_WebPage = item.ID;
+            //pedido.Id_Cliente = Convert.ToInt16(Session["Usuario"]); Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
+            pedido.Fecha = DateTime.Now; //falta comprobar que esto funcione como se debe.
 
-
-            
         }
     }
 }

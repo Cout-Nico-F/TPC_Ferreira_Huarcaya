@@ -19,7 +19,7 @@
     <div style="text-align:center">
         <h4>Precio Final: $<%=item.Precio%></h4>
         <asp:Label Text="Comentarios: " ID="lb_Comentarios"  runat="server" for="txtBox_Comentarios"/>
-        <asp:TextBox runat="server" ID="txtBox_Comentarios" placeholder="Estos comentarios seran leidos por el staff antes de comunicarse con usted" Width="1000"/>
+        <asp:TextBox runat="server" ID="txtBox_Comentarios" placeholder="Estos comentarios seran leidos por el staff antes de comunicarse con usted" Width="1000" MaxLength="200"/>
         <asp:Button id="btn_Confirmar" Text="Si! Quiero esta pagina web." runat="server" onclick="btn_Confirmar_Click"/>
     </div>
 </asp:Content>

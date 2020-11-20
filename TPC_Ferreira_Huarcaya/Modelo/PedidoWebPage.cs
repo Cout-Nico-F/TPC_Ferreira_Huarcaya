@@ -18,5 +18,6 @@ namespace Modelo
 
         public Int16 Id_WebPage { get; set; }
 
+        public DateTime Fecha { get; set; }
     }
 }
