@@ -84,6 +84,11 @@
                                 <asp:TextBox runat="server" ID="txtPrecio" Placeholder="Ingrese el precio" CssClass="form-control" TextMode="Number" ></asp:TextBox>
                                 <asp:Label Text="" runat="server" ID="lblPrecio" />
                             </div>
+                            <div class="col-md-6 form-group">
+                                <asp:TextBox runat="server" ID="txtHabilitado" Placeholder="Habilitado : 1 , Desabilitado : 0" CssClass="form-control" ></asp:TextBox>
+                                <small>Habilitado : True , Deshabilitado : False</small>
+                                <asp:Label Text="" runat="server" ID="lblHabilitado" />
+                            </div>
                         </div>
                         <br />
                         <div class="col-md-6 form-group">

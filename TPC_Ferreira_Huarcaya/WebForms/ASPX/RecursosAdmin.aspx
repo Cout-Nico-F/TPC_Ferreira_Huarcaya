@@ -136,6 +136,40 @@
             </table>
         </div>
 
+        <section id="facilities">
+            <div class="container">
+                <div class="row">
+                    <%
+                        foreach (Modelo.PaginaWeb item in ListaPaginasWeb)
+                        {
+                            if (!(item.Habilitado))
+                            {%>
+                    <div class="col md-5 col-sm-4">
+
+                        <div class="container">
+
+                            <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-trash"></i></a>
+                            <a href="AgregarPaginaWeb.aspx"><i class="fas fa-plus"></i></a>
+                            <a href="ModificarPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-tools"></i></a>
+
+
+                        </div>
+                        <div class="card text-center" style="margin-bottom: 40px;">
+                            <img src="<%=item.Url_Imagen %>" class="card-img-top" alt="No se encontro la imagen" />
+                            <div class="card-body">
+                                <h5 class="card-title"><%=item.Titulo %></h5>
+                                <p class="card-text"><%=item.Descripcion %></p>
+                                <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
+                                <a href="CarritoCompra.aspx?idPagina=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <%}
+                        }%>
+                </div>
+               </div>
+        </section>
+
         <script>
             $(document).ready(function () {
                 $('#myTable').DataTable();
