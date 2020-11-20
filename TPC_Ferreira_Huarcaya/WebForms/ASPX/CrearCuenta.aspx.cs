@@ -70,12 +70,12 @@ namespace WebForms.ASPX
         {
             lblMail.Text = "";
 
-            Regex regex = new Regex(@"/ ^(([^<> ()\[\]\\.,;:\s@”]+(\.[^<> ()\[\]\\.,;:\s@”]+)*)| (“.+”))@((\[[0–9]{ 1,3}\.[0–9]{ 1,3}\.[0–9]{ 1,3}\.[0–9]{ 1,3}])| (([a - zA - Z\-0–9] +\.)+[a - zA - Z]{ 2,}))$/");
-            if (regex.IsMatch(txtEmail.Text))
+            //Regex regex = new Regex(@"/^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,4})$/");
+            //(@"^[A-Za-z]+@[a-zA-Z]+$"
+            // "/ ^[^\\s@] +@[^\\s@] +\\.[^\\s@]+$/"
+            if (Regex.IsMatch(txtEmail.Text, @"^[A-Za-z]+@[a-zA-Z]+$"))
             {
                 lblMail.Text = "El formato es correcto";
-                
-
             }
             else
             {
@@ -109,12 +109,12 @@ namespace WebForms.ASPX
                 lblContrasenia.Text = "El campos Contraseña esta vacio";
                 return false;
             }
-            Regex regex = new Regex(@"^[A-Za-z]+@[a-zA-Z]+$");
+            /*Regex regex = new Regex(@"^[A-Za-z]+@[a-zA-Z]+$");
             if (!( regex.IsMatch(txtEmail.Text)))
             {
                 lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
                 return false;
-            }
+            }*/
             return true;
         }
         private void LimpiarLabels()
