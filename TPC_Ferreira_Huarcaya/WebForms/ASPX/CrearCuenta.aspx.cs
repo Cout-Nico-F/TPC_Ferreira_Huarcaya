@@ -70,7 +70,7 @@ namespace WebForms.ASPX
         {
             lblMail.Text = "";
 
-            Regex regex = new Regex("\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+            Regex regex = new Regex(@"/ ^(([^<> ()\[\]\\.,;:\s@”]+(\.[^<> ()\[\]\\.,;:\s@”]+)*)| (“.+”))@((\[[0–9]{ 1,3}\.[0–9]{ 1,3}\.[0–9]{ 1,3}\.[0–9]{ 1,3}])| (([a - zA - Z\-0–9] +\.)+[a - zA - Z]{ 2,}))$/");
             if (regex.IsMatch(txtEmail.Text))
             {
                 lblMail.Text = "El formato es correcto";

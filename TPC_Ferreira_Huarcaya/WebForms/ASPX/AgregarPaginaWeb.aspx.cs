@@ -19,15 +19,12 @@ namespace WebForms.ASPX
             {
                 PaginaWebVistaPrevia = new PaginaWeb();
             }
-            
+          
         }
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
         {
-            lblTitulo.Text = "";
-            lblDescripcion.Text = "";
-            lblPrecio.Text = "";
-            //esto es por ahora deberia ser un clear de los label
+            LimpiarLabels();
 
             if (Validaciones())
             {
@@ -35,13 +32,13 @@ namespace WebForms.ASPX
                 PaginaWeb pag = new PaginaWeb();
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
-                string ruta = WebConfigurationManager.AppSettings["ImageFolder"] + "prueba.jpg" ;
-                fileImagen.PostedFile.SaveAs(ruta);
-             
+                string Ruta = WebConfigurationManager.AppSettings["ImageFolder"] + "prueba1.jpg";
+                fileImagen.PostedFile.SaveAs(Ruta);
+
                 pag.Titulo = txtTitulo.Text;
                 pag.Descripcion = txtDescripcion.Text;
                 pag.Url_PaginaWeb = txtUrlPagina.Text;
-                pag.Url_Imagen = ruta;
+                pag.Url_Imagen = Ruta;
                 pag.Habilitado = true; //lo mando asi por ahora
                 pag.Precio = Convert.ToInt32(txtPrecio.Text);
 
@@ -66,15 +63,8 @@ namespace WebForms.ASPX
             {
                 PaginaWebVistaPrevia.Titulo = txtTitulo.Text;
                 PaginaWebVistaPrevia.Descripcion = txtDescripcion.Text;
-                //PaginaWebVistaPrevia.Url_Imagen = txtUrlImagen.Text;
+                // PaginaWebVistaPrevia.Url_Imagen = Ruta
             }
-            else
-            {
-                lblModal.CssClass = "alert alert-info";
-                lblModal.Text = "hola";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "OpenModal();", true);
-            }
-           
         }
 
         private bool Validaciones()
@@ -95,6 +85,12 @@ namespace WebForms.ASPX
                 return false;
             }
             return true;
+        }
+        private void LimpiarLabels()
+        {
+            lblTitulo.Text = "";
+            lblDescripcion.Text = "";
+            lblPrecio.Text = "";
         }
         
     }
