@@ -39,7 +39,7 @@ namespace WebForms.ASPX
                 if (Usuario.ID != 0)
                 {
                     Session.Add("usersession", Usuario);
-                    Response.Redirect("Catalogo.aspx");
+                    Response.Redirect("Catalogo.aspx");//se podra usar el javascript:back aca? porque nos redirecciona a catalogo y no es correcto
                 }
                 else
                 {

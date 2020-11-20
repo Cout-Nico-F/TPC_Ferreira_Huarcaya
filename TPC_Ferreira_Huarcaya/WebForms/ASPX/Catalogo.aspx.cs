@@ -71,5 +71,10 @@ namespace WebForms.ASPX
         {
             Response.Redirect("Catalogo.aspx");
         }
+
+        protected void btn_Solicitar_Prearmada_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

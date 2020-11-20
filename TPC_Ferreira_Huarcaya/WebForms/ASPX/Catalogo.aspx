@@ -65,6 +65,7 @@
                             <p class="card-text"><%=item.Descripcion %></p>
                             <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
                             <a href="CarritoCompra.aspx?idPagina=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                            <asp:Button ID="btn_Solicitar_Prearmada" Text="Solicitar" runat="server" OnClick="btn_Solicitar_Prearmada_Click"/>
                         </div>
                     </div>
                 </div>
