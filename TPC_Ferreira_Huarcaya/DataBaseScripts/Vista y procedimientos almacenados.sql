@@ -156,6 +156,8 @@ AS
 BEGIN
 	UPDATE Usuarios SET Habilitado = 0 WHERE id = (SELECT id FROM deleted)
 END
+go
+
 CREATE TRIGGER tr_Eliminar_PaginaWeb On PaginaWeb
 INSTEAD OF DELETE
 AS
