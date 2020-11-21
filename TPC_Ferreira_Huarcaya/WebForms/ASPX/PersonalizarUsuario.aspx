@@ -194,12 +194,10 @@
                     </table>
                     <%}%>
                       <div>
-                        <a href="ConfirmarPedidoPagWeb.aspx" class="btn btn-info" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Paso Final</a>
+                        <!--<a href="ConfirmarPedidoPagWeb.aspx" class="btn btn-info" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Paso Final</a> -->
                     </div>
+                </div>                    
                 </div>
-                  
-                </div>
-              
                
                 <br />
                 <br />

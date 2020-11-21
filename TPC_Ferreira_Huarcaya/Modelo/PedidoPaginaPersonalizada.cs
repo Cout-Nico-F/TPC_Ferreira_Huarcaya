@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class PedidoPaginaPersonalizada
+    public class PedidoPaginaPersonalizada
     {
         public Int16 Id { get; set; }
 

@@ -52,7 +52,6 @@ namespace WebForms.ASPX
             ddl_Paginas.DataValueField = "ID";
             ddl_Paginas.DataBind();
             ddl_Paginas.Items.Insert(0, new ListItem("[Pagina]", "0"));
-            //Paginas tambien podria tener una url_Imagen */
 
             //Estilos
             ddl_Estilos.DataSource = estNeg.ConsultaDataSet("Select * From Estilos where Habilitado = 1");
@@ -169,7 +168,6 @@ namespace WebForms.ASPX
         {
             if(ddl_Paginas.SelectedIndex != 0)
             {
-                //validar si hay una pagina elegida en el dropdown
                 Response.Redirect("AltasModificaciones/PaginasAM.aspx?idPagina=" + ddl_Paginas.SelectedItem.Value);
             }
           
@@ -259,6 +257,33 @@ namespace WebForms.ASPX
             {
                 ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
             }
+        }
+
+        protected void btn_Solicitar_Click(object sender, EventArgs e)
+        {
+            PedidoPaginaPersonalizada pedidoPersonalizado = new PedidoPaginaPersonalizada();
+            pedidoPersonalizado.Funcionalidades = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
+            pedidoPersonalizado.Paginas = (List<Pagina>)Session["listaPaginasSelec"];
+            pedidoPersonalizado.Estilo = EstiloSeleccionado;
+            pedidoPersonalizado.Precio = CalcularPrecio();
+            Session.Add("pedidoPersonalizado", pedidoPersonalizado);
+            Response.Redirect( "ConfirmarPedidoPersonalizado.aspx" );
+        }
+
+        int CalcularPrecio()
+        {
+            int precio = 0;
+
+            foreach (var item in (List<Funcionalidad>)Session["listaFuncionalidadesSelec"])
+            {
+                precio += item.Costo;
+            }
+            foreach (var item in (List<Pagina>)Session["listaPaginasSelec"])
+            {
+                precio += 1000;//TODO: el precio necesita poderse actualizar desde RecursosAdmin.aspx. Este mil hardcodeado es TEMPORAL
+            }
+
+            return precio;
         }
     }
 }
