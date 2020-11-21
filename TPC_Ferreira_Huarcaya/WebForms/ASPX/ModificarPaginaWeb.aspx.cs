@@ -36,6 +36,7 @@ namespace WebForms.ASPX
                 txtDescripcion.Text = PaginaSeleccionada.Descripcion;
                 txtUrlPaginaWeb.Text = PaginaSeleccionada.Url_PaginaWeb;
                 txtUrlImagen.Text = PaginaSeleccionada.Url_Imagen;
+
                 txtPrecio.Text = Convert.ToString(PaginaSeleccionada.Precio);
             }
             

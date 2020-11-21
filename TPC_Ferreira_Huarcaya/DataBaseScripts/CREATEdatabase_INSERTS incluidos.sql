@@ -58,7 +58,6 @@ create table Usuarios (
 	Habilitado bit not null
 )
 	go
-	
 create table Datos_Personales (
 	ID_Usuario smallint not null,
 	Nombre_Y_Apellido varchar(200) not null,

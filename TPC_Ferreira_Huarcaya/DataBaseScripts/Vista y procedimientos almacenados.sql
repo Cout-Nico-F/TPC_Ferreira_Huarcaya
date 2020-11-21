@@ -30,6 +30,36 @@ from vw_listapedidos
 
 
 -- PROCEDIMIENTOS ALMACENADOS
+/*			Guardar Pedido de Usuario de una pagina Prediseñadad       */
+Create procedure SP_PedidoPaginaWebPrediseniada(
+		@ID_Usuario smallint,
+		@ID_PaginaWeb smallint,
+		@Precio int,
+		@Comentarios varchar(200)
+)
+as
+begin
+	begin try
+		begin transaction
+			Insert into PedidosPaginaPrediseniada(ID_Usuario,ID_PaginaWeb,Precio,Fecha,Comentarios) values (@ID_Usuario,@ID_PaginaWeb,@Precio,GetDate(),@Comentarios)
+		commit transaction
+	end try
+	begin catch
+		Rollback transaction
+		Select 1
+	end catch
+end
+go
+
+/* Datos de Prueba */
+/*
+Exec SP_PedidoPaginaWebPrediseniada
+	@ID_Usuario = 8,
+	@ID_PaginaWeb = 1,
+	@Precio = 100,
+	@Comentarios = 'Bonita Pagina Web'
+*/
+
 /*		Crear cuenta a nuevo Usuario			*/
 
 create procedure SP_CrearUsuario( 
@@ -112,7 +142,7 @@ end
 go
 
 /*	Datos de prueba para SP_EditarDatosPersonales */		
-Exec SP_EditarDatosPersonales
+/*Exec SP_EditarDatosPersonales
 	@id_Usuario = 9,
 	@NombreUsuario = 'PruebaCambio',
 	@Contrasenia = 'contraCambiada',
@@ -121,7 +151,7 @@ Exec SP_EditarDatosPersonales
 	@Email = 'prueba@hotmail.com',
 	@TelefonoFijo = '4810292'
 
-go
+go*/
 
 /*Tenemos pensado usar triggers para insted of delete en funcionalidades, paginas, estilos y usuarios*/
 /*Y varios procedimientos almacenados mas. (por ejemplo para agregar un pedido con sus paginas y funcionalidades)*/
