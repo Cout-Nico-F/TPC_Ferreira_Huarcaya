@@ -12,7 +12,7 @@ namespace Modelo
 
         public string Comentarios { get; set; }
 
-        public Cliente Cliente { get; set; }//El pedido tiene un cliente ( que lo pidió )
+        public Int16 Id_Cliente { get; set; }//El pedido tiene un cliente ( que lo pidió )
 
         public int Precio { get; set; } // Precio final que se setea en base a los costos de funcionalidades y cantidad de paginas.
 
