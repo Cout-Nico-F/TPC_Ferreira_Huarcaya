@@ -51,6 +51,7 @@
     <Compile Include="LoginNegocio.cs" />
     <Compile Include="PaginaNegocio.cs" />
     <Compile Include="PaginasWebNegocios.cs" />
+    <Compile Include="PedidosWebPageNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
