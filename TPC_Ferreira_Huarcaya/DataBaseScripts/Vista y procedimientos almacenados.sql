@@ -71,6 +71,9 @@ begin
 	begin try
 		begin transaction
 			Insert into PedidosWebPage (ID_Usuario,ID_Estilo,PrecioTotal,Comentarios,Fecha) values (@ID_Usuario,@ID_Estilo,@PrecioTotal,@Comentarios,getdate())
+			Declare @id_PedidoPersonalizada smallint
+			set @id_PedidoPersonalizada = @@IDENTITY
+			return @id_PedidoPersonalizada
 		commit transaction
 	end try
 	begin catch

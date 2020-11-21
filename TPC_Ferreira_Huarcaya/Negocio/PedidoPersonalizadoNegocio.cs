@@ -23,8 +23,16 @@ namespace Negocio
                     cmd.Parameters.Add(new SqlParameter("@ID_Estilo", pedido.ID_Estilo));
                     cmd.Parameters.Add(new SqlParameter("@PrecioTotal", pedido.Precio));
                     cmd.Parameters.Add(new SqlParameter("@Comentarios", pedido.Comentarios));
+                    SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.SmallInt); //cambio
                     sql.Open();
+                    returnParameter.Direction = ParameterDirection.ReturnValue; //cambio
                     cmd.ExecuteNonQuery();
+
+                    Int16 idPedidoPersonalizado = Convert.ToInt16(returnParameter.Value);// cambio
+
+                    sql.Close(); //esto no estaba antes si da error sacalo cambio
+
+                    //TODO: Esto es una manera que encontre probalo y decime si funciona falta agregarle un return
                 }
             }
         }
