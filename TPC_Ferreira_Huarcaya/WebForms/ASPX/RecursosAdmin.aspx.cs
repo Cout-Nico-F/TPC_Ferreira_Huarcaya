@@ -15,21 +15,21 @@ namespace WebForms.ASPX
         public List<PaginaWeb> ListaPaginasWeb { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //lo saco por ahora porque cuando me redireccina me lleva a catalogo.aspx
-            /*try
+           if(Request.QueryString["idPaginaWeb"] != null)
             {
-                Usuario = (Usuario)Session["usersession"];
-                if (Usuario == null)
+                PaginasWebNegocios pagNeg = new PaginasWebNegocios();
+                Int16 idRecibido = Convert.ToInt16(Request.QueryString["idPaginaWeb"]);
+
+                int rows = pagNeg.Restaurar(idRecibido);
+                if(rows > 0)
                 {
-                    Response.Redirect("InicioSesion.aspx");
+                    Response.Redirect("RecursosAdmin.aspx");
                 }
-
+                else
+                {
+                    Response.Redirect("Error.aspx");
+                }
             }
-            catch (Exception)
-            {
-
-                throw;
-            }*/
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();

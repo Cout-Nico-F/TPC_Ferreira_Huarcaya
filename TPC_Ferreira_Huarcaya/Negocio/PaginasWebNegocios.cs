@@ -78,5 +78,12 @@ namespace Negocio
                 }
             }
         }
+        public int Restaurar(Int16 id)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            int rowAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Habilitado="+1+"Where ID="+id);
+            conexion.Desconectar();
+            return rowAfectadas;
+        }
     }
 }
