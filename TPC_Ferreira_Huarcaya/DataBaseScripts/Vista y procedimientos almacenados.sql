@@ -60,7 +60,7 @@ Exec SP_PedidoPaginaWebPrediseniada
 */
 
 /*		Crear pedido pagina personalizada		*/
-Create procedure SP_PedidoPaginaWebPersonalizada(
+create procedure SP_PedidoPaginaWebPersonalizada(
 		@ID_Usuario smallint,
 		@ID_Estilo smallint,
 		@PrecioTotal int,
@@ -69,12 +69,10 @@ Create procedure SP_PedidoPaginaWebPersonalizada(
 as
 begin
 	begin try
-		begin transaction
 			Insert into PedidosWebPage (ID_Usuario,ID_Estilo,PrecioTotal,Comentarios,Fecha) values (@ID_Usuario,@ID_Estilo,@PrecioTotal,@Comentarios,getdate())
 			Declare @id_PedidoPersonalizada smallint
 			set @id_PedidoPersonalizada = @@IDENTITY
 			return @id_PedidoPersonalizada
-		commit transaction
 	end try
 	begin catch
 		Rollback transaction
@@ -82,8 +80,13 @@ begin
 	end catch
 end
 go
-/*		Prueba		*/
 
+/*		Prueba		*/
+/*Exec SP_PedidoPaginaWebPersonalizada
+	@ID_Usuario = 7,
+	@ID_Estilo = 1,
+	@PrecioTotal = 100,
+	@Comentarios = 'prueba'*/
 
 /*		Crear cuenta a nuevo Usuario			*/
 
