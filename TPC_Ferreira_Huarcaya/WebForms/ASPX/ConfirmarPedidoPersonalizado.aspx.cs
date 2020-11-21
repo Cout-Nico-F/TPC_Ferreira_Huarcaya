@@ -11,7 +11,7 @@ namespace WebForms.ASPX
 {
     public partial class ConfirmarPedidoPersonalizado : System.Web.UI.Page
     {
-        public PedidoPaginaPersonalizada Pedido { get; set; }
+        protected PedidoPaginaPersonalizada Pedido { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["pedidoPersonalizado"] == null)
@@ -19,6 +19,10 @@ namespace WebForms.ASPX
                 Response.Redirect("Error.aspx");
             }
             Pedido = (PedidoPaginaPersonalizada) Session["pedidoPersonalizado"];
+        }
+        protected void btn_Confirmar_Click()
+        {
+
         }
     }
 }
