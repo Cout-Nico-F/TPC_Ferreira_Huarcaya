@@ -16,7 +16,7 @@ namespace Modelo
 
         public int Precio { get; set; } // Precio final que se setea en base a los costos de funcionalidades y cantidad de paginas.
 
-        public Estilo Estilo { get; set; }
+        public Int16 ID_Estilo { get; set; }
 
         public List<Funcionalidad> Funcionalidades { get; set; }
 
