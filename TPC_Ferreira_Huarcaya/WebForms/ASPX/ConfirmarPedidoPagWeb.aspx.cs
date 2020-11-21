@@ -42,12 +42,9 @@ namespace WebForms.ASPX
             pedido.Id_WebPage = item.ID;
             Usuario user = (Usuario)Session["usersession"];
             pedido.Id_Cliente = user.ID; //Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
-            pedido.Fecha = DateTime.Now;
-
             PedidosWebPageNegocio pedidoNeg = new PedidosWebPageNegocio();
             pedidoNeg.AgregarPedido(pedido);
             
-
         }
     }
 }

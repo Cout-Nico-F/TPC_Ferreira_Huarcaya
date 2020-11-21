@@ -90,7 +90,7 @@ create table Paginas_X_PedidosWebPage (
 )
 	go
 create table PedidosPaginaPrediseniada (
-	ID smallint not null,
+	ID smallint identity(1,1),
 	ID_Usuario smallint not null,
 	ID_PaginaWeb smallint not null,
 	Precio int not null,

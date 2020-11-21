@@ -17,7 +17,5 @@ namespace Modelo
         public int Precio { get; set; }//el precio a la fecha que se hizo el pedido
 
         public Int16 Id_WebPage { get; set; }
-
-        public DateTime Fecha { get; set; }
     }
 }
