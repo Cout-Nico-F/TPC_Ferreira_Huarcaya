@@ -23,7 +23,7 @@ namespace WebForms.ASPX
         protected void btn_Confirmar_Click1(object sender, EventArgs e)
         {
             Pedido.Comentarios = txtBox_Comentarios.Text;
-            Usuario user = (Usuario)Session["usersession"];
+            Usuario user = (Usuario)Session["usersession"];//TODO:(USUARIOS) confirmar que este logeado un usuario.
             Pedido.Id_Cliente = user.ID;
             
         }

@@ -199,6 +199,8 @@
                 </div>                    
                 </div>
                
+                <asp:Button  ID="btn_Solicitar" Text="Solicitar!" runat="server" OnClick="btn_Solicitar_Click" />
+
                 <br />
                 <br />
                 <br />

@@ -259,7 +259,7 @@ namespace WebForms.ASPX
             }
         }
 
-        protected void btn_Solicitar_Click(object sender, EventArgs e)
+        protected void btn_Solicitar_Click(object sender, EventArgs e)//TODO: dar estilo al boton solicitar.
         {
             PedidoPaginaPersonalizada pedidoPersonalizado = new PedidoPaginaPersonalizada();
             pedidoPersonalizado.Funcionalidades = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
