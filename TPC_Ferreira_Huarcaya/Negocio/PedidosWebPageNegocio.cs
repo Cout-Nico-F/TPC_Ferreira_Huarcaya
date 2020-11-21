@@ -7,13 +7,13 @@ using Modelo;
 
 namespace Negocio
 {
-    class PedidosWebPageNegocio
+    public class PedidosWebPageNegocio
     {
-        int AgregarPedido(PedidoWebPage pedido)
+        public int AgregarPedido(PedidoWebPage pedido)
         {
-            //todavia no esta probada la string en sql, pero creo que esta correcta.
+            //falta convertir el datetime a DATE de sql server. (asi como esta ahora tira error, debe ser por la hora que trae datetime)
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PedidosPaginasPrediseniadas(Id_usuario, id_paginaweb, precio, fecha, comentarios) values(" + pedido.Id_Cliente + "," + pedido.Id_WebPage + "," + pedido.Precio + ",'" + pedido.Fecha + "','" + pedido.Comentarios + "')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PedidosPaginaPrediseniada(Id_usuario, id_paginaweb, precio, fecha, comentarios) values(" + pedido.Id_Cliente + "," + pedido.Id_WebPage + "," + pedido.Precio + ",'" + pedido.Fecha + "','" + pedido.Comentarios + "')");
             conexion.Desconectar();
             return rowsAfectadas;
         }

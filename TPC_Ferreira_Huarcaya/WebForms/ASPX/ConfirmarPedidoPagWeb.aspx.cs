@@ -40,8 +40,13 @@ namespace WebForms.ASPX
             pedido.Comentarios = txtBox_Comentarios.Text;
             pedido.Precio = item.Precio;
             pedido.Id_WebPage = item.ID;
-            //pedido.Id_Cliente = Convert.ToInt16(Session["Usuario"]); Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
-            pedido.Fecha = DateTime.Now; //falta comprobar que esto funcione como se debe.
+            Usuario user = (Usuario)Session["usersession"];
+            pedido.Id_Cliente = user.ID; //Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
+            pedido.Fecha = DateTime.Now;
+
+            PedidosWebPageNegocio pedidoNeg = new PedidosWebPageNegocio();
+            pedidoNeg.AgregarPedido(pedido);
+            
 
         }
     }
