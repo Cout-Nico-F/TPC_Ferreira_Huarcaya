@@ -16,7 +16,7 @@ namespace Negocio
         {
             using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
             {
-                using (SqlCommand cmd = new SqlCommand("SP_PedidoPaginaWebPrediseniada", sql))
+                using (SqlCommand cmd = new SqlCommand("SP_PedidoPaginaWebPersonalizada", sql))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@ID_Usuario",pedido.Id_Cliente));//pedido.Id_Cliente
