@@ -106,6 +106,20 @@ namespace WebForms.ASPX
             }
 
         }
+        protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
+            {
+                EstiloSeleccionado = (Estilo)Session["estiloSelec"];
+                EstiloNegocio estNeg = new EstiloNegocio();
+
+                var listaEstilo = estNeg.Listar();
+
+                Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
+                EstiloSeleccionado = listaEstilo.Find(x => id == x.Id);
+                Session["estiloSelec"] = EstiloSeleccionado;
+            }
+        }
 
         protected void bnt_Funcionalidad_Baja_Click(object sender, EventArgs e)
         {
@@ -139,20 +153,6 @@ namespace WebForms.ASPX
 
                 PaginaSeleccionada = listaPaginas.Find(x => id == x.ID);
             }
-        }
-
-        protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
-            {
-                EstiloNegocio estNeg = new EstiloNegocio();
-
-                var listaEstilo = estNeg.Listar();
-
-                Int16 id = Convert.ToInt16(ddl_Estilos.SelectedItem.Value);
-                EstiloSeleccionado = listaEstilo.Find(x => id == x.Id);
-            }
-
         }
 
         protected void btn_Pagina_Baja_Click(object sender, EventArgs e)
@@ -233,6 +233,10 @@ namespace WebForms.ASPX
             {
                 ListaPaginasAgregadas = new List<Pagina>();
             }
+            if (EstiloSeleccionado == null)
+            {
+                EstiloSeleccionado = new Estilo();
+            }
         }
 
         void Actualizar_listas()
@@ -257,6 +261,16 @@ namespace WebForms.ASPX
             {
                 ListaPaginasAgregadas = (List<Pagina>)Session["listaPaginasSelec"];
             }
+
+            //Estilo
+            if (Session["estiloSelec"] == null)
+            {
+                Session.Add("estiloSelec", EstiloSeleccionado);
+            }
+            else
+            {
+                EstiloSeleccionado = (Estilo)Session["estiloSelec"];
+            }
         }
 
         protected void btn_Solicitar_Click(object sender, EventArgs e)//TODO: dar estilo al boton solicitar.
@@ -264,7 +278,7 @@ namespace WebForms.ASPX
             PedidoPaginaPersonalizada pedidoPersonalizado = new PedidoPaginaPersonalizada();
             pedidoPersonalizado.Funcionalidades = (List<Funcionalidad>)Session["listaFuncionalidadesSelec"];
             pedidoPersonalizado.Paginas = (List<Pagina>)Session["listaPaginasSelec"];
-            pedidoPersonalizado.Estilo = EstiloSeleccionado;
+            pedidoPersonalizado.ID_Estilo = EstiloSeleccionado.Id;
             pedidoPersonalizado.Precio = CalcularPrecio();
             Session.Add("pedidoPersonalizado", pedidoPersonalizado);
             Response.Redirect( "ConfirmarPedidoPersonalizado.aspx" );
