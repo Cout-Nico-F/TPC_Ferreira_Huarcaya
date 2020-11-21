@@ -78,6 +78,7 @@
     <Content Include="ASPX\ConfirmarBajas\FuncionalidadBaja.aspx" />
     <Content Include="ASPX\ConfirmarBajas\PaginaBaja.aspx" />
     <Content Include="ASPX\ConfirmarPedidoPagWeb.aspx" />
+    <Content Include="ASPX\ConfirmarPedidoPersonalizado.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
     <Content Include="ASPX\EditarDatosPersonales.aspx" />
     <Content Include="ASPX\Error.aspx" />
@@ -1955,6 +1956,13 @@
     </Compile>
     <Compile Include="ASPX\ConfirmarPedidoPagWeb.aspx.designer.cs">
       <DependentUpon>ConfirmarPedidoPagWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\ConfirmarPedidoPersonalizado.aspx.cs">
+      <DependentUpon>ConfirmarPedidoPersonalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\ConfirmarPedidoPersonalizado.aspx.designer.cs">
+      <DependentUpon>ConfirmarPedidoPersonalizado.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\CrearCuenta.aspx.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>

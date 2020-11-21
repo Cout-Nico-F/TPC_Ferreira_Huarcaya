@@ -179,6 +179,10 @@
                     </table>
                     <%}%>
                 </div>
+                    
+                </div>
+                <div>
+                    <asp:Button Text="Solicitar!" runat="server" ID="btn_Solicitar" onclick="btn_Solicitar_Click" />
                 </div>
               
                
