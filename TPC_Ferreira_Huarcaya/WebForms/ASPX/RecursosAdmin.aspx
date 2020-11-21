@@ -71,9 +71,7 @@
                         <th scope="col">Descrip. del Estilo</th>
                         <th scope="col">Cant. de Paginas</th>
                         <th scope="col">Cant. de Func.</th>
-                        <th scope="col" class="tam_txt">
-                            <asp:TextBox runat="server" CssClass="txt_table" />
-                            <asp:Button Text="Consultar" runat="server" CssClass="btn btn-outline-primary" ID="btn_Consulta" OnClick="btn_Consulta_Click" /></th>
+                        <th scope="col" class="tam_txt"> <asp:TextBox runat="server" CssClass="txt_table" /><asp:Button Text="Consultar" runat="server" CssClass="btn btn-outline-primary" ID="btn_Consulta" OnClick="btn_Consulta_Click" /></th>
                     </tr>
                 </thead>
                 <tbody>

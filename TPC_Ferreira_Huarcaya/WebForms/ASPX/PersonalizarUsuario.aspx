@@ -12,9 +12,9 @@
     <!-- Estilos CSS -->
     <link href="../CSS/Estilos_PersonalizarUsuario.css" rel="stylesheet" />
     <!-- Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Pacifico&display=swap" rel="stylesheet" />
 
-    <title>Paginas</title>
+    <title>Personalizacion</title>
 
 </head>
 <body>
@@ -55,16 +55,24 @@
             background-color:antiquewhite;
         }
          body div .fondo2 {
-            background-color:grey;
+            background-color:lightcyan;
         }
           body div .fondo3 {
-            background-color:red
+          background-color:white;
         }
         .container-estilos{
              min-height:100vh;
         }
         .container-funcionalidades{
             min-height:100vh;
+        }
+        h1{
+            font-family: 'Pacifico', cursive;
+            font-size:55px;
+        }
+        p{
+            font-family: 'Architects Daughter', cursive;
+            font-size:30px;
         }
 
     </style>
@@ -82,7 +90,7 @@
                         <h1>Paginas</h1>
                         <p>Elija las paginas que conformaran su Web</p>
                         <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
-                        <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
+                        <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" CssClass="btn btn-info" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
                         <%if (PaginaSeleccionada != null)
                             {%>
                         <br />
@@ -114,12 +122,15 @@
                                     <%}%>
                                 </tbody>
                             </table>
+                              <div>
+                                  <a href="#pag2" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Seguir</a>
+                              </div>
                         </div>
                     </div>
                 </div>
                 </div>
                
-                <div class="fondo2">
+                <div class="fondo2" id="pag2">
                      <div class="container container-estilos" >
                     <div style="text-align: center">
                          <br />
@@ -128,18 +139,22 @@
                         <h1>Estilo</h1>
                         <p>Elija el estilo que quiera que tenga su web</p>
                         <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
-
+                            
                         <%if (EstiloSeleccionado != null)
                             {%>
                         <br />
                         <br />
                         <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 50%; width: 80%;" />
                         <% }%>
+                        
                     </div>
+                           <div>
+                             <a href="#pag3" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Seguir</a>
+                         </div>
                 </div>
                 </div>
                
-                <div class="fondo3">
+                <div class="fondo3" id="pag3">
                       <div class="container container-funcionalidades">
                     <div style="text-align: center">
                         <br />
@@ -148,7 +163,7 @@
                         <h1>Funcionalidades</h1>
                         <p>Elija una o mas funcionalidades para su Web</p>
                         <asp:DropDownList runat="server" ID="ddl_Funcionalidades" CssClass="btn btn-dark"></asp:DropDownList>
-                        <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
+                        <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" CssClass="btn btn-info" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
                     </div>
                           <br />
                           <br />
@@ -178,7 +193,11 @@
 
                     </table>
                     <%}%>
+                      <div>
+                        <a href="ConfirmarPedidoPagWeb.aspx" class="btn btn-info" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Paso Final</a>
+                    </div>
                 </div>
+                  
                 </div>
               
                
