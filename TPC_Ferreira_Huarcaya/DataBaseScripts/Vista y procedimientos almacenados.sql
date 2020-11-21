@@ -50,7 +50,6 @@ begin
 	end catch
 end
 go
-Select * From PedidosPaginaPrediseniada
 /* Datos de Prueba */
 /*
 Exec SP_PedidoPaginaWebPrediseniada
