@@ -170,7 +170,7 @@
                                 <h5 class="card-title"><%=item.Titulo %></h5>
                                 <p class="card-text"><%=item.Descripcion %></p>
                                 <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
-                                <a href="CarritoCompra.aspx?idPagina=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                                <a href="#>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
                             </div>
                         </div>
                     </div>
