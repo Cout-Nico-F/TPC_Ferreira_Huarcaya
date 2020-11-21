@@ -36,15 +36,19 @@ namespace WebForms.ASPX
         protected void btn_Confirmar_Click(object sender, EventArgs e)
         {
             PedidoWebPage pedido = new PedidoWebPage();
-            
+            PedidosWebPageNegocio pedidoNeg = new PedidosWebPageNegocio();
+            Usuario user = (Usuario)Session["usersession"];
+
             pedido.Comentarios = txtBox_Comentarios.Text;
             pedido.Precio = item.Precio;
             pedido.Id_WebPage = item.ID;
-            Usuario user = (Usuario)Session["usersession"];
-            pedido.Id_Cliente = user.ID; //Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
-            PedidosWebPageNegocio pedidoNeg = new PedidosWebPageNegocio();
+            //pedido.Id_Cliente = user.ID; //Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
+           
             pedidoNeg.AgregarPedido(pedido);
-            
+
+            Response.Redirect("Catalogo.aspx");
         }
-    }
+    }//TODO: cuando estemos por hacer la parte de login y crear cuenta una vez que este terminada podemos ahora si hacer las validaciones que necesitamos para terminar esto
+    //TODO: esta harcodeado el id_Usuario 6
+    //TODO: necesitamos la forma de hacer modales o ventanas emergentes para que se haga mas ameno la aplicacion
 }
