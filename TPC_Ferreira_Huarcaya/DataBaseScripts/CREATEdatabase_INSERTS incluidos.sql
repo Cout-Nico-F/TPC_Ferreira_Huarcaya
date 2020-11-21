@@ -44,6 +44,7 @@ create table PedidosWebPage (
 	ID_Usuario smallint not null,
 	ID_Estilo smallint not null,
 	PrecioTotal int not null,
+	Comentarios varchar(200) null,
 	Fecha date not null
 )
 	go

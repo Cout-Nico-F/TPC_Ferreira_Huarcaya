@@ -59,6 +59,29 @@ Exec SP_PedidoPaginaWebPrediseniada
 	@Comentarios = 'Bonita Pagina Web'
 */
 
+/*		Crear pedido pagina personalizada		*/
+Create procedure SP_PedidoPaginaWebPersonalizada(
+		@ID_Usuario smallint,
+		@ID_Estilo smallint,
+		@PrecioTotal int,
+		@Comentarios varchar(200)
+)
+as
+begin
+	begin try
+		begin transaction
+			Insert into PedidosWebPage (ID_Usuario,ID_Estilo,PrecioTotal,Comentarios,Fecha) values (@ID_Usuario,@ID_Estilo,@PrecioTotal,@Comentarios,getdate())
+		commit transaction
+	end try
+	begin catch
+		Rollback transaction
+		select 2
+	end catch
+end
+go
+/*		Prueba		*/
+
+
 /*		Crear cuenta a nuevo Usuario			*/
 
 create procedure SP_CrearUsuario( 
@@ -102,7 +125,7 @@ end
 go
 /*		Datos de Prueba para SP_CrearUsuario		*/
 
-Exec SP_CrearUsuario
+/*Exec SP_CrearUsuario
 	@NombreUsuario = 'PruebaNombre01',
 	@Contrasenia = 'contra',
 	@ID_Nivel = 1,
@@ -113,7 +136,7 @@ Exec SP_CrearUsuario
 	@FechaNacimiento = '05/01/2020', 
 	@EmailRecuperacion = 'prueba@hotmail.com'
 
-go
+go*/
  /*Procedimiento usado para editar los datos personales de un usuario*/
 create procedure SP_EditarDatosPersonales(
 		@id_Usuario smallint,
