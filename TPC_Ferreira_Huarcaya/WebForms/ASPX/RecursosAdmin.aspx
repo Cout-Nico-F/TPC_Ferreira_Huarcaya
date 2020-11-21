@@ -137,6 +137,7 @@
         </div>
 
         <section id="facilities">
+            <h2>Paginas Prearmadas deshabilitadas: Utilice el boton de recliclaje para volver a habilitarlas.</h2>
             <div class="container">
                 <div class="row">
                     <%
