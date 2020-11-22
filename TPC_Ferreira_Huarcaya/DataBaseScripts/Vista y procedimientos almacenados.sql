@@ -68,6 +68,7 @@ create procedure SP_PedidoPaginaWebPersonalizada(
 )
 as
 begin
+	SET XACT_ABORT ON
 	begin try
 			Insert into PedidosWebPage (ID_Usuario,ID_Estilo,PrecioTotal,Comentarios,Fecha) values (@ID_Usuario,@ID_Estilo,@PrecioTotal,@Comentarios,getdate())
 			Declare @id_PedidoPersonalizada smallint
