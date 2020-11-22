@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Net.Mail;
+using System.Net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -46,7 +48,32 @@ namespace WebForms.ASPX
            
             pedidoNeg.AgregarPedido(pedido);
 
+            EnviarMailPrueba(pedido,user);
+
             Response.Redirect("Catalogo.aspx");
+        }// no olvidarme de hacer que si o si tenga que logearse si no no va a andar porque user va a ser null
+        protected void EnviarMailPrueba(PedidoWebPage pedido,Usuario user)
+        {
+            string body = "<body>" + 
+            "<h1>"+pedido.Comentarios+"</h1>" + 
+            "<h1>"+pedido.Precio+"</h1>" +
+            "<h1>" + pedido.Id_WebPage + "</h1>" + 
+            "</body>";
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com",587);
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
+
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("webform.proyecto01@gmail.com","Pedido de Pagina Web");
+            mail.To.Add(new MailAddress("AlonsoHS20@hotmail.com"));
+            mail.Subject = "Tu factura electronica";
+            mail.IsBodyHtml = true;
+            mail.Body = body;
+
+            smtp.Send(mail);
         }
     }//TODO: cuando estemos por hacer la parte de login y crear cuenta una vez que este terminada podemos ahora si hacer las validaciones que necesitamos para terminar esto
     //TODO: esta harcodeado el id_Usuario 6
