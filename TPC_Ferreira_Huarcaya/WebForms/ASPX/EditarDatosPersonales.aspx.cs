@@ -12,7 +12,6 @@ namespace WebForms.ASPX
     public partial class EditarDatosPersonales : System.Web.UI.Page
     {
         public Usuario Usuario { get; set; }
-        public Int16 idUsuario; 
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = (Usuario)Session["usersession"];
@@ -27,7 +26,7 @@ namespace WebForms.ASPX
 
                         dat = edNeg.TraerDatos(Usuario.ID); //esta mal la conexion a la DB sqlexception must declare scalar @id_Usuario en command = executeNonQuery();
 
-                        idUsuario = Usuario.ID; //guardo el id de la session en una variable
+                        //idUsuario = Usuario.ID; //guardo el id de la session en una variable , para que lo queria guardar aca???
 
                         //Muestra en cada textbox los datos que encontro del usuario
 
@@ -76,7 +75,7 @@ namespace WebForms.ASPX
                 datos.EmailRecuperacion = txtEmailRecuperacion.Text;
                 usu.NombreUsuario = txtNombreUsuario.Text;
                 usu.Contrasenia = txtContrasenia.Text;
-                usu.ID = idUsuario; //le envio el id guardo en el page load
+                usu.ID = Usuario.ID; 
 
 
                 pagNeg.ActualizarDatos(usu, datos);
