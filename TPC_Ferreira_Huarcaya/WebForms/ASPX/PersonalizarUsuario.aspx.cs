@@ -286,7 +286,7 @@ namespace WebForms.ASPX
 
         int CalcularPrecio()
         {
-            int precio = 0;
+            int precio = 7000;//precio base. tambien necesitamos poder setear este valor desde recursosAdmin
 
             foreach (var item in (List<Funcionalidad>)Session["listaFuncionalidadesSelec"])
             {

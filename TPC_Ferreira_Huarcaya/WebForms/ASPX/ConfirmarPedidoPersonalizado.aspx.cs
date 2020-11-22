@@ -42,7 +42,7 @@ namespace WebForms.ASPX
 
             EnviarMailPrueba( dat); //si pedido es una property no hace falta que lo envie como un parametro
 
-            Response.Redirect("Catalogo.aspx");
+            Response.Redirect("PedidoExitoso.aspx");
             //TODO: Ahora en caso de que no inicies sesion en principio no te dejaria confirmar el pedido
             //TODO: Agregue una properti de usuario para poder manejar el usuario en todo el negocio Maxi lo usaba asi
             //TODO: Necesitamos una ventana emergente si o si
