@@ -40,6 +40,7 @@ namespace WebForms.ASPX
                 {
                     Session.Add("usersession", Usuario);
                     Response.Redirect("Catalogo.aspx");//se podra usar el javascript:back aca? porque nos redirecciona a catalogo y no es correcto
+                    //con un back de javascript tendriamos el mismo problema porque lo que queremos es que siga, como cuando solicitamos una pagina y no estamos logeado
                 }
                 else
                 {
