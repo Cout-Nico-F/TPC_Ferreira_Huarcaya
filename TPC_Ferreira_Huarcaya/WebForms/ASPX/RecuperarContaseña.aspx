@@ -16,6 +16,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:TextBox runat="server" placeholder="Ingrese su correo electronico" ID="txt_Recuperar" />  
+            <asp:Button Text="Recuperar" runat="server" ID="btn_Recuperar" OnClick="btn_Recuperar_Click"/>
+            <asp:Label Text="" runat="server" ID="lbl_Recuperar"/>
         </div>
     </form>
 </body>

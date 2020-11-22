@@ -71,7 +71,7 @@
                                 <a href="CrearCuenta.aspx">Crear cuenta</a>
                                 <br />
                                 <label>Olvido su contraseña</label>
-                                <a href="RecuperarContraseña.aspx">Recuperar contraseña</a>
+                                <a href="RecuperarContaseña.aspx">Recuperar contraseña</a>
                             </div>
                         </div>
                     </div>
