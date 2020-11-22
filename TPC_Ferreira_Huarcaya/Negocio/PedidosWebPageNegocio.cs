@@ -19,7 +19,7 @@ namespace Negocio
                 using (SqlCommand cmd = new SqlCommand("SP_PedidoPaginaWebPrediseniada", sql))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@ID_Usuario",6));//pedido.Id_Cliente
+                    cmd.Parameters.Add(new SqlParameter("@ID_Usuario",pedido.Id_Cliente));//pedido.Id_Cliente
                     cmd.Parameters.Add(new SqlParameter("@ID_PaginaWeb", pedido.Id_WebPage));
                     cmd.Parameters.Add(new SqlParameter("@Precio", pedido.Precio));
                     cmd.Parameters.Add(new SqlParameter("@Comentarios", pedido.Comentarios));

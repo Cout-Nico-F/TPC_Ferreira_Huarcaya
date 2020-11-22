@@ -15,7 +15,7 @@ namespace Negocio
         { 
 
             ConexionMSSQL conexion = new ConexionMSSQL();
-            var lectura = conexion.Consulta_Rapida("Select Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Email_Recuperacion Fron Usuarios Where ID_Usuario=" + id+"");
+            var lectura = conexion.Consulta_Rapida("Select Nombre_Y_Apellido,Telefono_Movil,Email,Telefono_Fijo,Email_Recuperacion From Datos_Personales Where ID_Usuario=" + id+"");
 
 
             lectura.Read();
@@ -27,8 +27,6 @@ namespace Negocio
                 aux.EmailRecuperacion = lectura.GetString(4);
             return aux;
 
-           
-               
         }
     }
 }

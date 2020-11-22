@@ -16,9 +16,15 @@ namespace WebForms.ASPX
         public PaginaWeb item { get; set; }
 
         PaginasWebNegocios pNeg;
+        public Usuario Usuario { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario = (Usuario)Session["usersession"];
+            if(Usuario == null)
+            {
+                Response.Redirect("InicioSesion.aspx");
+            }
             if (Request.QueryString["idPagina"] == null)
             {
                 Response.Redirect("Home.aspx");//solo se puede entrar a esta pagina llegando con una id por url.
@@ -39,22 +45,25 @@ namespace WebForms.ASPX
         {
             PedidoWebPage pedido = new PedidoWebPage();
             PedidosWebPageNegocio pedidoNeg = new PedidosWebPageNegocio();
-            Usuario user = (Usuario)Session["usersession"];
+            DatosPersonalesNegocios datNeg = new DatosPersonalesNegocios();
 
             pedido.Comentarios = txtBox_Comentarios.Text;
             pedido.Precio = item.Precio;
             pedido.Id_WebPage = item.ID;
-            //pedido.Id_Cliente = user.ID; //Dejo comentado esta parte hasta que este implementado el sistema de login y lo retoquemos
-           
+            pedido.Id_Cliente = Usuario.ID;
+
+            DatosPersonales dat = datNeg.TraerDatos(Usuario.ID);//esto podria ir en el load para no tener tanto codigo aca podria ir en el else de Usuario == null
+
             pedidoNeg.AgregarPedido(pedido);
 
-            EnviarMailPrueba(pedido,user);
+            EnviarMailPrueba(pedido,dat);
 
             Response.Redirect("Catalogo.aspx");
-        }// no olvidarme de hacer que si o si tenga que logearse si no no va a andar porque user va a ser null
-        protected void EnviarMailPrueba(PedidoWebPage pedido,Usuario user)
+        }
+        protected void EnviarMailPrueba(PedidoWebPage pedido,DatosPersonales dat)
         {
             string body = "<body>" + 
+            "<h1>Hola "+dat.NombreApellido+"</h1>" + 
             "<h1>"+pedido.Comentarios+"</h1>" + 
             "<h1>"+pedido.Precio+"</h1>" +
             "<h1>" + pedido.Id_WebPage + "</h1>" + 
@@ -68,14 +77,16 @@ namespace WebForms.ASPX
 
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("webform.proyecto01@gmail.com","Pedido de Pagina Web");
-            mail.To.Add(new MailAddress("AlonsoHS20@hotmail.com"));
+            mail.To.Add(new MailAddress(dat.Email));
             mail.Subject = "Tu factura electronica";
             mail.IsBodyHtml = true;
             mail.Body = body;
 
             smtp.Send(mail);
         }
-    }//TODO: cuando estemos por hacer la parte de login y crear cuenta una vez que este terminada podemos ahora si hacer las validaciones que necesitamos para terminar esto
-    //TODO: esta harcodeado el id_Usuario 6
+    }
+    //TODO: cuando estemos por hacer la parte de login y crear cuenta una vez que este terminada podemos ahora si hacer las validaciones que necesitamos para terminar esto
+    //TODO: esta harcodeado el id_Usuario 6 (ya no)
     //TODO: necesitamos la forma de hacer modales o ventanas emergentes para que se haga mas ameno la aplicacion
+    //TODO: Mejorar la estetica de la factura 
 }
