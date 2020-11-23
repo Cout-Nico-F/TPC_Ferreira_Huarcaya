@@ -18,5 +18,7 @@ namespace Modelo
         public Int16 Id_Acceso { get; set; }
         public string Descripcion { get; set; }
         public string Url_Imagen { get; set; }
+
+        public bool Habilitado { get; set; }
     }
 }

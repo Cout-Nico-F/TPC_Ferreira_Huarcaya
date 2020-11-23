@@ -78,52 +78,51 @@
                  <a href="#pag5" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
             </div>
         </div>
-
+       
         <div class="container-pag" id="pag2">
-            <h1 style="text-align: center;">Vista Lista de Pedidos</h1>
             <div class="table-responsive-md ">
+                 <br />
+                 <br />
+                <br />
+                 <h1 style="text-align: center;">Lista de Usuarios Registrados</h1>
                 <table class="table table-hover table-dark ">
                     <thead>
                         <tr>
-                            <th scope="col" class="tam-lista">Fecha Pedido</th>
-                            <th scope="col" class="tam-lista">ID  Pedido</th>
-                            <th scope="col" class="tam-lista">ID Usuario</th>
-                            <th scope="col">Descrip. del Estilo</th>
-                            <th scope="col">Cant. de Paginas</th>
-                            <th scope="col">Cant. de Func.</th>
-                            <th scope="col" class="tam_txt">
-                                <asp:TextBox runat="server" CssClass="txt_table" /><asp:Button Text="Consultar" runat="server" CssClass="btn btn-outline-primary" ID="btn_Consulta" OnClick="btn_Consulta_Click" /></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre Usuario</th>
+                            <th scope="col">Contrasenia</th>
+                            <th scope="col">ID Nivel</th>
+                            <th scope="col">Habilitado</th>
+                            <th scope="col">Habilitar o Inhabilitar Usuario</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <%if (Usuarios != null)
+                            { %>
+                        <%foreach (var item in Usuarios)
+                         {%>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><%=item.ID %></td>
+                            <td><%=item.NombreUsuario %></td>
+                            <td><%=item.Contrasenia %></td>
+                            <td><%=item.Id_Acceso %></td>
+                            <%if (item.Habilitado) //para que no aparezca 1 o 0 o true o false es mejor un si o no
+                                {%>
+                                 <td>Si</td>
+                            <%} %>
+                            <%else
+                                {%>
+                                 <td>No</td>
+                            <%} %>
+                           <td style="text-align:center;"><a href="#"><i class="fas fa-ban"></i></a></td>
                         </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <%} %>
+
+                        <%} %>
+                       
                     </tbody>
                 </table>
+                <asp:Button Text="Actualizar Usuarios" runat="server" ID="btn_Usuarios" OnClick="btn_Usuarios_Click"/>
                   <div>
                      <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
                   </div>

@@ -14,6 +14,7 @@ namespace WebForms.ASPX
         public Usuario Usuario { get; set; }
         public List<PaginaWeb> ListaPaginasWeb { get; set; }
         public List<PedidoWebPage> ListaPedidosPrediseniada { get; set; }
+        public List<Usuario> Usuarios { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
            if(Request.QueryString["idPaginaWeb"] != null)
@@ -61,6 +62,13 @@ namespace WebForms.ASPX
         protected void btn_Actualizar_Personalizada_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btn_Usuarios_Click(object sender, EventArgs e)
+        {
+            UsuarioNegocio usuNeg = new UsuarioNegocio();
+
+            Usuarios = usuNeg.listaDeUsuarios(); //trae todos los usuario y los listo en la tabla
         }
     }
 }
