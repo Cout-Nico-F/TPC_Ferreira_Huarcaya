@@ -48,7 +48,6 @@
             </div>
             <div>
                 <div class="boton-nav-user">
-
                     <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i></a>
                     <a href="EditarDatosPersonales.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-info-circle"></i></a>
                     <a href="RecursosAdmin.aspx" style="color: white;"><i class="fas fa-question"></i></a>
@@ -58,129 +57,219 @@
     </nav>
 
     <form id="form1" runat="server">
-        <br />
-        <br />
-        <h1 style="text-align: center;">Vista Lista de Pedidos</h1>
-        <div class="table-responsive-md">
-            <table class="table table-hover table-dark ">
-                <thead>
-                    <tr>
-                        <th scope="col" class="tam-lista">Fecha Pedido</th>
-                        <th scope="col" class="tam-lista">ID  Pedido</th>
-                        <th scope="col" class="tam-lista">ID Usuario</th>
-                        <th scope="col">Descrip. del Estilo</th>
-                        <th scope="col">Cant. de Paginas</th>
-                        <th scope="col">Cant. de Func.</th>
-                        <th scope="col" class="tam_txt"> <asp:TextBox runat="server" CssClass="txt_table" /><asp:Button Text="Consultar" runat="server" CssClass="btn btn-outline-primary" ID="btn_Consulta" OnClick="btn_Consulta_Click" /></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+        
+        <div class="container-pag">
+            <div class="padre">
+                  <a href="#pag2" class="btn btn-outline-secondary hijo">Ir a el listado de Usuarios</a> 
+            </div> 
+            <div class="padre">
+                 <a href="#pag2" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Prediseñadas</a> 
+            </div>
+             <div class="padre">
+                 <a href="#pag4" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
+            </div>
+            <div class="padre">
+                 <a href="#pag4" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
+            </div>
         </div>
 
+       
 
-        <div class="container">
-            <div class="container d-flex">
-                <h1>Lista de Pedidos </h1>
-                <br />
 
+        <div class="container-pag" id="pag1">
+            <h1 style="text-align: center;">Vista Lista de Pedidos</h1>
+            <div class="table-responsive-md ">
+                <table class="table table-hover table-dark ">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="tam-lista">Fecha Pedido</th>
+                            <th scope="col" class="tam-lista">ID  Pedido</th>
+                            <th scope="col" class="tam-lista">ID Usuario</th>
+                            <th scope="col">Descrip. del Estilo</th>
+                            <th scope="col">Cant. de Paginas</th>
+                            <th scope="col">Cant. de Func.</th>
+                            <th scope="col" class="tam_txt">
+                                <asp:TextBox runat="server" CssClass="txt_table" /><asp:Button Text="Consultar" runat="server" CssClass="btn btn-outline-primary" ID="btn_Consulta" OnClick="btn_Consulta_Click" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                  <div>
+                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+                  </div>
             </div>
-            <table class="table table-fluid" id="myTable">
-                <thead>
-                    <tr>
-                        <th>Fecha Pedido</th>
-                        <th>ID Pedido</th>
-                        <th>ID Usuario</th>
-                        <th>Descripcion Estilo</th>
-                        <th>Cantidad Paginas</th>
-                        <th>Cantidad Funcionalidades</th>
-                        <th>
-                            <asp:TextBox runat="server" />
-                        </th>
-                        <!--Si pongo un boton se hace aun mas chico tenemos que usar el txtchanged -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>El Pepe</td>
-                        <td>askjdas</td>
-                    </tr>
-                    <tr>
-                        <td>Ete Seech</td>
-                        <td>asdasd</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
-        <section id="facilities">
-            <hr />
-            <div class="jumbotron">
-                <h2 style="text-align: center;">Paginas Prearmadas deshabilitadas: </h2>
-                <h4 style="text-align: center;">Utilice el boton <i class="fas fa-recycle"></i> para volver a habilitarlas ó el boton <i class="fas fa-tools"></i> para editar y habilitar.</h4>
-            </div>
-
+        <div class="container-pag" id="pag2">
+              <div class="jumbotron">
+                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
+                    <h4 style="text-align: center;">Utilice el boton"</h4>
+                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
+                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
+                </div>
             <div class="container">
-                <div class="row">
-                    <%
-                        foreach (Modelo.PaginaWeb item in ListaPaginasWeb)
-                        {
-                            if (!(item.Habilitado))
-                            {%>
-                    <div class="col md-5 col-sm-4">
+                <table class="table table-fluid" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>ID Usuario</th>
+                            <th>ID Pagina Web</th>
+                            <th>Precio</th>
+                            <th>Fecha de Pedido</th>
+                            <th>Comentario</th>
+                            <!--Si pongo un boton se hace aun mas chico tenemos que usar el txtchanged -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if (ListaPedidosPrediseniada != null)
+                                {%>
+                        <%foreach (var item in ListaPedidosPrediseniada)
+                                {%>
+                        <tr>
+                            <td><%=item.Id %></td>
+                            <td><%=item.Id_Cliente %></td>
+                            <td><%=item.Id_WebPage %></td>
+                            <td><%=item.Precio %></td>
+                            <td><%=item.FechaPedido %></td>
+                            <td><%=item.Comentarios %></td>
+                        </tr>
+                        <%} %>
+                        <%} %>
+                    </tbody>
+                </table>
+                 <asp:Button Text="" runat="server" ID="btn_Actualizar" OnClick="btn_Actualizar_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button>
+            </div>
+             <div>
+                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+                  </div>
+        </div>
 
-                        <div class="container">
+          <div class="container-pag" id="pag3">
+              <div class="jumbotron">
+                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizadas </h2>
+                    <h4 style="text-align: center;">Utilice el boton"</h4>
+                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
+                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
+                </div>
+            <div class="container">
+                <table class="table table-fluid" id="myTable1">
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>ID Usuario</th>
+                            <th>ID Estilo</th>
+                            <th>PrecioTotal</th>
+                            <th>Comentarios</th>
+                            <th>Cant.Funcionalidades</th>
+                            <th>Cant.Paginas</th>
+                            <th>Fecha</th>
+                            <!--Si pongo un boton se hace aun mas chico tenemos que usar el txtchanged -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                 <asp:Button Text="" runat="server" ID="btn_Actualizar_Personalizada" OnClick="btn_Actualizar_Personalizada_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button> 
+            </div>
+               <div>
+                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+                  </div>
+        </div>
 
-                            <a href="ModificarPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-tools"></i></a>
-                            <a href="RecursosAdmin.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-recycle"></i></a>
+        <div class="container-pag" id="pag4">
+            <section id="facilities">
+                <hr />
+                <div class="jumbotron">
+                    <h2 style="text-align: center;">Paginas Prearmadas deshabilitadas: </h2>
+                    <h4 style="text-align: center;">Utilice el boton <i class="fas fa-recycle"></i>para volver a habilitarlas ó el boton <i class="fas fa-tools"></i>para editar y habilitar.</h4>
+                </div>
 
-                        </div>
-                        <div class="card text-center" style="margin-bottom: 40px;">
-                            <img src="<%=item.Url_Imagen %>" class="card-img-top" alt="No se encontro la imagen" />
-                            <div class="card-body">
-                                <h5 class="card-title"><%=item.Titulo %></h5>
-                                <p class="card-text"><%=item.Descripcion %></p>
-                                <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
-                                <a href="#>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                <div class="container">
+                    <div class="row">
+                        <%
+                            foreach (Modelo.PaginaWeb item in ListaPaginasWeb)
+                            {
+                                if (!(item.Habilitado))
+                                {%>
+                        <div class="col md-5 col-sm-4">
+
+                            <div class="container">
+
+                                <a href="ModificarPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-tools"></i></a>
+                                <a href="RecursosAdmin.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-recycle"></i></a>
+
+                            </div>
+                            <div class="card text-center" style="margin-bottom: 40px;">
+                                <img src="<%=item.Url_Imagen %>" class="card-img-top" alt="No se encontro la imagen" />
+                                <div class="card-body">
+                                    <h5 class="card-title"><%=item.Titulo %></h5>
+                                    <p class="card-text"><%=item.Descripcion %></p>
+                                    <a href="<%=item.Url_PaginaWeb %>" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
+                                    <a href="#>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                                </div>
                             </div>
                         </div>
+                        <%}
+                            }%>
                     </div>
-                    <%}
-                        }%>
                 </div>
-            </div>
-        </section>
+            </section>
+             <div>
+                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+                  </div>
+        </div>
 
         <script>
+            window.onload = function () {
+                var pos = window.name || 10;
+                window.scrollTo(10, pos);
+            }
+            window.onunload = function () {
+                window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
+            }
+
             $(document).ready(function () {
                 $('#myTable').DataTable();
+            });
+            $(document).ready(function () {
+                $('#myTable1').DataTable();
             });
         </script>
     </form>

@@ -28,5 +28,28 @@ namespace Negocio
                 }
             }
         }
+        public List<PedidoWebPage> TraerPedidos()
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+
+            List<PedidoWebPage> listaPedidos = new List<PedidoWebPage>();
+
+            var lectura = conexion.Consulta_Rapida("Select * From PedidosPaginaPrediseniada");
+
+            while (lectura.Read())
+            {
+                PedidoWebPage aux = new PedidoWebPage();
+                aux.Id = lectura.GetInt16(0);
+                aux.Id_Cliente = lectura.GetInt16(1);
+                aux.Id_WebPage = lectura.GetInt16(2);
+                aux.Precio = lectura.GetInt32(3);
+                aux.FechaPedido = lectura.GetDateTime(4);
+                aux.Comentarios = lectura.GetString(5);
+
+                listaPedidos.Add(aux);
+            }
+            conexion.Desconectar();
+            return listaPedidos;
+        }
     }
 }

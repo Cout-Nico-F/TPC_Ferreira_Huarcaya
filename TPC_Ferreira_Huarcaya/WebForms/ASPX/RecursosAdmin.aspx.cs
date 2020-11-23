@@ -13,6 +13,7 @@ namespace WebForms.ASPX
     {
         public Usuario Usuario { get; set; }
         public List<PaginaWeb> ListaPaginasWeb { get; set; }
+        public List<PedidoWebPage> ListaPedidosPrediseniada { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
            if(Request.QueryString["idPaginaWeb"] != null)
@@ -45,6 +46,19 @@ namespace WebForms.ASPX
         }
 
         protected void btn_Consulta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            PedidosWebPageNegocio pedWeb = new PedidosWebPageNegocio();
+
+            ListaPedidosPrediseniada = pedWeb.TraerPedidos();
+
+        }
+
+        protected void btn_Actualizar_Personalizada_Click(object sender, EventArgs e)
         {
 
         }
