@@ -27,9 +27,6 @@
 </head>
 <body>
 
-    <style>
-        
-    </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
             <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color: transparent">
@@ -81,9 +78,6 @@
                  <a href="#pag5" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
             </div>
         </div>
-
-       
-
 
         <div class="container-pag" id="pag2">
             <h1 style="text-align: center;">Vista Lista de Pedidos</h1>

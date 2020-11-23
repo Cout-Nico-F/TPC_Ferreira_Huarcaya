@@ -44,6 +44,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DatosPersonales.cs" />
+    <Compile Include="EmailNegocios.cs" />
     <Compile Include="Estilo.cs" />
     <Compile Include="Funcionalidad.cs" />
     <Compile Include="InfoWeb.cs" />

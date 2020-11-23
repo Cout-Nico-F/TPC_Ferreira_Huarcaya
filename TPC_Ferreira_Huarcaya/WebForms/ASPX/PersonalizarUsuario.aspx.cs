@@ -46,7 +46,6 @@ namespace WebForms.ASPX
             DropdownsNegocio estNeg = new DropdownsNegocio();
 
             //Paginas
-
             ddl_Paginas.DataSource = estNeg.ConsultaDataSet("Select * From Paginas where Habilitado = 1");
             ddl_Paginas.DataTextField = "Descripcion";
             ddl_Paginas.DataValueField = "ID";
@@ -106,6 +105,7 @@ namespace WebForms.ASPX
             }
 
         }
+
         protected void ddl_Estilos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt16(ddl_Estilos.SelectedItem.Value) != 0)
@@ -128,7 +128,6 @@ namespace WebForms.ASPX
                 string id = ddl_Funcionalidades.SelectedItem.Value;
                 Response.Redirect("/ASPX/ConfirmarBajas/FuncionalidadBaja.aspx?idFuncionalidad=" + id);
             }
-
         }
 
         protected void btn_Estilo_Baja_Click(object sender, EventArgs e)
@@ -138,7 +137,6 @@ namespace WebForms.ASPX
                 string id = ddl_Estilos.SelectedItem.Value;
                 Response.Redirect("/ASPX/ConfirmarBajas/EstiloBaja.aspx?idEstilo=" + id);
             }
-
         }
 
         protected void ddl_Paginas_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,7 +168,6 @@ namespace WebForms.ASPX
             {
                 Response.Redirect("AltasModificaciones/PaginasAM.aspx?idPagina=" + ddl_Paginas.SelectedItem.Value);
             }
-          
         }
 
         protected void btn_Funcionalidad_Modificacion_Click(object sender, EventArgs e)
@@ -179,8 +176,6 @@ namespace WebForms.ASPX
             {
                 Response.Redirect("AltasModificaciones/FuncionalidadesAM.aspx?idFuncionalidad=" + ddl_Funcionalidades.SelectedItem.Value);
             }
-           
-
         }
 
         protected void btn_Estilo_Modificacion_Click(object sender, EventArgs e)
@@ -224,7 +219,7 @@ namespace WebForms.ASPX
 
         void Inicializar_listas()
         {
-            //inicializacion de listas si fuearan null
+            //inicializacion de listas si fueran null
             if (ListaFuncionalidadesAgregadas == null)
             {
                 ListaFuncionalidadesAgregadas = new List<Funcionalidad>();
