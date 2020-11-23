@@ -58,7 +58,7 @@ namespace WebForms.ASPX
 
             EnviarMailPrueba(pedido,dat);
 
-            Response.Redirect("Catalogo.aspx");
+            Response.Redirect("PedidoExitoso.aspx");
         }
         protected void EnviarMailPrueba(PedidoWebPage pedido,DatosPersonales dat)
         {

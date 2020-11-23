@@ -86,6 +86,7 @@
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\ModificarPaginaWeb.aspx" />
+    <Content Include="ASPX\PedidoExitoso.aspx" />
     <Content Include="ASPX\Personalizar.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
@@ -2012,6 +2013,13 @@
     </Compile>
     <Compile Include="ASPX\ModificarPaginaWeb.aspx.designer.cs">
       <DependentUpon>ModificarPaginaWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PedidoExitoso.aspx.cs">
+      <DependentUpon>PedidoExitoso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\PedidoExitoso.aspx.designer.cs">
+      <DependentUpon>PedidoExitoso.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Personalizar.aspx.cs">
       <DependentUpon>Personalizar.aspx</DependentUpon>
