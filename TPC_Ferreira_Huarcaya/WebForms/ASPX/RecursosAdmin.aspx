@@ -114,7 +114,7 @@
                                 {%>
                                  <td>No</td>
                             <%} %>
-                           <td style="text-align:center;"><a href="#"><i class="fas fa-ban"></i></a></td>
+                           <td style="text-align:center;"><a href="RecursosAdmin.aspx?idUsuario=<%=item.ID %>"<i class="fas fa-ban"></i></a></td>
                         </tr>
                         <%} %>
 

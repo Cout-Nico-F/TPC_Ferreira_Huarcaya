@@ -32,6 +32,10 @@ namespace WebForms.ASPX
                     Response.Redirect("Error.aspx");
                 }
             }
+           /*if(Request.QueryString["idUsuario"] != null)
+            {
+                CambiarHabilitadoUsuario();
+            }*/
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();
@@ -70,5 +74,25 @@ namespace WebForms.ASPX
 
             Usuarios = usuNeg.listaDeUsuarios(); //trae todos los usuario y los listo en la tabla
         }
+        /*void CambiarHabilitadoUsuario()
+        {
+            UsuarioNegocio usuNeg = new UsuarioNegocio();
+            
+
+            Int16 id = Convert.ToInt16(Request.QueryString["idUsuario"]);
+
+            if(  == id)
+            {
+                if( == true)
+                {
+                    usuNeg.CambiarHabilitado(id,true);
+                }
+                else
+                {
+                    usuNeg.CambiarHabilitado(id, false);
+                }
+            }
+           
+        }*/
     }
 }
