@@ -63,6 +63,7 @@ namespace WebForms.ASPX
             PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
             ListaVistaPedidos = new List<VistaPedidoPersonalizado>();
             ListaVistaPedidos = persNeg.ListarVistas();
+            //TODO:En las listas de pedidos tenemos que agregar la opcion de dar por finalizado un pedido. Para que solo se listen los que estan en curso
         }
 
         protected void btn_Actualizar_Click(object sender, EventArgs e)

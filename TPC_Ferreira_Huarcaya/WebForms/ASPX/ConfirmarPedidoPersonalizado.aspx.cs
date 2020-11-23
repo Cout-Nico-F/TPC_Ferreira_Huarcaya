@@ -42,7 +42,7 @@ namespace WebForms.ASPX
             emaNeg.EnviarMailPruebaPedidoPersonalizado(dat,Pedido); 
 
             Response.Redirect("PedidoExitoso.aspx");
-            //TODO: Necesitamos una ventana emergente si o si
+            //TODO: puede quedar mejor una ventana emergente
         }
     }
 }

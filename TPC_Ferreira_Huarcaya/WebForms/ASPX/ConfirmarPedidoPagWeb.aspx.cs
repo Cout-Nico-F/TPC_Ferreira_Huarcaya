@@ -63,6 +63,6 @@ namespace WebForms.ASPX
         }
     }
     //TODO: cuando estemos por hacer la parte de login y crear cuenta una vez que este terminada podemos ahora si hacer las validaciones que necesitamos para terminar esto
-    //TODO: necesitamos la forma de hacer modales o ventanas emergentes para que se haga mas ameno la aplicacion
-    //TODO: Mejorar la estetica de la factura 
+    // necesitamos la forma de hacer modales o ventanas emergentes para que se haga mas ameno la aplicacion
+    // Mejorar la estetica de la factura 
 }
