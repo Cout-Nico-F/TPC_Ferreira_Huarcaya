@@ -48,12 +48,21 @@ namespace WebForms.ASPX
                 Session.Add("errorEncontrado", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
-
+            LlenarListas();
         }
-
-        protected void btn_Consulta_Click(object sender, EventArgs e)
+        void LlenarListas()
         {
+            UsuarioNegocio usuNeg = new UsuarioNegocio();
 
+            Usuarios = usuNeg.listaDeUsuarios();
+
+            PedidosWebPageNegocio pedWeb = new PedidosWebPageNegocio();
+
+            ListaPedidosPrediseniada = pedWeb.TraerPedidos();
+
+            PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
+            ListaVistaPedidos = new List<VistaPedidoPersonalizado>();
+            ListaVistaPedidos = persNeg.ListarVistas();
         }
 
         protected void btn_Actualizar_Click(object sender, EventArgs e)
@@ -63,13 +72,11 @@ namespace WebForms.ASPX
             ListaPedidosPrediseniada = pedWeb.TraerPedidos();
 
         }
-
         protected void btn_Actualizar_Personalizada_Click(object sender, EventArgs e)
         {
             PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
             ListaVistaPedidos = new List<VistaPedidoPersonalizado>();
             ListaVistaPedidos = persNeg.ListarVistas();
-
 
         }
 
