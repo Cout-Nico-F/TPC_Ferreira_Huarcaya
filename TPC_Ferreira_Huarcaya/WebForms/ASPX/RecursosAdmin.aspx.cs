@@ -14,6 +14,7 @@ namespace WebForms.ASPX
         public Usuario Usuario { get; set; }
         public List<PaginaWeb> ListaPaginasWeb { get; set; }
         public List<PedidoWebPage> ListaPedidosPrediseniada { get; set; }
+        public List<VistaPedidoPersonalizado> ListaVistaPedidos { get; set; }
         public List<Usuario> Usuarios { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,6 +66,10 @@ namespace WebForms.ASPX
 
         protected void btn_Actualizar_Personalizada_Click(object sender, EventArgs e)
         {
+            PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
+            ListaVistaPedidos = new List<VistaPedidoPersonalizado>();
+            ListaVistaPedidos = persNeg.ListarVistas();
+
 
         }
 

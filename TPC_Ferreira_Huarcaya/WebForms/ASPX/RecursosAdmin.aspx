@@ -57,16 +57,16 @@
         
         <div class="container-pag" id="pag1">
             <div class="padre">
-                  <a href="#pag2" class="btn btn-outline-secondary hijo">Ir a el listado de Usuarios</a> 
+                  <a href="#pag2" class="btn btn-outline-secondary hijo">Ir al listado de Usuarios</a> 
             </div> 
             <div class="padre">
-                 <a href="#pag3" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Prediseñadas</a> 
+                 <a href="#pag3" class="btn btn-outline-secondary hijo">Ir al listado de Pedidos de Paginas Prediseñadas</a> 
             </div>
              <div class="padre">
-                 <a href="#pag4" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
+                 <a href="#pag4" class="btn btn-outline-secondary hijo">Ir al listado de Pedidos de Paginas Personalizadas</a> 
             </div>
             <div class="padre">
-                 <a href="#pag5" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
+                 <a href="#pag5" class="btn btn-outline-secondary hijo">ver listado de Paginas Prediseñadas deshabilitadas </a> 
             </div>
         </div>
 
@@ -75,7 +75,7 @@
                   <a href="#pag2" class="btn btn-outline-secondary hijo">listado de Usuarios</a> 
                  <a href="#pag3" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Prediseñadas</a> 
                  <a href="#pag4" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
-                 <a href="#pag5" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
+                 <a href="#pag5" class="btn btn-outline-secondary hijo">listado de Paginas Prediseñadas deshabilitadas</a> 
             </div>
         </div>
        
@@ -83,7 +83,7 @@
             <div class="table-responsive-md ">
                  <br />
                  <br />
-                <br />
+                 <br />
                  <h1 style="text-align: center;">Lista de Usuarios Registrados</h1>
                 <table class="table table-hover table-dark ">
                     <thead>
@@ -132,7 +132,7 @@
         <div class="container-pag" id="pag3">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
-                    <h4 style="text-align: center;">Utilice el boton"</h4>
+                    <h4 style="text-align: center;">Utilice el boton</h4>
                     <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
                     <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
                 </div>
@@ -146,7 +146,6 @@
                             <th>Precio</th>
                             <th>Fecha de Pedido</th>
                             <th>Comentario</th>
-                            <!--Si pongo un boton se hace aun mas chico tenemos que usar el txtchanged -->
                         </tr>
                     </thead>
                     <tbody>
@@ -177,35 +176,38 @@
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizadas </h2>
                     <h4 style="text-align: center;">Utilice el boton"</h4>
-                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
+                    <p  style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
                     <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
                 </div>
             <div class="container">
                 <table class="table table-fluid" id="myTable1">
                     <thead>
                         <tr>
+                            <th>Fecha</th>
                             <th>ID Pedido</th>
                             <th>ID Usuario</th>
-                            <th>ID Estilo</th>
-                            <th>PrecioTotal</th>
-                            <th>Comentarios</th>
-                            <th>Cant.Funcionalidades</th>
+                            <th>Estilo</th>
                             <th>Cant.Paginas</th>
-                            <th>Fecha</th>
-                            <!--Si pongo un boton se hace aun mas chico tenemos que usar el txtchanged -->
+                            <th>Cant.Funcionalidades</th>
+                            <th>Vista Detallada</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <%if (ListaVistaPedidos != null)
+                                {%>
+                        <%foreach (var item in ListaVistaPedidos)
+                            { %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><%= item.Fecha %></td>
+                            <td><%= item.IdPedido %></td>
+                            <td><%= item.IdUsuario %></td>
+                            <td><%= item.Estilo %></td>
+                            <td><%= item.CantPaginas %></td>
+                            <td><%= item.CantFuncs %></td>
+                            <td><a href="#">Ver Detalles</a></td>
                         </tr>
+                         <%}
+                             }%>
                     </tbody>
                 </table>
                  <asp:Button Text="" runat="server" ID="btn_Actualizar_Personalizada" OnClick="btn_Actualizar_Personalizada_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button> 

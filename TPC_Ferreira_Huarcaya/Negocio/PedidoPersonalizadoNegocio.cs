@@ -47,5 +47,29 @@ namespace Negocio
             }
             conex.Desconectar();
         }
+
+        public List<VistaPedidoPersonalizado> ListarVistas()
+        {
+            List<VistaPedidoPersonalizado> listaVistas = new List<VistaPedidoPersonalizado>();
+            ConexionMSSQL conex = new ConexionMSSQL();
+            SqlDataReader reader =  conex.Consulta_Rapida("select * from vw_ListaPedidos");
+
+            while (reader.Read())
+            {
+                VistaPedidoPersonalizado vistaPedido = new VistaPedidoPersonalizado();
+                var aux = reader.GetDateTime(0);
+                vistaPedido.Fecha = aux.ToShortDateString(); //Aca le estoy sacando la hora al mostrarlo en la tabla
+                
+                vistaPedido.IdPedido = reader.GetInt16(1);
+                vistaPedido.IdUsuario = reader.GetInt16(2);
+                vistaPedido.Estilo = reader.GetString(3);
+                vistaPedido.CantPaginas = reader.GetInt32(4);
+                vistaPedido.CantFuncs = reader.GetInt32(5);
+
+                listaVistas.Add(vistaPedido);
+            }
+            conex.Desconectar();
+            return listaVistas;
+        }
     }
 }

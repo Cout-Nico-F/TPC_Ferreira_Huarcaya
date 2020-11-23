@@ -26,12 +26,11 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Hola bienvenido</h1>
-            <p class="lead">Seguimos trabajando..</p>
+            <h1 class="display-4">Catalogo de paginas prediseñadas</h1>
+            <p class="lead">Elija la que mejor se acomode a sus necesidades o arme una pagina personalizada</p>
         </div>
     </div>
 
-    <!--Se que a Maxi no le gusta el uso de br(en un vivo le pregunte) pero no se me ocurre otra forma -->
     <br />
     <br />
 
@@ -71,6 +70,7 @@
                       <%}
                     }%>
             </div>
+        </div>
     </section>
 
     <footer>
