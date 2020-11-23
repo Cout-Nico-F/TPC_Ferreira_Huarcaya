@@ -31,6 +31,7 @@
     <br />
     <hr />
     <br />
+    <h2>Lista de funcionalidades: </h2>
     <table class="table table-fluid" id="FuncionalidadesPedido">
                     <thead>
                         <tr>
@@ -47,6 +48,29 @@
                             <td><%= item.Id %></td>
                             <td><%= item.Descripcion %></td>
                             <td><%= item.Costo %></td>
+                            <td><%= item.Habilitado %></td>
+                        </tr>
+                        <%} %>
+                    </tbody>
+                </table>
+    <br />
+    <hr />
+    <br />
+    <h2>Lista de Paginas</h2>
+    <table class="table table-fluid" id="PaginasPedido">
+                    <thead>
+                        <tr>
+                            <th>ID Pagina</th>
+                            <th>Descripcion</th>
+                            <th>Habilitado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%foreach (var item in Paginas)
+                          {%>
+                        <tr>
+                            <td><%= item.ID %></td>
+                            <td><%= item.Descripcion %></td>
                             <td><%= item.Habilitado %></td>
                         </tr>
                         <%} %>

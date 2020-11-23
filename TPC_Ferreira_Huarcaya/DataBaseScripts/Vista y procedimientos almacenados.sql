@@ -34,6 +34,13 @@ inner join Funcionalidades_X_PedidosWebPage fxp on f.id = fxp.id_funcionalidad
 inner join PedidosWebPage p on fxp.id_pedidowebpage = p.id
 go
 --para utilizar con un where idpedido = idbuscado
+create view vw_ListaPaginas
+as
+select p.id, p.descripcion, p.habilitado, ped.id as idPedido from paginas p
+inner join Paginas_X_Pedidoswebpage pxp on p.id = pxp.id_Pagina
+inner join pedidoswebpage ped on pxp.id_pedidowebpage = ped.id
+go
+--ejemplo de uso select id, descripcion, habilitado from vw_listapaginas where idpedido= idbuscado
 
 -- PROCEDIMIENTOS ALMACENADOS
 /*			Guardar Pedido de Usuario de una pagina Prediseñadad       */

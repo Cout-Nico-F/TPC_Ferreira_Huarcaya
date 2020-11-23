@@ -118,5 +118,22 @@ namespace Negocio
             conex.Desconectar();
             return listaFuncionalidades;
         }
+
+        public List<Pagina> ListarPaginas (Int16 idPedido)
+        {
+            List<Pagina> listaPaginas = new List<Pagina>();
+            ConexionMSSQL conex = new ConexionMSSQL();
+            SqlDataReader reader = conex.Consulta_Rapida("select id, descripcion, habilitado from vw_listapaginas where idpedido="+idPedido);
+            while (reader.Read())
+            {
+                Pagina p = new Pagina();
+                p.ID = reader.GetInt16(0);
+                p.Descripcion = reader.GetString(1);
+                p.Habilitado = reader.GetBoolean(2);
+                listaPaginas.Add(p);
+            }
+            conex.Desconectar();
+            return listaPaginas;
+        }
     }
 }
