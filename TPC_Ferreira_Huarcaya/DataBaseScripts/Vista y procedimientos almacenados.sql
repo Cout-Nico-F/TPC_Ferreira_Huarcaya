@@ -27,7 +27,13 @@ select distinct
 (select count(*)from vw_listapedidos where estilo = 'Material design')as 'Cantidad de paginas Material design pedidas a la fecha' 
 from vw_listapedidos 
 */
-
+create view vw_ListaFuncionalidades
+as
+select f.id, f.descripcion, f.costo, f.habilitado, p.id as idPEdido from funcionalidades f
+inner join Funcionalidades_X_PedidosWebPage fxp on f.id = fxp.id_funcionalidad
+inner join PedidosWebPage p on fxp.id_pedidowebpage = p.id
+go
+--para utilizar con un where idpedido = idbuscado
 
 -- PROCEDIMIENTOS ALMACENADOS
 /*			Guardar Pedido de Usuario de una pagina Prediseñadad       */

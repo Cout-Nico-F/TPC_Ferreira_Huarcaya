@@ -71,5 +71,52 @@ namespace Negocio
             conex.Desconectar();
             return listaVistas;
         }
+
+        public List<PedidoPaginaPersonalizada> ListarPedidos()
+        {
+            List<PedidoPaginaPersonalizada> listaPedidos = new List<PedidoPaginaPersonalizada>();
+            ConexionMSSQL conex = new ConexionMSSQL();
+            SqlDataReader reader = conex.Consulta_Rapida("select * from pedidoswebpage");
+
+            while (reader.Read())
+            {
+                PedidoPaginaPersonalizada p = new PedidoPaginaPersonalizada();
+                p.Id = reader.GetInt16(0);
+                p.Id_Cliente = reader.GetInt16(1);
+                p.ID_Estilo = reader.GetInt16(2);
+                p.Precio = reader.GetInt32(3);
+                try
+                {
+                    p.Comentarios = reader.GetString(4); //comentarios puede ser null
+                }
+                catch (Exception)
+                {
+                    p.Comentarios = ""; //los comentarios nulos los convierto en string vacia para poder mostrarlos
+                }
+                var aux = reader.GetDateTime(5);
+                p.Fecha = aux.ToShortDateString();
+                listaPedidos.Add(p);
+            }
+            conex.Desconectar();
+            return listaPedidos;
+        }
+
+        public List<Funcionalidad> ListarFuncionalidades(Int16 idPedido)
+        {
+            List<Funcionalidad> listaFuncionalidades = new List<Funcionalidad>();
+            ConexionMSSQL conex = new ConexionMSSQL();
+            SqlDataReader reader = conex.Consulta_Rapida("select id, descripcion, costo, habilitado from vw_ListaFuncionalidades where idPedido ="+idPedido);
+            while (reader.Read())
+            {
+                Funcionalidad f = new Funcionalidad();
+                f.Id = reader.GetInt16(0);
+                f.Descripcion = reader.GetString(1);
+                f.Costo = reader.GetInt32(2);
+                f.Habilitado = reader.GetBoolean(3);
+                listaFuncionalidades.Add(f);
+            }
+            conex.Desconectar();
+            return listaFuncionalidades;
+        }
     }
 }

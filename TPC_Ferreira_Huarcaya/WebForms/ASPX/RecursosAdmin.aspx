@@ -194,7 +194,7 @@
                     </thead>
                     <tbody>
                         <%if (ListaVistaPedidos != null)
-                                {%>
+                          {%>
                         <%foreach (var item in ListaVistaPedidos)
                             { %>
                         <tr>
@@ -204,10 +204,10 @@
                             <td><%= item.Estilo %></td>
                             <td><%= item.CantPaginas %></td>
                             <td><%= item.CantFuncs %></td>
-                            <td><a href="#">Ver Detalles</a></td>
+                            <td><a href="DetallesPedidoPersonalizado.aspx?IdPedido=<%=item.IdPedido %>">Ver Detalles</a></td>
                         </tr>
-                         <%}
-                             }%>
+                        <%}
+                            }%>
                     </tbody>
                 </table>
                  <asp:Button Text="" runat="server" ID="btn_Actualizar_Personalizada" OnClick="btn_Actualizar_Personalizada_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button> 

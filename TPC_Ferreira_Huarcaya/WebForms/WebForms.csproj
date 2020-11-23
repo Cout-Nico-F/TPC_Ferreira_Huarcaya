@@ -80,6 +80,7 @@
     <Content Include="ASPX\ConfirmarPedidoPagWeb.aspx" />
     <Content Include="ASPX\ConfirmarPedidoPersonalizado.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
+    <Content Include="ASPX\DetallesPedidoPersonalizado.aspx" />
     <Content Include="ASPX\EditarDatosPersonales.aspx" />
     <Content Include="ASPX\Error.aspx" />
     <Content Include="ASPX\Info.aspx" />
@@ -1971,6 +1972,13 @@
     </Compile>
     <Compile Include="ASPX\CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\DetallesPedidoPersonalizado.aspx.cs">
+      <DependentUpon>DetallesPedidoPersonalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\DetallesPedidoPersonalizado.aspx.designer.cs">
+      <DependentUpon>DetallesPedidoPersonalizado.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\EditarDatosPersonales.aspx.cs">
       <DependentUpon>EditarDatosPersonales.aspx</DependentUpon>

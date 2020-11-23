@@ -21,5 +21,7 @@ namespace Modelo
         public List<Funcionalidad> Funcionalidades { get; set; }
 
         public List<Pagina> Paginas { get; set; }
+
+        public string Fecha { get; set; }
     }
 }
