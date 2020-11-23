@@ -19,5 +19,6 @@ namespace Modelo
         public Int16 Id_WebPage { get; set; }
 
         public DateTime FechaPedido { get; set; } //en sql es date si da problemas lo saco
+        public bool Estado { get; set; }
     }
 }

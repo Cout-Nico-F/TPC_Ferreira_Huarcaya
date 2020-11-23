@@ -23,5 +23,6 @@ namespace Modelo
         public List<Pagina> Paginas { get; set; }
 
         public string Fecha { get; set; }
+        public bool Estado { get; set; }
     }
 }

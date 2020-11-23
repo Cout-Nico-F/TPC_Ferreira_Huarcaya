@@ -48,13 +48,14 @@ Create procedure SP_PedidoPaginaWebPrediseniada(
 		@ID_Usuario smallint,
 		@ID_PaginaWeb smallint,
 		@Precio int,
-		@Comentarios varchar(200)
+		@Comentarios varchar(200),
+		@Estado bit
 )
 as
 begin
 	begin try
 		begin transaction
-			Insert into PedidosPaginaPrediseniada(ID_Usuario,ID_PaginaWeb,Precio,Fecha,Comentarios) values (@ID_Usuario,@ID_PaginaWeb,@Precio,GetDate(),@Comentarios)
+			Insert into PedidosPaginaPrediseniada(ID_Usuario,ID_PaginaWeb,Precio,Fecha,Comentarios,Estado) values (@ID_Usuario,@ID_PaginaWeb,@Precio,GetDate(),@Comentarios,@Estado)
 		commit transaction
 	end try
 	begin catch
@@ -77,13 +78,14 @@ create procedure SP_PedidoPaginaWebPersonalizada(
 		@ID_Usuario smallint,
 		@ID_Estilo smallint,
 		@PrecioTotal int,
-		@Comentarios varchar(200)
+		@Comentarios varchar(200),
+		@Estado bit
 )
 as
 begin
 	SET XACT_ABORT ON
 	begin try
-			Insert into PedidosWebPage (ID_Usuario,ID_Estilo,PrecioTotal,Comentarios,Fecha) values (@ID_Usuario,@ID_Estilo,@PrecioTotal,@Comentarios,getdate())
+			Insert into PedidosWebPage (ID_Usuario,ID_Estilo,PrecioTotal,Comentarios,Fecha,Estado) values (@ID_Usuario,@ID_Estilo,@PrecioTotal,@Comentarios,getdate(),@Estado)
 			Declare @id_PedidoPersonalizada smallint
 			set @id_PedidoPersonalizada = @@IDENTITY
 			return @id_PedidoPersonalizada

@@ -23,6 +23,7 @@ namespace Negocio
                     cmd.Parameters.Add(new SqlParameter("@ID_PaginaWeb", pedido.Id_WebPage));
                     cmd.Parameters.Add(new SqlParameter("@Precio", pedido.Precio));
                     cmd.Parameters.Add(new SqlParameter("@Comentarios", pedido.Comentarios));
+                    cmd.Parameters.Add(new SqlParameter("@Estado", 1)); //cuando se crea un pedido siempre lo va a mandar activo
                     sql.Open();
                     cmd.ExecuteNonQuery();
                 }

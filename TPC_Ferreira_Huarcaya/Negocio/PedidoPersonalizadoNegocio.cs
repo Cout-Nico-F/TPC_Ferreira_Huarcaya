@@ -26,6 +26,7 @@ namespace Negocio
                     cmd.Parameters.Add(new SqlParameter("@ID_Estilo", pedido.ID_Estilo));
                     cmd.Parameters.Add(new SqlParameter("@PrecioTotal", pedido.Precio));
                     cmd.Parameters.Add(new SqlParameter("@Comentarios", pedido.Comentarios));
+                    cmd.Parameters.Add(new SqlParameter("@Estado", 1));
                     SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.SmallInt);
                     sql.Open();
                     returnParameter.Direction = ParameterDirection.ReturnValue;
