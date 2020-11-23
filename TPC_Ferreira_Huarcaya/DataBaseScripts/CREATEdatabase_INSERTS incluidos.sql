@@ -45,7 +45,8 @@ create table PedidosWebPage (
 	ID_Estilo smallint not null,
 	PrecioTotal int not null,
 	Comentarios varchar(200) null,
-	Fecha date not null
+	Fecha date not null,
+	Estado bit not null
 )
 	go
 	
@@ -95,7 +96,8 @@ create table PedidosPaginaPrediseniada (
 	ID_PaginaWeb smallint not null,
 	Precio int not null,
 	Fecha date not null,
-	Comentarios varchar(200) null
+	Comentarios varchar(200) null,
+	Estado bit not null
 )
 --Alter Tables de PK
 	alter table PedidosPaginaPrediseniada add constraint PK_PedidosPrediseniadas primary key (ID)
@@ -197,9 +199,9 @@ go
 
 --estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.
 --pedidos de prueba para poder probar la vista
-insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha) values (1,1,19000,'01/01/2020')
-insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha) values (2,1,18000,'01/01/2020')
-insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha) values (3,2,10000,'01/01/2020')
+insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha,Estado) values (1,1,19000,'01/01/2020',1)
+insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha,Estado) values (2,1,18000,'01/01/2020',1)
+insert into pedidoswebpage(id_usuario,id_estilo,preciototal,fecha,Estado) values (3,2,10000,'01/01/2020',1)
 go
 /*insert into Funcionalidades_X_PedidosWebPage*/
 insert into funcionalidades_x_pedidoswebpage (ID_Funcionalidad,ID_Pedidowebpage) values (1,1)
