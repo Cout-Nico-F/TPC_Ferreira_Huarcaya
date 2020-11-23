@@ -58,25 +58,34 @@
 
     <form id="form1" runat="server">
         
-        <div class="container-pag">
+        <div class="container-pag" id="pag1">
             <div class="padre">
                   <a href="#pag2" class="btn btn-outline-secondary hijo">Ir a el listado de Usuarios</a> 
             </div> 
             <div class="padre">
-                 <a href="#pag2" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Prediseñadas</a> 
+                 <a href="#pag3" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Prediseñadas</a> 
             </div>
              <div class="padre">
                  <a href="#pag4" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
             </div>
             <div class="padre">
-                 <a href="#pag4" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
+                 <a href="#pag5" class="btn btn-outline-secondary hijo">Ir a el listado de Pedidos de Paginas Personalizadas</a> 
+            </div>
+        </div>
+
+         <div class="container-pag">
+            <div class="padre">
+                  <a href="#pag2" class="btn btn-outline-secondary hijo">listado de Usuarios</a> 
+                 <a href="#pag3" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Prediseñadas</a> 
+                 <a href="#pag4" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
+                 <a href="#pag5" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
             </div>
         </div>
 
        
 
 
-        <div class="container-pag" id="pag1">
+        <div class="container-pag" id="pag2">
             <h1 style="text-align: center;">Vista Lista de Pedidos</h1>
             <div class="table-responsive-md ">
                 <table class="table table-hover table-dark ">
@@ -127,7 +136,7 @@
             </div>
         </div>
 
-        <div class="container-pag" id="pag2">
+        <div class="container-pag" id="pag3">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
                     <h4 style="text-align: center;">Utilice el boton"</h4>
@@ -167,11 +176,11 @@
                  <asp:Button Text="" runat="server" ID="btn_Actualizar" OnClick="btn_Actualizar_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button>
             </div>
              <div>
-                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
-                  </div>
+                  <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+             </div>
         </div>
 
-          <div class="container-pag" id="pag3">
+          <div class="container-pag" id="pag4">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizadas </h2>
                     <h4 style="text-align: center;">Utilice el boton"</h4>
@@ -209,11 +218,11 @@
                  <asp:Button Text="" runat="server" ID="btn_Actualizar_Personalizada" OnClick="btn_Actualizar_Personalizada_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button> 
             </div>
                <div>
-                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
-                  </div>
+                  <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+               </div>
         </div>
 
-        <div class="container-pag" id="pag4">
+        <div class="container-pag" id="pag5">
             <section id="facilities">
                 <hr />
                 <div class="jumbotron">
@@ -252,8 +261,8 @@
                 </div>
             </section>
              <div>
-                     <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
-                  </div>
+                 <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+            </div>
         </div>
 
         <script>
