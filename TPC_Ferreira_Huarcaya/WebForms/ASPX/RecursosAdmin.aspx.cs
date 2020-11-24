@@ -49,6 +49,13 @@ namespace WebForms.ASPX
                 Response.Redirect("Error.aspx");
             }
             LlenarListas();
+
+            if (! IsPostBack)
+            {
+                PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
+                txtBox_PrecioBase.Text = persNeg.GetPrecioBase().ToString();
+                txtBox_PrecioPorPagina.Text = persNeg.GetPrecioPorPagina().ToString();
+            }
         }
         void LlenarListas()
         {
@@ -65,8 +72,7 @@ namespace WebForms.ASPX
             ListaVistaPedidos = persNeg.ListarVistas();
             //TODO:En las listas de pedidos tenemos que agregar la opcion de dar por finalizado un pedido. Para que solo se listen los que estan en curso
 
-            txtBox_PrecioBase.Text = persNeg.GetPrecioBase().ToString() ;
-            txtBox_PrecioPorPagina.Text = persNeg.GetPrecioPorPagina().ToString();
+            
         }
 
         protected void btn_Actualizar_Click(object sender, EventArgs e)
@@ -95,7 +101,6 @@ namespace WebForms.ASPX
         {
             PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
             persNeg.SetPrecioBase(Convert.ToInt32(txtBox_PrecioBase.Text));
-            txtBox_PrecioBase.Text = persNeg.GetPrecioBase().ToString();
         }
 
         protected void btn_PrecioPorPagina_Click(object sender, EventArgs e)
