@@ -136,5 +136,36 @@ namespace Negocio
             conex.Desconectar();
             return listaPaginas;
         }
+
+        public int GetPrecioBase()
+        {
+            ConexionMSSQL conex = new ConexionMSSQL();
+            SqlDataReader reader = conex.Consulta_Rapida("select valor from ValoresConfigurables where descripcion = 'CostoBase' ");
+            reader.Read();
+            int preciobase = reader.GetInt32(0);
+            conex.Desconectar();
+            return preciobase;
+        }
+        public int GetPrecioPorPagina()
+        {
+            ConexionMSSQL conex = new ConexionMSSQL();
+            SqlDataReader reader = conex.Consulta_Rapida("select valor from ValoresConfigurables where descripcion = 'CostoPorPagina' ");
+            reader.Read();
+            int precioPagina = reader.GetInt32(0);
+            conex.Desconectar();
+            return precioPagina;
+        }
+        public void SetPrecioBase(int precio)
+        {
+            ConexionMSSQL conex = new ConexionMSSQL();
+            conex.SentenciaNonQuery("update ValoresConfigurables set valor = " + precio +" where descripcion = 'PrecioBase'");
+            conex.Desconectar();
+        }
+        public void SetPrecioPorPagina(int precio)
+        {
+            ConexionMSSQL conex = new ConexionMSSQL();
+            conex.SentenciaNonQuery("update ValoresConfigurables set valor = " + precio + " where descripcion = 'PrecioPorPagina'");
+            conex.Desconectar();
+        }
     }
 }

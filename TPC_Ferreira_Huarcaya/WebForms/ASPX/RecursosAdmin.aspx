@@ -10,7 +10,7 @@
     <!-- Estilos CSS -->
     <link href="../CSS/Estilos_RecursosAdmin.css" rel="stylesheet" />
     <!--CDN Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!--Google Fonts -->
 
     <!--JS Bootstrap -->
@@ -29,8 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
-            <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color: transparent">
-            <!-- No puedo hacer transparente el fonde de la imagen -->
+            <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color: transparent"/>
             FerreAlo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

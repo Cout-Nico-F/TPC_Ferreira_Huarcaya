@@ -281,7 +281,9 @@ namespace WebForms.ASPX
 
         int CalcularPrecio()
         {
-            int precio = 7000;//precio base. tambien necesitamos poder setear este valor desde recursosAdmin
+            PedidoPersonalizadoNegocio pneg = new PedidoPersonalizadoNegocio();
+
+            int precio = pneg.GetPrecioBase(); ;//precio base. tambien necesitamos poder setear este valor desde recursosAdmin
 
             foreach (var item in (List<Funcionalidad>)Session["listaFuncionalidadesSelec"])
             {
@@ -289,7 +291,7 @@ namespace WebForms.ASPX
             }
             foreach (var item in (List<Pagina>)Session["listaPaginasSelec"])
             {
-                precio += 1000;//TODO: el precio necesita poderse actualizar desde RecursosAdmin.aspx. Este mil hardcodeado es TEMPORAL
+                precio += pneg.GetPrecioPorPagina();//TODO: el precio necesita poderse actualizar desde RecursosAdmin.aspx. voy a crear una tabla para valores configurables
             }
 
             return precio;

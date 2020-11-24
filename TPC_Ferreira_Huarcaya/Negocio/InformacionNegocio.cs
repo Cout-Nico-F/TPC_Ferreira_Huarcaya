@@ -15,7 +15,7 @@ namespace Negocio
             ConexionMSSQL conexion = new ConexionMSSQL();
 
             List<Usuario> listaInfo = new List<Usuario>();
-
+            //TODO: no olvidarse de cambiar el id nivel hardcodeado en esta linea
             SqlDataReader lectura = conexion.Consulta_Rapida("select ID,NombreUsuario,ID_Nivel,urlImagen,Descripcion From Usuarios Where ID_Nivel="+3+"");
 
             while (lectura.Read())

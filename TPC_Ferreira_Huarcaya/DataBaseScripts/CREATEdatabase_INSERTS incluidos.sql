@@ -99,7 +99,15 @@ create table PedidosPaginaPrediseniada (
 	Comentarios varchar(200) null,
 	Estado bit not null
 )
+	go
+create table ValoresConfigurables (
+	descripcion varchar(100) not null,
+	valor int not null
+)
+	go
 --Alter Tables de PK
+	alter table ValoresConfigurables add constraint PK_ValoresConfigurables primary key (descripcion)
+	go
 	alter table PedidosPaginaPrediseniada add constraint PK_PedidosPrediseniadas primary key (ID)
 	go
 	alter table Funcionalidades add constraint PK_Funcionalidades primary key (ID)
@@ -229,5 +237,8 @@ insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado)
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png',12000,1)
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Prueba1','Template Prueba Bajas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png',1000,1)
 go
+-- Tabla de valores configurables
+insert into ValoresConfigurables (Descripcion, valor) values ('CostoPorPagina',1000)
+insert into ValoresConfigurables (Descripcion, valor) values ('CostoBase' ,7000)
 
 
