@@ -238,7 +238,6 @@ insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado)
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Prueba1','Template Prueba Bajas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png',1000,1)
 go
 -- Tabla de valores configurables
-insert into ValoresConfigurables (Descripcion, valor) values ('CostoPorPagina',1000)
-insert into ValoresConfigurables (Descripcion, valor) values ('CostoBase' ,7000)
-
+insert into ValoresConfigurables (Descripcion, valor) values ('PrecioPorPagina',1000)
+insert into ValoresConfigurables (Descripcion, valor) values ('PrecioBase' ,7000)
 

@@ -64,6 +64,9 @@ namespace WebForms.ASPX
             ListaVistaPedidos = new List<VistaPedidoPersonalizado>();
             ListaVistaPedidos = persNeg.ListarVistas();
             //TODO:En las listas de pedidos tenemos que agregar la opcion de dar por finalizado un pedido. Para que solo se listen los que estan en curso
+
+            txtBox_PrecioBase.Text = persNeg.GetPrecioBase().ToString() ;
+            txtBox_PrecioPorPagina.Text = persNeg.GetPrecioPorPagina().ToString();
         }
 
         protected void btn_Actualizar_Click(object sender, EventArgs e)
@@ -87,25 +90,41 @@ namespace WebForms.ASPX
 
             Usuarios = usuNeg.listaDeUsuarios(); //trae todos los usuario y los listo en la tabla
         }
-        /*void CambiarHabilitadoUsuario()
+
+        protected void btn_PrecioBase_Click(object sender, EventArgs e)
         {
-            UsuarioNegocio usuNeg = new UsuarioNegocio();
-            
+            PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
+            persNeg.SetPrecioBase(Convert.ToInt32(txtBox_PrecioBase.Text));
+            txtBox_PrecioBase.Text = persNeg.GetPrecioBase().ToString();
+        }
 
-            Int16 id = Convert.ToInt16(Request.QueryString["idUsuario"]);
+        protected void btn_PrecioPorPagina_Click(object sender, EventArgs e)
+        {
+            PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
+            persNeg.SetPrecioPorPagina(Convert.ToInt32(txtBox_PrecioPorPagina.Text));
+            txtBox_PrecioPorPagina.Text = persNeg.GetPrecioPorPagina().ToString();
 
-            if(  == id)
-            {
-                if( == true)
-                {
-                    usuNeg.CambiarHabilitado(id,true);
-                }
-                else
-                {
-                    usuNeg.CambiarHabilitado(id, false);
-                }
-            }
-           
-        }*/
+        }
+
+        /*void CambiarHabilitadoUsuario()
+{
+   UsuarioNegocio usuNeg = new UsuarioNegocio();
+
+
+   Int16 id = Convert.ToInt16(Request.QueryString["idUsuario"]);
+
+   if(  == id)
+   {
+       if( == true)
+       {
+           usuNeg.CambiarHabilitado(id,true);
+       }
+       else
+       {
+           usuNeg.CambiarHabilitado(id, false);
+       }
+   }
+
+}*/
     }
 }

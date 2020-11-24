@@ -65,7 +65,10 @@
                  <a href="#pag4" class="btn btn-outline-secondary hijo">Ir al listado de Pedidos de Paginas Personalizadas</a> 
             </div>
             <div class="padre">
-                 <a href="#pag5" class="btn btn-outline-secondary hijo">ver listado de Paginas Prediseñadas deshabilitadas </a> 
+                 <a href="#pag5" class="btn btn-outline-secondary hijo">Ver listado de Paginas Prediseñadas deshabilitadas </a> 
+            </div>
+            <div class="padre">
+                 <a href="#pag6" class="btn btn-outline-secondary hijo">Actualizar Precio Base y Precio Por Pagina</a> 
             </div>
         </div>
 
@@ -256,6 +259,20 @@
             </section>
              <div>
                  <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+            </div>
+        </div>
+
+        <div class="container-pag jumbotron" id="pag6">
+            <div>
+            <br />
+            <asp:Label Text="Precio Base de pagina web Personalizada" runat="server" />
+            <asp:TextBox runat="server" ID="txtBox_PrecioBase" />
+            <asp:Button Text="Actualizar Precio Base" runat="server" id="btn_PrecioBase" OnClick="btn_PrecioBase_Click"/>
+            <br />
+            <br />
+            <asp:Label Text="Precio por pagina de web Personalizada" runat="server" />
+            <asp:TextBox runat="server" ID="txtBox_PrecioPorPagina" />
+            <asp:Button Text="Actualizar Precio Por Pagina" runat="server" id="btn_PrecioPorPagina" OnClick="btn_PrecioPorPagina_Click"/>
             </div>
         </div>
 

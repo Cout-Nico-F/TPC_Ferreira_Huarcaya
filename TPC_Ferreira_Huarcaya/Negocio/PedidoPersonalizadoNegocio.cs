@@ -140,7 +140,7 @@ namespace Negocio
         public int GetPrecioBase()
         {
             ConexionMSSQL conex = new ConexionMSSQL();
-            SqlDataReader reader = conex.Consulta_Rapida("select valor from ValoresConfigurables where descripcion = 'CostoBase' ");
+            SqlDataReader reader = conex.Consulta_Rapida("select valor from ValoresConfigurables where descripcion = 'PrecioBase' ");
             reader.Read();
             int preciobase = reader.GetInt32(0);
             conex.Desconectar();
@@ -149,7 +149,7 @@ namespace Negocio
         public int GetPrecioPorPagina()
         {
             ConexionMSSQL conex = new ConexionMSSQL();
-            SqlDataReader reader = conex.Consulta_Rapida("select valor from ValoresConfigurables where descripcion = 'CostoPorPagina' ");
+            SqlDataReader reader = conex.Consulta_Rapida("select valor from ValoresConfigurables where descripcion = 'PrecioPorPagina' ");
             reader.Read();
             int precioPagina = reader.GetInt32(0);
             conex.Desconectar();
