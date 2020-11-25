@@ -48,7 +48,13 @@
                         if (item.Habilitado)
                         {%>
                 <div class="col md-5 col-sm-4">
+                    <%if (Session["usersession"] != null)
+                        {
+                            Usuario = (Modelo.Usuario)Session["usersession"];
 
+                            if (Usuario.Id_Acceso == 3)//verificar el tipo de acceso para poder ver la pagina.
+                            {%>
+               
                     <div class="container">
 
                         <a href="BajaPaginaWeb.aspx?idPaginaWeb=<%=item.ID %>"><i class="fas fa-trash"></i></a>
@@ -57,6 +63,8 @@
 
 
                     </div>
+                    <%}
+                    } %>
                     <div class="card text-center" style="margin-bottom: 40px;">
                         <img src="<%=item.Url_Imagen %>" class="card-img-top" alt="No se encontro la imagen" />
                         <div class="card-body">
@@ -67,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                      <%}
+                <%}
                     }%>
             </div>
         </div>
