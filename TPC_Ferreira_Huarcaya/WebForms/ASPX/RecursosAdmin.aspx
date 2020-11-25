@@ -146,6 +146,7 @@
                             <th>Precio</th>
                             <th>Fecha de Pedido</th>
                             <th>Comentario</th>
+                            <th>Estado</th>
                             <th>Vista Detallada</th>
                         </tr>
                     </thead>
@@ -161,6 +162,10 @@
                             <td><%=item.Precio %></td>
                             <td><%=item.FechaPedido %></td>
                             <td><%=item.Comentarios %></td>
+                            <%if (item.Estado)
+                                {%>
+                                 <td>En curso</td>
+                            <%} %>
                             <td><a href="DetallePedidoPrediseniado.aspx?IdUsuario=<%=item.Id_Cliente %>">Ver Detalles</a></td>
                         </tr>
                         <%} %>
@@ -168,6 +173,57 @@
                     </tbody>
                 </table>
                  <asp:Button Text="" runat="server" ID="btn_Actualizar" OnClick="btn_Actualizar_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button>
+            </div>
+             <div>
+                  <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
+             </div>
+        </div>
+
+         <div class="container-pag" id="pag3">
+              <div class="jumbotron">
+                    <h2 style="text-align: center;">Historial de Pedidos de Paginas Prediseñadas </h2>
+                    <h4 style="text-align: center;">Utilice el boton</h4>
+                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
+                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
+                </div>
+            <div class="container">
+                <table class="table table-fluid" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>ID Usuario</th>
+                            <th>ID Pagina Web</th>
+                            <th>Precio</th>
+                            <th>Fecha de Pedido</th>
+                            <th>Comentario</th>
+                            <th>Estado</th>
+                            <th>Vista Detallada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if (ListaPedidosPrediseniada != null)
+                                {%>
+                        <%foreach (var item in ListaPedidosPrediseniada)
+                                {%>
+                        <tr>
+                            <td><%=item.Id %></td>
+                            <td><%=item.Id_Cliente %></td>
+                            <td><%=item.Id_WebPage %></td>
+                            <td><%=item.Precio %></td>
+                            <td><%=item.FechaPedido %></td>
+                            <td><%=item.Comentarios %></td>
+                            <%if (item.Estado == false)
+                                {%>
+                                 <td>Finalizado</td>    
+                            <%} %>
+                            <%else {%> <td>   </td> <%} %>
+                            <td><a href="DetallePedidoPrediseniado.aspx?IdUsuario=<%=item.Id_Cliente %>">Ver Detalles</a></td>
+                        </tr>
+                        <%} %>
+                        <%} %>
+                    </tbody>
+                </table>
+                 <asp:Button Text="" runat="server" ID="Button1" OnClick="btn_Actualizar_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button>
             </div>
              <div>
                   <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>

@@ -46,6 +46,7 @@ namespace Negocio
                 aux.Precio = lectura.GetInt32(3);
                 aux.FechaPedido = lectura.GetDateTime(4);
                 aux.Comentarios = lectura.GetString(5);
+                aux.Estado = lectura.GetBoolean(6);
 
                 listaPedidos.Add(aux);
             }
