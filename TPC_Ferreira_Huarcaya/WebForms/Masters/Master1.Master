@@ -48,8 +48,9 @@
                 <%if (Session["usersession"] != null)
                     {
                         Modelo.Usuario usuario = (Modelo.Usuario)Session["usersession"];
-
-                        if (usuario.Id_Acceso == 3)//verificar el tipo de acceso para poder ver la pagina.
+                        %>
+                        <label style="color:aliceblue; font-weight:bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Logeado como: <%= usuario.NombreUsuario %> </label>
+                      <%if (usuario.Id_Acceso == 3)//verificar el tipo de acceso para poder ver la pagina.
                         {%>
                 <a href="RecursosAdmin.aspx" style="color: white;"><i class="fas fa-cogs"></i> Panel Admin</a>
                 <%}
