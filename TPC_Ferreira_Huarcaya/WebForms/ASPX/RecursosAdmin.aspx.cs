@@ -18,6 +18,8 @@ namespace WebForms.ASPX
         public List<Usuario> Usuarios { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            FiltrarAcceso();
+
            if(Request.QueryString["idPaginaWeb"] != null)
             {
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
@@ -53,6 +55,24 @@ namespace WebForms.ASPX
                 txtBox_PrecioPorPagina.Text = persNeg.GetPrecioPorPagina().ToString();
             }
         }
+
+        void FiltrarAcceso()
+        {
+            if (Session["usersession"] == null)//si no hay usuario en la sesion, ir a Log-in
+            {
+                Response.Redirect("InicioSesion.aspx");
+            }
+            Usuario = (Usuario)Session["usersession"];
+            if (Usuario == null)
+            {
+                Response.Redirect("InicioSesion.aspx");
+            }
+            else if ( Usuario.Id_Acceso != 3)//verificar el tipo de acceso para poder ver la pagina.
+            {
+                Response.Redirect("Home.aspx");
+            }
+        }
+
         void LlenarListas()
         {
             UsuarioNegocio usuNeg = new UsuarioNegocio();
