@@ -65,6 +65,8 @@
                                     <asp:Label Text="" runat="server" ID="lblContrasenia" />
                                 </div>
                                 <asp:Button Text="Ingresar" runat="server" CssClass="btn-Ingresar" ID="btn_Ingresar" OnClick="btn_Ingresar_Click" />
+                                <br />
+                                <asp:Label Text="" runat="server" id="lbl_Mensaje"/>
                             </form>
                             <div class="col-12">
                                 <label>No tiene una cuenta?</label>
