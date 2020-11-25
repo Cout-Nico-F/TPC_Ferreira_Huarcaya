@@ -16,7 +16,11 @@ namespace WebForms.ASPX
         public Usuario Usuario { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                lblContrasenia.Text = "";
+                lblNombreUsuario.Text = "";
+            }
         }
 
         protected void btn_Ingresar_Click(object sender, EventArgs e)
@@ -39,12 +43,14 @@ namespace WebForms.ASPX
                 if (Usuario.ID != 0)
                 {
                     Session.Add("usersession", Usuario);
-                    Response.Redirect("Catalogo.aspx");//se podra usar el javascript:back aca? porque nos redirecciona a catalogo y no es correcto
-                    //con un back de javascript tendriamos el mismo problema porque lo que queremos es que siga, como cuando solicitamos una pagina y no estamos logeado
+                    Response.Redirect("Catalogo.aspx");//TODO: Sistema para volver al url que nos envió aqui(osea para continuar en donde estabamos)
                 }
                 else
                 {
-                    Response.Redirect("Error.aspx");
+                    lbl_Mensaje.BackColor = System.Drawing.Color.Red;
+                    lbl_Mensaje.ForeColor = System.Drawing.Color.White;
+                    lbl_Mensaje.Text = "Usuario o Contraseña no existente!";
+                    //Response.Redirect("Error.aspx");
                 }
                
             }
