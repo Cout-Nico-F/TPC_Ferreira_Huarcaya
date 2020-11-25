@@ -45,6 +45,7 @@
     <Compile Include="DatosPersonalesNegocios.cs" />
     <Compile Include="DropdownsNegocio.cs" />
     <Compile Include="ConexionMSSQL.cs" />
+    <Compile Include="EmailNegocios.cs" />
     <Compile Include="EstiloNegocio.cs" />
     <Compile Include="FuncionalidadNegocio.cs" />
     <Compile Include="InformacionNegocio.cs" />
