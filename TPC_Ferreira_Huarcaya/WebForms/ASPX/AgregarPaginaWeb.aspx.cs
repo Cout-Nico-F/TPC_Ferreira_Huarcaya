@@ -33,14 +33,14 @@ namespace WebForms.ASPX
                 PaginaWeb pag = new PaginaWeb();
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
-                string Ruta = WebConfigurationManager.AppSettings["ImageFolder"] + "prueba1.jpg";
-                fileImagen.PostedFile.SaveAs(Ruta);
+                //string Ruta = WebConfigurationManager.AppSettings["ImageFolder"] + "prueba1.jpg";
+                //fileImagen.PostedFile.SaveAs(Ruta);
 
                 pag.Titulo = txtTitulo.Text;
                 pag.Descripcion = txtDescripcion.Text;
                 pag.Url_PaginaWeb = txtUrlPagina.Text;
-                pag.Url_Imagen = Ruta;
-                pag.Habilitado = true; //lo mando asi por ahora
+                pag.Url_Imagen = txtUrlImagen.Text;
+                pag.Habilitado = true; //una pagina recien ingresada siempre empieza habilitada
                 pag.Precio = Convert.ToInt32(txtPrecio.Text);
 
 
