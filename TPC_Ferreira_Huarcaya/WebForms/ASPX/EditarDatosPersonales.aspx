@@ -11,11 +11,30 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!--CSS Estilos -->
     <link href="#" rel="stylesheet" />
-    
+    <!--Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet" />
+
     <title>Editar Datos Personales</title>
 
 </head>
 <body>
+
+    <style>
+        body{
+            
+            background-color:antiquewhite;
+            background-size:cover;
+        }
+        h2{
+            font-family: 'Sansita Swashed', cursive;
+            font-size:60px;
+        }
+        .form-control{
+            font-family: 'Domine', serif;
+            font-size:20px;
+        }
+    </style>
+
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
         <a class="navbar-brand" href="#">
              <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color:transparent" /> <!-- No puedo hacer transparente el fonde de la imagen -->
@@ -67,11 +86,11 @@
                                 <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
                                  <asp:Label Text="" runat="server" ID="lblContrasenia"/>
                             </div>
-                             <div class="col-md-12 form-group">
+                             <div class="col-md-6 form-group">
                                  <asp:Label Text="Telefono Movil" runat="server" />
                                 <asp:TextBox runat="server" ID="txtTelefonoMovil" Placeholder="Telefono Movil (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
                             </div>
-                             <div class="col-md-12 form-group">
+                             <div class="col-md-6 form-group">
                                 <asp:Label Text="Telefono Fijo" runat="server" />
                                  <asp:TextBox runat="server" ID="txtTelefonoFijo" Placeholder="Telefono Fijo (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
                             </div>
@@ -87,10 +106,8 @@
                         </div>
                         <br />
                         <div class="col-md-6 form-group">
-                            <asp:Button Text="Aplicar Cambios" runat="server" CssClass="btn btn-primary" ID="btn_Cambio" OnClick="btn_Cambio_Click"  />
-                        </div>
-                         <div class="col-md-6 form-group">
-                             <a href="Catalogo.aspx" class="btn btn-primary">Cancelar</a>
+                            <asp:Button Text="Aplicar Cambios" runat="server" CssClass="btn btn-dark" ID="btn_Cambio" OnClick="btn_Cambio_Click"  />
+                             <a href="Catalogo.aspx" class="btn btn-dark">Cancelar</a>
                         </div>
                     </form>
                 </div>

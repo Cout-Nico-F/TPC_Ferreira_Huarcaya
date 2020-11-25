@@ -7,7 +7,7 @@
         <div class="container my-3 py-5 text-center" id="Titulo">
             <div class="row mb-5">
                 <div class="col">
-                    <h1>Director's</h1>
+                    <h1>Admin's</h1>
                     <p class="mt-3">
                          
                     </p>
@@ -15,7 +15,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-12 col-md-12">
                 </div>
                 <%
                     foreach (Modelo.Usuario item in listaInfo)

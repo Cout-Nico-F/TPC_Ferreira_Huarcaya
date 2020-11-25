@@ -196,10 +196,13 @@
                       <div>
                         <!--<a href="ConfirmarPedidoPagWeb.aspx" class="btn btn-info" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Paso Final</a> -->
                     </div>
-                </div>                    
+                          <br />
+                          <br />
+                           <asp:Button  ID="btn_Solicitar" Text="Solicitar Pagina" runat="server" OnClick="btn_Solicitar_Click" CssClass="btn btn-secondary btn-lg btn-block" />
+                </div>           
                 </div>
                
-                <asp:Button  ID="btn_Solicitar" Text="Solicitar!" runat="server" OnClick="btn_Solicitar_Click" />
+               
 
                 <br />
                 <br />
