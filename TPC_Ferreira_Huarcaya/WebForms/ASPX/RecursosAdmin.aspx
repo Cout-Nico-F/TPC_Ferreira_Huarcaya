@@ -146,6 +146,7 @@
                             <th>Precio</th>
                             <th>Fecha de Pedido</th>
                             <th>Comentario</th>
+                            <th>Vista Detallada</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -160,6 +161,7 @@
                             <td><%=item.Precio %></td>
                             <td><%=item.FechaPedido %></td>
                             <td><%=item.Comentarios %></td>
+                            <td><a href="DetallePedidoPrediseniado.aspx?IdUsuario=<%=item.Id_Cliente %>">Ver Detalles</a></td>
                         </tr>
                         <%} %>
                         <%} %>
