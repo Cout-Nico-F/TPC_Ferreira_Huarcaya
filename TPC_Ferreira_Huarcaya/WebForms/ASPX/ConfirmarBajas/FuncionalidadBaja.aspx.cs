@@ -22,6 +22,7 @@ namespace WebForms.ASPX.ConfirmarBajas
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            FiltrarAcceso();
             if (Request.QueryString["idFuncionalidad"] == null) 
             {
                 Response.Redirect("../Home.aspx");//solo se puede entrar a esta pagina llegando con una id de funcionalidad por url.
@@ -36,6 +37,22 @@ namespace WebForms.ASPX.ConfirmarBajas
         {
             FunNegocio.Eliminar(Funcionalidad.Id);//el metodo permite usar un if para comprobar que se pudo eliminar (1) o que no afecto ninguna row (0)
             Response.Redirect("../PersonalizarUsuario.aspx");
+        }
+        void FiltrarAcceso()
+        {
+            if (Session["usersession"] == null)//si no hay usuario en la sesion, ir a Log-in
+            {
+                Response.Redirect("../InicioSesion.aspx");
+            }
+            Usuario usuario = (Usuario)Session["usersession"];
+            if (usuario == null)
+            {
+                Response.Redirect("../InicioSesion.aspx");
+            }
+            else if (usuario.Id_Acceso != 3)//verificar el tipo de acceso para poder ver la pagina.
+            {
+                Response.Redirect("../Home.aspx");
+            }
         }
     }
 }

@@ -24,6 +24,7 @@ namespace WebForms.ASPX.ConfirmarBajas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FiltrarAcceso();
             if (Request.QueryString["idEstilo"] == null)
             {
                 Response.Redirect("../Home.aspx");//solo se puede entrar a esta pagina llegando con una id de estilo por url.
@@ -38,6 +39,22 @@ namespace WebForms.ASPX.ConfirmarBajas
         {
             EstNegocio.Eliminar(EstiloSeleccionado.Id);
             Response.Redirect("../PersonalizarUsuario.aspx");
+        }
+        void FiltrarAcceso()
+        {
+            if (Session["usersession"] == null)//si no hay usuario en la sesion, ir a Log-in
+            {
+                Response.Redirect("../InicioSesion.aspx");
+            }
+            Usuario usuario = (Usuario)Session["usersession"];
+            if (usuario == null)
+            {
+                Response.Redirect("../InicioSesion.aspx");
+            }
+            else if (usuario.Id_Acceso != 3)//verificar el tipo de acceso para poder ver la pagina.
+            {
+                Response.Redirect("../Home.aspx");
+            }
         }
     }
 }

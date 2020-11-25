@@ -24,6 +24,7 @@ namespace WebForms.ASPX.AltasModificaciones
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FiltrarAcceso();
             if (Request.QueryString["idFuncionalidad"] != null)
             {//si es modificacion
                 idRecibido = Convert.ToInt16(Request.QueryString["idFuncionalidad"]);
@@ -106,6 +107,22 @@ namespace WebForms.ASPX.AltasModificaciones
                 return false;
             }
             return true;
+        }
+        void FiltrarAcceso()
+        {
+            if (Session["usersession"] == null)//si no hay usuario en la sesion, ir a Log-in
+            {
+                Response.Redirect("../InicioSesion.aspx");
+            }
+            Usuario usuario = (Usuario)Session["usersession"];
+            if (usuario == null)
+            {
+                Response.Redirect("../InicioSesion.aspx");
+            }
+            else if (usuario.Id_Acceso != 3)//verificar el tipo de acceso para poder ver la pagina.
+            {
+                Response.Redirect("../Home.aspx");
+            }
         }
     }
 }
