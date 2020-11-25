@@ -12,6 +12,7 @@ namespace WebForms.ASPX
         public PedidoPaginaPersonalizada PedidoSeleccionado { get; set; }
         public List<Funcionalidad> Funcionalidades { get; set; }
         public List<Pagina> Paginas { get; set; }
+        public DatosPersonales DatosUsuario { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,6 +26,7 @@ namespace WebForms.ASPX
             CargarPedidoSeleccionado();
             CargarFuncionalidades();
             CargarPaginas();
+            CargarDatosUsuarioPedido();
         }
 
         void CargarPedidoSeleccionado()
@@ -40,6 +42,11 @@ namespace WebForms.ASPX
         void CargarPaginas()
         {
             Paginas = pneg.ListarPaginas(idPedido);
+        }
+        void CargarDatosUsuarioPedido()
+        {
+            DatosPersonalesNegocios datNeg = new DatosPersonalesNegocios();
+            DatosUsuario = datNeg.TraerDatos(PedidoSeleccionado.Id_Cliente);
         }
         //TODO: Necesitamos una seccion donde el staff pueda buscar datos personales por numero de ID de usuario
     }

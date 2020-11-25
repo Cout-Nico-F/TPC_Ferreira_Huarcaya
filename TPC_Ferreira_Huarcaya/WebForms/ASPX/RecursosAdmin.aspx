@@ -95,7 +95,6 @@
                             <th scope="col">Contrasenia</th>
                             <th scope="col">ID Nivel</th>
                             <th scope="col">Habilitado</th>
-                            <th scope="col">Habilitar o Inhabilitar Usuario</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,7 +115,6 @@
                                 {%>
                                  <td>No</td>
                             <%} %>
-                           <td style="text-align:center;"><a href="RecursosAdmin.aspx?idUsuario=<%=item.ID %>"<i class="fas fa-ban"></i></a></td>
                         </tr>
                         <%} %>
 

@@ -33,10 +33,6 @@ namespace WebForms.ASPX
                     Response.Redirect("Error.aspx");
                 }
             }
-           /*if(Request.QueryString["idUsuario"] != null)
-            {
-                CambiarHabilitadoUsuario();
-            }*/
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();
@@ -50,7 +46,7 @@ namespace WebForms.ASPX
             }
             LlenarListas();
 
-            if (! IsPostBack)
+            if (!IsPostBack)
             {
                 PedidoPersonalizadoNegocio persNeg = new PedidoPersonalizadoNegocio();
                 txtBox_PrecioBase.Text = persNeg.GetPrecioBase().ToString();
@@ -110,26 +106,5 @@ namespace WebForms.ASPX
             txtBox_PrecioPorPagina.Text = persNeg.GetPrecioPorPagina().ToString();
 
         }
-
-        /*void CambiarHabilitadoUsuario()
-{
-   UsuarioNegocio usuNeg = new UsuarioNegocio();
-
-
-   Int16 id = Convert.ToInt16(Request.QueryString["idUsuario"]);
-
-   if(  == id)
-   {
-       if( == true)
-       {
-           usuNeg.CambiarHabilitado(id,true);
-       }
-       else
-       {
-           usuNeg.CambiarHabilitado(id, false);
-       }
-   }
-
-}*/
     }
 }
