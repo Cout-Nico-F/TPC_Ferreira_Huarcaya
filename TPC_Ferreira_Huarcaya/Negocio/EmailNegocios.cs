@@ -11,14 +11,19 @@ namespace Negocio
 {
     public class EmailNegocios
     {
-        public void EnviarMailPruebaPedidoPersonalizado(DatosPersonales dat,PedidoPaginaPersonalizada Pedido)
+        public void EnviarMailPruebaPedidoPersonalizado(DatosPersonales dat,PedidoPaginaPersonalizada pedido)
         {
             string body = "<body>" +
             "<h1>Hola " + dat.NombreApellido + "</h1>" +
-            "<h1> Comentario: " + Pedido.Comentarios + "</h1>" +
-            "<h1> Precio:" + Pedido.Precio + " $</h1>" +
-            "<h1> ID_Estilo" + Pedido.ID_Estilo + "</h1>" +
+            "<h2>Muchas gracias por contar con nosotros!</h2>" +
+            "<h2>Recibimos tu pedido de pagina web. Un representante se comunicara contigo a la brevedad!.</h2>" +
+            //"<h3>Estos son los detalles de tu pedido:</h3>" +
+            "<h3>Precio Final: $" + pedido.Precio + "</h3>" +
+            //"<h3>Tu numero de pedido es: " + pedido.Id + "</h3>" +
+            //"<h3>Tu numero de cliente es: " + dat.Usuario + "</h3>" +
+            "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
+
 
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -29,7 +34,7 @@ namespace Negocio
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
             mail.To.Add(new MailAddress(dat.Email));
-            mail.Subject = "Tu factura electronica";
+            mail.Subject = "Recibimos tu pedido de pagina web";
             mail.IsBodyHtml = true;
             mail.Body = body;
 
@@ -39,9 +44,13 @@ namespace Negocio
         {
             string body = "<body>" +
             "<h1>Hola " + dat.NombreApellido + "</h1>" +
-            "<h1>" + pedido.Comentarios + "</h1>" +
-            "<h1>" + pedido.Precio + "</h1>" +
-            "<h1>" + pedido.Id_WebPage + "</h1>" +
+            "<h2>Muchas gracias por contar con nosotros!</h2>" +
+            "<h2>Recibimos tu pedido de pagina web. Un representante se comunicara contigo a la brevedad!.</h2>" +
+            //"<h3>Estos son los detalles de tu pedido:</h3>" +
+            "<h3>Precio Final: $" + pedido.Precio + "</h3>" +
+            //"<h3>Tu numero de pedido es: " + pedido.Id + "</h3>" + //Como el id lo pone la base de datos, en este punto no lo reconoce
+            //"<h3>Tu numero de cliente es: " + dat.Usuario + "</h3>" + //TODO: usar el SP para recibir el id de pedido.
+            "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
 
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
@@ -53,7 +62,7 @@ namespace Negocio
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
             mail.To.Add(new MailAddress(dat.Email));
-            mail.Subject = "Tu factura electronica";
+            mail.Subject = "Recibimos tu pedido de pagina web";
             mail.IsBodyHtml = true;
             mail.Body = body;
 
