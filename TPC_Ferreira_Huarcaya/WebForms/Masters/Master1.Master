@@ -40,9 +40,9 @@
         <div>
             <div class="boton-nav-user">
                 
-                <a href="InicioSesion.aspx" style="color:white; margin-right:30px;"><i class="fas fa-user"></i></a>
-                <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i></a>
-                <a href="RecursosAdmin.aspx" style="color:white;"><i class="fas fa-question"></i></a>
+                <a href="InicioSesion.aspx" style="color:white; margin-right:30px;"><i class="fas fa-user"></i> Log-In</a>
+                <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i> Editar info</a>
+                <a href="RecursosAdmin.aspx" style="color:white;"><i class="fas fa-question"></i> Panel Admin</a>
             </div>
         </div>
     </div>

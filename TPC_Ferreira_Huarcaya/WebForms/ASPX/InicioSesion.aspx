@@ -34,8 +34,8 @@
                     </div>
                     <div>
                         <div class="boton-nav-user">
-                            <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i></a>
-                            <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i></a>
+                            <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i>LogIn</a>
+                            <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i>Editar Datos</a>
                         </div>
                     </div>
                 </div>
