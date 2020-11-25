@@ -47,34 +47,39 @@
     </nav>
 
     <style>
-
-        .container-paginas{
-            min-height:100vh;
+        .container-paginas {
+            min-height: 100vh;
         }
+
         body div .fondo1 {
-            background-color:antiquewhite;
-        }
-         body div .fondo2 {
-            background-color:lightcyan;
-        }
-          body div .fondo3 {
-          background-color:white;
-        }
-        .container-estilos{
-             min-height:100vh;
-        }
-        .container-funcionalidades{
-            min-height:100vh;
-        }
-        h1{
-            font-family: 'Pacifico', cursive;
-            font-size:55px;
-        }
-        p{
-            font-family: 'Architects Daughter', cursive;
-            font-size:30px;
+            background-color: antiquewhite;
         }
 
+        body div .fondo2 {
+            background-color: lightcyan;
+        }
+
+        body div .fondo3 {
+            background-color: white;
+        }
+
+        .container-estilos {
+            min-height: 100vh;
+        }
+
+        .container-funcionalidades {
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 55px;
+        }
+
+        p {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 30px;
+        }
     </style>
 
     <form id="form1" runat="server">
@@ -82,133 +87,17 @@
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <div class="fondo1">
-                     <div class="container container-paginas">
-                    <div style="text-align: center">
-                         <br />
-                        <br />
-                        <h1>Paso 1:</h1>
-                        <h1>Paginas</h1>
-                        <p>Elija las paginas que conformaran su Web</p>
-                        <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
-                        <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" CssClass="btn btn-info" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
-                        <%if (PaginaSeleccionada != null)
-                            {%>
-                        <br />
-                        <br />
-                        <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 50%; width: 80%;" />
-                        <% }%>
-                        <div class="float-md-right">
-                            <%if (!(ListaFuncionalidadesAgregadas == null))
-                                {%>
-                            <table id="Paginas-Agregadas" class="table table-striped table-dark">
-                                <thead>
-                                    <tr>
-                                        <th>Paginas</th>
-                                        <th>Accion</th>
-                                    </tr>
-                                </thead>
+                    <div class="container container-paginas">
+                        <div style="text-align: center">
+                            <br />
+                            <%if (Session["usersession"] != null)
+                    {
+                        Usuario = (Modelo.Usuario)Session["usersession"];
 
-                                <tbody>
+                        if (Usuario.Id_Acceso == 3)//verificar el tipo de acceso para poder ver la pagina.
+                        {%>
 
-                                    <%foreach (var pag in ListaPaginasAgregadas)
-                                        {%>
-                                    <tr>
-                                        <td><%=pag.Descripcion%></td>
-                                        <td>
-                                            <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>" class="btn btn-outline-info">Remover pagina</a>
-                                        </td>
-                                    </tr>
-                                    <%} %>
-                                    <%}%>
-                                </tbody>
-                            </table>
-                              <div>
-                                  <a href="#pag2" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Seguir</a>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-               
-                <div class="fondo2" id="pag2">
-                     <div class="container container-estilos" >
-                    <div style="text-align: center">
-                         <br />
-                        <br />
-                        <h1>Paso 2:</h1>
-                        <h1>Estilo</h1>
-                        <p>Elija el estilo que quiera que tenga su web</p>
-                        <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
-                            
-                        <%if (EstiloSeleccionado != null)
-                            {%>
-                        <br />
-                        <br />
-                        <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 50%; width: 80%;" />
-                        <% }%>
-                        
-                    </div>
-                           <div>
-                             <a href="#pag3" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Seguir</a>
-                         </div>
-                </div>
-                </div>
-               
-                <div class="fondo3" id="pag3">
-                      <div class="container container-funcionalidades">
-                    <div style="text-align: center">
-                        <br />
-                        <br />
-                        <h1>Paso 3:</h1>
-                        <h1>Funcionalidades</h1>
-                        <p>Elija una o mas funcionalidades para su Web</p>
-                        <asp:DropDownList runat="server" ID="ddl_Funcionalidades" CssClass="btn btn-dark"></asp:DropDownList>
-                        <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" CssClass="btn btn-info" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
-                    </div>
-                          <br />
-                          <br />
-                    <table id="Funcionalidades-Agregadas" class="table table-striped table-dark">
-                        <thead>
-                            <tr>
-                                <th>Funcionalidades</th>
-                                <th>Costo</th>
-                                <th>Accion</th>
-                            </tr>
-                        </thead>
 
-                        <%if (!(ListaFuncionalidadesAgregadas == null))
-                            {%>
-                        <%foreach (var item in ListaFuncionalidadesAgregadas)
-                            { %>
-                        <tbody>
-                            <tr>
-                                <td><%=item.Descripcion%></td>
-                                <td>$ <%=item.Costo %></td>
-                                <td>
-                                    <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>" class="btn btn-outline-info">Remover funcionalidad</a>
-                                </td>
-                            </tr>
-                            <%} %>
-                        </tbody>
-
-                    </table>
-                    <%}%>
-                      <div>
-                        <!--<a href="ConfirmarPedidoPagWeb.aspx" class="btn btn-info" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Paso Final</a> -->
-                    </div>
-                          <br />
-                          <br />
-                           <asp:Button  ID="btn_Solicitar" Text="Solicitar Pagina" runat="server" OnClick="btn_Solicitar_Click" CssClass="btn btn-secondary btn-lg btn-block" />
-                </div>           
-                </div>
-               
-               
-
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
 
                 <table class="table table-striped table-dark">
                     <thead>
@@ -248,11 +137,129 @@
                         </tr>
                     </tbody>
                 </table>
+                <%}
+                } %>
+                            <br />
+                            <h1>Paso 1:</h1>
+                            <h1>Paginas</h1>
+                            <p>Elija las paginas que conformaran su Web</p>
+                            <asp:DropDownList runat="server" ID="ddl_Paginas" AutoPostBack="true" OnSelectedIndexChanged="ddl_Paginas_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
+                            <asp:Button Text="Agregar" runat="server" ID="btn_AgregarPagina" CssClass="btn btn-info" OnClick="btn_AgregarPagina_Click" AutoPostBack="true" />
+                            <%if (PaginaSeleccionada != null)
+                                {%>
+                            <br />
+                            <br />
+                            <img src="<%=PaginaSeleccionada.Url_Imagen%>" alt="Imagen Pagina no encontrada" style="height: 50%; width: 80%;" />
+                            <% }%>
+                            <div class="float-md-right">
+                                <%if (!(ListaFuncionalidadesAgregadas == null))
+                                    {%>
+                                <table id="Paginas-Agregadas" class="table table-striped table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th>Paginas</th>
+                                            <th>Accion</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        <%foreach (var pag in ListaPaginasAgregadas)
+                                            {%>
+                                        <tr>
+                                            <td><%=pag.Descripcion%></td>
+                                            <td>
+                                                <a href="PersonalizarUsuario.aspx?IdRemoverPagina=<%=pag.ID%>" class="btn btn-outline-info">Remover pagina</a>
+                                            </td>
+                                        </tr>
+                                        <%} %>
+                                        <%}%>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <a href="#pag2" class="btn btn-primary" role="button" style="box-shadow: 5px 5px 8px #999; border-radius: 40px;">Seguir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fondo2" id="pag2">
+                    <div class="container container-estilos">
+                        <div style="text-align: center">
+                            <br />
+                            <br />
+                            <h1>Paso 2:</h1>
+                            <h1>Estilo</h1>
+                            <p>Elija el estilo que quiera que tenga su web</p>
+                            <asp:DropDownList runat="server" ID="ddl_Estilos" AutoPostBack="true" OnSelectedIndexChanged="ddl_Estilos_SelectedIndexChanged" CssClass="btn btn-dark"></asp:DropDownList>
+
+                            <%if (EstiloSeleccionado != null)
+                                {%>
+                            <br />
+                            <br />
+                            <img src="<%=EstiloSeleccionado.Url_Imagen%>" alt="Imagen Estilo no encontrada" style="height: 50%; width: 80%;" />
+                            <% }%>
+                        </div>
+                        <div>
+                            <a href="#pag3" class="btn btn-primary" role="button" style="box-shadow: 5px 5px 8px #999; border-radius: 40px;">Seguir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fondo3" id="pag3">
+                    <div class="container container-funcionalidades">
+                        <div style="text-align: center">
+                            <br />
+                            <br />
+                            <h1>Paso 3:</h1>
+                            <h1>Funcionalidades</h1>
+                            <p>Elija una o mas funcionalidades para su Web</p>
+                            <asp:DropDownList runat="server" ID="ddl_Funcionalidades" CssClass="btn btn-dark"></asp:DropDownList>
+                            <asp:Button Text="Agregar" runat="server" ID="btn_Agregar_Funcionalidad" CssClass="btn btn-info" OnClick="btn_Agregar_Funcionalidad_Click" AutoPostBack="true" />
+                        </div>
+                        <br />
+                        <br />
+                        <table id="Funcionalidades-Agregadas" class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th>Funcionalidades</th>
+                                    <th>Costo</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+
+                            <%if (!(ListaFuncionalidadesAgregadas == null))
+                                {%>
+                            <%foreach (var item in ListaFuncionalidadesAgregadas)
+                                { %>
+                            <tbody>
+                                <tr>
+                                    <td><%=item.Descripcion%></td>
+                                    <td>$ <%=item.Costo %></td>
+                                    <td>
+                                        <a href="PersonalizarUsuario.aspx?IdRemoverFuncionalidad=<%=item.Id%>" class="btn btn-outline-info">Remover funcionalidad</a>
+                                    </td>
+                                </tr>
+                                <%} %>
+                            </tbody>
+
+                        </table>
+                        <%}%>
+                        <div>
+                            <!--<a href="ConfirmarPedidoPagWeb.aspx" class="btn btn-info" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Paso Final</a> -->
+                        </div>
+                        <br />
+                        <br />
+                        <asp:Button ID="btn_Solicitar" Text="Solicitar Pagina" runat="server" OnClick="btn_Solicitar_Click" CssClass="btn btn-secondary btn-lg btn-block" />
+                    </div>
+                </div>
+
+
 
                 <br />
-                <br />
-                <br />
-                <br />
+
+
 
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -260,15 +267,15 @@
 
         <script>
             window.onload = function () {
-                var pos = window.name || 10;
-                window.scrollTo(10, pos);
-            }
-            window.onunload = function () {
-                window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
-            }
-        </script>
+                      var pos = window.name || 10;
+                      window.scrollTo(10, pos);
+                  }
+                  window.onunload = function () {
+                      window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
+                  }
+        </script >
 
-    </form>
+    </form >
 </body>
 </html>
 
