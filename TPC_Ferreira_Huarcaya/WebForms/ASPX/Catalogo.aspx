@@ -10,9 +10,10 @@
                 <div class="col-md-12 col-md-offset-2">
                     <div class="row">
                         <div class="col-md-12 form-group">
+                            <asp:Label Text="Ingrese un titulo y presione enter para buscar" runat="server" style="margin-left: 3%"/>
                             <div class="container d-flex">
                                 <asp:TextBox runat="server" CssClass="form-control" ID="txt_Buscar" placeholder=" Buscar..." MaxLength="50" OnTextChanged="txt_Buscar_TextChanged" />
-                                <asp:CheckBox Text="Mostrar todos" runat="server" ID="ch_MostrarTodos" Checked="false" />
+                                <a href="Catalogo.aspx" class="btn alert-info">Todas</a>
                             </div>
                         </div>
                     </div>
@@ -20,9 +21,6 @@
             </div>
         </div>
     </div>
-
-    <br />
-    <br />
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">

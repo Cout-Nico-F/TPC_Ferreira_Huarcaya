@@ -12,7 +12,7 @@ namespace WebForms.ASPX
     public partial class Catalogo : System.Web.UI.Page
     {
         public List<PaginaWeb> Lista { get; set; }
-        public Usuario Usuario { get; set; } // properti para poder usarla en el front
+        public Usuario Usuario { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,28 +50,15 @@ namespace WebForms.ASPX
             {
                 Session.Add("listadoBuscados", listaBuscador);
             }
-            /*
-             Como va a buscar por Titulo entonces deberiamos hacer los totulos de las paginas mas explicativos
-             Los que tenemos ahi son de prueba, los iremos mejorando mas delante
-             */
+
             listaBuscador = Lista;
             listaBuscador = Lista.FindAll(
                 page => page.Titulo.ToUpper().Contains(txt_Buscar.Text.ToUpper()));
-            //no funciona pero deberiamos hacerlo de otra manera para que busque coincidencias
+
             Session["listadoBuscados"] = listaBuscador;
             
-            /*Esto es para que recargue la pagina no?*/
             Response.Redirect("Catalogo.aspx");
         }
 
-        protected void ch_MostrarTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            Response.Redirect("Catalogo.aspx");
-        }
-
-        protected void btn_Solicitar_Prearmada_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
