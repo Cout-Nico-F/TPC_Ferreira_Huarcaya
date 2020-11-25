@@ -16,6 +16,15 @@ namespace WebForms.ASPX
         public Usuario Usuario { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["LogOut"] != null)
+            {
+                if (Session["usersession"] != null )
+                {
+                    Session.Remove("usersession");
+                    Response.Redirect("Home.aspx");
+                }
+                
+            }
             if (IsPostBack)
             {
                 lblContrasenia.Text = "";
