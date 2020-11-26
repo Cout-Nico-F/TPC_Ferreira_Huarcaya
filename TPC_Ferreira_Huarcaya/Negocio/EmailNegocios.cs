@@ -17,10 +17,9 @@ namespace Negocio
             "<h1>Hola " + dat.NombreApellido + "</h1>" +
             "<h2>Muchas gracias por contar con nosotros!</h2>" +
             "<h2>Recibimos tu pedido de pagina web. Un representante se comunicara contigo a la brevedad!.</h2>" +
-            //"<h3>Estos son los detalles de tu pedido:</h3>" +
+            "<h3>Estos son los detalles de tu pedido:</h3>" +
             "<h3>Precio Final: $" + pedido.Precio + "</h3>" +
-            //"<h3>Tu numero de pedido es: " + pedido.Id + "</h3>" +
-            //"<h3>Tu numero de cliente es: " + dat.Usuario + "</h3>" +
+            "<h3>Tu numero de cliente es: " + dat.IdUsuario + "</h3>" +
             "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
 
@@ -46,10 +45,9 @@ namespace Negocio
             "<h1>Hola " + dat.NombreApellido + "</h1>" +
             "<h2>Muchas gracias por contar con nosotros!</h2>" +
             "<h2>Recibimos tu pedido de pagina web. Un representante se comunicara contigo a la brevedad!.</h2>" +
-            //"<h3>Estos son los detalles de tu pedido:</h3>" +
+            "<h3>Estos son los detalles de tu pedido:</h3>" +
             "<h3>Precio Final: $" + pedido.Precio + "</h3>" +
-            //"<h3>Tu numero de pedido es: " + pedido.Id + "</h3>" + //Como el id lo pone la base de datos, en este punto no lo reconoce
-            //"<h3>Tu numero de cliente es: " + dat.Usuario + "</h3>" + //TODO: usar el SP para recibir el id de pedido.
+            "<h3>Tu numero de cliente es: " + dat.IdUsuario + "</h3>" +
             "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
 

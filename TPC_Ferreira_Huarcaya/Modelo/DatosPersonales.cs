@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class DatosPersonales
     {
-        public Usuario Usuario { get; set; }
+        public Int16 IdUsuario { get; set; }
         public string NombreApellido { get; set; }
         public Int32 TelefonoMovil { get; set; }
         public string Email { get; set; }

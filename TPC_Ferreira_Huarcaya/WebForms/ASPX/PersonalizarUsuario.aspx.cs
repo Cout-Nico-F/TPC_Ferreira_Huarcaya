@@ -283,7 +283,7 @@ namespace WebForms.ASPX
         {
             PedidoPersonalizadoNegocio pneg = new PedidoPersonalizadoNegocio();
 
-            int precio = pneg.GetPrecioBase(); ;//precio base. tambien necesitamos poder setear este valor desde recursosAdmin
+            int precio = pneg.GetPrecioBase();
 
             foreach (var item in (List<Funcionalidad>)Session["listaFuncionalidadesSelec"])
             {
@@ -291,7 +291,7 @@ namespace WebForms.ASPX
             }
             foreach (var item in (List<Pagina>)Session["listaPaginasSelec"])
             {
-                precio += pneg.GetPrecioPorPagina();//TODO: el precio necesita poderse actualizar desde RecursosAdmin.aspx. voy a crear una tabla para valores configurables
+                precio += pneg.GetPrecioPorPagina();
             }
 
             return precio;
