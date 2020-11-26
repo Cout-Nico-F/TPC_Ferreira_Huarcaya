@@ -202,7 +202,13 @@ go
 /*			Tabla Paginas				*/
 insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Home','../Imagenes/ImagenesPaginas/Home.jpg',1)
 insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Contacto','../Imagenes/ImagenesPaginas/Contacto.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Sobre Nosotros','../Imagenes/ImagenesPaginas/Sobrenosotros.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Catalogo de productos','../Imagenes/ImagenesPaginas/Catalogoproductos.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Portfolio','../Imagenes/ImagenesPaginas/Portfolio.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Noticias','../Imagenes/ImagenesPaginas/Noticias.jpg',1)
 insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Login','../Imagenes/ImagenesPaginas/Login.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Blog','../Imagenes/ImagenesPaginas/Blog.jpg',1)
+insert into Paginas(Descripcion,Url_Imagen,Habilitado) values ('Preguntas Frecuentes','../Imagenes/ImagenesPaginas/FaQ.jpg',1)
 go
 
 --estos inserts se hacen al agregarle una funcionalidad a un pedido. Empieza vacio porque no hay ningun pedido. Amenos que hagamos un pedido de muestra.

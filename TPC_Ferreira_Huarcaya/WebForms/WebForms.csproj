@@ -145,7 +145,13 @@
     <Content Include="CSS\Estilos_Sesion.css" />
     <Content Include="CSS\Home.css" />
     <Content Include="Imagenes\Alonso.jpg" />
+    <Content Include="Imagenes\blog.jpg" />
+    <Content Include="Imagenes\Catalogoproductos.jpg" />
+    <Content Include="Imagenes\FaQ.jpg" />
     <Content Include="Imagenes\NicolasFerreira.jpg" />
+    <Content Include="Imagenes\Noticias.jpg" />
+    <Content Include="Imagenes\portfolio.jpg" />
+    <Content Include="Imagenes\Sobrenosotros.jpg" />
     <Content Include="Templates Prefabricados\Template_03\assets\img\about\1.jpg" />
     <Content Include="Templates Prefabricados\Template_03\assets\img\about\2.jpg" />
     <Content Include="Templates Prefabricados\Template_03\assets\img\about\3.jpg" />
