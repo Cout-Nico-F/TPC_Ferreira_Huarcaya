@@ -19,32 +19,47 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
-        <a class="navbar-brand" href="#">
-            <img src="../Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="icono_E-commerce" style="background-color: transparent" />
-            <!-- No puedo hacer transparente el fonde de la imagen -->
-            FerreAlo</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- el ID anterior era : navbarNavAltMarkup -->
-            <div class="navbar-nav mr-auto ml-auto text-center">
-                <a class="nav-link" href="Home.aspx">Home</a>
-                <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
-                <a class="nav-link" href="Info.aspx">Informacion</a>
-                <a class="nav-link" href="PersonalizarUsuario.aspx">Crea tu propia Pagina Web</a>
-            </div>
-            <div>
-                <div class="boton-nav-user">
-                    <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i></a>
-                    <a href="EditarDatosPersonales.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-info-circle"></i></a>
-                    <!-- Carrito no lo vamos a usar por lo menos aca -->
-                    <!--<a href="CarritoCompra.aspx" style="color:white; margin-right:80px;"><i class="fas fa-shopping-cart"></i></a> -->
-                </div>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
+    <a class="navbar-brand" href="#">
+        <img src="https://localhost:44344/Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="" style="background-color: transparent">
+        <!-- No puedo hacer transparente el fonde de la imagen -->
+        FerreAlo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- el ID anterior era : navbarNavAltMarkup -->
+        <div class="navbar-nav mr-auto ml-auto text-center">
+            <a class="nav-link" href="Home.aspx">Home</a>
+            <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
+            <a class="nav-link" href="Info.aspx">Informacion</a>
+            <a class="nav-link" href="PersonalizarUsuario.aspx">Crea tu propia Pagina Web</a>
+        </div>
+        <div>
+            <div class="boton-nav-user">
+
+                <%if (!(Session["usersession"] != null))
+                    {%>
+                         <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i> Log-In</a>
+                <%} %>
+                <a href="InicioSesion.aspx?LogOut=1" style="color: white; margin-right: 30px;"><i class="fas fa-sign-out-alt"></i> Log-Out</a>
+                <a href="EditarDatosPersonales.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-info-circle"></i> Editar info</a>
+                <a href="RecursosAdmin.aspx" style="color: white;"><i class="fas fa-cogs"></i> Panel Admin</a>
+                <%if (Session["usersession"] != null)
+                    {
+
+                        Modelo.Usuario usuario = (Modelo.Usuario)Session["usersession"];
+                        %>
+                        <label style="color:aliceblue; font-weight:bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Logeado como: <%= usuario.NombreUsuario %> </label>
+                      <%if (usuario.Id_Acceso == 3)//verificar el tipo de acceso para poder ver la pagina.
+                        {%>
+                
+                <%}
+                } %>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <style>
         .container-paginas {
@@ -273,7 +288,7 @@
                   window.onunload = function () {
                       window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
                   }
-        </script >
+        </script>
 
     </form >
 </body>
