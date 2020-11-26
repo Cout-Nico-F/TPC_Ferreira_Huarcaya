@@ -79,8 +79,8 @@
     <Content Include="ASPX\ConfirmarPedidoPagWeb.aspx" />
     <Content Include="ASPX\ConfirmarPedidoPersonalizado.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
+    <Content Include="ASPX\DetallePedidoPersonalizado.aspx" />
     <Content Include="ASPX\DetallePedidoPrediseniado.aspx" />
-    <Content Include="ASPX\DetallesPedidoPrediseniado.aspx" />
     <Content Include="ASPX\EditarDatosPersonales.aspx" />
     <Content Include="ASPX\Error.aspx" />
     <Content Include="ASPX\Info.aspx" />
@@ -1965,19 +1965,19 @@
     <Compile Include="ASPX\CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\DetallePedidoPersonalizado.aspx.cs">
+      <DependentUpon>DetallePedidoPersonalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\DetallePedidoPersonalizado.aspx.designer.cs">
+      <DependentUpon>DetallePedidoPersonalizado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\DetallePedidoPrediseniado.aspx.cs">
       <DependentUpon>DetallePedidoPrediseniado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ASPX\DetallePedidoPrediseniado.aspx.designer.cs">
       <DependentUpon>DetallePedidoPrediseniado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASPX\DetallesPedidoPrediseniado.aspx.cs">
-      <DependentUpon>DetallesPedidoPrediseniado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\DetallesPedidoPrediseniado.aspx.designer.cs">
-      <DependentUpon>DetallesPedidoPrediseniado.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\EditarDatosPersonales.aspx.cs">
       <DependentUpon>EditarDatosPersonales.aspx</DependentUpon>

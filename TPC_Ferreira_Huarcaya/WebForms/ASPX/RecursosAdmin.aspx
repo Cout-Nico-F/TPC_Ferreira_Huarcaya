@@ -262,7 +262,7 @@
                             <td><%= item.Estilo %></td>
                             <td><%= item.CantPaginas %></td>
                             <td><%= item.CantFuncs %></td>
-                            <td><a href="DetallesPedidoPersonalizado.aspx?IdPedido=<%=item.IdPedido %>">Ver Detalles</a></td>
+                            <td><a href="DetallePedidoPersonalizado.aspx?IdPedido=<%=item.IdPedido %>">Ver Detalles</a></td>
                         </tr>
                         <%}
                             }%>
