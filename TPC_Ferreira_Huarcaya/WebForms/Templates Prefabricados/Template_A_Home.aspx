@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Template_A.aspx.cs" Inherits="WebForms.Templates_Prefabricados.Template_A" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Template_A_Home.aspx.cs" Inherits="WebForms.Templates_Prefabricados.Template_A" %>
 
 <!DOCTYPE html>
 
@@ -25,14 +25,15 @@
             <div id="sidebar-container" class="bg-primary">
                 <div class="menu">
                     <p class="logo nombre-pagina">Nombre-Pagina</p>
-                    <a href="AltasModificaciones/FuncionalidadesAM.aspx" class="btn btn-warning d-block seccion-button">Seccion1</a>
-                    <a href="AltasModificaciones/EstilosAM.aspx" class="btn btn-warning d-block seccion-button">Seccion2</a>
-                    <a href="AltasModificaciones/PaginasAM.aspx" class="btn btn-warning d-block seccion-button">Seccion3</a>
+                    <a href="#" class="btn btn-warning d-block seccion-button">Contacto</a>
                 </div>
             </div>
             <div class="d-block" id="BodyCentro">
-                <h1 id="Titulo_Principal">Titulo principal</h1>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                <h1 id="titulo_principal">Titulo principal</h1>
+
+                <img src="../Imagenes/NicolasFerreira.jpg" alt="Primer imagen" id="primer-imagen" />
+
+                <h4 id="texto-home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                     when an unknown printer took a galley of type and scrambled it to make a type 
                     specimen book. It has survived not only five centuries, but also the leap into 

@@ -1,7 +1,18 @@
-﻿#Titulo_Principal{
+﻿#titulo_principal{
 color: aqua;
-margin: 5%;
+margin: 2%;
 text-align: center;
+}
+
+#texto-home{
+    text-align:center;
+    margin: 1%;
+}
+
+#primer-imagen {
+    width: 20%;
+    height: 15%;
+    margin-left: 40%;
 }
 
 .seccion-button{
@@ -12,3 +23,5 @@ text-align: center;
 .nombre-pagina{
     margin-bottom: 25%;
 }
+
+
