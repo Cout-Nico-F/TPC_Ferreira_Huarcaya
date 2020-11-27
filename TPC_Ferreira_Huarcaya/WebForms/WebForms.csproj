@@ -145,6 +145,7 @@
     <Content Include="CSS\Estilos_RecursosAdmin.css" />
     <Content Include="CSS\Estilos_Sesion.css" />
     <Content Include="CSS\Home.css" />
+    <Content Include="CSS\Template_A.css" />
     <Content Include="Imagenes\Alonso.jpg" />
     <Content Include="Imagenes\blog.jpg" />
     <Content Include="Imagenes\Catalogoproductos.jpg" />
@@ -1885,6 +1886,7 @@
     <Content Include="Templates Prefabricados\Template_01\vendor\jquery\jquery.min.js" />
     <Content Include="Templates Prefabricados\Template_01\vendor\jquery\jquery.slim.js" />
     <Content Include="Templates Prefabricados\Template_01\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Templates Prefabricados\Template_A.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2071,6 +2073,13 @@
       <DependentUpon>Master1.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates Prefabricados\Template_A.aspx.cs">
+      <DependentUpon>Template_A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_A.aspx.designer.cs">
+      <DependentUpon>Template_A.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Master1.Master" />
