@@ -91,6 +91,7 @@
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
     <Content Include="ASPX\RecursosAdmin.aspx" />
+    <Content Include="ASPX\VistaPreviaPaginaPrediseniada.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -2054,6 +2055,13 @@
     </Compile>
     <Compile Include="ASPX\RecursosAdmin.aspx.designer.cs">
       <DependentUpon>RecursosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\VistaPreviaPaginaPrediseniada.aspx.cs">
+      <DependentUpon>VistaPreviaPaginaPrediseniada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\VistaPreviaPaginaPrediseniada.aspx.designer.cs">
+      <DependentUpon>VistaPreviaPaginaPrediseniada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Masters\Master1.Master.cs">
       <DependentUpon>Master1.Master</DependentUpon>
