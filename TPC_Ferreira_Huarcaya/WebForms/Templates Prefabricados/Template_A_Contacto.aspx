@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Template_A_Contacto.aspx.cs" Inherits="WebForms.Templates_Prefabricados.Template_A_Contacto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Template_A_Contacto.aspx.cs" Inherits="WebForms.Templates_Prefabricados.Template_A_Contacto1" %>
 
 <!DOCTYPE html>
 
@@ -23,24 +23,20 @@
         <div class="d-flex">
             <div id="sidebar-container" class="bg-primary">
                 <div class="menu">
-                    <p class="logo nombre-pagina">Nombre-Pagina</p>
+                    <p class="logo nombre-pagina"><%=RellenoVariable.Nombre_Pagina %></p>
                     <a href="Template_A_Home.aspx" class="btn btn-warning d-block seccion-button">Home</a>
                 </div>
             </div>
             <div class="d-block" id="BodyCentro">
                 <h1 id="titulo_principal">Contactenos</h1>
 
-                <h4 id="texto-Contacto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type 
+                <h4 id="texto-Contacto"><%=RellenoVariable.Texto_Contacto %>
                 </h4>
                 <div style="text-align:center; margin-top: 2%;">
-                    <h5>Telefono:  </h5>
-                    <h5>Direccion: </h5>
-                    <h5>Email:  </h5>
+                    <h5>Telefono: <%=RellenoVariable.Telefono %> </h5>
+                    <h5>Direccion: <%=RellenoVariable.Direccion %></h5>
+                    <h5>Email: <%=RellenoVariable.Email %> </h5>
                 </div>
-                
-                 
                 <img id="imagen-contacto" src="../Imagenes/unnamed.jpg" alt="Imagen_Contacto" />
             </div>
         </div>

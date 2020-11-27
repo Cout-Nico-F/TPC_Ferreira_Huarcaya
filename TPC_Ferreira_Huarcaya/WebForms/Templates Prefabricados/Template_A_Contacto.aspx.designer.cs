@@ -11,7 +11,7 @@ namespace WebForms.Templates_Prefabricados
 {
 
 
-    public partial class Template_A_Contacto
+    public partial class Template_A_Contacto1
     {
 
         /// <summary>
