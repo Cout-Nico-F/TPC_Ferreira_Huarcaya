@@ -1,5 +1,5 @@
 ﻿#titulo_principal{
-color: aqua;
+color: darkslategray;
 margin: 2%;
 text-align: center;
 }
@@ -13,6 +13,12 @@ text-align: center;
     width: 20%;
     height: 15%;
     margin-left: 40%;
+}
+
+#imagen-contacto {
+    width: auto ;
+    height: auto;
+    margin-left: 35%;
 }
 
 .seccion-button{

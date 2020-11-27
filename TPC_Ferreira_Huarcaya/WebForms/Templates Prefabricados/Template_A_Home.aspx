@@ -25,7 +25,7 @@
             <div id="sidebar-container" class="bg-primary">
                 <div class="menu">
                     <p class="logo nombre-pagina">Nombre-Pagina</p>
-                    <a href="#" class="btn btn-warning d-block seccion-button">Contacto</a>
+                    <a href="Template_A_Contacto.aspx" class="btn btn-warning d-block seccion-button">Contacto</a>
                 </div>
             </div>
             <div class="d-block" id="BodyCentro">
