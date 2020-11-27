@@ -49,6 +49,8 @@
         <asp:textbox runat="server" id="txtbox_direccion" />
     </div>
 
-    <asp:button id="btn_Rellenar" Text="Rellenar!" runat="server" OnClick="btn_Rellenar_Click" />
+    <asp:button id="btn_Rellenar" Text="Rellenar!"  target="_blank" runat="server" OnClick="btn_Rellenar_Click" />
+    <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+
 
 </asp:Content>

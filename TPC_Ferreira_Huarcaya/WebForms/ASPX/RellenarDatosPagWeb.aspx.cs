@@ -11,9 +11,11 @@ namespace WebForms.ASPX
     public partial class RellenarDatosPagWeb : System.Web.UI.Page
     {
         public Relleno RellenoIngresado { get; set; }
+        public int IdRecibido { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             RellenoIngresado = new Relleno();
+            IdRecibido =Convert.ToInt32( Request.QueryString["id"]) ;
         }
 
         protected void btn_Rellenar_Click(object sender, EventArgs e)
@@ -28,7 +30,8 @@ namespace WebForms.ASPX
             RellenoIngresado.Telefono = txtbox_telefono.Text;
             RellenoIngresado.Direccion = txtbox_direccion.Text;
             Session.Add("relleno", RellenoIngresado);
-            Response.Redirect("/Templates Prefabricados/Template_A_Home.aspx");
+            //Response.Redirect("/Templates Prefabricados/Template_A_Home.aspx");
+            Response.Write("<script>window.open ('/Templates Prefabricados/Template_A_Home.aspx','_blank');</script>");
         }
     }
 }

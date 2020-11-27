@@ -13,8 +13,9 @@
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
     <!-- Estilos CSS -->
-    <link href="../CSS/Template_A.css" rel="stylesheet" />
     <link href="../CSS/Estilos_Personalizar.css" rel="stylesheet" />
+    <link href="../CSS/Template_A.css" rel="stylesheet" />
+
     <title>Titulo</title>
 
 </head>
