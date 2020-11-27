@@ -91,6 +91,7 @@
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
     <Content Include="ASPX\RecursosAdmin.aspx" />
+    <Content Include="ASPX\RellenarDatosPagWeb.aspx" />
     <Content Include="ASPX\VistaPreviaPaginaPrediseniada.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -2059,6 +2060,13 @@
     </Compile>
     <Compile Include="ASPX\RecursosAdmin.aspx.designer.cs">
       <DependentUpon>RecursosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\RellenarDatosPagWeb.aspx.cs">
+      <DependentUpon>RellenarDatosPagWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\RellenarDatosPagWeb.aspx.designer.cs">
+      <DependentUpon>RellenarDatosPagWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\VistaPreviaPaginaPrediseniada.aspx.cs">
       <DependentUpon>VistaPreviaPaginaPrediseniada.aspx</DependentUpon>
