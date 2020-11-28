@@ -35,15 +35,36 @@ namespace WebForms.ASPX
 
         protected void btn_RellenoPagina2_Click(object sender, EventArgs e)
         {
-            RellenoIngresado.Titulo_Pagina1 = txt_titulo_carousel1.Text;
-            RellenoIngresado.Url_Imagen_Home = txt_url1.Text;
-            RellenoIngresado.Titulo_Pagina2 = txt_titulo_carousel2.Text;
-            RellenoIngresado.Url_Imagen_Home2 = txt_url2.Text;
-            RellenoIngresado.Titulo_Pagina3 = txt_titulo_carousel3.Text;
-            RellenoIngresado.Url_Imagen_Home3 = txt_url3.Text;
+            lbl_Titulo.Text = "";
+            lbl_Imagen.Text = "";
 
-            Session.Add("relleno", RellenoIngresado);
-            Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");
+            if (ValidarLabel())
+            {
+                RellenoIngresado.Titulo_Pagina1 = txt_titulo_carousel1.Text;
+                RellenoIngresado.Url_Imagen_Home = txt_url1.Text;
+                RellenoIngresado.Titulo_Pagina2 = txt_titulo_carousel2.Text;
+                RellenoIngresado.Url_Imagen_Home2 = txt_url2.Text;
+                RellenoIngresado.Titulo_Pagina3 = txt_titulo_carousel3.Text;
+                RellenoIngresado.Url_Imagen_Home3 = txt_url3.Text;
+
+                Session.Add("relleno", RellenoIngresado);
+                Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");
+            }
+        }
+
+        private bool ValidarLabel()
+        {
+            if(txt_titulo_carousel1.Text == "")
+            {
+                lbl_Titulo.Text = "Ingrese el Titulo de la pagina 1";
+                return false;
+            }
+            if(txt_url1.Text == "")
+            {
+                lbl_Imagen.Text = "Ingrese una url imagen 1";
+                return false;
+            }
+            return true;
         }
     }
 }

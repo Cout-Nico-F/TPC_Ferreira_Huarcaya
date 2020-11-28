@@ -65,10 +65,12 @@
                 <div class="col-md-6 form-group">
                     <asp:Label Text="Titulo Imagen Carousel 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_titulo_carousel1" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Titulo"/>
                 </div>
                 <div class="col-md-6 form-group">
                     <asp:Label Text="Url Imagen Home" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url1" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Imagen"/>
                 </div>
                 <div class="col-md-6 form-group">
                     <asp:Label Text="Titulo Imagen Carousel 2" runat="server" />
@@ -90,11 +92,15 @@
                     <asp:Button ID="btn_RellenoPagina2" Text="Rellenar!" target="_blank" runat="server" OnClick="btn_RellenoPagina2_Click" CssClass="btn btn-info btn-lg btn-block" />
                 </div>
             </div>
-            <%} %>
+    <%} %>    
+            
+    <%if (IdRecibido == 3)
+        {%>
+            <div class="col-md-12 col-md-offset-2">
 
-            <div class="col-md-6 form-group">
-    <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
-    </div>
+            </div>
+     <%} %>
+             <!-- <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a> -->
 
     </div>
 

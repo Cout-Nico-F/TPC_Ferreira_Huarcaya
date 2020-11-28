@@ -114,6 +114,15 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.TextBox txt_titulo_carousel1;
 
         /// <summary>
+        /// Control lbl_Titulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Titulo;
+
+        /// <summary>
         /// Control txt_url1.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace WebForms.ASPX
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_url1;
+
+        /// <summary>
+        /// Control lbl_Imagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Imagen;
 
         /// <summary>
         /// Control txt_titulo_carousel2.
