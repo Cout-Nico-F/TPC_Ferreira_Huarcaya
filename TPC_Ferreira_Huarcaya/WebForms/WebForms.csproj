@@ -87,6 +87,7 @@
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\ModificarPaginaWeb.aspx" />
+    <Content Include="ASPX\PaginaPrediseniada01.aspx" />
     <Content Include="ASPX\PedidoExitoso.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
@@ -2032,6 +2033,13 @@
     </Compile>
     <Compile Include="ASPX\ModificarPaginaWeb.aspx.designer.cs">
       <DependentUpon>ModificarPaginaWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PaginaPrediseniada01.aspx.cs">
+      <DependentUpon>PaginaPrediseniada01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\PaginaPrediseniada01.aspx.designer.cs">
+      <DependentUpon>PaginaPrediseniada01.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\PedidoExitoso.aspx.cs">
       <DependentUpon>PedidoExitoso.aspx</DependentUpon>

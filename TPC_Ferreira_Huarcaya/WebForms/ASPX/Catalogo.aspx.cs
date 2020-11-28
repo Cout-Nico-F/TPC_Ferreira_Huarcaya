@@ -17,8 +17,13 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
 
-             Usuario = (Usuario)Session["usersession"];
-           
+            Usuario = (Usuario)Session["usersession"];
+
+            if(Request.QueryString["idPrueba"] != null)
+            {
+                VerificarIDPagina();
+            }
+
             try
             {
                 PaginasWebNegocios pagNegocio = new PaginasWebNegocios();
@@ -39,7 +44,6 @@ namespace WebForms.ASPX
                 Response.Redirect("Error.aspx");
             }
 
-
         }
 
         protected void txt_Buscar_TextChanged(object sender, EventArgs e)
@@ -58,6 +62,23 @@ namespace WebForms.ASPX
             Session["listadoBuscados"] = listaBuscador;
             
             Response.Redirect("Catalogo.aspx");
+        }
+        private void VerificarIDPagina()
+        {
+           
+            switch (Convert.ToInt16(Request.QueryString["idPrueba"]))
+            {
+                case 1:
+                    {
+                        Response.Redirect("PaginaPrediseniada01.aspx");
+                    }
+                    break;
+                case 2:
+                    {
+                        Response.Redirect("PaginaPrediseniada02.aspx");
+                    }
+                    break;
+            }
         }
 
     }

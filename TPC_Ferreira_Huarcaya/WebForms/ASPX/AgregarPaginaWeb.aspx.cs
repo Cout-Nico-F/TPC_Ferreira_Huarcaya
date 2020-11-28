@@ -72,7 +72,7 @@ namespace WebForms.ASPX
         {
             if(txtTitulo.Text == "")
             {
-                lblTitulo.Text = "El campos titulo esta vacio";
+                lblTitulo.Text = "El campo titulo esta vacio";
                 return false;
             }
             if(txtDescripcion.Text == "")

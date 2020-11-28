@@ -70,6 +70,7 @@
                             <p class="card-text"><%=item.Descripcion %></p>
                             <a href="<%=item.Url_PaginaWeb %>" target="_blank" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
                             <a href="RellenarDatosPagWeb.aspx?id=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Rellenar Datos</a>
+                            <a href="Catalogo.aspx?idPrueba=<%=item.ID %>" class="btn btn-secondary btn-lg btn-block">Prueba Vista</a>
                         </div>
                     </div>
                 </div>
