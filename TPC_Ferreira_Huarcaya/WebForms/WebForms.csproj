@@ -87,13 +87,11 @@
     <Content Include="ASPX\Home.aspx" />
     <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\ModificarPaginaWeb.aspx" />
-    <Content Include="ASPX\PaginaPrediseniada01.aspx" />
     <Content Include="ASPX\PedidoExitoso.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecuperarContaseña.aspx" />
     <Content Include="ASPX\RecursosAdmin.aspx" />
     <Content Include="ASPX\RellenarDatosPagWeb.aspx" />
-    <Content Include="ASPX\VistaPreviaPaginaPrediseniada.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -1891,6 +1889,7 @@
     <Content Include="Templates Prefabricados\Template_01\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Templates Prefabricados\Template_A_Contacto.aspx" />
     <Content Include="Templates Prefabricados\Template_A_Home.aspx" />
+    <Content Include="Templates Prefabricados\Template_B_Home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2034,13 +2033,6 @@
     <Compile Include="ASPX\ModificarPaginaWeb.aspx.designer.cs">
       <DependentUpon>ModificarPaginaWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\PaginaPrediseniada01.aspx.cs">
-      <DependentUpon>PaginaPrediseniada01.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\PaginaPrediseniada01.aspx.designer.cs">
-      <DependentUpon>PaginaPrediseniada01.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ASPX\PedidoExitoso.aspx.cs">
       <DependentUpon>PedidoExitoso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2076,13 +2068,6 @@
     <Compile Include="ASPX\RellenarDatosPagWeb.aspx.designer.cs">
       <DependentUpon>RellenarDatosPagWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\VistaPreviaPaginaPrediseniada.aspx.cs">
-      <DependentUpon>VistaPreviaPaginaPrediseniada.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\VistaPreviaPaginaPrediseniada.aspx.designer.cs">
-      <DependentUpon>VistaPreviaPaginaPrediseniada.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Masters\Master1.Master.cs">
       <DependentUpon>Master1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2104,6 +2089,13 @@
     </Compile>
     <Compile Include="Templates Prefabricados\Template_A_Home.aspx.designer.cs">
       <DependentUpon>Template_A_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Home.aspx.cs">
+      <DependentUpon>Template_B_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Home.aspx.designer.cs">
+      <DependentUpon>Template_B_Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

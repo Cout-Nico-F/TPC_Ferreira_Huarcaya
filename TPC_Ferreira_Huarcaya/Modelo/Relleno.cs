@@ -12,7 +12,12 @@ namespace Modelo
         public string Nombre_Pagina { get; set; }
         public string Titulo_Home { get; set; }
         public string Texto_Home { get; set; }
-        public string Url_Imagen_Home { get; set; }
+        public string Url_Imagen_Home { get; set; }//
+        public string  Url_Imagen_Home2 { get; set; }//
+        public string Url_Imagen_Home3 { get; set; }//
+        public string Titulo_Pagina1 { get; set; }//
+        public string Titulo_Pagina2 { get; set; }//
+        public string Titulo_Pagina3 { get; set; }//
         public string Texto_Contacto { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }

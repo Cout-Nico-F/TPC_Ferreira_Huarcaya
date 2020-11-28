@@ -30,8 +30,20 @@ namespace WebForms.ASPX
             RellenoIngresado.Telefono = txtbox_telefono.Text;
             RellenoIngresado.Direccion = txtbox_direccion.Text;
             Session.Add("relleno", RellenoIngresado);
-            //Response.Redirect("/Templates Prefabricados/Template_A_Home.aspx");
             Response.Write("<script>window.open ('/Templates Prefabricados/Template_A_Home.aspx','_blank');</script>");
+        }
+
+        protected void btn_RellenoPagina2_Click(object sender, EventArgs e)
+        {
+            RellenoIngresado.Titulo_Pagina1 = txt_titulo_carousel1.Text;
+            RellenoIngresado.Url_Imagen_Home = txt_url1.Text;
+            RellenoIngresado.Titulo_Pagina2 = txt_titulo_carousel2.Text;
+            RellenoIngresado.Url_Imagen_Home2 = txt_url2.Text;
+            RellenoIngresado.Titulo_Pagina3 = txt_titulo_carousel3.Text;
+            RellenoIngresado.Url_Imagen_Home3 = txt_url3.Text;
+
+            Session.Add("relleno", RellenoIngresado);
+            Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");
         }
     }
 }

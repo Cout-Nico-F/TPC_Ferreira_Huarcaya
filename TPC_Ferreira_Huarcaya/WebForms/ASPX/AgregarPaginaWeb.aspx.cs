@@ -15,12 +15,11 @@ namespace WebForms.ASPX
         public PaginaWeb PaginaWebVistaPrevia { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            FiltrarAcceso();
+           FiltrarAcceso();
            if(PaginaWebVistaPrevia == null)
             {
                 PaginaWebVistaPrevia = new PaginaWeb();
             }
-          
         }
 
         protected void btn_Cambios_Click(object sender, EventArgs e)
