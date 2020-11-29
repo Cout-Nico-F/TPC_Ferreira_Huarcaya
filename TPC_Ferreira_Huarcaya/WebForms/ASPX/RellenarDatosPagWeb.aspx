@@ -153,14 +153,17 @@
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo1" CssClass="form-control" />
+                     <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo2" CssClass="form-control" />
+                      <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 3" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo3" CssClass="form-control" />
+                      <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Nombre de la Categoria 2" runat="server" />
@@ -169,14 +172,17 @@
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 4" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo4" CssClass="form-control" />
+                     <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 5" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo5" CssClass="form-control" />
+                     <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 6" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo6" CssClass="form-control" />
+                     <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
 
                  <h3 style="text-align:center">Informacion de Contacto</h3>
