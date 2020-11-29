@@ -1,5 +1,5 @@
--use master
-Drop database Ferreira_Huarcaya_DB
+--use master
+--Drop database Ferreira_Huarcaya_DB
 
 create database Ferreira_Huarcaya_DB
 go
