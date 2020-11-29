@@ -139,8 +139,65 @@
             
     <%if (IdRecibido == 3)
         {%>
+             <h3 style="text-align:center">Informacion del Home</h3>
+            <p style="text-align:center">Aca vas a poder completar los datos requeridos para el home</p>
             <div class="col-md-12 col-md-offset-2">
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Logo Home" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Logo" CssClass="form-control" />
+                </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Nombre de la Categoria 1" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_NombreCategoria1" CssClass="form-control" />
+                </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Video 1" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_UrlVideo1" CssClass="form-control" />
+                </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Video 2" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_UrlVideo2" CssClass="form-control" />
+                </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Video 3" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_UrlVideo3" CssClass="form-control" />
+                </div>
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Nombre de la Categoria 2" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_NombreCategoria2" CssClass="form-control" />
+                </div>
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Video 4" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_UrlVideo4" CssClass="form-control" />
+                </div>
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Video 5" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_UrlVideo5" CssClass="form-control" />
+                </div>
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Video 6" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_UrlVideo6" CssClass="form-control" />
+                </div>
 
+                 <h3 style="text-align:center">Informacion de Contacto</h3>
+                <p style="text-align:center">Aca vas a poder completar los datos necesarios para el formulario de contacto</p>
+                 <div class="col-md-12 col-md-offset-2">
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Direccion" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Direccion" CssClass="form-control" />
+                </div>
+                      <div class="col-md-12 form-group">
+                    <asp:Label Text="Telefono" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Telefono" CssClass="form-control" TextMode="Number"/>
+                </div>
+                      <div class="col-md-12 form-group">
+                    <asp:Label Text="Email" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Email" CssClass="form-control" TextMode="Email" />
+                </div>
+               </div>
+            </div>
+             <div class="col-md-12 form-group">
+                <asp:Button ID="btn_Rellenar3" Text="Rellenar!" target="_blank" runat="server" Onclick="btn_Rellenar3_Click" CssClass="btn btn-info btn-lg btn-block" />
             </div>
      <%} %>
              <!-- <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a> -->

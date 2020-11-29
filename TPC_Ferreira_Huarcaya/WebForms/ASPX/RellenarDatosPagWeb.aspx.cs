@@ -65,6 +65,28 @@ namespace WebForms.ASPX
                 Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");
             }
         }
+        protected void btn_Rellenar3_Click(object sender, EventArgs e)
+        {
+            //Home
+            RellenoIngresado.Url_Logo = txt_Logo.Text;
+            RellenoIngresado.Nombre_Categoria1 = txt_NombreCategoria1.Text;
+            RellenoIngresado.Url_Video1_Categoria1 = txt_UrlVideo1.Text;
+            RellenoIngresado.Url_Video2_Categoria1 = txt_UrlVideo2.Text;
+            RellenoIngresado.Url_Video3_Categoria1 = txt_UrlVideo3.Text;
+
+            RellenoIngresado.Nombre_Categoria2 = txt_NombreCategoria2.Text;
+            RellenoIngresado.Url_Video1_Categoria2 = txt_UrlVideo4.Text;
+            RellenoIngresado.Url_Video2_Categoria2 = txt_UrlVideo5.Text;
+            RellenoIngresado.Url_Video3_Categoria2 = txt_UrlVideo6.Text;
+
+            //Contacto
+            RellenoIngresado.Direccion = txt_Direccion.Text;
+            RellenoIngresado.Telefono = txt_Telefono.Text;
+            RellenoIngresado.Email = txt_Email.Text;
+
+            Session.Add("relleno", RellenoIngresado);
+            Response.Write("<script>window.open ('/Templates Prefabricados/Template_C_Home.aspx','_blank');</script>");
+        }
 
         private bool ValidarLabel()
         {
@@ -100,5 +122,7 @@ namespace WebForms.ASPX
             }
             return true;
         }
+
+       
     }
 }

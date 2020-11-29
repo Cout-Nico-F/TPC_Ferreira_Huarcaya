@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace WebForms.Templates_Prefabricados
 {
-    public partial class Template_C_Home : System.Web.UI.Page
+    public partial class Template_C_Contacto : System.Web.UI.Page
     {
         public Relleno RellenoVariable { get; set; }
         protected void Page_Load(object sender, EventArgs e)

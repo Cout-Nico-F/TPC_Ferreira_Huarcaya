@@ -1893,6 +1893,8 @@
     <Content Include="Templates Prefabricados\Template_B_Contacto.aspx" />
     <Content Include="Templates Prefabricados\Template_B_Home.aspx" />
     <Content Include="Templates Prefabricados\Template_B_Login.aspx" />
+    <Content Include="Templates Prefabricados\Template_C_Contacto.aspx" />
+    <Content Include="Templates Prefabricados\Template_C_Home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2120,6 +2122,20 @@
     </Compile>
     <Compile Include="Templates Prefabricados\Template_B_Login.aspx.designer.cs">
       <DependentUpon>Template_B_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_C_Contacto.aspx.cs">
+      <DependentUpon>Template_C_Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_C_Contacto.aspx.designer.cs">
+      <DependentUpon>Template_C_Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_C_Home.aspx.cs">
+      <DependentUpon>Template_C_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_C_Home.aspx.designer.cs">
+      <DependentUpon>Template_C_Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

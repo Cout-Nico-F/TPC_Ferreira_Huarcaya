@@ -18,20 +18,60 @@
 <body>
 
     <style>
-        body{
+         body{
             background-color:black;
+        }
+        .jumbotron{
+            background-color: orange;
+            height: 500px;
+        }
+        .display-4 img{
+            text-align: center;
+            width: 500px;
+            height: 400px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+        }
+        iframe{
+            margin-left: 100px;
+            width: 500px;
+            height: 300px;
         }
     </style>
 
     <form id="form1" runat="server">
         
-        <div class="jumbotron jumbotron-fluid">
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="Template_C_Home.aspx">Home</a>
+            <a class="nav-link" href="Template_C_Contacto.aspx">Contacto</a>
+          </div>
+        </div>
+      </nav>
+        
+        <div class="jumbotron jumbotron-fluid" >
             <div class="container">
-                <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                <h1 class="display-4"><img src="<%=RellenoVariable.Url_Logo %>" alt="No se encontro la imagen" /></h1>
             </div>
         </div>
-
+        <br/><br/>
+        <h1><%=RellenoVariable.Nombre_Categoria1 %></h1>
+        <br/><br/>
+        <iframe  src="<%=RellenoVariable.Url_Video1_Categoria1 %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  src="<%=RellenoVariable.Url_Video2_Categoria1 %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  src="<%=RellenoVariable.Url_Video3_Categoria1 %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br/>
+        <br/>
+        <h1><%=RellenoVariable.Nombre_Categoria2 %></h1>
+        <br/><br/>
+        <iframe  src="<%=RellenoVariable.Url_Video1_Categoria2 %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  src="<%=RellenoVariable.Url_Video1_Categoria2 %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  src="<%=RellenoVariable.Url_Video1_Categoria2 %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br/><br/><br/>
     </form>
 
 </body>

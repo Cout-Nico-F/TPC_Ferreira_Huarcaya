@@ -36,5 +36,21 @@ namespace Modelo
         public string  Descripcion_Catalogo { get; set; }
         public Int32 Precio_Catalogo { get; set; }
 
+        //Pagina 3 
+
+        //Home
+        public string  Url_Logo { get; set; }
+        public string Nombre_Categoria1 { get; set; }
+        public string Url_Video1_Categoria1 { get; set; }
+        public string Url_Video2_Categoria1 { get; set; }
+        public string Url_Video3_Categoria1 { get; set; }
+        public string Nombre_Categoria2 { get; set; }
+        public string Url_Video1_Categoria2 { get; set; }
+        public string Url_Video2_Categoria2 { get; set; }
+        public string Url_Video3_Categoria2 { get; set; }
+
+        //Contacto
+        //reutilizo las prop de contacto de la pagina 1
+
     }
 }
