@@ -239,7 +239,7 @@ insert into paginas_X_pedidoswebpage (ID_Pagina,ID_Pedidowebpage) values (1,3)
 go
 /*				Tabla Pagina Web					*/
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Full Width Pics','Template con imagenes grandes','../Templates Prefabricados/Template_01/index.html','../Imagenes/ImagenesPaginaWeb/ImagenesFull.png',10000,1)
-insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Home/Catalogo/Login/Contacto','Este Template contiene varias ofrece variedad de Paginas para en las que puedes modificar y probar cambiar titulos,descripciones y hasta Imagenes!!','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginaWeb/Blog.png',11000,1)
+insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Home/Catalogo/Login/Contacto','Este Template contiene varias Paginas en las que puedes modificar titulos,descripciones y hasta Imagenes!!','../Templates Prefabricados/Template_02/index.html','../Imagenes/ImagenesPaginaWeb/Template_02.png',10000,1)
 insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Precio,Habilitado) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginaWeb/Moderno.png',12000,1)
 go
 -- Tabla de valores configurables

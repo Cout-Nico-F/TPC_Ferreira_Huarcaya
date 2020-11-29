@@ -17,7 +17,8 @@
     <title>Template B Catalogo</title>
 
 </head>
-<body">
+<body>
+   
     <style>
         body{
             background:url(https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788_960_720.jpg);
@@ -91,7 +92,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%=RellenoVariable.Titulo_Card_Catalogo %></h5>
                                 <p class="card-text"><%=RellenoVariable.Descripcion_Catalogo %></p>
-                                <a href="#" class="btn btn-info btn-lg btn-block"><i class="fas fa-search"></i>Vista Previa</a>
+                                <p>Precio: <%=RellenoVariable.Precio_Catalogo %>$</p>
                             </div>
                         </div>
                     </div>

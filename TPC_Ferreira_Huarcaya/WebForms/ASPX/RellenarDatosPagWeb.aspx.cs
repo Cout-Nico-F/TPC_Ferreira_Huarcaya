@@ -59,6 +59,7 @@ namespace WebForms.ASPX
                 RellenoIngresado.Titulo_Card_Catalogo = txt_Titulo_Card_Catalogo.Text;
                 RellenoIngresado.url_Imagen_Catalogo = txt_Url_Imagen_Catalogo.Text;
                 RellenoIngresado.Descripcion_Catalogo = txt_Descripcion_Catalogo.Text;
+                RellenoIngresado.Precio_Catalogo = Convert.ToInt32(txt_Precio_Catalogo.Text);
 
                 Session.Add("relleno", RellenoIngresado);
                 Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");

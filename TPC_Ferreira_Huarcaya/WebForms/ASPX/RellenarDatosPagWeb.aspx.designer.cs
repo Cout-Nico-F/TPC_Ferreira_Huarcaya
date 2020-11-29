@@ -285,6 +285,24 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.Label lbl_Descripcion_Catalogo;
 
         /// <summary>
+        /// Control txt_Precio_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Precio_Catalogo;
+
+        /// <summary>
+        /// Control lbl_Precio_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Precio_Catalogo;
+
+        /// <summary>
         /// Control btn_RellenoPagina2.
         /// </summary>
         /// <remarks>

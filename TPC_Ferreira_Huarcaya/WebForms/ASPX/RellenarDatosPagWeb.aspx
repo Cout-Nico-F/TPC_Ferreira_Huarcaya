@@ -125,6 +125,11 @@
                     <asp:TextBox runat="server" ID="txt_Descripcion_Catalogo" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Descripcion_Catalogo"/>
                 </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Precio Producto" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Precio_Catalogo" CssClass="form-control" TextMode="Number"/>
+                    <asp:Label Text="" runat="server" id="lbl_Precio_Catalogo"/>
+                </div>
             </div>
 
             <div class="col-md-12 form-group">

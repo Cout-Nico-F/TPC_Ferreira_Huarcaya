@@ -34,6 +34,7 @@ namespace Modelo
         public string  Titulo_Catalogo { get; set; }
         public string Titulo_Card_Catalogo { get; set; }
         public string  Descripcion_Catalogo { get; set; }
+        public Int32 Precio_Catalogo { get; set; }
 
     }
 }
