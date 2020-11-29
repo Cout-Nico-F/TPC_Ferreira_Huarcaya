@@ -35,17 +35,30 @@ namespace WebForms.ASPX
 
         protected void btn_RellenoPagina2_Click(object sender, EventArgs e)
         {
+            lbl_NombrePagina.Text = "";
+            lbl_url_Pagina.Text = "";
             lbl_Titulo.Text = "";
             lbl_Imagen.Text = "";
+            lbl_Titulo2.Text = "";
+            lbl_Imagen2.Text = "";
 
             if (ValidarLabel())
             {
+                //Pagina
+                RellenoIngresado.Nombre_Pagina = txt_Nombre_Pagina.Text;
+                RellenoIngresado.Url_Logo_Pagina = txt_Url_Pagina.Text;
+
+                //Carosusel
                 RellenoIngresado.Titulo_Pagina1 = txt_titulo_carousel1.Text;
                 RellenoIngresado.Url_Imagen_Home = txt_url1.Text;
                 RellenoIngresado.Titulo_Pagina2 = txt_titulo_carousel2.Text;
                 RellenoIngresado.Url_Imagen_Home2 = txt_url2.Text;
-                RellenoIngresado.Titulo_Pagina3 = txt_titulo_carousel3.Text;
-                RellenoIngresado.Url_Imagen_Home3 = txt_url3.Text;
+
+                //Catalogo
+                RellenoIngresado.Titulo_Catalogo = txt_Titulo_Catalogo.Text;
+                RellenoIngresado.Titulo_Card_Catalogo = txt_Titulo_Card_Catalogo.Text;
+                RellenoIngresado.url_Imagen_Catalogo = txt_Url_Imagen_Catalogo.Text;
+                RellenoIngresado.Descripcion_Catalogo = txt_Descripcion_Catalogo.Text;
 
                 Session.Add("relleno", RellenoIngresado);
                 Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");
@@ -54,6 +67,16 @@ namespace WebForms.ASPX
 
         private bool ValidarLabel()
         {
+            if (txt_Nombre_Pagina.Text == "")
+            {
+                lbl_NombrePagina.Text = "Ingrese el nombre de su pagina";
+                return false;
+            }
+            if (txt_Url_Pagina.Text == "")
+            {
+                lbl_url_Pagina.Text = "Ingrese la url del logo de su pagina";
+                return false;
+            }
             if(txt_titulo_carousel1.Text == "")
             {
                 lbl_Titulo.Text = "Ingrese el Titulo de la pagina 1";
@@ -61,7 +84,17 @@ namespace WebForms.ASPX
             }
             if(txt_url1.Text == "")
             {
-                lbl_Imagen.Text = "Ingrese una url imagen 1";
+                lbl_Imagen.Text = "Ingrese una url para imagen 1";
+                return false;
+            }
+            if(txt_titulo_carousel2.Text == "")
+            {
+                lbl_Titulo2.Text = "Ingrese el Titulo de la pagina 2";
+                return false;
+            }
+            if(txt_url2.Text == "")
+            {
+                lbl_Imagen2.Text = "Ingrese una url para Imagen 2";
                 return false;
             }
             return true;

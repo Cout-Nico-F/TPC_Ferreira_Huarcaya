@@ -61,36 +61,74 @@
     
     <%if (IdRecibido == 2)
         {%>
+             <h3 style="text-align:center">Informacion de la Pagina</h3>
+            <p style="text-align:center">Aca vas a poder ingresar algunos datos para hacer unica tu pagina</p>
             <div class="col-md-12 col-md-offset-2">
-                <div class="col-md-6 form-group">
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Nombre de la Pagina" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Nombre_Pagina" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_NombrePagina"/>
+                </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Url de la Pagina" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Url_Pagina" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_url_Pagina"/>
+                </div>
+            </div>
+
+            <h3 style="text-align:center">Informacion del Carousel</h3>
+            <p style="text-align:center">Aca vas a poder ingresar toda la informacion que requieres para hacer tu propia pagina de Home</p>
+
+            <div class="col-md-12 col-md-offset-2">
+                <div class="col-md-12 form-group">
                     <asp:Label Text="Titulo Imagen Carousel 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_titulo_carousel1" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Titulo"/>
                 </div>
-                <div class="col-md-6 form-group">
+                <div class="col-md-12 form-group">
                     <asp:Label Text="Url Imagen Home" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url1" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Imagen"/>
                 </div>
-                <div class="col-md-6 form-group">
+                <div class="col-md-12 form-group">
                     <asp:Label Text="Titulo Imagen Carousel 2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_titulo_carousel2" CssClass="form-control" />
+                     <asp:Label Text="" runat="server" id="lbl_Titulo2"/>
                 </div>
-                <div class="col-md-6 form-group">
+                <div class="col-md-12 form-group">
                     <asp:Label Text="Url Imagen Home2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url2" CssClass="form-control" />
+                     <asp:Label Text="" runat="server" id="lbl_Imagen2"/>
                 </div>
-                <div class="col-md-6 form-group">
-                    <asp:Label Text="Titulo Imagen Carousel 3" runat="server" />
-                    <asp:TextBox runat="server" ID="txt_titulo_carousel3" CssClass="form-control" />
+            </div>
+
+             <h3 style="text-align:center">Informacion del Catalogo</h3>
+            <p style="text-align:center">Aca vas a poder ingresar toda la informacion que para tu pagina Catalogo</p>
+            <div class="col-md-12 col-md-offset-2">
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Titulo Catalogo" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Titulo_Catalogo" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Titulo_Catalogo"/>
                 </div>
-                <div class="col-md-6 form-group">
-                    <asp:Label Text="Url Imagen Home3" runat="server" />
-                    <asp:TextBox runat="server" ID="txt_url3" CssClass="form-control" />
+                <div class="col-md-12 form-group">
+                    <asp:Label Text="Titulo Card Catalogo" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Titulo_Card_Catalogo" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Titulo_Card_Catalogo"/>
                 </div>
-                <div class="col-md-6 form-group">
-                    <asp:Button ID="btn_RellenoPagina2" Text="Rellenar!" target="_blank" runat="server" OnClick="btn_RellenoPagina2_Click" CssClass="btn btn-info btn-lg btn-block" />
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Url Imagen Catalogo" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Url_Imagen_Catalogo" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Url_Imagen_Catalogo"/>
                 </div>
+                 <div class="col-md-12 form-group">
+                    <asp:Label Text="Descripcion Card Catalogo" runat="server" />
+                    <asp:TextBox runat="server" ID="txt_Descripcion_Catalogo" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Descripcion_Catalogo"/>
+                </div>
+            </div>
+
+            <div class="col-md-12 form-group">
+                <asp:Button ID="btn_RellenoPagina2" Text="Rellenar!" target="_blank" runat="server" OnClick="btn_RellenoPagina2_Click" CssClass="btn btn-info btn-lg btn-block" />
             </div>
     <%} %>    
             

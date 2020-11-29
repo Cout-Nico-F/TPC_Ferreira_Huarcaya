@@ -16,7 +16,9 @@
 
 </head>
 <body>
+
      <style>
+
         .container-fluid{
             padding: 0;
         }
@@ -49,36 +51,46 @@
          {
              background-color:rgb(210, 213, 124 );
          }
-
+         
     </style>
+
     <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
+             <a class="navbar-brand" href="#">
+             <img src="<%=RellenoVariable.Url_Logo_Pagina %>" width="30" height="30" class="d-inline-block align-top" alt="" style="background-color: transparent">   <%=RellenoVariable.Nombre_Pagina %></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto ml-auto text-center">
+                    <a class="nav-link" href="Template_B_Home.aspx">Home</a>
+                    <a class="nav-link" href="Template_B_Catalogo.aspx">Catalogo</a>
+                    <a class="nav-link" href="Template_B_Contacto.aspx">Contacto</a>
+                </div>
+                <div>
+                    <div class="boton-nav-user">
+                        <a href="Template_B_Login.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i>Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <br />
          <div class="container-fluid">
         <div id="mainSlider" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="mainSlider" data-slide-to="0" class="active"></li>
                 <li data-target="mainSlider" data-slide-to="1"></li>
-                <li data-target="mainSlider" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="<%=RellenoVariable.Url_Imagen_Home %>" class="d-block w-100" alt="Carousel_Imagen1" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2><%=RellenoVariable.Titulo_Pagina1 %></h2>
-                        <a href="#" class="btn btn-dark btn-neon">Catalogo</a>   
+                        <a href="Template_B_Catalogo.aspx" class="btn btn-dark btn-neon">Catalogo</a>   
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="<%=RellenoVariable.Url_Imagen_Home2 %>" class="d-block w-100" alt="Carousel_Imagen2" />
                     <div class="carousel-caption d-none d-md-block">
                         <h2><%=RellenoVariable.Titulo_Pagina2 %></h2>
-                        <a href="#" class="btn btn-dark ">Informacion</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="<%=RellenoVariable.Url_Imagen_Home3 %>" class="d-block w-100" alt="Carousel_Imagen3" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2><%=RellenoVariable.Titulo_Pagina3 %></h2>
-                        <a href="#" class="btn btn-dark">Contacto</a>
+                        <a href="Template_B_Contacto.aspx" class="btn btn-dark ">Informacion</a>
                     </div>
                 </div>
             </div>
@@ -92,9 +104,9 @@
             </a>
         </div>
     </div>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </form>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+
+   
 </body>
 </html>

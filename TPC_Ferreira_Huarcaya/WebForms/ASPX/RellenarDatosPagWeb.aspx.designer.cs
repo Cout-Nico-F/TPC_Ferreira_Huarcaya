@@ -105,6 +105,42 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.Button btn_Rellenar;
 
         /// <summary>
+        /// Control txt_Nombre_Pagina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Nombre_Pagina;
+
+        /// <summary>
+        /// Control lbl_NombrePagina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_NombrePagina;
+
+        /// <summary>
+        /// Control txt_Url_Pagina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Url_Pagina;
+
+        /// <summary>
+        /// Control lbl_url_Pagina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_url_Pagina;
+
+        /// <summary>
         /// Control txt_titulo_carousel1.
         /// </summary>
         /// <remarks>
@@ -150,6 +186,15 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.TextBox txt_titulo_carousel2;
 
         /// <summary>
+        /// Control lbl_Titulo2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Titulo2;
+
+        /// <summary>
         /// Control txt_url2.
         /// </summary>
         /// <remarks>
@@ -159,22 +204,85 @@ namespace WebForms.ASPX
         protected global::System.Web.UI.WebControls.TextBox txt_url2;
 
         /// <summary>
-        /// Control txt_titulo_carousel3.
+        /// Control lbl_Imagen2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_titulo_carousel3;
+        protected global::System.Web.UI.WebControls.Label lbl_Imagen2;
 
         /// <summary>
-        /// Control txt_url3.
+        /// Control txt_Titulo_Catalogo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_url3;
+        protected global::System.Web.UI.WebControls.TextBox txt_Titulo_Catalogo;
+
+        /// <summary>
+        /// Control lbl_Titulo_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Titulo_Catalogo;
+
+        /// <summary>
+        /// Control txt_Titulo_Card_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Titulo_Card_Catalogo;
+
+        /// <summary>
+        /// Control lbl_Titulo_Card_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Titulo_Card_Catalogo;
+
+        /// <summary>
+        /// Control txt_Url_Imagen_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Url_Imagen_Catalogo;
+
+        /// <summary>
+        /// Control lbl_Url_Imagen_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Url_Imagen_Catalogo;
+
+        /// <summary>
+        /// Control txt_Descripcion_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Descripcion_Catalogo;
+
+        /// <summary>
+        /// Control lbl_Descripcion_Catalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Descripcion_Catalogo;
 
         /// <summary>
         /// Control btn_RellenoPagina2.

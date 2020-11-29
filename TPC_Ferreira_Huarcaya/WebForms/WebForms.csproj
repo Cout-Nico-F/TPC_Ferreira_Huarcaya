@@ -1889,7 +1889,10 @@
     <Content Include="Templates Prefabricados\Template_01\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Templates Prefabricados\Template_A_Contacto.aspx" />
     <Content Include="Templates Prefabricados\Template_A_Home.aspx" />
+    <Content Include="Templates Prefabricados\Template_B_Catalogo.aspx" />
+    <Content Include="Templates Prefabricados\Template_B_Contacto.aspx" />
     <Content Include="Templates Prefabricados\Template_B_Home.aspx" />
+    <Content Include="Templates Prefabricados\Template_B_Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2090,12 +2093,33 @@
     <Compile Include="Templates Prefabricados\Template_A_Home.aspx.designer.cs">
       <DependentUpon>Template_A_Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Catalogo.aspx.cs">
+      <DependentUpon>Template_B_Catalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Catalogo.aspx.designer.cs">
+      <DependentUpon>Template_B_Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Contacto.aspx.cs">
+      <DependentUpon>Template_B_Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Contacto.aspx.designer.cs">
+      <DependentUpon>Template_B_Contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Templates Prefabricados\Template_B_Home.aspx.cs">
       <DependentUpon>Template_B_Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Templates Prefabricados\Template_B_Home.aspx.designer.cs">
       <DependentUpon>Template_B_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Login.aspx.cs">
+      <DependentUpon>Template_B_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates Prefabricados\Template_B_Login.aspx.designer.cs">
+      <DependentUpon>Template_B_Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
