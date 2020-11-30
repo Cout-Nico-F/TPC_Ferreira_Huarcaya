@@ -205,6 +205,7 @@
              <div class="col-md-12 form-group">
                 <asp:Button ID="btn_Rellenar3" Text="Rellenar!" target="_blank" runat="server" Onclick="btn_Rellenar3_Click" CssClass="btn btn-info btn-lg btn-block" />
             </div>
+            <asp:Button Text="Enviar mail" runat="server" id="btn_Enviar" OnClick="btn_Enviar_Click"/>
      <%} %>
              <!-- <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a> -->
 

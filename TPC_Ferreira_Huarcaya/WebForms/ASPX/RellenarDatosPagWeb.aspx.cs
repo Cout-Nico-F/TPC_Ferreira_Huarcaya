@@ -1,10 +1,13 @@
-﻿using System;
+﻿using System.Net.Mail;
+using System.Net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Modelo;
+using Negocio;
 
 namespace WebForms.ASPX
 {
@@ -123,6 +126,13 @@ namespace WebForms.ASPX
             return true;
         }
 
-       
+        protected void btn_Enviar_Click(object sender, EventArgs e)
+        {
+            EmailNegocios email = new EmailNegocios();
+
+            email.enviar();
+
+            Response.Redirect("Catalogo.aspx");
+        }
     }
 }

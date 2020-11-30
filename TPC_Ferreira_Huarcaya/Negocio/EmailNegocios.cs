@@ -66,5 +66,89 @@ namespace Negocio
 
             smtp.Send(mail);
         }
+        public void enviar()
+        {
+            string body = "<body>" + "<h1> Hola </h1>" + "</body>";
+            string adjunto = @"C:\Users\Alons\Desktop\Template_03.rar";
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
+
+            MailMessage mail = new MailMessage();
+            mail.Attachments.Add(new Attachment(adjunto));
+            mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
+            mail.To.Add(new MailAddress("AlonsoHS20@hotmail.com"));
+            mail.Subject = "Recibimos tu pedido de pagina web";
+            mail.IsBodyHtml = true;
+            mail.Body = body;
+
+            smtp.Send(mail);
+        }
+        public void enviarTemplate_01()
+        {
+            string body = "<body>" + "<h1> Hola </h1>" + "</body>";
+            string adjunto = @"C:\Users\Alons\Desktop\Template_01.rar";
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
+
+            MailMessage mail = new MailMessage();
+            mail.Attachments.Add(new Attachment(adjunto));
+            mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
+            mail.To.Add(new MailAddress("AlonsoHS20@hotmail.com"));
+            mail.Subject = "Recibimos tu pedido de pagina web";
+            mail.IsBodyHtml = true;
+            mail.Body = body;
+
+            smtp.Send(mail);
+        }
+        public void enviarTemplate_02()
+        {
+            string body = "<body>" + "<h1> Hola </h1>" + "</body>";
+            string adjunto = @"C:\Users\Alons\Desktop\Template_02.rar";
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
+
+            MailMessage mail = new MailMessage();
+            mail.Attachments.Add(new Attachment(adjunto));
+            mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
+            mail.To.Add(new MailAddress("AlonsoHS20@hotmail.com"));
+            mail.Subject = "Recibimos tu pedido de pagina web";
+            mail.IsBodyHtml = true;
+            mail.Body = body;
+
+            smtp.Send(mail);
+        }
+        public void enviarTemplate_03()
+        {
+            string body = "<body>" + "<h1> Hola </h1>" + "</body>";
+            string adjunto = @"C:\Users\Alons\Desktop\Template_03.rar";
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
+
+            MailMessage mail = new MailMessage();
+            mail.Attachments.Add(new Attachment(adjunto));
+            mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
+            mail.To.Add(new MailAddress("AlonsoHS20@hotmail.com"));
+            mail.Subject = "Recibimos tu pedido de pagina web";
+            mail.IsBodyHtml = true;
+            mail.Body = body;
+
+            smtp.Send(mail);
+        }
     }
 }
