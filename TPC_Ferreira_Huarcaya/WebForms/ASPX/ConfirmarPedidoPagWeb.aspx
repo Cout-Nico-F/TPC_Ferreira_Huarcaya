@@ -13,6 +13,7 @@
             <div class="card-body">
                 <h5 class="card-title"><%=item.Titulo %></h5>
                 <p class="card-text"><%=item.Descripcion %></p>
+                <!-- Comentario -->
             </div>
         </div>
     </div>
