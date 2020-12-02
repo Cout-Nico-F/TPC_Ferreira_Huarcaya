@@ -23,7 +23,7 @@ namespace Negocio
             {
                 aux.ID = lectura.GetInt16(0);
                 aux.NombreUsuario = lectura.GetString(1);
-                aux.Contrasenia = lectura.GetString(2);
+                aux.Contrasenia =  lectura.GetString(2);
                 aux.Id_Acceso = lectura.GetInt16(3);
             }
             conexion.Desconectar();

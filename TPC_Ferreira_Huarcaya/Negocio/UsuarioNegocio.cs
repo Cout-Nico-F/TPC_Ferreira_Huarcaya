@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace Negocio
 {
@@ -41,6 +42,17 @@ namespace Negocio
             conexion.SentenciaNonQuery("update Usuarios set Habilitado=" + Convert.ToInt16(habilitado) + " Where ID=" + id);
             conexion.Desconectar();
         }
+        public static string GetSHA256(string str)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = sha256.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
+        }
+
     }
     //TODO: se que informacion Negocio hace lo mismo pero solo trae los id Nivel 3 podria sacar el where y hacer un if en el back del aspx de info para que solo muestre
     //los id nivel 3 pero bueno

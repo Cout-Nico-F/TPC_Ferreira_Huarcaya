@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace WebForms.ASPX
 {
@@ -35,7 +36,7 @@ namespace WebForms.ASPX
                     DatosPersonales dat = new DatosPersonales();
 
                     user.NombreUsuario = txtNombreUsuario.Text;
-                    user.Contrasenia = txtContrasenia.Text;
+                    user.Contrasenia = UsuarioNegocio.GetSHA256(txtContrasenia.Text);
                     user.Id_Acceso = 1;
                     dat.NombreApellido = txtNombreApellido.Text;
                     dat.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);

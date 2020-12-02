@@ -45,7 +45,7 @@ namespace WebForms.ASPX
                 Usuario user = new Usuario();
 
                 user.NombreUsuario = txtNombreUsuario.Text;
-                user.Contrasenia = txtPass.Text;
+                user.Contrasenia = UsuarioNegocio.GetSHA256 ( txtPass.Text );
 
                 Usuario = logNeg.login(user);
 

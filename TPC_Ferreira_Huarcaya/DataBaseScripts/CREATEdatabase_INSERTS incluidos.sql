@@ -176,13 +176,13 @@ insert into Funcionalidades(Descripcion,Costo,Habilitado) values ('Prueba Deshab
 go
 
 /*				Tabla Usuarios			*/
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('JeremiasI21','Jere123',1,0)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('Lorena23','Lore321',1,1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('JazminSR1','Jazz23',1,1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('GabiF','GabFru24',1,1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('AndreaA2','Andreita15',1,1)
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('AlonsoHS20','AlonsohuarcayaAdmin2',3,1,'Estudiante UTN-FRPG','../Imagenes/Alonso.jpg')
-insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('NicoFerreira1','NicoFerreAdmin1',3,1,'Estudiante UTN-FRPG','../Imagenes/NicolasFerreira.jpg')
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('JeremiasI21','8f924abde36ce44e2317191008fb3cfcbe24a910b6ed8930eaed03941d51eebc',1,0)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('Lorena23','2ccfa34fc2628cdcaedcb7952e4aa2656e5e12cc855b2ae04fd2a57c81e462c1',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('JazminSR1','2a8ec83aaf34608c58cf52e60de36644b8c072104485479f35499f447fbc8b75',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('GabiF','8080b5d5b7f8cb16a4a66bc18f069f51d2f360b5327978ef476d2f22bb7d8145',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado) values ('AndreaA2','8fa053338cf2bc1544b06d1ae0c549cdbaeb18f81451f546d5e66bc9e46bc58e',1,1)
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('AlonsoHS20','7012bc77e1aea6ecfc420c938a32e9ae3fe9802d957782f7eff3d1a37f9d18dc',3,1,'Estudiante UTN-FRPG','../Imagenes/Alonso.jpg')
+insert into Usuarios(NombreUsuario,Contrasenia,ID_Nivel,Habilitado,Descripcion,UrlImagen) values ('NicoFerreira1','7e7fc357fc23749f5b63f6532c85b5660f840d0cb901e9017c2fb110e1486781',3,1,'Estudiante UTN-FRPG','../Imagenes/NicolasFerreira.jpg')
 go
 
 /*				Tabla Datos Personales				*/

@@ -74,7 +74,7 @@ namespace WebForms.ASPX
                 datos.Email = txtEmail.Text;
                 datos.EmailRecuperacion = txtEmailRecuperacion.Text;
                 usu.NombreUsuario = txtNombreUsuario.Text;
-                usu.Contrasenia = txtContrasenia.Text;
+                usu.Contrasenia = UsuarioNegocio.GetSHA256( txtContrasenia.Text );
                 usu.ID = Usuario.ID; 
 
 
