@@ -44,8 +44,13 @@ namespace WebForms.ASPX
             lbl_Imagen.Text = "";
             lbl_Titulo2.Text = "";
             lbl_Imagen2.Text = "";
+            lbl_Titulo_Catalogo.Text = "";
+            lbl_Titulo_Card_Catalogo.Text = "";
+            lbl_Url_Imagen_Catalogo.Text = "";
+            lbl_Descripcion_Catalogo.Text = "";
+            lbl_Precio_Catalogo.Text = "";
 
-            if (ValidarLabel())
+            if (ValidarInputsID2())
             {
                 //Pagina
                 RellenoIngresado.Nombre_Pagina = txt_Nombre_Pagina.Text;
@@ -91,36 +96,93 @@ namespace WebForms.ASPX
             Response.Write("<script>window.open ('/Templates Prefabricados/Template_C_Home.aspx','_blank');</script>");
         }
 
-        private bool ValidarLabel()
+        private bool ValidarInputsID3()
+        {
+            if (txt_Logo.Text == "")
+            {
+                txt_Logo.BackColor = System.Drawing.Color.Red;
+                txt_Logo.ForeColor = System.Drawing.Color.White;
+                lbl_logo.Text = "Ingrese el url del logo";
+            }
+        }
+
+        private bool ValidarInputsID2()
         {
             if (txt_Nombre_Pagina.Text == "")
             {
+                lbl_NombrePagina.BackColor = System.Drawing.Color.Red;
+                lbl_NombrePagina.ForeColor = System.Drawing.Color.White;
                 lbl_NombrePagina.Text = "Ingrese el nombre de su pagina";
                 return false;
             }
             if (txt_Url_Pagina.Text == "")
             {
+                lbl_url_Pagina.BackColor = System.Drawing.Color.Red;
+                lbl_url_Pagina.ForeColor = System.Drawing.Color.White;
                 lbl_url_Pagina.Text = "Ingrese la url del logo de su pagina";
                 return false;
             }
             if(txt_titulo_carousel1.Text == "")
             {
+                lbl_Titulo.BackColor = System.Drawing.Color.Red;
+                lbl_Titulo.ForeColor = System.Drawing.Color.White;
                 lbl_Titulo.Text = "Ingrese el Titulo de la pagina 1";
                 return false;
             }
             if(txt_url1.Text == "")
             {
+                lbl_Imagen.BackColor = System.Drawing.Color.Red;
+                lbl_Imagen.ForeColor = System.Drawing.Color.White;
                 lbl_Imagen.Text = "Ingrese una url para imagen 1";
                 return false;
             }
             if(txt_titulo_carousel2.Text == "")
             {
+                lbl_Titulo2.BackColor = System.Drawing.Color.Red;
+                lbl_Titulo2.ForeColor = System.Drawing.Color.White;
                 lbl_Titulo2.Text = "Ingrese el Titulo de la pagina 2";
                 return false;
             }
             if(txt_url2.Text == "")
             {
+                lbl_Imagen2.BackColor = System.Drawing.Color.Red;
+                lbl_Imagen2.ForeColor = System.Drawing.Color.White;
                 lbl_Imagen2.Text = "Ingrese una url para Imagen 2";
+                return false;
+            }
+            if (txt_Titulo_Catalogo.Text == "")
+            {
+                txt_Titulo_Catalogo.BackColor = System.Drawing.Color.Red;
+                txt_Titulo_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Titulo_Catalogo.Text = "Ingrese un titulo para el catalogo";
+                return false;
+            }
+            if (txt_Titulo_Card_Catalogo.Text == "")
+            {
+                txt_Titulo_Card_Catalogo.BackColor = System.Drawing.Color.Red;
+                txt_Titulo_Card_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Titulo_Card_Catalogo.Text = "Ingrese el titulo de esta tarjeta en el catalogo";
+                return false;
+            }
+            if (txt_Url_Imagen_Catalogo.Text == "")
+            {
+                txt_Url_Imagen_Catalogo.BackColor = System.Drawing.Color.Red;
+                txt_Url_Imagen_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Url_Imagen_Catalogo.Text = "Ingrese el url para la imagen de esta tarjeta";
+                return false;
+            }
+            if (txt_Descripcion_Catalogo.Text == "")
+            {
+                txt_Descripcion_Catalogo.BackColor = System.Drawing.Color.Red;
+                txt_Descripcion_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Descripcion_Catalogo.Text = "Ingrese la descripcion de esta tarjeta";
+                return false;
+            }
+            if (txt_Precio_Catalogo.Text == "")
+            {
+                txt_Precio_Catalogo.BackColor = System.Drawing.Color.Red;
+                txt_Precio_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Precio_Catalogo.Text = "Ingrese el precio de este item del catalogo";
                 return false;
             }
             return true;
