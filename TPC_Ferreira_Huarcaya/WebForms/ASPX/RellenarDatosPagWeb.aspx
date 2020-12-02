@@ -11,46 +11,55 @@
     <div class="col-md-6 form-group">
         <asp:label text="Titulo de la Web (Cabecera)" runat="server" />
         <asp:textbox runat="server" id="txtbox_titulo" cssClass="form-control"/>
+        <asp:Label Text="" runat="server" id="lbl_titulo"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Nombre de la web" runat="server" />
         <asp:textbox runat="server" id="txtbox_nombre" cssClass="form-control"/>
+        <asp:Label Text="" runat="server" id="lbl_nombre"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Titulo Home" runat="server" />
         <asp:textbox runat="server" id="txtbox_tituloHome" cssClass="form-control" />
+        <asp:Label Text="" runat="server" id="lbl_tituloHome"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Url Imagen Home" runat="server" />
         <asp:textbox runat="server" id="txtbox_urlImagen" cssClass="form-control" />
+        <asp:Label Text="" runat="server" id="lbl_urlImagen"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Texto Home" runat="server" />
         <asp:textbox runat="server" id="txtbox_textoHome" cssClass="form-control"/>
+        <asp:Label Text="" runat="server" id="lbl_textoHome"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Texto Contacto" runat="server" />
         <asp:textbox runat="server" id="txtbox_textoContacto" cssClass="form-control" />
+        <asp:Label Text="" runat="server" id="lbl_textoContacto"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Email" runat="server" />
         <asp:textbox runat="server" id="txtbox_email" cssClass="form-control"/>
+        <asp:Label Text="" runat="server" id="lbl_email1"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Telefono" runat="server" />
         <asp:textbox runat="server" id="txtbox_telefono" cssClass="form-control"/>
+        <asp:Label Text="" runat="server" id="lbl_telefono1"/>
     </div>
 
     <div class="col-md-6 form-group">
         <asp:label text="Direccion" runat="server" />
         <asp:textbox runat="server" id="txtbox_direccion" cssClass="form-control"/>
+        <asp:Label Text="" runat="server" id="lbl_direccion1"/>
     </div>
       <div class="col-md-6 form-group">
     <asp:button id="btn_Rellenar" Text="Rellenar!"  target="_blank" runat="server" OnClick="btn_Rellenar_Click" cssClass="btn btn-info btn-lg btn-block" />
@@ -67,12 +76,12 @@
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Nombre de la Pagina" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Nombre_Pagina" CssClass="form-control" />
-                    <asp:Label Text="" runat="server" id="lbl_NombrePagina"/>
+                    <asp:Label Text="" runat="server" id="lbl_Nombre_Pagina"/>
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url de la Pagina" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Url_Pagina" CssClass="form-control" />
-                    <asp:Label Text="" runat="server" id="lbl_url_Pagina"/>
+                    <asp:Label Text="" runat="server" id="lbl_Url_Pagina"/>
                 </div>
             </div>
 
@@ -83,22 +92,22 @@
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Titulo Imagen Carousel 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_titulo_carousel1" CssClass="form-control" />
-                    <asp:Label Text="" runat="server" id="lbl_Titulo"/>
+                    <asp:Label Text="" runat="server" id="lbl_titulo_carousel1"/>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Imagen Home" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url1" CssClass="form-control" />
-                    <asp:Label Text="" runat="server" id="lbl_Imagen"/>
+                    <asp:Label Text="" runat="server" id="lbl_url1"/>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Titulo Imagen Carousel 2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_titulo_carousel2" CssClass="form-control" />
-                     <asp:Label Text="" runat="server" id="lbl_Titulo2"/>
+                     <asp:Label Text="" runat="server" id="lbl_titulo_carousel2"/>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Imagen Home2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url2" CssClass="form-control" />
-                     <asp:Label Text="" runat="server" id="lbl_Imagen2"/>
+                     <asp:Label Text="" runat="server" id="lbl_url2"/>
                 </div>
             </div>
 
@@ -145,43 +154,53 @@
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Logo Home" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Logo" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Logo"/>
+
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Nombre de la Categoria 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_NombreCategoria1" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_NombreCategoria1"/>
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo1" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_UrlVideo1"/>
                      <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo2" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_UrlVideo2"/>
                       <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                  <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 3" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo3" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_UrlVideo3"/>
                       <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Nombre de la Categoria 2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_NombreCategoria2" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_NombreCategoria2"/>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 4" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo4" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_UrlVideo4"/>
                      <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 5" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo5" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_UrlVideo5"/>
                      <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Url Video 6" runat="server" />
                     <asp:TextBox runat="server" ID="txt_UrlVideo6" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_UrlVideo6"/>
                      <small>La url la puede encontrar el la seccion compartir --> iframe --> src= "https://www.youtube.com/embed/ZytblQpydwQ" </small>
                 </div>
 
@@ -191,14 +210,17 @@
                 <div class="col-md-12 form-group">
                     <asp:Label Text="Direccion" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Direccion" CssClass="form-control" />
+                    <asp:Label Text="" runat="server" id="lbl_Direccion"/>
                 </div>
                       <div class="col-md-12 form-group">
                     <asp:Label Text="Telefono" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Telefono" CssClass="form-control" TextMode="Number"/>
+                    <asp:Label Text="" runat="server" id="lbl_Telefono"/>
                 </div>
                       <div class="col-md-12 form-group">
                     <asp:Label Text="Email" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Email" CssClass="form-control" TextMode="Email" />
+                    <asp:Label Text="" runat="server" id="lbl_Email"/>
                 </div>
                </div>
             </div>

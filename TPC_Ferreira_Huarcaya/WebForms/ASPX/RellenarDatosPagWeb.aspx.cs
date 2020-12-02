@@ -23,6 +23,18 @@ namespace WebForms.ASPX
 
         protected void btn_Rellenar_Click(object sender, EventArgs e)
         {
+            lbl_titulo.Text = "";
+            lbl_tituloHome.Text = "";
+            lbl_nombre.Text = "";
+            lbl_urlImagen.Text = "";
+            lbl_textoHome.Text = "";
+            lbl_textoContacto.Text = "";
+            lbl_email1.Text = "";
+            lbl_telefono1.Text = "";
+            lbl_direccion1.Text = "";
+
+            if (ValidarInputsID1())
+            {
             RellenoIngresado.Titulo = txtbox_titulo.Text ;
             RellenoIngresado.Titulo_Home = txtbox_tituloHome.Text;
             RellenoIngresado.Nombre_Pagina = txtbox_nombre.Text;
@@ -34,16 +46,84 @@ namespace WebForms.ASPX
             RellenoIngresado.Direccion = txtbox_direccion.Text;
             Session.Add("relleno", RellenoIngresado);
             Response.Write("<script>window.open ('/Templates Prefabricados/Template_A_Home.aspx','_blank');</script>");
+            }
+        }
+        private bool ValidarInputsID1()
+        {
+            if (txtbox_titulo.Text == "")
+            {
+                lbl_titulo.BackColor = System.Drawing.Color.Red;
+                lbl_titulo.ForeColor = System.Drawing.Color.White;
+                lbl_titulo.Text = "Ingrese el titulo de la pagina";
+                return false;
+            }
+            if (txtbox_nombre.Text == "")
+            {
+                lbl_nombre.BackColor = System.Drawing.Color.Red;
+                lbl_nombre.ForeColor = System.Drawing.Color.White;
+                lbl_nombre.Text = "Ingrese el nombre de la pagina";
+                return false;
+            }
+            if (txtbox_tituloHome.Text == "")
+            {
+                lbl_tituloHome.BackColor = System.Drawing.Color.Red;
+                lbl_tituloHome.ForeColor = System.Drawing.Color.White;
+                lbl_tituloHome.Text = "Ingrese el titulo del Home";
+                return false;
+            }
+            if (txtbox_urlImagen.Text == "")
+            {
+                lbl_urlImagen.BackColor = System.Drawing.Color.Red;
+                lbl_urlImagen.ForeColor = System.Drawing.Color.White;
+                lbl_urlImagen.Text = "Ingrese la Url de la foto del Home";
+                return false;
+            }
+            if (txtbox_textoHome.Text == "")
+            {
+                lbl_textoHome.BackColor = System.Drawing.Color.Red;
+                lbl_textoHome.ForeColor = System.Drawing.Color.White;
+                lbl_textoHome.Text = "Ingrese el texto del Home";
+                return false;
+            }
+            if (txtbox_textoContacto.Text == "")
+            {
+                lbl_textoContacto.BackColor = System.Drawing.Color.Red;
+                lbl_textoContacto.ForeColor = System.Drawing.Color.White;
+                lbl_textoContacto.Text = "Ingrese el texto del Contacto";
+                return false;
+            }
+            if (txtbox_email.Text == "")
+            {
+                lbl_email1.BackColor = System.Drawing.Color.Red;
+                lbl_email1.ForeColor = System.Drawing.Color.White;
+                lbl_email1.Text = "Ingrese el Email de Contacto";
+                return false;
+            }
+            if (txtbox_telefono.Text == "")
+            {
+                lbl_telefono1.BackColor = System.Drawing.Color.Red;
+                lbl_telefono1.ForeColor = System.Drawing.Color.White;
+                lbl_telefono1.Text = "Ingrese el Telefono de Contacto";
+                return false;
+            }
+            if (txtbox_direccion.Text == "")
+            {
+                lbl_direccion1.BackColor = System.Drawing.Color.Red;
+                lbl_direccion1.ForeColor = System.Drawing.Color.White;
+                lbl_direccion1.Text = "Ingrese la direccion de Contacto";
+                return false;
+            }
+            return true;
         }
 
         protected void btn_RellenoPagina2_Click(object sender, EventArgs e)
         {
-            lbl_NombrePagina.Text = "";
-            lbl_url_Pagina.Text = "";
-            lbl_Titulo.Text = "";
-            lbl_Imagen.Text = "";
-            lbl_Titulo2.Text = "";
-            lbl_Imagen2.Text = "";
+            lbl_Nombre_Pagina.Text = "";
+            lbl_Url_Pagina.Text = "";
+            lbl_titulo_carousel1.Text = "";
+            lbl_url1.Text = "";
+            lbl_titulo_carousel2.Text = "";
+            lbl_url2.Text = "";
             lbl_Titulo_Catalogo.Text = "";
             lbl_Titulo_Card_Catalogo.Text = "";
             lbl_Url_Imagen_Catalogo.Text = "";
@@ -73,120 +153,216 @@ namespace WebForms.ASPX
                 Response.Write("<script>window.open ('/Templates Prefabricados/Template_B_Home.aspx','_blank');</script>");
             }
         }
+        private bool ValidarInputsID2()
+        {
+            if (txt_Nombre_Pagina.Text == "")
+            {
+                lbl_Nombre_Pagina.BackColor = System.Drawing.Color.Red;
+                lbl_Nombre_Pagina.ForeColor = System.Drawing.Color.White;
+                lbl_Nombre_Pagina.Text = "Ingrese el nombre de su pagina";
+                return false;
+            }
+            if (txt_Url_Pagina.Text == "")
+            {
+                lbl_Url_Pagina.BackColor = System.Drawing.Color.Red;
+                lbl_Url_Pagina.ForeColor = System.Drawing.Color.White;
+                lbl_Url_Pagina.Text = "Ingrese la url del logo de su pagina";
+                return false;
+            }
+            if (txt_titulo_carousel1.Text == "")
+            {
+                lbl_titulo_carousel1.BackColor = System.Drawing.Color.Red;
+                lbl_titulo_carousel1.ForeColor = System.Drawing.Color.White;
+                lbl_titulo_carousel1.Text = "Ingrese el Titulo de la primer imagen del carousel";
+                return false;
+            }
+            if (txt_url1.Text == "")
+            {
+                lbl_url1.BackColor = System.Drawing.Color.Red;
+                lbl_url1.ForeColor = System.Drawing.Color.White;
+                lbl_url1.Text = "Ingrese una url para la primer imagen del carousel";
+                return false;
+            }
+            if (txt_titulo_carousel2.Text == "")
+            {
+                lbl_titulo_carousel2.BackColor = System.Drawing.Color.Red;
+                lbl_titulo_carousel2.ForeColor = System.Drawing.Color.White;
+                lbl_titulo_carousel2.Text = "Ingrese el Titulo de la segunda imagen del carousel";
+                return false;
+            }
+            if (txt_url2.Text == "")
+            {
+                lbl_url2.BackColor = System.Drawing.Color.Red;
+                lbl_url2.ForeColor = System.Drawing.Color.White;
+                lbl_url2.Text = "Ingrese una url para la segunda imagen del carousel";
+                return false;
+            }
+            if (txt_Titulo_Catalogo.Text == "")
+            {
+                lbl_Titulo_Catalogo.BackColor = System.Drawing.Color.Red;
+                lbl_Titulo_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Titulo_Catalogo.Text = "Ingrese un titulo para el catalogo";
+                return false;
+            }
+            if (txt_Titulo_Card_Catalogo.Text == "")
+            {
+                lbl_Titulo_Card_Catalogo.BackColor = System.Drawing.Color.Red;
+                lbl_Titulo_Card_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Titulo_Card_Catalogo.Text = "Ingrese el titulo de esta tarjeta en el catalogo";
+                return false;
+            }
+            if (txt_Url_Imagen_Catalogo.Text == "")
+            {
+                lbl_Url_Imagen_Catalogo.BackColor = System.Drawing.Color.Red;
+                lbl_Url_Imagen_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Url_Imagen_Catalogo.Text = "Ingrese el url para la imagen de esta tarjeta";
+                return false;
+            }
+            if (txt_Descripcion_Catalogo.Text == "")
+            {
+                lbl_Descripcion_Catalogo.BackColor = System.Drawing.Color.Red;
+                lbl_Descripcion_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Descripcion_Catalogo.Text = "Ingrese la descripcion de esta tarjeta";
+                return false;
+            }
+            if (txt_Precio_Catalogo.Text == "")
+            {
+                lbl_Precio_Catalogo.BackColor = System.Drawing.Color.Red;
+                lbl_Precio_Catalogo.ForeColor = System.Drawing.Color.White;
+                lbl_Precio_Catalogo.Text = "Ingrese el precio de este item del catalogo";
+                return false;
+            }
+            return true;
+        }
         protected void btn_Rellenar3_Click(object sender, EventArgs e)
         {
-            //Home
-            RellenoIngresado.Url_Logo = txt_Logo.Text;
-            RellenoIngresado.Nombre_Categoria1 = txt_NombreCategoria1.Text;
-            RellenoIngresado.Url_Video1_Categoria1 = txt_UrlVideo1.Text;
-            RellenoIngresado.Url_Video2_Categoria1 = txt_UrlVideo2.Text;
-            RellenoIngresado.Url_Video3_Categoria1 = txt_UrlVideo3.Text;
+            lbl_Logo.Text = "";
+            lbl_NombreCategoria1.Text = "";
+            lbl_UrlVideo1.Text = "";
+            lbl_UrlVideo2.Text = "";
+            lbl_UrlVideo3.Text = "";
+            lbl_NombreCategoria2.Text = "";
+            lbl_UrlVideo4.Text = "";
+            lbl_UrlVideo5.Text = "";
+            lbl_UrlVideo6.Text = "";
+            lbl_Direccion.Text = "";
+            lbl_Telefono.Text = "";
+            lbl_Email.Text = "";
 
-            RellenoIngresado.Nombre_Categoria2 = txt_NombreCategoria2.Text;
-            RellenoIngresado.Url_Video1_Categoria2 = txt_UrlVideo4.Text;
-            RellenoIngresado.Url_Video2_Categoria2 = txt_UrlVideo5.Text;
-            RellenoIngresado.Url_Video3_Categoria2 = txt_UrlVideo6.Text;
+            if (ValidarInputsID3())
+            {
+                //Home
+                RellenoIngresado.Url_Logo = txt_Logo.Text;
+                RellenoIngresado.Nombre_Categoria1 = txt_NombreCategoria1.Text;
+                RellenoIngresado.Url_Video1_Categoria1 = txt_UrlVideo1.Text;
+                RellenoIngresado.Url_Video2_Categoria1 = txt_UrlVideo2.Text;
+                RellenoIngresado.Url_Video3_Categoria1 = txt_UrlVideo3.Text;
 
-            //Contacto
-            RellenoIngresado.Direccion = txt_Direccion.Text;
-            RellenoIngresado.Telefono = txt_Telefono.Text;
-            RellenoIngresado.Email = txt_Email.Text;
+                RellenoIngresado.Nombre_Categoria2 = txt_NombreCategoria2.Text;
+                RellenoIngresado.Url_Video1_Categoria2 = txt_UrlVideo4.Text;
+                RellenoIngresado.Url_Video2_Categoria2 = txt_UrlVideo5.Text;
+                RellenoIngresado.Url_Video3_Categoria2 = txt_UrlVideo6.Text;
 
-            Session.Add("relleno", RellenoIngresado);
-            Response.Write("<script>window.open ('/Templates Prefabricados/Template_C_Home.aspx','_blank');</script>");
+                //Contacto
+                RellenoIngresado.Direccion = txt_Direccion.Text;
+                RellenoIngresado.Telefono = txt_Telefono.Text;
+                RellenoIngresado.Email = txt_Email.Text;
+
+                Session.Add("relleno", RellenoIngresado);
+                Response.Write("<script>window.open ('/Templates Prefabricados/Template_C_Home.aspx','_blank');</script>");
+            }
         }
 
         private bool ValidarInputsID3()
         {
             if (txt_Logo.Text == "")
             {
-                txt_Logo.BackColor = System.Drawing.Color.Red;
-                txt_Logo.ForeColor = System.Drawing.Color.White;
-                lbl_logo.Text = "Ingrese el url del logo";
-            }
-        }
-
-        private bool ValidarInputsID2()
-        {
-            if (txt_Nombre_Pagina.Text == "")
-            {
-                lbl_NombrePagina.BackColor = System.Drawing.Color.Red;
-                lbl_NombrePagina.ForeColor = System.Drawing.Color.White;
-                lbl_NombrePagina.Text = "Ingrese el nombre de su pagina";
+                lbl_Logo.BackColor = System.Drawing.Color.Red;
+                lbl_Logo.ForeColor = System.Drawing.Color.White;
+                lbl_Logo.Text = "Ingrese el url del logo";
                 return false;
             }
-            if (txt_Url_Pagina.Text == "")
+            if (txt_NombreCategoria1.Text == "")
             {
-                lbl_url_Pagina.BackColor = System.Drawing.Color.Red;
-                lbl_url_Pagina.ForeColor = System.Drawing.Color.White;
-                lbl_url_Pagina.Text = "Ingrese la url del logo de su pagina";
+                lbl_NombreCategoria1.BackColor = System.Drawing.Color.Red;
+                lbl_NombreCategoria1.ForeColor = System.Drawing.Color.White;
+                lbl_NombreCategoria1.Text = "Ingrese el nombre de la categoria";
                 return false;
             }
-            if(txt_titulo_carousel1.Text == "")
+            if (txt_UrlVideo1.Text == "")
             {
-                lbl_Titulo.BackColor = System.Drawing.Color.Red;
-                lbl_Titulo.ForeColor = System.Drawing.Color.White;
-                lbl_Titulo.Text = "Ingrese el Titulo de la pagina 1";
+                lbl_UrlVideo1.BackColor = System.Drawing.Color.Red;
+                lbl_UrlVideo1.ForeColor = System.Drawing.Color.White;
+                lbl_UrlVideo1.Text = "Ingrese la Url del video";
                 return false;
             }
-            if(txt_url1.Text == "")
+            if (txt_UrlVideo2.Text == "")
             {
-                lbl_Imagen.BackColor = System.Drawing.Color.Red;
-                lbl_Imagen.ForeColor = System.Drawing.Color.White;
-                lbl_Imagen.Text = "Ingrese una url para imagen 1";
+                lbl_UrlVideo2.BackColor = System.Drawing.Color.Red;
+                lbl_UrlVideo2.ForeColor = System.Drawing.Color.White;
+                lbl_UrlVideo2.Text = "Ingrese la Url del video";
                 return false;
             }
-            if(txt_titulo_carousel2.Text == "")
+            if (txt_UrlVideo3.Text == "")
             {
-                lbl_Titulo2.BackColor = System.Drawing.Color.Red;
-                lbl_Titulo2.ForeColor = System.Drawing.Color.White;
-                lbl_Titulo2.Text = "Ingrese el Titulo de la pagina 2";
+                lbl_UrlVideo3.BackColor = System.Drawing.Color.Red;
+                lbl_UrlVideo3.ForeColor = System.Drawing.Color.White;
+                lbl_UrlVideo3.Text = "Ingrese la Url del video";
                 return false;
             }
-            if(txt_url2.Text == "")
+            if (txt_NombreCategoria2.Text == "")
             {
-                lbl_Imagen2.BackColor = System.Drawing.Color.Red;
-                lbl_Imagen2.ForeColor = System.Drawing.Color.White;
-                lbl_Imagen2.Text = "Ingrese una url para Imagen 2";
+                lbl_NombreCategoria2.BackColor = System.Drawing.Color.Red;
+                lbl_NombreCategoria2.ForeColor = System.Drawing.Color.White;
+                lbl_NombreCategoria2.Text = "Ingrese el nombre de la categoria";
                 return false;
             }
-            if (txt_Titulo_Catalogo.Text == "")
+            if (txt_UrlVideo4.Text == "")
             {
-                txt_Titulo_Catalogo.BackColor = System.Drawing.Color.Red;
-                txt_Titulo_Catalogo.ForeColor = System.Drawing.Color.White;
-                lbl_Titulo_Catalogo.Text = "Ingrese un titulo para el catalogo";
+                lbl_UrlVideo4.BackColor = System.Drawing.Color.Red;
+                lbl_UrlVideo4.ForeColor = System.Drawing.Color.White;
+                lbl_UrlVideo4.Text = "Ingrese la Url del video";
                 return false;
             }
-            if (txt_Titulo_Card_Catalogo.Text == "")
+            if (txt_UrlVideo5.Text == "")
             {
-                txt_Titulo_Card_Catalogo.BackColor = System.Drawing.Color.Red;
-                txt_Titulo_Card_Catalogo.ForeColor = System.Drawing.Color.White;
-                lbl_Titulo_Card_Catalogo.Text = "Ingrese el titulo de esta tarjeta en el catalogo";
+                lbl_UrlVideo5.BackColor = System.Drawing.Color.Red;
+                lbl_UrlVideo5.ForeColor = System.Drawing.Color.White;
+                lbl_UrlVideo5.Text = "Ingrese la Url del video";
                 return false;
             }
-            if (txt_Url_Imagen_Catalogo.Text == "")
+            if (txt_UrlVideo6.Text == "")
             {
-                txt_Url_Imagen_Catalogo.BackColor = System.Drawing.Color.Red;
-                txt_Url_Imagen_Catalogo.ForeColor = System.Drawing.Color.White;
-                lbl_Url_Imagen_Catalogo.Text = "Ingrese el url para la imagen de esta tarjeta";
+                lbl_UrlVideo6.BackColor = System.Drawing.Color.Red;
+                lbl_UrlVideo6.ForeColor = System.Drawing.Color.White;
+                lbl_UrlVideo6.Text = "Ingrese la Url del video";
                 return false;
             }
-            if (txt_Descripcion_Catalogo.Text == "")
+            if (txt_Direccion.Text == "")
             {
-                txt_Descripcion_Catalogo.BackColor = System.Drawing.Color.Red;
-                txt_Descripcion_Catalogo.ForeColor = System.Drawing.Color.White;
-                lbl_Descripcion_Catalogo.Text = "Ingrese la descripcion de esta tarjeta";
+                lbl_Direccion.BackColor = System.Drawing.Color.Red;
+                lbl_Direccion.ForeColor = System.Drawing.Color.White;
+                lbl_Direccion.Text = "Ingrese la direccion para contacto";
                 return false;
             }
-            if (txt_Precio_Catalogo.Text == "")
+            if (txt_Telefono.Text == "")
             {
-                txt_Precio_Catalogo.BackColor = System.Drawing.Color.Red;
-                txt_Precio_Catalogo.ForeColor = System.Drawing.Color.White;
-                lbl_Precio_Catalogo.Text = "Ingrese el precio de este item del catalogo";
+                lbl_Telefono.BackColor = System.Drawing.Color.Red;
+                lbl_Telefono.ForeColor = System.Drawing.Color.White;
+                lbl_Telefono.Text = "Ingrese el telefono para contacto";
+                return false;
+            }
+            if (txt_Email.Text == "")
+            {
+                lbl_Email.BackColor = System.Drawing.Color.Red;
+                lbl_Email.ForeColor = System.Drawing.Color.White;
+                lbl_Email.Text = "Ingrese el Email para contacto";
                 return false;
             }
             return true;
         }
+
+       
 
         protected void btn_Enviar_Click(object sender, EventArgs e)
         {

@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
     <a class="navbar-brand" href="#">
-        <img src="https://localhost:44344/Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="" style="background-color: transparent">
+        <img src="https://localhost:44344/Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="" style="background-color: transparent"/>
         <!-- No puedo hacer transparente el fonde de la imagen -->
         FerreAlo</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
