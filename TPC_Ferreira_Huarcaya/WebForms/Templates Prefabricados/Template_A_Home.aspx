@@ -13,11 +13,52 @@
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
     <!-- Estilos CSS -->
-    <link href="../CSS/Template_A.css" rel="stylesheet" />
     <link href="../CSS/Estilos_Personalizar.css" rel="stylesheet" />
     <title><%= RellenoVariable.Titulo %></title>
 </head>
-<body>
+<body > 
+    <style>
+        body{
+            background:url(https://www.xtrafondos.com/wallpapers/resized/ubuntu-15-vivid-vervet-3441.jpg?s=large);
+            background-size:cover;
+        }
+       .d-block h1{
+            color: darkslategray;
+            text-align: center;
+            font-size:100px;
+            margin-right:10px;
+        }
+
+        #texto-home {
+            text-align: center;
+            margin: 1%;
+        }
+
+        #primer-imagen {
+            width: 60%;
+            height: 15%;
+            margin-left: 40%;   
+        }
+
+        #imagen-contacto {
+            width: auto;
+            height: auto;
+            margin-left: 35%;
+        }
+
+        .seccion-button {
+            margin: 3%;
+            margin-bottom: 15%;
+        }
+
+        .nombre-pagina {
+            margin-bottom: 25%;
+        }
+        h1{
+            margin-left:50%;
+        }
+       
+    </style>
 
     <form id="form1" runat="server">
         <div class="d-flex">
@@ -27,9 +68,9 @@
                     <a href="Template_A_Contacto.aspx" class="btn btn-warning d-block seccion-button">Contacto</a>
                 </div>
             </div>
-            <div class="d-block" id="BodyCentro">
-                <h1 id="titulo_principal"><%=RellenoVariable.Titulo_Home %></h1>
-                <img src="<%=RellenoVariable.Url_Imagen_Home %>" alt="Primer imagen" id="primer-imagen" />
+            <div class="d-block">
+                <h1><%=RellenoVariable.Titulo_Home %></h1>
+                <img src="<%=RellenoVariable.Url_Imagen_Home %>" alt="Primer imagen" id="primer-imagen" class="img-thumbnail "/>
                 <h4 id="texto-home"><%=RellenoVariable.Texto_Home %></h4>
             </div>
         </div>

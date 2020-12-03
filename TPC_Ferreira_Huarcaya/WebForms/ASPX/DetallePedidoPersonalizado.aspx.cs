@@ -17,20 +17,24 @@ namespace WebForms.ASPX
         public List<Funcionalidad> Funcionalidades { get; set; }
         public List<Pagina> Paginas { get; set; }
         public DatosPersonales DatosUsuario { get; set; }
+        public Usuario Usuario { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            pneg = new PedidoPersonalizadoNegocio();
-
-            if (Request.QueryString["idPedido"] == null)
+            if(Usuario != null && Usuario.ID == 3) //si hay logeado un usuario y si ese usuario tiene un ID_Nivel igual a 3 (o sea es una Admin)
             {
-                Response.Redirect("Home.aspx");//solo se puede entrar a esta pagina llegando con una id por url.
+                pneg = new PedidoPersonalizadoNegocio();
+
+                if (Request.QueryString["idPedido"] == null)
+                {
+                    Response.Redirect("Home.aspx");//solo se puede entrar a esta pagina llegando con una id por url.
+                }
+                idPedido = Convert.ToInt16(Request.QueryString["idPedido"]);
+                CargarPedidoSeleccionado();
+                CargarFuncionalidades();
+                CargarPaginas();
+                CargarDatosUsuarioPedido();
             }
-            idPedido = Convert.ToInt16(Request.QueryString["idPedido"]);
-            CargarPedidoSeleccionado();
-            CargarFuncionalidades();
-            CargarPaginas();
-            CargarDatosUsuarioPedido();
         }
 
         void CargarPedidoSeleccionado()

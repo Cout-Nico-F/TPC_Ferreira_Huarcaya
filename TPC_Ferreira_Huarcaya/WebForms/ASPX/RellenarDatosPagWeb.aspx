@@ -7,64 +7,67 @@
     <br />
     <%if (IdRecibido == 1)
         {%>
-        <div class="col-md-12 col-md-offset-2">
-    <div class="col-md-6 form-group">
-        <asp:label text="Titulo de la Web (Cabecera)" runat="server" />
-        <asp:textbox runat="server" id="txtbox_titulo" cssClass="form-control"/>
-        <asp:Label Text="" runat="server" id="lbl_titulo"/>
-    </div>
+    <h3 style="text-align: center">Informacion del Home</h3>
+    <p style="text-align: center">Aca vas a poder ingresar algunos datos para hacer unica tu pagina</p>
+    <div class="col-md-12 col-md-offset-2">
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Titulo de la Web (Cabecera)" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_titulo" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_titulo" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Nombre de la web" runat="server" />
-        <asp:textbox runat="server" id="txtbox_nombre" cssClass="form-control"/>
-        <asp:Label Text="" runat="server" id="lbl_nombre"/>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Nombre de la web" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_nombre" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_nombre" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Titulo Home" runat="server" />
-        <asp:textbox runat="server" id="txtbox_tituloHome" cssClass="form-control" />
-        <asp:Label Text="" runat="server" id="lbl_tituloHome"/>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Titulo Home" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_tituloHome" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_tituloHome" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Url Imagen Home" runat="server" />
-        <asp:textbox runat="server" id="txtbox_urlImagen" cssClass="form-control" />
-        <asp:Label Text="" runat="server" id="lbl_urlImagen"/>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Url Imagen Home" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_urlImagen" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_urlImagen" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Texto Home" runat="server" />
-        <asp:textbox runat="server" id="txtbox_textoHome" cssClass="form-control"/>
-        <asp:Label Text="" runat="server" id="lbl_textoHome"/>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Texto Home" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_textoHome" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_textoHome" />
+        </div>
+         <h3 style="text-align:center">Informacion de Contacto</h3>
+         <p style="text-align:center">Aca vas a poder ingresar algunos datos para completar el Contacto </p>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Texto Contacto" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_textoContacto" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_textoContacto" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Texto Contacto" runat="server" />
-        <asp:textbox runat="server" id="txtbox_textoContacto" cssClass="form-control" />
-        <asp:Label Text="" runat="server" id="lbl_textoContacto"/>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Email" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_email" CssClass="form-control" TextMode="Email" />
+            <asp:Label Text="" runat="server" ID="lbl_email1" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Email" runat="server" />
-        <asp:textbox runat="server" id="txtbox_email" cssClass="form-control"/>
-        <asp:Label Text="" runat="server" id="lbl_email1"/>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Telefono" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_telefono" CssClass="form-control" TextMode="Number" />
+            <asp:Label Text="" runat="server" ID="lbl_telefono1" />
+        </div>
 
-    <div class="col-md-6 form-group">
-        <asp:label text="Telefono" runat="server" />
-        <asp:textbox runat="server" id="txtbox_telefono" cssClass="form-control"/>
-        <asp:Label Text="" runat="server" id="lbl_telefono1"/>
-    </div>
-
-    <div class="col-md-6 form-group">
-        <asp:label text="Direccion" runat="server" />
-        <asp:textbox runat="server" id="txtbox_direccion" cssClass="form-control"/>
-        <asp:Label Text="" runat="server" id="lbl_direccion1"/>
-    </div>
-      <div class="col-md-6 form-group">
-    <asp:button id="btn_Rellenar" Text="Rellenar!"  target="_blank" runat="server" OnClick="btn_Rellenar_Click" cssClass="btn btn-info btn-lg btn-block" />
-    <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
-    </div>
+        <div class="col-md-12 form-group">
+            <asp:Label Text="Direccion" runat="server" />
+            <asp:TextBox runat="server" ID="txtbox_direccion" CssClass="form-control" />
+            <asp:Label Text="" runat="server" ID="lbl_direccion1" />
+        </div>
+        <div class="col-md-12 form-group">
+            <asp:Button ID="btn_Rellenar" Text="Rellenar!" target="_blank" runat="server" OnClick="btn_Rellenar_Click" CssClass="btn btn-info btn-lg btn-block" />
+            <!-- <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a> -->
+        </div>
     <%} %>
     
     
