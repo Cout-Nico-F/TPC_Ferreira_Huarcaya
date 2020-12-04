@@ -103,6 +103,7 @@ namespace WebForms.ASPX
                 lblFechaNaci.Text = "El campos Fecha de nacimiento esta vacio";
                 return false;
             }
+
             if (txtNombreUsuario.Text == "")
             {
                 lblNombreUsuario.Text = "El campos Nombre Usuario no puede quedar vacio";

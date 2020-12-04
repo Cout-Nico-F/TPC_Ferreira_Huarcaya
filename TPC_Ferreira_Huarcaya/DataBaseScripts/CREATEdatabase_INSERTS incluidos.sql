@@ -52,8 +52,8 @@ create table PedidosWebPage (
 	
 create table Usuarios (
 	ID smallint identity(1,1),
-	NombreUsuario varchar(100) not null,
-	Contrasenia varchar(200) not null, --tal vez a modificar a futuro cuando veamos como cifrarla o cuanto ocupa el hash.
+	NombreUsuario varchar(100) not null unique,
+	Contrasenia varchar(200) not null, 
 	ID_Nivel smallint not null,
 	Descripcion varchar(200) null,
 	urlImagen varchar(200) null,

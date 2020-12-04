@@ -70,7 +70,7 @@
                                 <asp:Label Text="" runat="server" ID="lblMail"/>
                             </div>
                             <div class="col-md-6 form-group">
-                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="Fecha de Nacimiento" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtFechaNacimiento" Placeholder="DIA/MES/AÑO" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
                                 <asp:Label Text="" runat="server" ID="lblFechaNaci"/>
                             </div>
                              <div class="col-md-12 form-group">
