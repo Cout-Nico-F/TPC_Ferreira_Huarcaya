@@ -32,12 +32,6 @@
                         <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
                         <a class="nav-link" href="Info.aspx">Informacion</a>
                     </div>
-                    <div>
-                        <div class="boton-nav-user">
-                            <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i>LogIn</a>
-                            <a href="EditarDatosPersonales.aspx" style="color:white; margin-right:30px;"><i class="fas fa-info-circle"></i>Editar Datos</a>
-                        </div>
-                    </div>
                 </div>
             </nav>
 
@@ -72,8 +66,6 @@
                                 <label>No tiene una cuenta?</label>
                                 <a href="CrearCuenta.aspx">Crear cuenta</a>
                                 <br />
-                                <label>Olvido su contraseña</label>
-                                <a href="RecuperarContaseña.aspx">Recuperar contraseña</a>
                             </div>
                         </div>
                     </div>

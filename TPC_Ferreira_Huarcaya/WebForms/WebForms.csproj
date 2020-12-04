@@ -89,7 +89,6 @@
     <Content Include="ASPX\ModificarPaginaWeb.aspx" />
     <Content Include="ASPX\PedidoExitoso.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
-    <Content Include="ASPX\RecuperarContaseña.aspx" />
     <Content Include="ASPX\RecursosAdmin.aspx" />
     <Content Include="ASPX\RellenarDatosPagWeb.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -2051,13 +2050,6 @@
     </Compile>
     <Compile Include="ASPX\PersonalizarUsuario.aspx.designer.cs">
       <DependentUpon>PersonalizarUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASPX\RecuperarContaseña.aspx.cs">
-      <DependentUpon>RecuperarContaseña.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\RecuperarContaseña.aspx.designer.cs">
-      <DependentUpon>RecuperarContaseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\RecursosAdmin.aspx.cs">
       <DependentUpon>RecursosAdmin.aspx</DependentUpon>

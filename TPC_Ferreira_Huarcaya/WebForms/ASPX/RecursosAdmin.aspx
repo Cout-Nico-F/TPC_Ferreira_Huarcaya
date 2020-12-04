@@ -71,30 +71,21 @@
 
     <form id="form1" runat="server">
         
-        <div class="container-pag" id="pag1">
+        <div class="container-pag" id="pag1" style="background:url(https://www.xtrafondos.com/wallpapers/resized/imagen-borrosa-2400.jpg?s=large);background-size:cover;">
             <div class="padre">
-                  <a href="#pag2" class="btn btn-outline-secondary hijo">Ir al listado de Usuarios</a> 
+                  <a href="#pag2" class="btn btn-info hijo">Ir al listado de Usuarios</a> 
             </div> 
             <div class="padre">
-                 <a href="#pag3" class="btn btn-outline-secondary hijo">Ir al listado de Pedidos de Paginas Prediseñadas</a> 
+                 <a href="#pag3" class="btn btn-info hijo">Ir al listado de Pedidos de Paginas Prediseñadas</a> 
             </div>
              <div class="padre">
-                 <a href="#pag4" class="btn btn-outline-secondary hijo">Ir al listado de Pedidos de Paginas Personalizadas</a> 
+                 <a href="#pag4" class="btn btn-info hijo">Ir al listado de Pedidos de Paginas Personalizadas</a> 
             </div>
             <div class="padre">
-                 <a href="#pag5" class="btn btn-outline-secondary hijo">Ver listado de Paginas Prediseñadas deshabilitadas </a> 
+                 <a href="#pag5" class="btn btn-info hijo">Ver listado de Paginas Prediseñadas deshabilitadas </a> 
             </div>
             <div class="padre">
-                 <a href="#pag6" class="btn btn-outline-secondary hijo">Actualizar Precio Base y Precio Por Pagina</a> 
-            </div>
-        </div>
-
-         <div class="container-pag">
-            <div class="padre">
-                  <a href="#pag2" class="btn btn-outline-secondary hijo">listado de Usuarios</a> 
-                 <a href="#pag3" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Prediseñadas</a> 
-                 <a href="#pag4" class="btn btn-outline-secondary hijo">listado de Pedidos de Paginas Personalizadas</a> 
-                 <a href="#pag5" class="btn btn-outline-secondary hijo">listado de Paginas Prediseñadas deshabilitadas</a> 
+                 <a href="#pag6" class="btn btn-info hijo">Actualizar Precio Base y Precio Por Pagina</a> 
             </div>
         </div>
        
@@ -190,57 +181,6 @@
                     </tbody>
                 </table>
                  <asp:Button Text="" runat="server" ID="btn_Actualizar" OnClick="btn_Actualizar_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button>
-            </div>
-             <div>
-                  <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
-             </div>
-        </div>
-
-         <div class="container-pag" id="pag3">
-              <div class="jumbotron">
-                    <h2 style="text-align: center;">Historial de Pedidos de Paginas Prediseñadas </h2>
-                    <h4 style="text-align: center;">Utilice el boton</h4>
-                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
-                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
-                </div>
-            <div class="container">
-                <table class="table table-fluid" id="myTable">
-                    <thead>
-                        <tr>
-                            <th>ID Pedido</th>
-                            <th>ID Usuario</th>
-                            <th>ID Pagina Web</th>
-                            <th>Precio</th>
-                            <th>Fecha de Pedido</th>
-                            <th>Comentario</th>
-                            <th>Estado</th>
-                            <th>Vista Detallada</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%if (ListaPedidosPrediseniada != null)
-                                {%>
-                        <%foreach (var item in ListaPedidosPrediseniada)
-                                {%>
-                        <tr>
-                            <td><%=item.Id %></td>
-                            <td><%=item.Id_Cliente %></td>
-                            <td><%=item.Id_WebPage %></td>
-                            <td><%=item.Precio %></td>
-                            <td><%=item.FechaPedido %></td>
-                            <td><%=item.Comentarios %></td>
-                            <%if (item.Estado == false)
-                                {%>
-                                 <td>Finalizado</td>    
-                            <%} %>
-                            <%else {%> <td>   </td> <%} %>
-                            <td><a href="DetallePedidoPrediseniado.aspx?IdUsuario=<%=item.Id_Cliente %>">Ver Detalles</a></td>
-                        </tr>
-                        <%} %>
-                        <%} %>
-                    </tbody>
-                </table>
-                 <asp:Button Text="" runat="server" ID="Button1" OnClick="btn_Actualizar_Click" CssClass="boton-shadow btn btn-outline-info"> </asp:Button>
             </div>
              <div>
                   <a href="#pag1" class="btn btn-primary" role="button" style="box-shadow:5px 5px 8px #999;border-radius:40px;">Ir al Indice</a>
