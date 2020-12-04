@@ -24,7 +24,7 @@ namespace WebForms.ASPX
             Usuario = (Usuario)Session["usersession"];
 
             pneg = new PedidoPersonalizadoNegocio();
-            if (Usuario == null)
+            if (Usuario.Id_Acceso != 3)
             {
                 Response.Redirect("InicioSesion.aspx");
             }
