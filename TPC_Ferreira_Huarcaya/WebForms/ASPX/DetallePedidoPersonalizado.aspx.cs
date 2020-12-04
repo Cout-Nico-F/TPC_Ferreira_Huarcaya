@@ -23,21 +23,22 @@ namespace WebForms.ASPX
         {
             Usuario = (Usuario)Session["usersession"];
 
-                pneg = new PedidoPersonalizadoNegocio();
-                if(Usuario == null)
-                 {
+            pneg = new PedidoPersonalizadoNegocio();
+            if (Usuario == null)
+            {
                 Response.Redirect("InicioSession.aspx");
-                 }
-                if (Request.QueryString["idPedido"] == null)
-                {
-                    Response.Redirect("Home.aspx");//solo se puede entrar a esta pagina llegando con una id por url.
-                }
-                idPedido = Convert.ToInt16(Request.QueryString["idPedido"]);
-                CargarDatosUsuarioPedido();
-                CargarPedidoSeleccionado();
-                CargarFuncionalidades();
-                CargarPaginas();
-            
+            }
+            if (Request.QueryString["idPedido"] == null)
+            {
+                Response.Redirect("Home.aspx");//solo se puede entrar a esta pagina llegando con una id por url.
+            }
+            idPedido = Convert.ToInt16(Request.QueryString["idPedido"]);
+            CargarPedidoSeleccionado();
+            CargarDatosUsuarioPedido();
+
+            CargarFuncionalidades();
+            CargarPaginas();
+
         }
 
         void CargarPedidoSeleccionado()
