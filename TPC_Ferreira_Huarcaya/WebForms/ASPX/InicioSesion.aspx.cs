@@ -23,7 +23,10 @@ namespace WebForms.ASPX
                     Session.Remove("usersession");
                     Response.Redirect("Home.aspx");
                 }
-                
+            }
+            if (Request.QueryString["usuario"]!=null)
+            {
+                txtNombreUsuario.Text = Request.QueryString["usuario"].ToString();
             }
             if (IsPostBack)
             {

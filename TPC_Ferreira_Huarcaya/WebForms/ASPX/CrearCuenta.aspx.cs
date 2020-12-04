@@ -18,9 +18,7 @@ namespace WebForms.ASPX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-           
-
+            
         }
 
         protected void btn_CrearCuenta_Click1(object sender, EventArgs e)
@@ -37,25 +35,45 @@ namespace WebForms.ASPX
 
                     user.NombreUsuario = txtNombreUsuario.Text;
                     user.Contrasenia = UsuarioNegocio.GetSHA256(txtContrasenia.Text);
-                    user.Id_Acceso = 1;
+                    user.Id_Acceso = 1; //TODO: falta un boton visible solo por el admin para setear esto en id = 2 ó 3 y lo mismo en la lista de usuarios de recursosadmin
                     dat.NombreApellido = txtNombreApellido.Text;
-                    dat.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
-                    dat.Email = txtEmail.Text;
-                    dat.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
-                    dat.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-                    dat.EmailRecuperacion = txtEmailRecuperacion.Text;
+                    try
+                    {
+                        dat.TelefonoMovil = Convert.ToInt32(txtTelefonoMovil.Text);
+                    }
+                    catch (Exception)
+                    {
 
+                    }
+                    dat.Email = txtEmail.Text;
+                    try
+                    {
+                        dat.TelefonoFijo = Convert.ToInt32(txtTelefonoFijo.Text);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    dat.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+                    try
+                    {
+                        dat.EmailRecuperacion = txtEmailRecuperacion.Text;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                     try
                     {
                         cuentaNeg.CrearCuenta(user, dat);
-                        Thread.Sleep(5000);
-                        Response.Redirect("Catalogo.aspx");
+                        lbl_Exito.BackColor = System.Drawing.Color.Green;
+                        lbl_Exito.ForeColor = System.Drawing.Color.White;
+                        lbl_Exito.Text = "Usuario creado exitosamente!";
+                        Response.Redirect("InicioSesion.aspx?usuario="+txtNombreUsuario.Text);
                     }
                     catch (SqlException)
                     {
-
                         Response.Redirect("Error.aspx");
-
                     }
 
                 }
@@ -67,22 +85,7 @@ namespace WebForms.ASPX
             }
 
         }
-        protected void btn_Comprobar_Click(object sender, EventArgs e)
-        {
-            lblMail.Text = "";
-
-            //Regex regex = new Regex(@"/^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,4})$/");
-            //(@"^[A-Za-z]+@[a-zA-Z]+$"
-            // "/ ^[^\\s@] +@[^\\s@] +\\.[^\\s@]+$/"
-            if (Regex.IsMatch(txtEmail.Text, @"^[A-Za-z]+@[a-zA-Z]+$"))
-            {
-                lblMail.Text = "El formato es correcto";
-            }
-            else
-            {
-                lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
-            }
-        }
+        
         private bool Validaciones()
         {
             if (txtNombreApellido.Text == "")
@@ -110,12 +113,17 @@ namespace WebForms.ASPX
                 lblContrasenia.Text = "El campos Contraseña esta vacio";
                 return false;
             }
-            /*Regex regex = new Regex(@"^[A-Za-z]+@[a-zA-Z]+$");
-            if (!( regex.IsMatch(txtEmail.Text)))
+            if (txtConfirmarContrasenia.Text != txtContrasenia.Text)
             {
+                lblContrasenia.Text = "Los campos de contraseña no coinciden";
+                return false;
+            }
+            if ( ! Regex.IsMatch(txtEmail.Text, @"^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"))
+            {            
                 lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
                 return false;
-            }*/
+            }
+            
             return true;
         }
         private void LimpiarLabels()

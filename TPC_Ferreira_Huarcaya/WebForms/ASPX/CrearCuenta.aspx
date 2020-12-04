@@ -74,12 +74,16 @@
                                 <asp:Label Text="" runat="server" ID="lblFechaNaci"/>
                             </div>
                              <div class="col-md-12 form-group">
-                               <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control"></asp:TextBox>
+                               <asp:TextBox runat="server" ID="txtNombreUsuario" Placeholder="Nombre Usuario" CssClass="form-control" ></asp:TextBox>
                                  <asp:Label Text="" runat="server" ID="lblNombreUsuario"/>
                             </div>
                              <div class="col-md-12 form-group">
-                                <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control" textMode="Password" autocomplete="new-password"></asp:TextBox>
                                  <asp:Label Text="" runat="server" ID="lblContrasenia"/>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <asp:TextBox runat="server" ID="txtConfirmarContrasenia" Placeholder="Vuelve a ingresar tu contraseña" CssClass="form-control" textMode="Password" AutoCompleteType="None"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="Label1"/>
                             </div>
                              <div class="col-md-12 form-group">
                                 <asp:TextBox runat="server" ID="txtEmailRecuperacion" Placeholder="Email para recuperacion de cuenta(opcional)" CssClass="form-control" TextMode="Email"></asp:TextBox>
@@ -88,9 +92,7 @@
                         <br />
                         <div class="col-md-6 form-group">
                             <asp:Button Text="Crear Cuenta" runat="server" CssClass="btn btn-primary" ID="btn_CrearCuenta" Onclick="btn_CrearCuenta_Click1" />
-                        </div>
-                         <div class="col-md-6 form-group">
-                            <asp:Button Text="Comprobar" runat="server" CssClass="btn btn-primary" ID="btn_Comprobar" Onclick="btn_Comprobar_Click" />
+                            <asp:Label Text="" runat="server" ID="lbl_Exito" />
                         </div>
                     </form>
                 </div>
