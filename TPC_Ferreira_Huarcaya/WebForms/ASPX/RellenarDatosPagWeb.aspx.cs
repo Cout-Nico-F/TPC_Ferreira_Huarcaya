@@ -15,10 +15,15 @@ namespace WebForms.ASPX
     {
         public Relleno RellenoIngresado { get; set; }
         public int IdRecibido { get; set; }
+
+        //Validaciones para el boton solicitar
+        public bool ValidarID1 { get; set; }
+        public bool ValidarID2 { get; set; }
+        public bool ValidarID3 { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             RellenoIngresado = new Relleno();
-            IdRecibido =Convert.ToInt32( Request.QueryString["id"]) ;
+            IdRecibido =Convert.ToInt32( Request.QueryString["id"]);
         }
 
         protected void btn_Rellenar_Click(object sender, EventArgs e)
@@ -33,7 +38,9 @@ namespace WebForms.ASPX
             lbl_telefono1.Text = "";
             lbl_direccion1.Text = "";
 
-            if (ValidarInputsID1())
+            ValidarID1 = ValidarInputsID1();
+
+            if (ValidarID1)
             {
             RellenoIngresado.Titulo = txtbox_titulo.Text ;
             RellenoIngresado.Titulo_Home = txtbox_tituloHome.Text;
@@ -130,7 +137,9 @@ namespace WebForms.ASPX
             lbl_Descripcion_Catalogo.Text = "";
             lbl_Precio_Catalogo.Text = "";
 
-            if (ValidarInputsID2())
+            ValidarID2 = ValidarInputsID2();
+
+            if (ValidarID2)
             {
                 //Pagina
                 RellenoIngresado.Nombre_Pagina = txt_Nombre_Pagina.Text;
@@ -249,7 +258,9 @@ namespace WebForms.ASPX
             lbl_Telefono.Text = "";
             lbl_Email.Text = "";
 
-            if (ValidarInputsID3())
+            ValidarID3 = ValidarInputsID3();
+
+            if (ValidarID3)
             {
                 //Home
                 RellenoIngresado.Url_Logo = txt_Logo.Text;
@@ -360,17 +371,6 @@ namespace WebForms.ASPX
                 return false;
             }
             return true;
-        }
-
-       
-
-        protected void btn_Enviar_Click(object sender, EventArgs e)
-        {
-            EmailNegocios email = new EmailNegocios();
-
-            email.enviar();
-
-            Response.Redirect("Catalogo.aspx");
         }
     }
 }

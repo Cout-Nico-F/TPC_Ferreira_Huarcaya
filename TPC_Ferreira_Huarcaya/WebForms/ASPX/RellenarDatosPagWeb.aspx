@@ -66,7 +66,14 @@
         </div>
         <div class="col-md-12 form-group">
             <asp:Button ID="btn_Rellenar" Text="Rellenar!" target="_blank" runat="server" OnClick="btn_Rellenar_Click" CssClass="btn btn-info btn-lg btn-block" />
-            <!-- <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a> -->
+              <%if (!(ValidarID1))
+                     {%>
+                    <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block disabled"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                 <%} %>
+                 <%else
+                { %>
+                     <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                 <%} %>
         </div>
     <%} %>
     
@@ -146,6 +153,15 @@
 
             <div class="col-md-12 form-group">
                 <asp:Button ID="btn_RellenoPagina2" Text="Rellenar!" target="_blank" runat="server" OnClick="btn_RellenoPagina2_Click" CssClass="btn btn-info btn-lg btn-block" />
+                 <%if (!(ValidarID2))
+                     {%>
+                    <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block disabled"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                 <%} %>
+                 <%else
+                { %>
+                     <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                 <%} %>
+                
             </div>
     <%} %>    
             
@@ -229,11 +245,17 @@
             </div>
              <div class="col-md-12 form-group">
                 <asp:Button ID="btn_Rellenar3" Text="Rellenar!" target="_blank" runat="server" Onclick="btn_Rellenar3_Click" CssClass="btn btn-info btn-lg btn-block" />
+                 <%if (!(ValidarID3))
+                     {%>
+                    <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block disabled"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                 <%} %>
+                 <%else
+                { %>
+                     <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a>
+                 <%} %>
+                
             </div>
-            <asp:Button Text="Enviar mail" runat="server" id="btn_Enviar" OnClick="btn_Enviar_Click"/>
      <%} %>
-             <!-- <a href="ConfirmarPedidoPagWeb.aspx?idPagina=<%=IdRecibido%>" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-shopping-cart"></i>Solicitar</a> -->
-
     </div>
 
 </asp:Content>

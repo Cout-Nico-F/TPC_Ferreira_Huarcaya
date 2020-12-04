@@ -78,7 +78,6 @@
     <Content Include="ASPX\ConfirmarBajas\PaginaBaja.aspx" />
     <Content Include="ASPX\ConfirmarPedidoPagWeb.aspx" />
     <Content Include="ASPX\ConfirmarPedidoPersonalizado.aspx" />
-    <Content Include="ASPX\ConfirmarPedidoPrediseniada.aspx" />
     <Content Include="ASPX\CrearCuenta.aspx" />
     <Content Include="ASPX\DetallePedidoPersonalizado.aspx" />
     <Content Include="ASPX\DetallePedidoPrediseniado.aspx" />
@@ -1975,13 +1974,6 @@
     </Compile>
     <Compile Include="ASPX\ConfirmarPedidoPersonalizado.aspx.designer.cs">
       <DependentUpon>ConfirmarPedidoPersonalizado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASPX\ConfirmarPedidoPrediseniada.aspx.cs">
-      <DependentUpon>ConfirmarPedidoPrediseniada.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\ConfirmarPedidoPrediseniada.aspx.designer.cs">
-      <DependentUpon>ConfirmarPedidoPrediseniada.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\CrearCuenta.aspx.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>

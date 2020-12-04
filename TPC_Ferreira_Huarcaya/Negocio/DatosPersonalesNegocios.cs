@@ -29,15 +29,5 @@ namespace Negocio
             return aux;
 
         }
-        /* public DatosPersonales TraerDatosXCorreo(Int16 id)
-         {
-             ConexionMSSQL conexion = new ConexionMSSQL();
-             var lectura = conexion.Consulta_Rapida("Select Email From Datos_Personales Where Email="+correo+"");
-
-             lectura.Read();
-             DatosPersonales aux = new DatosPersonales();
-             aux.Email = lectura.GetString(0);
-             return aux;
-         }*/
     }
 }

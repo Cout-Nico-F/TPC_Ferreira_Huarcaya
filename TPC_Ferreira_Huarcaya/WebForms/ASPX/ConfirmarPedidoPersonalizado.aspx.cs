@@ -25,6 +25,7 @@ namespace WebForms.ASPX
                 Response.Redirect("Error.aspx");
             }
             Pedido = (PedidoPaginaPersonalizada) Session["pedidoPersonalizado"];
+
         }
         protected void btn_Confirmar_Click1(object sender, EventArgs e)
         {

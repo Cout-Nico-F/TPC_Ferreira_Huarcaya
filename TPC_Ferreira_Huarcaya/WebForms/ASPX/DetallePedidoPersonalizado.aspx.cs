@@ -21,20 +21,23 @@ namespace WebForms.ASPX
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Usuario != null && Usuario.ID == 3) //si hay logeado un usuario y si ese usuario tiene un ID_Nivel igual a 3 (o sea es una Admin)
-            {
-                pneg = new PedidoPersonalizadoNegocio();
+            Usuario = (Usuario)Session["usersession"];
 
+                pneg = new PedidoPersonalizadoNegocio();
+                if(Usuario == null)
+                 {
+                Response.Redirect("InicioSession.aspx");
+                 }
                 if (Request.QueryString["idPedido"] == null)
                 {
                     Response.Redirect("Home.aspx");//solo se puede entrar a esta pagina llegando con una id por url.
                 }
                 idPedido = Convert.ToInt16(Request.QueryString["idPedido"]);
+                CargarDatosUsuarioPedido();
                 CargarPedidoSeleccionado();
                 CargarFuncionalidades();
                 CargarPaginas();
-                CargarDatosUsuarioPedido();
-            }
+            
         }
 
         void CargarPedidoSeleccionado()

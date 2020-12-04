@@ -57,7 +57,7 @@ namespace WebForms.ASPX
 
             pedidoNeg.AgregarPedido(pedido);
 
-            emaNeg.EnviarMailPruebaPedidoPrediseniado(pedido,dat);
+            emaNeg.enviarTemplate(pedido,dat);
 
             Response.Redirect("PedidoExitoso.aspx");
         }

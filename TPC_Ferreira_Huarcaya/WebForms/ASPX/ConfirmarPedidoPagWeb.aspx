@@ -4,8 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="jumbotron">
         <h1 style="text-align:center">Confirmación del pedido de pagina web</h1>
-        <h4>Al confirmar este pedido un miembro del Staff se comunicará al contacto que figura en su usuario para pactar una entrevista necesaria para el armado de su pagina web</h4>
-        <h5>En la entrevista se pactaran fechas de entrega y monto de la seña inicial entre otros temas. Los pagos son por MercadoPago o transferencia bancaria.</h5>
+        <p style="text-align:center;">Gracias </p>
     </div>
     <div class="col md-5 col-sm-4" style="margin-bottom: 40px; margin-left:35%;">
         <div class="card text-center" >
