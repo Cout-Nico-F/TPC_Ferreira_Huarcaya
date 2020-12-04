@@ -26,7 +26,7 @@ namespace WebForms.ASPX
             pneg = new PedidoPersonalizadoNegocio();
             if (Usuario == null)
             {
-                Response.Redirect("InicioSession.aspx");
+                Response.Redirect("InicioSesion.aspx");
             }
             if (Request.QueryString["idPedido"] == null)
             {
@@ -35,10 +35,8 @@ namespace WebForms.ASPX
             idPedido = Convert.ToInt16(Request.QueryString["idPedido"]);
             CargarPedidoSeleccionado();
             CargarDatosUsuarioPedido();
-
             CargarFuncionalidades();
             CargarPaginas();
-
         }
 
         void CargarPedidoSeleccionado()
