@@ -238,3 +238,6 @@ AS
 BEGIN 
 	UPDATE PaginaWeb SET Habilitado = 0 Where id = (SELECT id From deleted)
 END
+
+--reestablecer contraseña
+--update Usuarios set contrasenia = '7e7fc357fc23749f5b63f6532c85b5660f840d0cb901e9017c2fb110e1486781' where id = 7

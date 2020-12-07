@@ -1,6 +1,7 @@
 ﻿using Modelo;
 using Negocio;
 using System;
+using System.Text.RegularExpressions;
 
 namespace WebForms.ASPX
 {
@@ -30,7 +31,7 @@ namespace WebForms.ASPX
                         txtTelefonoFijo.Text = Convert.ToString(dat.TelefonoFijo);
                         txtEmail.Text = dat.Email;
                         txtEmailRecuperacion.Text = dat.EmailRecuperacion;
-                        txtContrasenia.Text = Usuario.Contrasenia;
+                        txtContrasenia.Text = "";
                         txtNombreUsuario.Text = Usuario.NombreUsuario;
                     }
                     catch (Exception)
@@ -93,7 +94,12 @@ namespace WebForms.ASPX
             }
             if (txtContrasenia.Text == "")
             {
-                lblContrasenia.Text = "El campo contraseña no puede estar vacio";
+                lblContrasenia.Text = "El campo contraseña no puede estar vacio, Ingrese su contraseña para hacer los cambios o una nueva para cambiarla.";
+                return false;
+            }
+            if (txtConfirmarContrasenia.Text != txtContrasenia.Text)
+            {
+                lblContrasenia.Text = "Los campos de contraseña no coinciden";
                 return false;
             }
             if (txtEmail.Text == "")
@@ -101,7 +107,13 @@ namespace WebForms.ASPX
                 lblMail.Text = "El campo Mail no puede estar vacio";
                 return false;
             }
+            if (!Regex.IsMatch(txtEmail.Text, @"^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"))
+            {
+                lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
+                return false;
+            }
             return true;
+
         }
     }
 }
