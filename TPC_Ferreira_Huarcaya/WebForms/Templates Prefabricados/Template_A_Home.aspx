@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
-    <!-- Estilos CSS -->
-    <link href="../CSS/Estilos_Personalizar.css" rel="stylesheet" />
     <title><%= RellenoVariable.Titulo %></title>
 </head>
 <body > 
     <style>
+
         body{
             background:url(https://www.xtrafondos.com/wallpapers/resized/ubuntu-15-vivid-vervet-3441.jpg?s=large);
             background-size:cover;
@@ -56,9 +55,23 @@
         }
         h1{
             margin-left:50%;
+           
         }
         h4{
             color: white;
+        }
+        #sidebar-container {
+             min-height: 300vh;
+        }
+        #sidebar-container .menu {
+             width: 20rem;
+        }
+        .logo {
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+            font-family: 'Anton', sans-serif;
         }
     </style>
 

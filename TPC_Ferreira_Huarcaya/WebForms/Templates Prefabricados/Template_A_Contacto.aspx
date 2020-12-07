@@ -46,7 +46,7 @@
                 <h1 id="titulo_principal">Contactenos</h1>
                 <p id="texto-Contacto"><%=RellenoVariable.Texto_Contacto %>
                 </p>
-                <div style="text-align:center; margin-top: 2%;">
+                <div >
                     <h5>Telefono: <%=RellenoVariable.Telefono %> </h5>
                     <h5>Direccion: <%=RellenoVariable.Direccion %></h5>
                     <h5>Email: <%=RellenoVariable.Email %> </h5>
