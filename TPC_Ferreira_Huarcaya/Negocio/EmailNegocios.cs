@@ -49,30 +49,61 @@ namespace Negocio
             "</body>";
 
             string adjunto; 
-
-            switch (pedido.Id_WebPage)
+            if(dat.IdUsuario == 6)
             {
-                case 1:
-                    {
-                        adjunto = @"C:\Users\Alons\Desktop\Template_01.rar";
-                    }
-                    break;
-                case 2:
-                    {
-                        adjunto = @"C:\Users\Alons\Desktop\Template_02.rar";
-                    }
-                    break;
-                case 3:
-                    {
-                        adjunto = @"C:\Users\Alons\Desktop\Template_03.rar";
-                    }
-                    break;
-                default:
-                    {
-                        adjunto = "";//la pongo en vacio porque si no me da un error de variable no asignada
-                    }
-                    break;
-            }; 
+                switch (pedido.Id_WebPage)
+                {
+                    case 1:
+                        {
+                            adjunto = @"C:\Users\Alons\Desktop\Template_01.rar";
+                        }
+                        break;
+                    case 2:
+                        {
+                            adjunto = @"C:\Users\Alons\Desktop\Template_02.rar";
+                        }
+                        break;
+                    case 3:
+                        {
+                            adjunto = @"C:\Users\Alons\Desktop\Template_03.rar";
+                        }
+                        break;
+                    default:
+                        {
+                            adjunto = "";//la pongo en vacio porque si no me da un error de variable no asignada
+                        }
+                        break;
+                };
+           
+            }
+            if (dat.IdUsuario == 7)
+            {
+                switch (pedido.Id_WebPage)
+                {
+                    case 1:
+                        {
+                            adjunto = @"C:\Users\Nferr\Desktop\Template_01.rar";
+                        }
+                        break;
+                    case 2:
+                        {
+                            adjunto = @"C:\Users\Nferr\Desktop\Template_02.rar";
+                        }
+                        break;
+                    case 3:
+                        {
+                            adjunto = @"C:\Users\Nferr\Desktop\Template_03.rar";
+                        }
+                        break;
+                    default:
+                        {
+                            adjunto = "";//la pongo en vacio porque si no me da un error de variable no asignada
+                        }
+                        break;
+                };
+
+            }
+
 
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
