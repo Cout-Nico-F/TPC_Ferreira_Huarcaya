@@ -57,7 +57,9 @@
         h1{
             margin-left:50%;
         }
-       
+        h4{
+            color: white;
+        }
     </style>
 
     <form id="form1" runat="server">

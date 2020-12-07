@@ -20,6 +20,20 @@
 
 </head>
 <body>
+    <style>
+         body{
+            background:url(https://www.xtrafondos.com/wallpapers/resized/ubuntu-15-vivid-vervet-3441.jpg?s=large);
+            background-size:cover;
+        }
+         p{
+             text-align:center;
+         }
+         img{
+             width:50%;
+             height:5%;
+         }
+
+    </style>
     <form id="form1" runat="server">
         <div class="d-flex">
             <div id="sidebar-container" class="bg-primary">
@@ -28,17 +42,18 @@
                     <a href="Template_A_Home.aspx" class="btn btn-warning d-block seccion-button">Home</a>
                 </div>
             </div>
-            <div class="d-block" id="BodyCentro">
+            <div class="container" id="BodyCentro">
                 <h1 id="titulo_principal">Contactenos</h1>
-
-                <h4 id="texto-Contacto"><%=RellenoVariable.Texto_Contacto %>
-                </h4>
+                <p id="texto-Contacto"><%=RellenoVariable.Texto_Contacto %>
+                </p>
                 <div style="text-align:center; margin-top: 2%;">
                     <h5>Telefono: <%=RellenoVariable.Telefono %> </h5>
                     <h5>Direccion: <%=RellenoVariable.Direccion %></h5>
                     <h5>Email: <%=RellenoVariable.Email %> </h5>
                 </div>
-                <img id="imagen-contacto" src="../Imagenes/unnamed.jpg" alt="Imagen_Contacto" />
+                <hr />
+                <hr />
+                <img src="../Imagenes/unnamed.jpg" alt="Imagen_Contacto" />
             </div>
         </div>
     </form>
