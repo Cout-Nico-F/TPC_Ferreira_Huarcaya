@@ -86,6 +86,11 @@
                                 <asp:TextBox runat="server" ID="txtContrasenia" Placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
                                  <asp:Label Text="" runat="server" ID="lblContrasenia"/>
                             </div>
+                            <div class="col-md-6 form-group">
+                                 <asp:Label Text="Ingrese nuevamente su contraseña" runat="server" />
+                                <asp:TextBox runat="server" ID="txtConfirmarContrasenia" Placeholder="Ingrese nuevamente su contraseña" CssClass="form-control"></asp:TextBox>
+                                 <asp:Label Text="" runat="server" ID="Label1"/>
+                            </div>
                              <div class="col-md-6 form-group">
                                  <asp:Label Text="Telefono Movil" runat="server" />
                                 <asp:TextBox runat="server" ID="txtTelefonoMovil" Placeholder="Telefono Movil (opcional)" CssClass="form-control" TextMode="Number"></asp:TextBox>
