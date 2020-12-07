@@ -89,7 +89,7 @@
                     <asp:Label Text="" runat="server" id="lbl_Nombre_Pagina"/>
                 </div>
                  <div class="col-md-12 form-group">
-                    <asp:Label Text="Url de la Pagina" runat="server" />
+                    <asp:Label Text="Url de imagen del icono que acompaña el nombre la Pagina" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Url_Pagina" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Url_Pagina"/>
                 </div>
@@ -105,7 +105,7 @@
                     <asp:Label Text="" runat="server" id="lbl_titulo_carousel1"/>
                 </div>
                 <div class="col-md-12 form-group">
-                    <asp:Label Text="Url Imagen Home" runat="server" />
+                    <asp:Label Text="Url Imagen Carousel 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url1" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_url1"/>
                 </div>
@@ -115,7 +115,7 @@
                      <asp:Label Text="" runat="server" id="lbl_titulo_carousel2"/>
                 </div>
                 <div class="col-md-12 form-group">
-                    <asp:Label Text="Url Imagen Home2" runat="server" />
+                    <asp:Label Text="Url Imagen Carousel 2" runat="server" />
                     <asp:TextBox runat="server" ID="txt_url2" CssClass="form-control" />
                      <asp:Label Text="" runat="server" id="lbl_url2"/>
                 </div>
@@ -125,27 +125,27 @@
             <p style="text-align:center">Aca vas a poder ingresar toda la informacion que para tu pagina Catalogo</p>
             <div class="col-md-12 col-md-offset-2">
                 <div class="col-md-12 form-group">
-                    <asp:Label Text="Titulo Catalogo" runat="server" />
+                    <asp:Label Text="Titulo del Catalogo" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Titulo_Catalogo" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Titulo_Catalogo"/>
                 </div>
                 <div class="col-md-12 form-group">
-                    <asp:Label Text="Titulo Card Catalogo" runat="server" />
+                    <asp:Label Text="Titulo del Producto 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Titulo_Card_Catalogo" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Titulo_Card_Catalogo"/>
                 </div>
                  <div class="col-md-12 form-group">
-                    <asp:Label Text="Url Imagen Catalogo" runat="server" />
+                    <asp:Label Text="Url Imagen del Producto 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Url_Imagen_Catalogo" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Url_Imagen_Catalogo"/>
                 </div>
                  <div class="col-md-12 form-group">
-                    <asp:Label Text="Descripcion Card Catalogo" runat="server" />
+                    <asp:Label Text="Descripcion del Producto 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Descripcion_Catalogo" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Descripcion_Catalogo"/>
                 </div>
                  <div class="col-md-12 form-group">
-                    <asp:Label Text="Precio Producto" runat="server" />
+                    <asp:Label Text="Precio del Producto 1" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Precio_Catalogo" CssClass="form-control" TextMode="Number"/>
                     <asp:Label Text="" runat="server" id="lbl_Precio_Catalogo"/>
                 </div>
@@ -171,7 +171,7 @@
             <p style="text-align:center">Aca vas a poder completar los datos requeridos para el home</p>
             <div class="col-md-12 col-md-offset-2">
                 <div class="col-md-12 form-group">
-                    <asp:Label Text="Url Logo Home" runat="server" />
+                    <asp:Label Text="Url imagen del Home" runat="server" />
                     <asp:TextBox runat="server" ID="txt_Logo" CssClass="form-control" />
                     <asp:Label Text="" runat="server" id="lbl_Logo"/>
 
