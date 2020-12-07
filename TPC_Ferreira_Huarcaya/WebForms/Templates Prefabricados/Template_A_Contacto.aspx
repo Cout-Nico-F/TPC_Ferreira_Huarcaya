@@ -42,10 +42,9 @@
           font-size: 50px;
           font-family: 'Anton', sans-serif;
           }
-     .container{
+        .container{
         color:white;
-     }
-
+        }
     </style>
     <form id="form1" runat="server">
         <div class="d-flex">

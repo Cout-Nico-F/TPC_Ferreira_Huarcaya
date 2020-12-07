@@ -52,7 +52,7 @@ namespace WebForms.ASPX
 
             emaNeg.enviarTemplate(pedido, dat);
 
-            Response.Redirect("PedidoExitoso.aspx");
+            Response.Redirect("PedidoExitoso.aspx?id="+pedido.Id_WebPage);
         }
     }
     //TODO: cuando estemos por hacer la parte de login y crear cuenta una vez que este terminada podemos ahora si hacer las validaciones que necesitamos para terminar esto
