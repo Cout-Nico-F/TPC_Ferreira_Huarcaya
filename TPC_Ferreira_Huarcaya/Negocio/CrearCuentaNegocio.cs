@@ -1,26 +1,20 @@
-﻿using System.Data.SqlClient;
-using Modelo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Common;
+﻿using Modelo;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Negocio
 {
     public class CrearCuentaNegocio
     {
 
-        public void CrearCuenta(Usuario user,DatosPersonales dat)
+        public void CrearCuenta(Usuario user, DatosPersonales dat)
         {
             using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_CrearUsuario", sql))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario",user.NombreUsuario));
+                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario", user.NombreUsuario));
                     cmd.Parameters.Add(new SqlParameter("@Contrasenia", user.Contrasenia));
                     cmd.Parameters.Add(new SqlParameter("@ID_Nivel", user.Id_Acceso));
                     cmd.Parameters.Add(new SqlParameter("@NombreApellido", dat.NombreApellido));

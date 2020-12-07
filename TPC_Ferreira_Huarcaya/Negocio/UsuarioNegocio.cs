@@ -1,19 +1,15 @@
 ﻿using Modelo;
-using Negocio;
-using System.Data.SqlClient;
-using System.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace Negocio
 {
     public class UsuarioNegocio
     {
-        public  List<Usuario> listaDeUsuarios()
+        public List<Usuario> listaDeUsuarios()
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
 
@@ -36,7 +32,7 @@ namespace Negocio
             return listaDeUsuarios;
 
         }
-        public void CambiarHabilitado(Int16 id,bool habilitado)
+        public void CambiarHabilitado(Int16 id, bool habilitado)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
             conexion.SentenciaNonQuery("update Usuarios set Habilitado=" + Convert.ToInt16(habilitado) + " Where ID=" + id);

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -14,7 +9,7 @@ namespace Negocio
         public SqlConnection Connection { get; set; }
         public SqlCommand Command { get; set; }
 
-        public void Conectar  ()
+        public void Conectar()
         {
             Connection = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi");
             Command = new SqlCommand();
@@ -51,12 +46,12 @@ namespace Negocio
             Command.CommandText = storedProcedureQuery;
         }
 
-        public void AgregarParametro(string clave, string valor) 
+        public void AgregarParametro(string clave, string valor)
         {
             Command.Parameters.AddWithValue(clave, valor);
         }
 
-        public int SentenciaNonQuery (string sentencia)
+        public int SentenciaNonQuery(string sentencia)
         {
             Conectar();
             Command.CommandType = CommandType.Text;

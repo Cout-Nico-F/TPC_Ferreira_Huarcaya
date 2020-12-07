@@ -1,9 +1,6 @@
 ﻿using Modelo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -17,7 +14,7 @@ namespace Negocio
         public int Agregar(Funcionalidad Func)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Funcionalidades(Descripcion, Costo,Habilitado) values('" + Func.Descripcion + "' , '" + Func.Costo + "','"+Func.Habilitado+"')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Funcionalidades(Descripcion, Costo,Habilitado) values('" + Func.Descripcion + "' , '" + Func.Costo + "','" + Func.Habilitado + "')");
             conexion.Desconectar();
             return rowsAfectadas;
         }
@@ -26,7 +23,7 @@ namespace Negocio
         /// Devuelve la lista completa de funcionalidades existentes en la base de datos.
         /// </summary>
         /// <returns></returns>
-        public List<Funcionalidad> Listar ()
+        public List<Funcionalidad> Listar()
         {
             List<Funcionalidad> lista = new List<Funcionalidad>();
             ConexionMSSQL conexion = new ConexionMSSQL();
@@ -47,7 +44,7 @@ namespace Negocio
         public int Eliminar(Int16 id)//tal vez serviria un procedimiento almacenado que solo elimine si la sentencia afecta 1 sola row?
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("Delete from Funcionalidades where ID ="+ id);
+            int rowsAfectadas = conexion.SentenciaNonQuery("Delete from Funcionalidades where ID =" + id);
             conexion.Desconectar();
             return rowsAfectadas;
         }

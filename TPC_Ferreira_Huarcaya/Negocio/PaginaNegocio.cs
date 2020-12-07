@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modelo;
-using Negocio;
 
 namespace Negocio
 {
@@ -34,7 +30,7 @@ namespace Negocio
         public int Agregar(Pagina pag)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into paginas (descripcion,Url_Imagen,Habilitado) values ('" + pag.Descripcion + "','"+pag.Url_Imagen+"','"+pag.Habilitado+"')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into paginas (descripcion,Url_Imagen,Habilitado) values ('" + pag.Descripcion + "','" + pag.Url_Imagen + "','" + pag.Habilitado + "')");
             conexion.Desconectar();
             return rowsAfectadas;
         }

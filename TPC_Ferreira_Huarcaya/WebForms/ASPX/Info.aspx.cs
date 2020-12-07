@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Modelo;
+﻿using Modelo;
 using Negocio;
+using System;
+using System.Collections.Generic;
 
 namespace WebForms.ASPX
 {
@@ -14,7 +10,7 @@ namespace WebForms.ASPX
         public List<Usuario> listaInfo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             try
             {
                 InformacionNegocio infoNeg = new InformacionNegocio();
@@ -34,10 +30,10 @@ namespace WebForms.ASPX
 
                 Session.Add("errorEncontrado", ex.ToString());
                 Response.Redirect("Error.aspx");
-                
+
             }
-            
-            
+
+
         }
     }
 }

@@ -1,11 +1,6 @@
-﻿using System.Net.Mail;
+﻿using Modelo;
 using System.Net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modelo;
+using System.Net.Mail;
 
 namespace Negocio
 {
@@ -48,9 +43,9 @@ namespace Negocio
             "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
 
-            string adjunto = ""; 
+            string adjunto = "";
 
-            if(dat.IdUsuario == 6)
+            if (dat.IdUsuario == 6)
             {
                 switch (pedido.Id_WebPage)
                 {
@@ -70,7 +65,7 @@ namespace Negocio
                         }
                         break;
                 };
-           
+
             }
             if (dat.IdUsuario == 7)
             {
@@ -112,6 +107,6 @@ namespace Negocio
 
             smtp.Send(mail);
         }
-      
+
     }
 }

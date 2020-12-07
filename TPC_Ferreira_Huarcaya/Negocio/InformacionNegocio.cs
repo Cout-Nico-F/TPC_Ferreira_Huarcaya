@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Modelo;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modelo;
 
 namespace Negocio
 {
@@ -16,7 +12,7 @@ namespace Negocio
 
             List<Usuario> listaInfo = new List<Usuario>();
             //TODO: no olvidarse de cambiar el id nivel hardcodeado en esta linea
-            SqlDataReader lectura = conexion.Consulta_Rapida("select ID,NombreUsuario,ID_Nivel,urlImagen,Descripcion From Usuarios Where ID_Nivel="+3+"");
+            SqlDataReader lectura = conexion.Consulta_Rapida("select ID,NombreUsuario,ID_Nivel,urlImagen,Descripcion From Usuarios Where ID_Nivel=" + 3 + "");
 
             while (lectura.Read())
             {

@@ -1,11 +1,6 @@
 ﻿using Modelo;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
@@ -15,12 +10,12 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = (Usuario)Session["usersession"];
-            if(Usuario != null)
+            if (Usuario != null)
             {
                 if (!IsPostBack)
                 {
                     try
-                    { 
+                    {
                         DatosPersonales dat = new DatosPersonales();
                         DatosPersonalesNegocios edNeg = new DatosPersonalesNegocios();
 
@@ -74,8 +69,8 @@ namespace WebForms.ASPX
                 datos.Email = txtEmail.Text;
                 datos.EmailRecuperacion = txtEmailRecuperacion.Text;
                 usu.NombreUsuario = txtNombreUsuario.Text;
-                usu.Contrasenia = UsuarioNegocio.GetSHA256( txtContrasenia.Text );
-                usu.ID = Usuario.ID; 
+                usu.Contrasenia = UsuarioNegocio.GetSHA256(txtContrasenia.Text);
+                usu.ID = Usuario.ID;
 
 
                 pagNeg.ActualizarDatos(usu, datos);
@@ -86,22 +81,22 @@ namespace WebForms.ASPX
         }
         private bool Validaciones()
         {
-            if(txtNombreApellido.Text == "")
+            if (txtNombreApellido.Text == "")
             {
                 lblNombreApellido.Text = "El campos Nombre Apellido no puede estar vacio";
                 return false;
             }
-            if(txtNombreUsuario.Text == "")
+            if (txtNombreUsuario.Text == "")
             {
                 lblNombreUsuario.Text = "El campo Nombre Usuario no puede estar vacio";
                 return false;
             }
-            if(txtContrasenia.Text == "")
+            if (txtContrasenia.Text == "")
             {
                 lblContrasenia.Text = "El campo contraseña no puede estar vacio";
                 return false;
             }
-            if(txtEmail.Text == "")
+            if (txtEmail.Text == "")
             {
                 lblMail.Text = "El campo Mail no puede estar vacio";
                 return false;

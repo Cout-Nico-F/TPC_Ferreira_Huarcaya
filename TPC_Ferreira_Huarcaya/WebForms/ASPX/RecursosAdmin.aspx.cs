@@ -2,10 +2,6 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
@@ -20,13 +16,13 @@ namespace WebForms.ASPX
         {
             FiltrarAcceso();
 
-           if(Request.QueryString["idPaginaWeb"] != null)
+            if (Request.QueryString["idPaginaWeb"] != null)
             {
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
                 Int16 idRecibido = Convert.ToInt16(Request.QueryString["idPaginaWeb"]);
 
                 int rows = pagNeg.Restaurar(idRecibido);
-                if(rows > 0)
+                if (rows > 0)
                 {
                     Response.Redirect("RecursosAdmin.aspx");
                 }
@@ -67,7 +63,7 @@ namespace WebForms.ASPX
             {
                 Response.Redirect("InicioSesion.aspx");
             }
-            else if ( Usuario.Id_Acceso != 3)//verificar el tipo de acceso para poder ver la pagina.
+            else if (Usuario.Id_Acceso != 3)//verificar el tipo de acceso para poder ver la pagina.
             {
                 Response.Redirect("Home.aspx");
             }

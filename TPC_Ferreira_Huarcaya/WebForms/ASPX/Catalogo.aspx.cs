@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Modelo;
 using Negocio;
-using Modelo;
+using System;
+using System.Collections.Generic;
 
 namespace WebForms.ASPX
 {
@@ -19,7 +15,7 @@ namespace WebForms.ASPX
 
             Usuario = (Usuario)Session["usersession"];
 
-            if(Request.QueryString["idPrueba"] != null)
+            if (Request.QueryString["idPrueba"] != null)
             {
                 VerificarIDPagina();
             }
@@ -60,12 +56,12 @@ namespace WebForms.ASPX
                 page => page.Titulo.ToUpper().Contains(txt_Buscar.Text.ToUpper()));
 
             Session["listadoBuscados"] = listaBuscador;
-            
+
             Response.Redirect("Catalogo.aspx");
         }
         private void VerificarIDPagina()
         {
-           
+
             switch (Convert.ToInt16(Request.QueryString["idPrueba"]))
             {
                 case 1:

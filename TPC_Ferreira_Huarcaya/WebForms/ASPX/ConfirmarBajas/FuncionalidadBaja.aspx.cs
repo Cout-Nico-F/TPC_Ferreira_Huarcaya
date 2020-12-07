@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Modelo;
 using Negocio;
-using Modelo;
+using System;
 
 namespace WebForms.ASPX.ConfirmarBajas
 {
@@ -23,14 +18,14 @@ namespace WebForms.ASPX.ConfirmarBajas
         protected void Page_Load(object sender, EventArgs e)
         {
             FiltrarAcceso();
-            if (Request.QueryString["idFuncionalidad"] == null) 
+            if (Request.QueryString["idFuncionalidad"] == null)
             {
                 Response.Redirect("../Home.aspx");//solo se puede entrar a esta pagina llegando con una id de funcionalidad por url.
             }
             idRecibido = Convert.ToInt32(Request.QueryString["idFuncionalidad"]);
-            
+
             var listaFuncionalidades = FunNegocio.Listar();
-            Funcionalidad = listaFuncionalidades.Find( f => idRecibido == f.Id );
+            Funcionalidad = listaFuncionalidades.Find(f => idRecibido == f.Id);
         }
 
         protected void Btn_Baja_Funcionalidad_Click(object sender, EventArgs e)

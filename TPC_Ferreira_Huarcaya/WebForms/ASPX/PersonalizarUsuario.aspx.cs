@@ -2,9 +2,6 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
@@ -20,7 +17,7 @@ namespace WebForms.ASPX
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             if (!IsPostBack)
             {
                 IniciarLlenadoDeDropDowns();
@@ -164,7 +161,7 @@ namespace WebForms.ASPX
 
         protected void btn_Pagina_Modificacion_Click(object sender, EventArgs e)
         {
-            if(ddl_Paginas.SelectedIndex != 0)
+            if (ddl_Paginas.SelectedIndex != 0)
             {
                 Response.Redirect("AltasModificaciones/PaginasAM.aspx?idPagina=" + ddl_Paginas.SelectedItem.Value);
             }
@@ -172,7 +169,7 @@ namespace WebForms.ASPX
 
         protected void btn_Funcionalidad_Modificacion_Click(object sender, EventArgs e)
         {
-            if(ddl_Funcionalidades.SelectedIndex != 0)
+            if (ddl_Funcionalidades.SelectedIndex != 0)
             {
                 Response.Redirect("AltasModificaciones/FuncionalidadesAM.aspx?idFuncionalidad=" + ddl_Funcionalidades.SelectedItem.Value);
             }
@@ -180,11 +177,11 @@ namespace WebForms.ASPX
 
         protected void btn_Estilo_Modificacion_Click(object sender, EventArgs e)
         {
-            if(ddl_Estilos.SelectedIndex != 0)
+            if (ddl_Estilos.SelectedIndex != 0)
             {
                 Response.Redirect("AltasModificaciones/EstilosAM.aspx?idEstilo=" + ddl_Estilos.SelectedItem.Value);
             }
-           
+
         }
 
         void RemoverFuncionalidad()
@@ -276,7 +273,7 @@ namespace WebForms.ASPX
             pedidoPersonalizado.ID_Estilo = EstiloSeleccionado.Id;
             pedidoPersonalizado.Precio = CalcularPrecio();
             Session.Add("pedidoPersonalizado", pedidoPersonalizado);
-            Response.Redirect( "ConfirmarPedidoPersonalizado.aspx" );
+            Response.Redirect("ConfirmarPedidoPersonalizado.aspx");
         }
 
         int CalcularPrecio()

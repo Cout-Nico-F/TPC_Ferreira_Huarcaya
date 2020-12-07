@@ -1,12 +1,6 @@
 ﻿using Modelo;
 using Negocio;
-using System.Web.Configuration;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
@@ -15,8 +9,8 @@ namespace WebForms.ASPX
         public PaginaWeb PaginaWebVistaPrevia { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-           FiltrarAcceso();
-           if(PaginaWebVistaPrevia == null)
+            FiltrarAcceso();
+            if (PaginaWebVistaPrevia == null)
             {
                 PaginaWebVistaPrevia = new PaginaWeb();
             }
@@ -28,7 +22,7 @@ namespace WebForms.ASPX
 
             if (Validaciones())
             {
-                
+
                 PaginaWeb pag = new PaginaWeb();
                 PaginasWebNegocios pagNeg = new PaginasWebNegocios();
 
@@ -59,7 +53,7 @@ namespace WebForms.ASPX
 
         protected void txtPrevia_Click(object sender, EventArgs e)
         {
-            if(Validaciones())
+            if (Validaciones())
             {
                 PaginaWebVistaPrevia.Titulo = txtTitulo.Text;
                 PaginaWebVistaPrevia.Descripcion = txtDescripcion.Text;
@@ -69,17 +63,17 @@ namespace WebForms.ASPX
 
         private bool Validaciones()
         {
-            if(txtTitulo.Text == "")
+            if (txtTitulo.Text == "")
             {
                 lblTitulo.Text = "El campo titulo esta vacio";
                 return false;
             }
-            if(txtDescripcion.Text == "")
+            if (txtDescripcion.Text == "")
             {
                 lblDescripcion.Text = "El campo descripcion esta vacio";
                 return false;
             }
-            if(txtPrecio.Text == "")
+            if (txtPrecio.Text == "")
             {
                 lblPrecio.Text = "El campo Precio esta vacio";
                 return false;

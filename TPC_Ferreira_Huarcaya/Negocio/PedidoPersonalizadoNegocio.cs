@@ -1,11 +1,8 @@
 ﻿using Modelo;
-using System.Data.SqlClient;
-using System.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 
 namespace Negocio
@@ -15,7 +12,7 @@ namespace Negocio
         public void AgregarPedido(PedidoPaginaPersonalizada pedido)
         {
             Int16 id;
-            
+
             //primero se guarda el pedido
             using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
             {
@@ -40,11 +37,11 @@ namespace Negocio
             ConexionMSSQL conex = new ConexionMSSQL();
             foreach (var item in pedido.Funcionalidades)
             {
-               conex.SentenciaNonQuery("insert into Funcionalidades_X_PedidosWebPage (ID_Funcionalidad,ID_Pedidowebpage) values (" + item.Id + ","+id+")");
+                conex.SentenciaNonQuery("insert into Funcionalidades_X_PedidosWebPage (ID_Funcionalidad,ID_Pedidowebpage) values (" + item.Id + "," + id + ")");
             }
             foreach (var item in pedido.Paginas)
             {
-               conex.SentenciaNonQuery("insert into Paginas_X_PedidosWebPage (ID_Pagina,ID_Pedidowebpage) values (" + item.ID + "," + id + ")");
+                conex.SentenciaNonQuery("insert into Paginas_X_PedidosWebPage (ID_Pagina,ID_Pedidowebpage) values (" + item.ID + "," + id + ")");
             }
             conex.Desconectar();
         }
@@ -53,14 +50,14 @@ namespace Negocio
         {
             List<VistaPedidoPersonalizado> listaVistas = new List<VistaPedidoPersonalizado>();
             ConexionMSSQL conex = new ConexionMSSQL();
-            SqlDataReader reader =  conex.Consulta_Rapida("select * from vw_ListaPedidos");
+            SqlDataReader reader = conex.Consulta_Rapida("select * from vw_ListaPedidos");
 
             while (reader.Read())
             {
                 VistaPedidoPersonalizado vistaPedido = new VistaPedidoPersonalizado();
                 var aux = reader.GetDateTime(0);
                 vistaPedido.Fecha = aux.ToShortDateString(); //Aca le estoy sacando la hora al mostrarlo en la tabla
-                
+
                 vistaPedido.IdPedido = reader.GetInt16(1);
                 vistaPedido.IdUsuario = reader.GetInt16(2);
                 vistaPedido.Estilo = reader.GetString(3);
@@ -106,7 +103,7 @@ namespace Negocio
         {
             List<Funcionalidad> listaFuncionalidades = new List<Funcionalidad>();
             ConexionMSSQL conex = new ConexionMSSQL();
-            SqlDataReader reader = conex.Consulta_Rapida("select id, descripcion, costo, habilitado from vw_ListaFuncionalidades where idPedido ="+idPedido);
+            SqlDataReader reader = conex.Consulta_Rapida("select id, descripcion, costo, habilitado from vw_ListaFuncionalidades where idPedido =" + idPedido);
             while (reader.Read())
             {
                 Funcionalidad f = new Funcionalidad();
@@ -120,11 +117,11 @@ namespace Negocio
             return listaFuncionalidades;
         }
 
-        public List<Pagina> ListarPaginas (Int16 idPedido)
+        public List<Pagina> ListarPaginas(Int16 idPedido)
         {
             List<Pagina> listaPaginas = new List<Pagina>();
             ConexionMSSQL conex = new ConexionMSSQL();
-            SqlDataReader reader = conex.Consulta_Rapida("select id, descripcion, habilitado from vw_listapaginas where idpedido="+idPedido);
+            SqlDataReader reader = conex.Consulta_Rapida("select id, descripcion, habilitado from vw_listapaginas where idpedido=" + idPedido);
             while (reader.Read())
             {
                 Pagina p = new Pagina();
@@ -158,7 +155,7 @@ namespace Negocio
         public void SetPrecioBase(int precio)
         {
             ConexionMSSQL conex = new ConexionMSSQL();
-            conex.SentenciaNonQuery("update ValoresConfigurables set valor = " + precio +" where descripcion = 'PrecioBase'");
+            conex.SentenciaNonQuery("update ValoresConfigurables set valor = " + precio + " where descripcion = 'PrecioBase'");
             conex.Desconectar();
         }
         public void SetPrecioPorPagina(int precio)

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Modelo;
+﻿using Modelo;
 using Negocio;
+using System;
 
 namespace WebForms.ASPX.AltasModificaciones
 {
@@ -38,7 +33,7 @@ namespace WebForms.ASPX.AltasModificaciones
             {//si es alta
                 _Pagina = new Pagina();
             }
-           
+
         }
 
         protected void Btn_PaginaAM_OK_Click(object sender, EventArgs e)
@@ -81,11 +76,11 @@ namespace WebForms.ASPX.AltasModificaciones
                     else Response.Redirect("../PersonalizarUsuario.aspx");
                 }
             }
-            
+
         }
         private bool Validaciones()
         {
-            if(txtBox_Descripcion.Text == "")
+            if (txtBox_Descripcion.Text == "")
             {
                 lblDescripcion.Text = "El campo Descripcion no puede estar vacio";
                 return false;

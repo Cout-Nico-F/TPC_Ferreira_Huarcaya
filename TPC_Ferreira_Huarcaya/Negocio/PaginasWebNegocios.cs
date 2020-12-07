@@ -1,11 +1,8 @@
 ﻿using Modelo;
-using System.Data.SqlClient;
-using System.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 
 namespace Negocio
@@ -47,18 +44,18 @@ namespace Negocio
         {
             //insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image) values ('Modern Business','Template moderno para empresas','../Templates Prefabricados/Template_03/index.html','../Imagenes/ImagenesPaginas/Moderno.png')
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Habilitado,Precio) values ('" + pag.Titulo + "','" + pag.Descripcion + "','" + pag.Url_PaginaWeb + "','" + pag.Url_Imagen +"','"+pag.Habilitado+"','"+pag.Precio+"')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into PaginaWeb(Titulo,Descripcion,Url_Pagina,Url_Image,Habilitado,Precio) values ('" + pag.Titulo + "','" + pag.Descripcion + "','" + pag.Url_PaginaWeb + "','" + pag.Url_Imagen + "','" + pag.Habilitado + "','" + pag.Precio + "')");
             conexion.Desconectar();
             return rowsAfectadas;
         }
         public int Modificar(PaginaWeb pag)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo='" + pag.Titulo + "',Descripcion='" + pag.Descripcion + "',Url_Pagina='" + pag.Url_PaginaWeb + "',Url_Image='" + pag.Url_Imagen + "',Habilitado="+Convert.ToInt16(pag.Habilitado)+",Precio="+pag.Precio+" Where ID=" + pag.ID);
+            int rowsAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Titulo='" + pag.Titulo + "',Descripcion='" + pag.Descripcion + "',Url_Pagina='" + pag.Url_PaginaWeb + "',Url_Image='" + pag.Url_Imagen + "',Habilitado=" + Convert.ToInt16(pag.Habilitado) + ",Precio=" + pag.Precio + " Where ID=" + pag.ID);
             conexion.Desconectar();
             return rowsAfectadas;
         }
-        public void ActualizarDatos(Usuario usu,DatosPersonales dat)
+        public void ActualizarDatos(Usuario usu, DatosPersonales dat)
         {
             using (SqlConnection sql = new SqlConnection("data source = localhost\\SQLEXPRESS01; initial catalog = Ferreira_Huarcaya_DB; integrated security = sspi"))
             {
@@ -66,13 +63,13 @@ namespace Negocio
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@id_Usuario", usu.ID));
-                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario",usu.NombreUsuario));
+                    cmd.Parameters.Add(new SqlParameter("@NombreUsuario", usu.NombreUsuario));
                     cmd.Parameters.Add(new SqlParameter("@Contrasenia", usu.Contrasenia));
                     cmd.Parameters.Add(new SqlParameter("@NombreApellido", dat.NombreApellido));
                     cmd.Parameters.Add(new SqlParameter("@TelefonoMovil", dat.TelefonoMovil));
                     cmd.Parameters.Add(new SqlParameter("@Email", dat.Email));
-                    cmd.Parameters.Add(new SqlParameter("@TelefonoFijo",dat.TelefonoFijo));
-                    cmd.Parameters.Add(new SqlParameter("@EmailRecuperacion",dat.EmailRecuperacion));
+                    cmd.Parameters.Add(new SqlParameter("@TelefonoFijo", dat.TelefonoFijo));
+                    cmd.Parameters.Add(new SqlParameter("@EmailRecuperacion", dat.EmailRecuperacion));
                     sql.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -81,7 +78,7 @@ namespace Negocio
         public int Restaurar(Int16 id)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Habilitado="+1+"Where ID="+id);
+            int rowAfectadas = conexion.SentenciaNonQuery("update PaginaWeb set Habilitado=" + 1 + "Where ID=" + id);
             conexion.Desconectar();
             return rowAfectadas;
         }

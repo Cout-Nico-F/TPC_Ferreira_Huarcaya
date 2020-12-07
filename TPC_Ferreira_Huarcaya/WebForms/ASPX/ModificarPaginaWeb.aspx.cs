@@ -1,11 +1,6 @@
 ﻿using Modelo;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
@@ -21,7 +16,7 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
             FiltrarAcceso();
-            if(Request.QueryString["idPaginaWeb"] == null)
+            if (Request.QueryString["idPaginaWeb"] == null)
             {
                 Response.Redirect("Error.aspx");
             }
@@ -40,7 +35,7 @@ namespace WebForms.ASPX
 
                 txtPrecio.Text = Convert.ToString(PaginaSeleccionada.Precio);
             }
-            
+
 
         }
 
@@ -74,21 +69,21 @@ namespace WebForms.ASPX
                     Response.Redirect("Error.aspx");
                 }
             }
-           
+
         }
         private bool Validaciones()
         {
-            if(txtTitulo.Text == "")
+            if (txtTitulo.Text == "")
             {
                 lblTitulo.Text = "El campos Titulo esta vacio";
                 return false;
             }
-            if(txtDescripcion.Text == "")
+            if (txtDescripcion.Text == "")
             {
                 lblDescripcion.Text = "El campo Descripcion esta vacion";
                 return false;
             }
-            if(txtPrecio.Text == "")
+            if (txtPrecio.Text == "")
             {
                 lblPrecio.Text = "El campo Precio esta vacio";
                 return false;

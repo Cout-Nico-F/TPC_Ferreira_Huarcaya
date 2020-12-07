@@ -1,11 +1,6 @@
-﻿using Negocio;
-using Modelo;
+﻿using Modelo;
+using Negocio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebForms.ASPX
 {
@@ -30,7 +25,7 @@ namespace WebForms.ASPX
             var listaPaginasWeb = pagNeg.listaPaginassWeb();
 
             PaginaSeleccionada = listaPaginasWeb.Find(pag => idRecibido == pag.ID);
-       
+
         }
         protected void btn_Confirmar_Click(object sender, EventArgs e)
         {

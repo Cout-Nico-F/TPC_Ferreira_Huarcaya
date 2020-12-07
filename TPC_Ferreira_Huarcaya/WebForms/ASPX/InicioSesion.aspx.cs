@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Services.Description;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Modelo;
+﻿using Modelo;
 using Negocio;
-using System.Text.RegularExpressions;
+using System;
 
 namespace WebForms.ASPX
 {
@@ -18,13 +11,13 @@ namespace WebForms.ASPX
         {
             if (Request.QueryString["LogOut"] != null)
             {
-                if (Session["usersession"] != null )
+                if (Session["usersession"] != null)
                 {
                     Session.Remove("usersession");
                     Response.Redirect("Home.aspx");
                 }
             }
-            if (Request.QueryString["usuario"]!=null)
+            if (Request.QueryString["usuario"] != null)
             {
                 txtNombreUsuario.Text = Request.QueryString["usuario"].ToString();
             }
@@ -48,7 +41,7 @@ namespace WebForms.ASPX
                 Usuario user = new Usuario();
 
                 user.NombreUsuario = txtNombreUsuario.Text;
-                user.Contrasenia = UsuarioNegocio.GetSHA256 ( txtPass.Text );
+                user.Contrasenia = UsuarioNegocio.GetSHA256(txtPass.Text);
 
                 Usuario = logNeg.login(user);
 
@@ -64,18 +57,18 @@ namespace WebForms.ASPX
                     lbl_Mensaje.Text = "Usuario o Contraseña no existente!";
                     //Response.Redirect("Error.aspx");
                 }
-               
+
             }
 
         }
         private bool Validaciones()
         {
-            if(txtNombreUsuario.Text == "")
+            if (txtNombreUsuario.Text == "")
             {
                 lblNombreUsuario.Text = "El campos Nombre Usuario no puede estar vacio";
                 return false;
             }
-            if(txtPass.Text == "")
+            if (txtPass.Text == "")
             {
                 lblContrasenia.Text = "El campo Contraseña no puede estar vacio";
                 return false;

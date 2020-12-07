@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Profile;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Modelo;
+﻿using Modelo;
 using Negocio;
+using System;
 
 namespace WebForms.ASPX.AltasModificaciones
 {
@@ -92,16 +86,16 @@ namespace WebForms.ASPX.AltasModificaciones
                     Response.Redirect("../PersonalizarUsuario.aspx");
                 }
             }
-          
+
         }
         private bool Validaciones()
         {
-            if(txtBox_Descripcion.Text == "")
+            if (txtBox_Descripcion.Text == "")
             {
                 lblDescripcion.Text = "El campos Descripcion esta vacio";
                 return false;
             }
-            if(txtBox_Costo.Text == "")
+            if (txtBox_Costo.Text == "")
             {
                 lblPrecio.Text = "El campo Precio esta vacio";
                 return false;

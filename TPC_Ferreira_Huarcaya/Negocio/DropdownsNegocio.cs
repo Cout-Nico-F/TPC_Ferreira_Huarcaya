@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modelo;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace Negocio
 {
     public class DropdownsNegocio
-    { 
+    {
         /// <summary>
         /// Consulta la base de datos y devuelve un dataset con el resultado de la consulta para ser utilizado en dropdowns u otros controles que utilizen dataset
         /// 
@@ -30,7 +24,7 @@ namespace Negocio
             return dataSet;
         }
 
-        
+
     }
-   
+
 }

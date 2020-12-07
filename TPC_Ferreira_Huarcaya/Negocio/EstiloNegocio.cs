@@ -1,10 +1,7 @@
-﻿using System.Data.SqlClient;
+﻿using Modelo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modelo;
+using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -13,7 +10,7 @@ namespace Negocio
         public int Agregar(Estilo estilo)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Estilos(Descripcion, Url_Imagen,Habilitado) values('"+ estilo.Descripcion +"','" + estilo.Url_Imagen +"','"+estilo.Habilitado+"')");
+            int rowsAfectadas = conexion.SentenciaNonQuery("insert into Estilos(Descripcion, Url_Imagen,Habilitado) values('" + estilo.Descripcion + "','" + estilo.Url_Imagen + "','" + estilo.Habilitado + "')");
             // estilos ahora tiene un UrlImagen entonces podemos usar el boton que nos mostro maxi apra agregar imagenes, guardarlas en una carpeta, traer la ruta y la ruta la enviamos
             // a la BD con este insert tambien
             conexion.Desconectar();
@@ -62,7 +59,7 @@ namespace Negocio
         public int Modificar(Estilo estilo)
         {
             ConexionMSSQL conexion = new ConexionMSSQL();
-            int rowsAfectadas = conexion.SentenciaNonQuery("update Estilos set Descripcion='" + estilo.Descripcion + "',Url_Imagen='" + estilo.Url_Imagen + "',Habilitado=" + Convert.ToInt16( estilo.Habilitado ) + " Where ID=" + estilo.Id);
+            int rowsAfectadas = conexion.SentenciaNonQuery("update Estilos set Descripcion='" + estilo.Descripcion + "',Url_Imagen='" + estilo.Url_Imagen + "',Habilitado=" + Convert.ToInt16(estilo.Habilitado) + " Where ID=" + estilo.Id);
             conexion.Desconectar();
             return rowsAfectadas;
         }

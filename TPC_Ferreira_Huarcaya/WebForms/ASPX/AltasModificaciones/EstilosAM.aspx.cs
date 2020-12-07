@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Modelo;
+﻿using Modelo;
 using Negocio;
+using System;
 
 namespace WebForms.ASPX.AltasModificaciones
 {
     public partial class EstilosAM : System.Web.UI.Page
     {
         public Estilo NuevoEstilo { get; set; }
-        
+
         protected int idRecibido;
         public Estilo EstiloSeleccionado { get; set; }
         public EstiloNegocio EstiloNegocio { get; set; }
@@ -42,7 +37,7 @@ namespace WebForms.ASPX.AltasModificaciones
             {//si es alta
                 NuevoEstilo = new Estilo();
             }
-            
+
         }
 
         void FiltrarAcceso()
@@ -109,11 +104,11 @@ namespace WebForms.ASPX.AltasModificaciones
                     Response.Redirect("../PersonalizarUsuario.aspx");
                 }
             }
-           
+
         }
         private bool Validaciones()
         {
-            if(txtBox_Descripcion.Text == "")
+            if (txtBox_Descripcion.Text == "")
             {
                 lblDescripcion.Text = "El campo Descripcion esta vacio";
                 return false;

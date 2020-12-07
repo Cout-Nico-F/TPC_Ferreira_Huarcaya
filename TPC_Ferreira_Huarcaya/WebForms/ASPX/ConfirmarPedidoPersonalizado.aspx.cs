@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Modelo;
+﻿using Modelo;
 using Negocio;
+using System;
 
 namespace WebForms.ASPX
 {
@@ -16,7 +11,7 @@ namespace WebForms.ASPX
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = (Usuario)Session["usersession"];
-            if(Usuario == null)
+            if (Usuario == null)
             {
                 Response.Redirect("InicioSesion.aspx");
             }
@@ -24,7 +19,7 @@ namespace WebForms.ASPX
             {
                 Response.Redirect("Error.aspx");
             }
-            Pedido = (PedidoPaginaPersonalizada) Session["pedidoPersonalizado"];
+            Pedido = (PedidoPaginaPersonalizada)Session["pedidoPersonalizado"];
 
         }
         protected void btn_Confirmar_Click1(object sender, EventArgs e)
@@ -35,12 +30,12 @@ namespace WebForms.ASPX
             DatosPersonales dat = datNeg.TraerDatos(Usuario.ID);
 
             Pedido.Comentarios = txtBox_Comentarios.Text;
-           
+
             Pedido.Id_Cliente = Usuario.ID;
 
             pedPer.AgregarPedido(Pedido);
 
-            emaNeg.EnviarMailPruebaPedidoPersonalizado(dat,Pedido); 
+            emaNeg.EnviarMailPruebaPedidoPersonalizado(dat, Pedido);
 
             Response.Redirect("PedidoExitoso.aspx");
             //TODO: puede quedar mejor una ventana emergente

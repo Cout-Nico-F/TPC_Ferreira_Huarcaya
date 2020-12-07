@@ -1,16 +1,8 @@
 ﻿using Modelo;
 using Negocio;
-using System.Threading;
+using System;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using System.Security.Cryptography;
 
 namespace WebForms.ASPX
 {
@@ -18,7 +10,7 @@ namespace WebForms.ASPX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btn_CrearCuenta_Click1(object sender, EventArgs e)
@@ -69,7 +61,7 @@ namespace WebForms.ASPX
                         lbl_Exito.BackColor = System.Drawing.Color.Green;
                         lbl_Exito.ForeColor = System.Drawing.Color.White;
                         lbl_Exito.Text = "Usuario creado exitosamente!";
-                        Response.Redirect("InicioSesion.aspx?usuario="+txtNombreUsuario.Text);
+                        Response.Redirect("InicioSesion.aspx?usuario=" + txtNombreUsuario.Text);
                     }
                     catch (SqlException)
                     {
@@ -85,7 +77,7 @@ namespace WebForms.ASPX
             }
 
         }
-        
+
         private bool Validaciones()
         {
             if (txtNombreApellido.Text == "")
@@ -105,7 +97,7 @@ namespace WebForms.ASPX
             }
             else
             {
-                if (! Regex.IsMatch(txtFechaNacimiento.Text, @"^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"))
+                if (!Regex.IsMatch(txtFechaNacimiento.Text, @"^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"))
                 {
                     lblMail.Text = "Formato de fecha incorrecta. Ingrese DIA-MES-AÑO";
                     return false;
@@ -127,13 +119,13 @@ namespace WebForms.ASPX
                 lblContrasenia.Text = "Los campos de contraseña no coinciden";
                 return false;
             }
-            if ( ! Regex.IsMatch(txtEmail.Text, @"^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"))
-            {            
+            if (!Regex.IsMatch(txtEmail.Text, @"^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"))
+            {
                 lblMail.Text = "El formato de Correo Electronico es incorrecto ej: AlonsoHS21@hotmail.com";
                 return false;
             }
 
-            
+
             return true;
         }
         private void LimpiarLabels()
@@ -145,6 +137,6 @@ namespace WebForms.ASPX
             lblMail.Text = "";
         }
 
-       
+
     }
 }
