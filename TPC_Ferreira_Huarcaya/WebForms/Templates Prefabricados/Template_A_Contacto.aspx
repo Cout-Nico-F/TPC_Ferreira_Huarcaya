@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
-    <!-- Estilos CSS -->
-    <link href="../CSS/Estilos_Personalizar.css" rel="stylesheet" />
-    <link href="../CSS/Template_A.css" rel="stylesheet" />
 
     <title>Titulo</title>
 
@@ -25,18 +22,34 @@
             background:url(https://www.xtrafondos.com/wallpapers/resized/ubuntu-15-vivid-vervet-3441.jpg?s=large);
             background-size:cover;
         }
-         p{
-             text-align:center;
-         }
          img{
              width:50%;
-             height:5%;
+             height:10%;
          }
+         #sidebar-container {
+             min-height: 300vh;
+        }
+        #sidebar-container .menu {
+             width: 20rem;
+        } 
+        .gris{
+             background-color: #808080;
+        } 
+        .logo {
+         color: white;
+         text-align: center;
+           font-weight: bold;
+          font-size: 50px;
+          font-family: 'Anton', sans-serif;
+          }
+     .container{
+        color:white;
+     }
 
     </style>
     <form id="form1" runat="server">
         <div class="d-flex">
-            <div id="sidebar-container" class="bg-primary">
+            <div id="sidebar-container" class="gris">
                 <div class="menu">
                     <p class="logo nombre-pagina"><%=RellenoVariable.Nombre_Pagina %></p>
                     <a href="Template_A_Home.aspx" class="btn btn-warning d-block seccion-button">Home</a>
@@ -53,7 +66,7 @@
                 </div>
                 <hr />
                 <hr />
-                <img src="../Imagenes/unnamed.jpg" alt="Imagen_Contacto" />
+                <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/men-1979261__340.jpg" alt="Imagen_Contacto" />
             </div>
         </div>
     </form>

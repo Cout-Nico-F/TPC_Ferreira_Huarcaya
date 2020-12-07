@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
     <title><%= RellenoVariable.Titulo %></title>
+
 </head>
 <body > 
+   
     <style>
-
         body{
             background:url(https://www.xtrafondos.com/wallpapers/resized/ubuntu-15-vivid-vervet-3441.jpg?s=large);
             background-size:cover;
@@ -24,13 +26,14 @@
        .d-block h1{
             color: darkslategray;
             text-align: center;
-            font-size:100px;
-            margin-right:10px;
+            font-size:70px;
+            margin-right:60px;
         }
 
         #texto-home {
             text-align: center;
-            margin: 1%;
+            margin-top: 10px;
+            margin-left:40%;
         }
 
         #primer-imagen {
@@ -55,7 +58,7 @@
         }
         h1{
             margin-left:50%;
-           
+            
         }
         h4{
             color: white;
@@ -65,6 +68,9 @@
         }
         #sidebar-container .menu {
              width: 20rem;
+        } 
+        .gris{
+             background-color: #808080;
         }
         .logo {
             color: white;
@@ -73,17 +79,20 @@
             font-size: 50px;
             font-family: 'Anton', sans-serif;
         }
+ 
     </style>
 
     <form id="form1" runat="server">
         <div class="d-flex">
-            <div id="sidebar-container" class="bg-primary">
+            <div id="sidebar-container" class="gris">
                 <div class="menu">
                     <p class="logo nombre-pagina"><%= RellenoVariable.Nombre_Pagina %></p>
                     <a href="Template_A_Contacto.aspx" class="btn btn-warning d-block seccion-button">Contacto</a>
                 </div>
             </div>
             <div class="d-block">
+                <br />
+                <br />
                 <h1><%=RellenoVariable.Titulo_Home %></h1>
                 <img src="<%=RellenoVariable.Url_Imagen_Home %>" alt="Primer imagen" id="primer-imagen" class="img-thumbnail "/>
                 <h4 id="texto-home"><%=RellenoVariable.Texto_Home %></h4>
