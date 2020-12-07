@@ -48,7 +48,8 @@ namespace Negocio
             "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
 
-            string adjunto; 
+            string adjunto = ""; 
+
             if(dat.IdUsuario == 6)
             {
                 switch (pedido.Id_WebPage)
@@ -66,11 +67,6 @@ namespace Negocio
                     case 3:
                         {
                             adjunto = @"C:\Users\Alons\Desktop\Template_03.rar";
-                        }
-                        break;
-                    default:
-                        {
-                            adjunto = "";//la pongo en vacio porque si no me da un error de variable no asignada
                         }
                         break;
                 };
@@ -93,11 +89,6 @@ namespace Negocio
                     case 3:
                         {
                             adjunto = @"C:\Users\Nferr\Desktop\Template_03.rar";
-                        }
-                        break;
-                    default:
-                        {
-                            adjunto = "";//la pongo en vacio porque si no me da un error de variable no asignada
                         }
                         break;
                 };
