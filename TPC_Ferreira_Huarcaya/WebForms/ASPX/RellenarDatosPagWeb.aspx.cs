@@ -22,6 +22,10 @@ namespace WebForms.ASPX
         public bool ValidarID3 { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usersession"] == null)
+            {
+                Response.Redirect("InicioSesion.aspx");
+            }
             RellenoIngresado = new Relleno();
             IdRecibido =Convert.ToInt32( Request.QueryString["id"]);
         }
