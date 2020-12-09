@@ -16,24 +16,22 @@ namespace WebForms.ASPX
         public List<PedidoWebPage> PedidoPrediseniado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            /* Si estas logeado solo te aparece el boton entonces esto no es necesario por ahora 
-            if(Session["usersession"] != null)
+            if (!IsPostBack)
             {
-                Response.Redirect("InicioSesion.aspx");
-            }*/
-            if(Request.QueryString["idPedidoPers"] != null)
-            {
-                var idPersonalizado = Convert.ToInt16(Request.QueryString["idPedidoPers"]);
-                PedidoPersonalizadoNegocio pedNeg = new PedidoPersonalizadoNegocio();
-                pedNeg.EliminarPedidoPersonalizado(idPersonalizado);
-                Response.Redirect("PedidosPaginas.aspx");
-            }
-            if (Request.QueryString["idPedidoPred"] != null)
-            {
-                var idPrediseniado = Convert.ToInt16(Request.QueryString["idPedidoPred"]);
-                PedidosWebPageNegocio pedNeg = new PedidosWebPageNegocio();
-                pedNeg.EliminarPedidoPrediseniado(idPrediseniado);
-                Response.Redirect("PedidosPaginas.aspx");
+                if (Request.QueryString["idPedidoPers"] != null)
+                {
+                    var idPersonalizado = Convert.ToInt16(Request.QueryString["idPedidoPers"]);
+                    PedidoPersonalizadoNegocio pedNeg = new PedidoPersonalizadoNegocio();
+                    pedNeg.EliminarPedidoPersonalizado(idPersonalizado);
+                    Response.Redirect("PedidosPaginas.aspx");
+                }
+                if (Request.QueryString["idPedidoPred"] != null)
+                {
+                    var idPrediseniado = Convert.ToInt16(Request.QueryString["idPedidoPred"]);
+                    PedidosWebPageNegocio pedNeg = new PedidosWebPageNegocio();
+                    pedNeg.EliminarPedidoPrediseniado(idPrediseniado);
+                    Response.Redirect("PedidosPaginas.aspx");
+                }
             }
 
             IDUsuario = Convert.ToInt16(Request.QueryString["idUsuario"]);
