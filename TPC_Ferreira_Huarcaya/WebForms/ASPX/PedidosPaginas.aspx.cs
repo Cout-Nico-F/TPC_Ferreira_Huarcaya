@@ -26,12 +26,14 @@ namespace WebForms.ASPX
                 var idPersonalizado = Convert.ToInt16(Request.QueryString["idPedidoPers"]);
                 PedidoPersonalizadoNegocio pedNeg = new PedidoPersonalizadoNegocio();
                 pedNeg.EliminarPedidoPersonalizado(idPersonalizado);
+                Response.Redirect("PedidosPaginas.aspx");
             }
             if (Request.QueryString["idPedidoPred"] != null)
             {
                 var idPrediseniado = Convert.ToInt16(Request.QueryString["idPedidoPred"]);
                 PedidosWebPageNegocio pedNeg = new PedidosWebPageNegocio();
                 pedNeg.EliminarPedidoPrediseniado(idPrediseniado);
+                Response.Redirect("PedidosPaginas.aspx");
             }
 
             IDUsuario = Convert.ToInt16(Request.QueryString["idUsuario"]);
