@@ -7,15 +7,15 @@ go
 
 create view vw_ListaPedidos
 as
-select p.fecha, p.id as 'Id de Pedido', p.id_usuario, e.descripcion as Estilo, 
+select p.fecha, p.id as 'Id de Pedido', p.id_usuario, e.descripcion as Estilo,
 (select count(*) from paginas_x_pedidoswebpage as pxp where p.id = pxp.id_pedidowebpage)as 'Cantidad de Paginas',
-(select count(*) from funcionalidades_x_pedidoswebpage as fxp where p.id = fxp.id_pedidowebpage)as 'Cantidad de Funcionalidades'
-from pedidoswebpage as p
+(select count(*) from funcionalidades_x_pedidoswebpage as fxp where p.id = fxp.id_pedidowebpage)as 'Cantidad de Funcionalidades', 
+p.Estado from pedidoswebpage as p
 inner join estilos as e on p.id_estilo = e.id
-group by p.fecha,p.id, p.id_usuario, e.descripcion
+group by p.fecha,p.id, p.id_usuario, e.descripcion,p.Estado
 go
-Select * From vw_ListaPedidos Where id_usuario = 6
-Select * From PedidosWebPage Where ID_Usuario = 6
+Select * From PedidosPaginaPrediseniada Where ID = 1
+Select * From PedidosWebPage Where ID = 1
 /*
 /* Ejemplos de consultas utiles para esta vista */
 --Todos los pedidos

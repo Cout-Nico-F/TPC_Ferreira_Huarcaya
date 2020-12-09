@@ -15,5 +15,7 @@ namespace Modelo
         public int CantPaginas { get; set; }
 
         public int CantFuncs { get; set; }
+
+        public bool Estado { get; set; }
     }
 }

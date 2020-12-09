@@ -21,7 +21,19 @@ namespace WebForms.ASPX
             {
                 Response.Redirect("InicioSesion.aspx");
             }*/
-          
+            if(Request.QueryString["idPedidoPers"] != null)
+            {
+                var idPersonalizado = Convert.ToInt16(Request.QueryString["idPedidoPers"]);
+                PedidoPersonalizadoNegocio pedNeg = new PedidoPersonalizadoNegocio();
+                pedNeg.EliminarPedidoPersonalizado(idPersonalizado);
+            }
+            if (Request.QueryString["idPedidoPred"] != null)
+            {
+                var idPrediseniado = Convert.ToInt16(Request.QueryString["idPedidoPred"]);
+                PedidosWebPageNegocio pedNeg = new PedidosWebPageNegocio();
+                pedNeg.EliminarPedidoPrediseniado(idPrediseniado);
+            }
+
             IDUsuario = Convert.ToInt16(Request.QueryString["idUsuario"]);
             
             CargarListaPedidosPersonalizados();

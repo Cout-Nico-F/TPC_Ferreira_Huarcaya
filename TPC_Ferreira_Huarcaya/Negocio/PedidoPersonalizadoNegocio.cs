@@ -181,11 +181,18 @@ namespace Negocio
                 vistaPedido.Estilo = reader.GetString(3);
                 vistaPedido.CantPaginas = reader.GetInt32(4);
                 vistaPedido.CantFuncs = reader.GetInt32(5);
+                vistaPedido.Estado = reader.GetBoolean(6);
 
                 listaVistas.Add(vistaPedido);
             }
             conex.Desconectar();
             return listaVistas;
+        }
+        public void EliminarPedidoPersonalizado(Int16 idPagina)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            conexion.SentenciaNonQuery("update PedidosWebPage set Estado = 0 Where ID="+idPagina);
+            conexion.Desconectar();
         }
     }
 }

@@ -80,5 +80,11 @@ namespace Negocio
             conexion.Desconectar();
             return listaPedidos;
         }
+        public void EliminarPedidoPrediseniado( Int16 idPagina)
+        {
+            ConexionMSSQL conexion = new ConexionMSSQL();
+            conexion.SentenciaNonQuery("update PedidosPaginaPrediseniada set Estado = 0 Where ID="+idPagina);
+            conexion.Desconectar();
+        }
     }
 }

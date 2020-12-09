@@ -11,7 +11,7 @@
     <!--CDN Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
     <!--Google Fonts -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
     <!-- JQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Datatable -->
@@ -23,20 +23,81 @@
 </head>
 <body>
     <style>
+
         #pag1{
-            min-width:100%;
+            min-height:100vh;
         }
         #pag2{
-            min-height:100%;
+            min-height:100vh;
         }
+        .jumbotron h2{
+            font-family: 'Libre Baskerville', serif;
+            font-size:50px;
+        }
+        .table th{
+             font-family: 'Libre Baskerville', serif;
+        }
+        #myTable td{
+            text-align:center;
+        }
+        .container-pag {
+                background-color:antiquewhite;
+        }
+        .jumbotron{
+            background:url(https://cdn.pixabay.com/photo/2018/07/17/14/43/banner-3544296_960_720.jpg);
+            background-size:cover;
+        }
+
     </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav-toggleable-sm">
+    <a class="navbar-brand" href="#">
+        <img src="https://localhost:44344/Imagenes/icono_ecommerce.jpg" width="30" height="30" class="d-inline-block align-top" alt="" style="background-color: transparent">
+        <!-- No puedo hacer transparente el fonde de la imagen -->
+        FerreAlo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- el ID anterior era : navbarNavAltMarkup -->
+        <div class="navbar-nav mr-auto ml-auto text-center">
+            <a class="nav-link" href="Home.aspx">Home</a>
+            <a class="nav-link" href="Catalogo.aspx">Catalogo</a>
+            <a class="nav-link" href="Info.aspx">Informacion</a>
+            <a class="nav-link" href="PersonalizarUsuario.aspx">Crea tu propia Pagina Web</a>
+        </div>
+        <div>
+            <div class="boton-nav-user">
+
+                <%if (!(Session["usersession"] != null))
+                    {%>
+                         <a href="InicioSesion.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-user"></i> Log-In</a>
+                <%} %>
+                <a href="InicioSesion.aspx?LogOut=1" style="color: white; margin-right: 30px;"><i class="fas fa-sign-out-alt"></i> Log-Out</a>
+                <a href="EditarDatosPersonales.aspx" style="color: white; margin-right: 30px;"><i class="fas fa-info-circle"></i> Editar info</a>  
+                <%if (Session["usersession"] != null)
+                    {
+
+                        Modelo.Usuario usuario = (Modelo.Usuario)Session["usersession"];
+                        %>
+                          <a href="PedidosPaginas.aspx?idUsuario=<%= usuario.ID %>" style="color:white ;margin-right:30px;"><i class="fas fa-shopping-cart"></i></a>   
+                        <label style="color:aliceblue; font-weight:bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Logeado como: <%= usuario.NombreUsuario %> </label>
+                        
+                <%if (usuario.Id_Acceso == 3)//verificar el tipo de acceso para poder ver la pagina.
+                        {%>
+                        <a href="RecursosAdmin.aspx" style="color: white;"><i class="fas fa-cogs"></i> Panel Admin</a>
+                         <%}
+                       
+                } %>
+                  
+            </div>
+        </div>
+    </div>
+</nav>
     <form id="form1" runat="server">
         <div class="container-pag" id="pag1">
               <div class="jumbotron">
-                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
-                    <h4 style="text-align: center;">Utilice el boton</h4>
-                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
-                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
+                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizado </h2>
                 </div>
             <div class="container">
                 <table class="table table-fluid" id="myTable">
@@ -47,10 +108,13 @@
                             <th>Fecha de Pedido</th>
                             <th>Cantidad de Funciones</th>
                             <th>Cantidad de Paginas</th>
+                            <th>Eliminar Pedido</th>
                         </tr>
                     </thead>
                     <tbody>
                          <%foreach (var item in PedidosPersonalizados)
+                            {%>
+                        <%if (item.Estado != false)
                             {%>
                         <tr>
                             <td><%=item.IdPedido %></td>
@@ -58,8 +122,9 @@
                             <td><%=item.Fecha %></td>
                             <td><%=item.CantFuncs %></td>
                             <td><%=item.CantPaginas %></td>
-                           
+                           <td><a href="PedidosPaginas.aspx?idPedidoPers=<%=item.IdPedido %>"><i class="fas fa-trash"></i></a></td>
                         </tr>
+                        <%} %>
                          <%} %>
                     </tbody>
                 </table>
@@ -68,9 +133,6 @@
         <div class="container-pag" id="pag2">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
-                    <h4 style="text-align: center;">Utilice el boton</h4>
-                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
-                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
                 </div>
             <div class="container">
                 <table class="table table-fluid">
@@ -80,17 +142,22 @@
                             <th>ID Pagina Web PD</th>
                             <th>Fecha de Pedido</th>
                             <th>Precio</th>
+                            <th>ElimarPedido</th>
                         </tr>
                     </thead>
                     <tbody>
                          <%foreach (var item in PedidoPrediseniado)
+                            {%>
+                        <%if (item.Estado != false)
                             {%>
                         <tr>
                             <td><%=item.Id %></td>
                             <td><%= item.Id_WebPage %></td>
                             <td><%=item.FechaPedido %></td>
                             <td>$ <%=item.Precio %></td>
+                            <td><a href="PedidosPaginas.aspx?idPedidoPred=<%=item.Id %>"><i class="fas fa-trash"></i></a></td>
                         </tr>
+                            <%} %>
                          <%} %>
                     </tbody>
                 </table>
