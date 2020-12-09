@@ -88,6 +88,7 @@
     <Content Include="ASPX\InicioSesion.aspx" />
     <Content Include="ASPX\ModificarPaginaWeb.aspx" />
     <Content Include="ASPX\PedidoExitoso.aspx" />
+    <Content Include="ASPX\PedidosPaginas.aspx" />
     <Content Include="ASPX\PersonalizarUsuario.aspx" />
     <Content Include="ASPX\RecursosAdmin.aspx" />
     <Content Include="ASPX\RellenarDatosPagWeb.aspx" />
@@ -362,6 +363,13 @@
     </Compile>
     <Compile Include="ASPX\PedidoExitoso.aspx.designer.cs">
       <DependentUpon>PedidoExitoso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PedidosPaginas.aspx.cs">
+      <DependentUpon>PedidosPaginas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\PedidosPaginas.aspx.designer.cs">
+      <DependentUpon>PedidosPaginas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\PersonalizarUsuario.aspx.cs">
       <DependentUpon>PersonalizarUsuario.aspx</DependentUpon>
