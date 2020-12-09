@@ -35,15 +35,22 @@
                     <thead>
                         <tr>
                             <th>ID Pedido</th>
-                            <th>ID Pagina Web</th>
-                            <th>Precio</th>
+                            <th>Estilo de la Pagina</th>
                             <th>Fecha de Pedido</th>
-                            <th>Comentario</th>
+                            <th>Cantidad de Funciones</th>
+                            <th>Cantidad de Paginas</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                          <td></td>  
+                            <%foreach (var item in PedidosPersonalizados)
+                                {%>
+                          <td><%=item.IdPedido %></td>
+                            <td><%=item.Estilo %></td>
+                            <td><%=item.Fecha %></td>
+                            <td><%=item.CantFuncs %></td>
+                            <td><%=item.CantPaginas %></td>
+                            <%} %>
                         </tr>
                     </tbody>
                 </table>
