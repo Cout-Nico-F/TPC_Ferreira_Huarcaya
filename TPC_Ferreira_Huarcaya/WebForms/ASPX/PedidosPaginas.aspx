@@ -22,8 +22,16 @@
 
 </head>
 <body>
+    <style>
+        #pag1{
+            min-width:100%;
+        }
+        #pag2{
+            min-height:100%;
+        }
+    </style>
     <form id="form1" runat="server">
-        <div class="container-pag" id="pag3">
+        <div class="container-pag" id="pag1">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
                     <h4 style="text-align: center;">Utilice el boton</h4>
@@ -42,16 +50,48 @@
                         </tr>
                     </thead>
                     <tbody>
+                         <%foreach (var item in PedidosPersonalizados)
+                            {%>
                         <tr>
-                            <%foreach (var item in PedidosPersonalizados)
-                                {%>
-                          <td><%=item.IdPedido %></td>
+                            <td><%=item.IdPedido %></td>
                             <td><%=item.Estilo %></td>
                             <td><%=item.Fecha %></td>
                             <td><%=item.CantFuncs %></td>
                             <td><%=item.CantPaginas %></td>
-                            <%} %>
+                           
                         </tr>
+                         <%} %>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        <div class="container-pag" id="pag2">
+              <div class="jumbotron">
+                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
+                    <h4 style="text-align: center;">Utilice el boton</h4>
+                    <p style="text-align: center;"><button type="button" class="boton-shadow1 btn btn-outline-info" disabled></button> </p>
+                    <h4 style="text-align: center;">para Actualizar la lista de Pedidos</h4>
+                </div>
+            <div class="container">
+                <table class="table table-fluid">
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>ID Pagina Web PD</th>
+                            <th>Fecha de Pedido</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <%foreach (var item in PedidoPrediseniado)
+                            {%>
+                        <tr>
+                            <td><%=item.Id %></td>
+                            <td><%= item.Id_WebPage %></td>
+                            <td><%=item.FechaPedido %></td>
+                            <td>$ <%=item.Precio %></td>
+                        </tr>
+                         <%} %>
                     </tbody>
                 </table>
                 </div>

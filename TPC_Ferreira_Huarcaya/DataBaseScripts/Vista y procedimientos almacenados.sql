@@ -14,6 +14,8 @@ from pedidoswebpage as p
 inner join estilos as e on p.id_estilo = e.id
 group by p.fecha,p.id, p.id_usuario, e.descripcion
 go
+Select * From vw_ListaPedidos Where id_usuario = 6
+Select * From PedidosWebPage Where ID_Usuario = 6
 /*
 /* Ejemplos de consultas utiles para esta vista */
 --Todos los pedidos

@@ -21,10 +21,9 @@ namespace WebForms.ASPX
             {
                 Response.Redirect("InicioSesion.aspx");
             }*/
-            if(Request.QueryString["idUsuario"] != null)
-            {
-                IDUsuario = Convert.ToInt16(Request.QueryString["idUsuario"]);
-            }
+          
+            IDUsuario = Convert.ToInt16(Request.QueryString["idUsuario"]);
+            
             CargarListaPedidosPersonalizados();
             CargarListaPedidosPrediseniados();
         }

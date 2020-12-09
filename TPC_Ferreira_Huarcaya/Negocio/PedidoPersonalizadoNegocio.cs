@@ -168,7 +168,7 @@ namespace Negocio
         {
             List<VistaPedidoPersonalizado> listaVistas = new List<VistaPedidoPersonalizado>();
             ConexionMSSQL conex = new ConexionMSSQL();
-            SqlDataReader reader = conex.Consulta_Rapida("select * from vw_ListaPedidos Where=id"+id);
+            SqlDataReader reader = conex.Consulta_Rapida("select * from vw_ListaPedidos Where id_usuario="+id);
 
             while (reader.Read())
             {

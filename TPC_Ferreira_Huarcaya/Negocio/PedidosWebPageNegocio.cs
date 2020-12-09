@@ -41,7 +41,10 @@ namespace Negocio
                 aux.Id_Cliente = lectura.GetInt16(1);
                 aux.Id_WebPage = lectura.GetInt16(2);
                 aux.Precio = lectura.GetInt32(3);
-                aux.FechaPedido = lectura.GetDateTime(4);
+
+                var auxFecha = lectura.GetDateTime(4);
+                aux.FechaPedido = auxFecha.ToShortDateString();
+
                 aux.Comentarios = lectura.GetString(5);
                 aux.Estado = lectura.GetBoolean(6);
 
@@ -56,7 +59,7 @@ namespace Negocio
 
             List<PedidoWebPage> listaPedidos = new List<PedidoWebPage>();
 
-            var lectura = conexion.Consulta_Rapida("Select * From PedidosPaginaPrediseniada Where ID="+id);
+            var lectura = conexion.Consulta_Rapida("Select * From PedidosPaginaPrediseniada Where ID_Usuario="+id);
 
             while (lectura.Read())
             {
@@ -65,7 +68,10 @@ namespace Negocio
                 aux.Id_Cliente = lectura.GetInt16(1);
                 aux.Id_WebPage = lectura.GetInt16(2);
                 aux.Precio = lectura.GetInt32(3);
-                aux.FechaPedido = lectura.GetDateTime(4);
+
+                var auxFecha = lectura.GetDateTime(4);
+                aux.FechaPedido = auxFecha.ToShortDateString();
+
                 aux.Comentarios = lectura.GetString(5);
                 aux.Estado = lectura.GetBoolean(6);
 
