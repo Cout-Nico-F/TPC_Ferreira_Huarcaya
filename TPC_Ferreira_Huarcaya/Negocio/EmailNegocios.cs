@@ -43,6 +43,29 @@ namespace Negocio
             "<h3>Recibimos tus comentarios: " + pedido.Comentarios + "</h3>" +
             "</body>";
 
+            string adjunto = LocalPatch(pedido,dat);
+
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
+
+            MailMessage mail = new MailMessage();
+            mail.Attachments.Add(new Attachment(adjunto));
+            mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
+            mail.To.Add(new MailAddress(dat.Email));
+            mail.Subject = "Recibimos tu pedido de pagina web";
+            mail.IsBodyHtml = true;
+            mail.Body = body;
+
+            smtp.Send(mail);
+        }
+
+        private string LocalPatch(PedidoWebPage pedido, DatosPersonales dat)
+        {
+            //este parche es para que la pagina funcione localmente sin estar subida a un servidor azure.
             string adjunto = "";
 
             if (dat.IdUsuario == 6)
@@ -67,7 +90,7 @@ namespace Negocio
                 };
 
             }
-            if (dat.IdUsuario == 7)
+            else if (dat.IdUsuario == 7)
             {
                 switch (pedido.Id_WebPage)
                 {
@@ -89,24 +112,28 @@ namespace Negocio
                 };
 
             }
-
-
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("webform.proyecto01@gmail.com", "Webform123");
-
-            MailMessage mail = new MailMessage();
-            mail.Attachments.Add(new Attachment(adjunto));
-            mail.From = new MailAddress("webform.proyecto01@gmail.com", "Pedido de Pagina Web");
-            mail.To.Add(new MailAddress(dat.Email));
-            mail.Subject = "Recibimos tu pedido de pagina web";
-            mail.IsBodyHtml = true;
-            mail.Body = body;
-
-            smtp.Send(mail);
+            else // si no esta haciendo el pedido ni yo ni alonso, supone que lo hice yo. Alo: Aca si estas mostrando vos la app solo necesitas cambiar la ruta por la tuya en este ultimo else.
+            {
+                switch (pedido.Id_WebPage)
+                {
+                    case 1:
+                        {
+                            adjunto = @"C:\Users\Nferr\Desktop\Template_01.rar";
+                        }
+                        break;
+                    case 2:
+                        {
+                            adjunto = @"C:\Users\Nferr\Desktop\Template_02.rar";
+                        }
+                        break;
+                    case 3:
+                        {
+                            adjunto = @"C:\Users\Nferr\Desktop\Template_03.rar";
+                        }
+                        break;
+                };
+            }
+            return adjunto;
         }
-
     }
 }
