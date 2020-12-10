@@ -99,9 +99,43 @@
         <asp:UpdatePanel runat="server">
             <ContentTemplate>   
 
-                <div class="container-pag" id="pag1">
+                
+        <div class="container-pag" id="pag2">
               <div class="jumbotron">
-                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizado </h2>
+                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
+                </div>
+            <div class="container">
+                <table class="table table-fluid">
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>ID Pagina Web PD</th>
+                            <th>Fecha de Pedido</th>
+                            <th>Precio</th>
+                            <th>EliminarPedido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <%foreach (var item in PedidoPrediseniado)
+                            {%>
+                        <%if (item.Estado != false)
+                            {%>
+                        <tr>
+                            <td><%=item.Id %></td>
+                            <td><%= item.Id_WebPage %></td>
+                            <td><%=item.FechaPedido %></td>
+                            <td>$ <%=item.Precio %></td>
+                            <td><a href="PedidosPaginas.aspx?idPedidoPred=<%=item.Id %>"><i class="fas fa-trash"></i></a></td>
+                        </tr>
+                            <%} %>
+                         <%} %>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+<div class="container-pag" id="pag1">
+              <div class="jumbotron">
+                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizadas </h2>
                 </div>
             <div class="container">
                 <table class="table table-fluid" id="myTable">
@@ -134,40 +168,6 @@
                 </table>
                 </div>
             </div>
-        <div class="container-pag" id="pag2">
-              <div class="jumbotron">
-                    <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
-                </div>
-            <div class="container">
-                <table class="table table-fluid">
-                    <thead>
-                        <tr>
-                            <th>ID Pedido</th>
-                            <th>ID Pagina Web PD</th>
-                            <th>Fecha de Pedido</th>
-                            <th>Precio</th>
-                            <th>ElimarPedido</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                         <%foreach (var item in PedidoPrediseniado)
-                            {%>
-                        <%if (item.Estado != false)
-                            {%>
-                        <tr>
-                            <td><%=item.Id %></td>
-                            <td><%= item.Id_WebPage %></td>
-                            <td><%=item.FechaPedido %></td>
-                            <td>$ <%=item.Precio %></td>
-                            <td><a href="PedidosPaginas.aspx?idPedidoPred=<%=item.Id %>"><i class="fas fa-trash"></i></a></td>
-                        </tr>
-                            <%} %>
-                         <%} %>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-
             </ContentTemplate>
         </asp:UpdatePanel>
         
