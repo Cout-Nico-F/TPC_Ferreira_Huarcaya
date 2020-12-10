@@ -174,6 +174,10 @@
                                 {%>
                                  <td>En curso</td>
                             <%} %>
+                            <%else
+                                { %>
+                                <td>Cancelado </td>
+                            <%} %>
                             <td><a href="DetallePedidoPrediseniado.aspx?IdUsuario=<%=item.Id_Cliente %>">Ver Detalles</a></td>
                         </tr>
                         <%} %>
@@ -278,14 +282,14 @@
         <div class="container-pag jumbotron" id="pag6">
             <div>
             <br />
-            <asp:Label Text="Precio Base de pagina web Personalizada" runat="server" />
+            <asp:Label Text="Precio Base de pagina web Personalizada" runat="server" /><br />
             <asp:TextBox runat="server" ID="txtBox_PrecioBase" />
-            <asp:Button Text="Actualizar Precio Base" runat="server" id="btn_PrecioBase" OnClick="btn_PrecioBase_Click"/>
+            <asp:Button Text="Actualizar Precio Base" runat="server" id="btn_PrecioBase" OnClick="btn_PrecioBase_Click" CssClass="btn btn-dark"/>
             <br />
             <br />
-            <asp:Label Text="Precio por pagina de web Personalizada" runat="server" />
+            <asp:Label Text="Precio por pagina de web Personalizada" runat="server" /><br />
             <asp:TextBox runat="server" ID="txtBox_PrecioPorPagina" />
-            <asp:Button Text="Actualizar Precio Por Pagina" runat="server" id="btn_PrecioPorPagina" OnClick="btn_PrecioPorPagina_Click"/>
+            <asp:Button Text="Actualizar Precio Por Pagina" runat="server" id="btn_PrecioPorPagina" OnClick="btn_PrecioPorPagina_Click" CssClass="btn btn-dark"/>
             </div>
         </div>
 

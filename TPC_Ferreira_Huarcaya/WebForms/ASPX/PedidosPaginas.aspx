@@ -95,7 +95,11 @@
     </div>
 </nav>
     <form id="form1" runat="server">
-        <div class="container-pag" id="pag1">
+        <asp:ScriptManager runat="server" />    
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>   
+
+                <div class="container-pag" id="pag1">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizado </h2>
                 </div>
@@ -163,6 +167,10 @@
                 </table>
                 </div>
             </div>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        
     </form>
 
       <script>
