@@ -100,7 +100,7 @@
             <ContentTemplate>   
 
                 
-        <div class="container-pag" id="pag2">
+        <div class="container-pag" id="pag1">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Prediseñadas </h2>
                 </div>
@@ -131,9 +131,10 @@
                          <%} %>
                     </tbody>
                 </table>
+                <a href="#pag2" class="btn btn-info">Ver lista de pedidos de paginas Personalizadas</a>
                 </div>
             </div>
-<div class="container-pag" id="pag1">
+<div class="container-pag" id="pag2">
               <div class="jumbotron">
                     <h2 style="text-align: center;">Lista de Pedidos de Paginas Personalizadas </h2>
                 </div>
@@ -166,6 +167,7 @@
                          <%} %>
                     </tbody>
                 </table>
+                <a href="#pag1" class="btn btn-info">Ver lista de pedidos de paginas Prediseñadas</a>
                 </div>
             </div>
             </ContentTemplate>
