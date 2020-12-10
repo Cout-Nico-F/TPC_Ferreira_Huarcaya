@@ -14,8 +14,9 @@ p.Estado from pedidoswebpage as p
 inner join estilos as e on p.id_estilo = e.id
 group by p.fecha,p.id, p.id_usuario, e.descripcion,p.Estado
 go
-Select * From PedidosPaginaPrediseniada Where ID = 1
-Select * From PedidosWebPage Where ID = 1
+--Select * From PedidosPaginaPrediseniada Where ID = 1
+--Select * From PedidosWebPage Where ID = 1
+--go
 /*
 /* Ejemplos de consultas utiles para esta vista */
 --Todos los pedidos
@@ -29,6 +30,7 @@ select distinct
 (select count(*)from vw_listapedidos where estilo = 'Material design')as 'Cantidad de paginas Material design pedidas a la fecha' 
 from vw_listapedidos 
 */
+
 create view vw_ListaFuncionalidades
 as
 select f.id, f.descripcion, f.costo, f.habilitado, p.id as idPEdido from funcionalidades f
